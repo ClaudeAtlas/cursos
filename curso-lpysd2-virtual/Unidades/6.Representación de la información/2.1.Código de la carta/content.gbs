@@ -1,0 +1,4 @@
+program {
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarElNúmero_(códigoDelPalo_(palo_(Espadas)))
+}

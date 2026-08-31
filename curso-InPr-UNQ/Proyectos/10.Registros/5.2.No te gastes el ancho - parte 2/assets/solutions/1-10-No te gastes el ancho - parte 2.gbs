@@ -1,0 +1,42 @@
+program { ContestarLaJugada() }
+
+procedure ContestarLaJugada() {
+  if (el3DeOrosPierde()) {
+    PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(1), palo_(Espadas)))
+  } else {
+    PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(3), palo_(Oros)))
+  }
+}
+
+function el3DeOrosPierde() {
+  return (laComputadoraJugóUnAncho() || (laComputadoraJugóUn7Bravo() || laComputadoraJugóUn3()))
+}
+
+function laComputadoraJugóUnAncho() {
+  return (laComputadoraJugóElAnchoDeEspadas() || laComputadoraJugóElAnchoDeBastos())
+}
+
+function laComputadoraJugóElAnchoDeEspadas() {
+  return (cartaQueJugóLaComputadora() == dameCarta__(númeroDeCartaEspañolaDe40_(1), palo_(Espadas)))
+}
+
+function laComputadoraJugóElAnchoDeBastos() {
+  return (cartaQueJugóLaComputadora() == dameCarta__(númeroDeCartaEspañolaDe40_(1), palo_(Bastos)))
+}
+
+function laComputadoraJugóUn7Bravo() {
+  return (laComputadoraJugóEl7DeEspadas() || laComputadoraJugóEl7DeOros())
+}
+
+function laComputadoraJugóEl7DeEspadas() {
+  return (cartaQueJugóLaComputadora() == dameCarta__(númeroDeCartaEspañolaDe40_(7), palo_(Espadas)))
+}
+
+function laComputadoraJugóEl7DeOros() {
+  return (cartaQueJugóLaComputadora() == dameCarta__(númeroDeCartaEspañolaDe40_(7), palo_(Oros)))
+}
+
+function laComputadoraJugóUn3() {
+  return (dameElNúmero_(cartaQueJugóLaComputadora()) == númeroDeCartaEspañolaDe40_(3))
+}
+

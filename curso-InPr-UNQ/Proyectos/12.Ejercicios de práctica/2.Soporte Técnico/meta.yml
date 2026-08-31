@@ -1,0 +1,45 @@
+name: Soporte Técnico
+board:
+  visible_edition: true
+  collapse_toolbox: false
+  user_permissions:
+    can_change_initial_board: true
+    can_change_initial_board_source: false
+    can_edit_board: false
+    can_view_size_section: false
+    can_view_attire_section: true
+  active: 3
+  initial_board_source: random
+execution_speed:
+  user_permissions:
+    can_change_speed: true
+  active: instantaneous
+attire:
+  visible: true
+  user_permissions:
+    can_toggle_visibility: true
+  active: Soporte Técnico
+blocks:
+  disabled:
+    - IrAlBorde
+  visible:
+    - Poner
+    - Mover
+    - Sacar
+    - IrAlBorde
+    - Procedimientos primitivos
+    - Mis procedimientos
+    - RepeticionSimple
+    - EXPRESIONES
+    - Color
+    - Direccion
+    - Numero
+    - DEFINICIONES
+    - procedures_defnoreturnnoparams
+    - procedures_defnoreturn
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.7631197257383966
+customErrors: null

@@ -1,0 +1,10 @@
+procedure ImitarAzulesConRojasPeroEnElEste() {
+  cantidadDeBolitasAzules := nroBolitas(Azul)
+  Mover(Este)
+  Poner_BolitasRojas(cantidadDeBolitasAzules)
+}
+
+
+program {
+  ImitarAzulesConRojasPeroEnElEste()
+}

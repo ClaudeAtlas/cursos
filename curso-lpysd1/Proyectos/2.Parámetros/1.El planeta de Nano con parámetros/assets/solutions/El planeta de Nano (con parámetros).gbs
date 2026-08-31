@@ -1,0 +1,27 @@
+program {
+  ComerFilaCon_Bananas(9)
+  MoverANanoHaciaArriba()
+  ComerFilaCon_Bananas(4)
+  MoverANanoHaciaArriba()
+  ComerFilaCon_Bananas(7)
+  MoverANanoHaciaArriba()
+  ComerFilaCon_Bananas(2)
+  MoverANanoHaciaArriba()
+  ComerFilaCon_Bananas(8)
+  MoverANanoHaciaArriba()
+  ComerFilaCon_Bananas(5)
+  MoverANanoHaciaArriba()
+  ComerFilaCon_Bananas(6)
+  MoverANanoHaciaArriba()
+  ComerFilaCon_Bananas(3)
+  MoverANanoHaciaArriba()
+}
+
+procedure ComerFilaCon_Bananas(cantidadDeBananas) {
+  repeat(cantidadDeBananas) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+}
+

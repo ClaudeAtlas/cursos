@@ -1,0 +1,13 @@
+procedures_defreturnsimple DefinicionDeFuncionSimpleDeclarativa
+procedures_callreturnsimple procedures_callreturndeclarativesimple
+
+procedures_defreturnsimplewithparams DefinicionDeFuncionSimpleConParametrosDeclarativa
+procedures_callreturnsimplewithparams procedures_callreturndeclarativesimplewithparams
+
+procedures_defreturn DefinicionDeFuncionDeclarativa
+procedures_callreturn procedures_callreturndeclarative
+
+        <category name="Funciones">
+          <block type="DefinicionDeFuncionSimpleDeclarativa"></block>
+          <block type="DefinicionDeFuncionSimpleConParametrosDeclarativa"></block>
+          <block type="DefinicionDeFuncionDeclarativa"></block>

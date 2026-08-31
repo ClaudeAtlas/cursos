@@ -1,0 +1,384 @@
+program {
+  AsignarClubATodosLosMotoquerosActivos()    
+}
+
+//////////////////////////////////////////////////////
+// EJERCICIO 1
+//////////////////////////////////////////////////////
+function cantidadDeClubesEnLaConvención() {
+  /*
+     PROPÓSITO: describe la cantidad de clubes que hay en la convención actual
+     PRECONDICIONES: 
+       * hay una convención representada en el tablero
+       * ningún motoquero tiene un club asignado
+     RESULTADO: un número, la cantidad indicada
+     OBSERVACIONES: 
+       * se arma como un recorrido sobre los posibles clubes
+       * si no hay clubes, devuelve 0
+  */
+  próximoClub := 1
+  while (hayMotoquerosActivosSinClub()) {
+    IrAMotoqueroActivoSinClub()
+    AsignarClub_AMotoquerosConectados(próximoClub)
+    próximoClub := próximoClub + 1
+  }
+  return(próximoClub - 1)
+}
+
+function hayMotoquerosActivosSinClub() {
+  /*
+     PROPÓSITO: indica si en algún lugar de la convención hay un motoquero activo sin club
+     PRECONDICIONES: hay una convención representada en el tablero
+     RESULTADO: un valor de verdad que describe la condición pedida
+  */
+  IrAMotoqueroActivoSinClub()
+  return(esMotoqueroActivoSinClub())
+}
+
+procedure IrAMotoqueroActivoSinClub() {
+  /*
+     PROPÓSITO: posiciona el cabezal sobre algún motoquero activo sin club, si el mismo existe,
+                o sobre alguna esquina, si no
+     PRECONDICIONES: hay una convención representada en el tablero
+     OBSERVACIONES:
+       - se arma como un recorrido de búsqueda sobre las celdas del tablero
+       - al terminar, si hay un motoquero que cumpla la condición, está parado sobre él
+  */
+  IniciarRecorrido__(Norte, Este)
+  while (not esFinDeRecorrido__(Norte, Este)
+      && not esMotoqueroActivoSinClub()) {
+      PasarALaSiguienteCeldaDelRecorrido__(Norte, Este)
+  }
+}
+
+function esMotoqueroActivoSinClub() {
+  /*
+     PROPÓSITO: indica si el motoquero actual está activo y no pertenece a ningún club
+     PRECONDICIONES: ninguna
+     RESULTADO: un valor de verdad que indica la condición establecida
+  */
+  return (elMotoqueroEstáActivo() && not elMotoqueroPerteneceAUnClub())
+}
+
+procedure AsignarClub_AMotoquerosConectados(númeroDeClub) {
+  /*
+     PROPÓSITO: incluir en el club con el número dado a todo el grupo de motoqueros conectados entre sí al motoquero actual (incluído él)
+     PRECONDICIONES:
+       * hay una convención representada en el tablero
+       * hay un motoquero activo en la celda actual, y no pertenece a ningún club
+       * ninguno de los motoqueros conectados con el motoquero actual pertenece a un club
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club asignar al próximo grupo
+  */
+  AsignarClub_AlMotoqueroActualYSusVecinosActivosSinClub(númeroDeClub)
+  while (hayMotoqueroActivoYSinClubConVecinoEn_(númeroDeClub)) {
+    IrAMotoqueroActivoYSinClubConVecinoEn_(númeroDeClub)
+    AsignarClub_AlMotoqueroActualYSusVecinosActivosSinClub(númeroDeClub)
+  }
+}
+
+procedure AsignarClub_AlMotoqueroActualYSusVecinosActivosSinClub(númeroDeClub) {
+  /*
+     PROPÓSITO: incluir en el club con el número dado al motoquero actual y a todos sus vecinos activos y sin club
+     PRECONDICIONES:
+       * hay una convención representada en el tablero
+       * hay un motoquero activo en la celda actual, y no pertenece a ningún club
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club asignar al motoquero y sus vecinos
+  */
+  IncluirEnElClubNúmero_(númeroDeClub)
+  AsignarClub_AVecinos(númeroDeClub)
+}
+
+procedure AsignarClub_AVecinos(númeroDeClub) {
+  /*
+     PROPÓSITO: incluir en el club con el número dado a todos los vecinos del motoquero 
+                actual que estén activos y sin club
+     PRECONDICIONES:
+       * hay una convención representada en el tablero
+       * hay un motoquero activo en la celda actual
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club asignar al motoquero y sus vecinos
+     OBSERVACIÓN: en esta versión solo mira ortogonales; se puede cambiar para que también estén
+                  los de las diagonales, cambiando AsignarClub_AlVecinoOrtogonalAl_SiCorresponde
+                  por AsignarClub_ALosVecinosAl_SiCorresponde.
+  */
+  direcciónActual := minDir()
+  while (direcciónActual < maxDir()) {
+      AsignarClub_AlVecinoOrtogonalAl_SiCorresponde(númeroDeClub, direcciónActual)
+      direcciónActual := siguiente(direcciónActual)
+  }
+  AsignarClub_AlVecinoOrtogonalAl_SiCorresponde(númeroDeClub, direcciónActual)
+}
+
+procedure AsignarClub_ALosVecinosAl_SiCorresponde(númeroDeClub, dirección) {
+  /*
+     PROPÓSITO: incluir en el club con el número dado los motoqueros que están 
+                en la dirección dada, tanto ortogonal como diagonal, 
+                si corresponde (existen, están activos y no tienen club asignado)
+     PRECONDICIONES:
+       * hay una convención representada en el tablero
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club asignar a los vecinos del motoquero
+       * dirección, una dirección que indica en qué dirección buscar a los motoqueros para incluir
+  */
+  AsignarClub_AlVecinoOrtogonalAl_SiCorresponde(númeroDeClub, dirección)
+  AsignarClub_AlVecinoEnDiagonalAl_SiCorresponde(númeroDeClub, dirección)
+}
+
+procedure AsignarClub_AlVecinoOrtogonalAl_SiCorresponde(númeroDeClub, dirección) {
+  /*
+     PROPÓSITO: incluir en el club con el número dado al motoquero que está 
+                en la dirección dada, en forma ortogonal, 
+                si corresponde (existe, están activo y no tiene club asignado)
+     PRECONDICIONES:
+       * hay una convención representada en el tablero
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club asignar al vecino del motoquero
+       * dirección, una dirección que indica en qué dirección buscar al motoquero para incluir
+  */
+  if (puedeMover(dirección)) {
+     Mover(dirección)
+     AsignarClub_SiCorresponde(númeroDeClub)
+     Mover(opuesto(dirección))
+  }
+}
+
+procedure AsignarClub_AlVecinoEnDiagonalAl_SiCorresponde(númeroDeClub, dirección) {
+  /*
+     PROPÓSITO: incluir en el club con el número dado al motoquero que está 
+                en la dirección dada, en forma diagonal, 
+                si corresponde (existe, está activo y no tiene club asignado)
+     PRECONDICIONES:
+       * hay una convención representada en el tablero
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club asignar al vecino del motoquero
+       * dirección, una dirección que indica en qué dirección buscar al motoquero para incluir
+  */
+  if (puedeMover(dirección) && puedeMover(siguiente(dirección))) {
+     Mover(dirección) Mover(siguiente(dirección))
+     AsignarClub_SiCorresponde(númeroDeClub)
+     Mover(opuesto(dirección)) Mover(previo(dirección))
+  }
+}
+
+procedure AsignarClub_SiCorresponde(númeroDeClub) {
+  /*
+     PROPÓSITO: incluir en el club con el número dado al motoquero actual, si corresponde
+                (está activo y no tiene club asignado)
+     PRECONDICIONES: hay una convención representada en el tablero
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club asignar al motoquero
+  */
+  if (elMotoqueroEstáActivo() && not elMotoqueroPerteneceAUnClub()) {
+      IncluirEnElClubNúmero_(númeroDeClub)
+  }
+}
+
+function hayMotoqueroActivoYSinClubConVecinoEn_(númeroDeClub) {
+  /*
+     PROPÓSITO: indica si en algún lugar de la convención hay un motoquero activo y sin club con un vecino en el club dado
+     PRECONDICIONES: hay una convención representada en el tablero
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club debe pertenecer el vecino del buscado
+     RESULTADO:
+       * un valor de verdad que indica la condición establecida
+  */
+  IrAMotoqueroActivoYSinClubConVecinoEn_(númeroDeClub)
+  return(esMotoqueroActivoYSinClubConVecinoEn_(númeroDeClub))
+}
+
+procedure IrAMotoqueroActivoYSinClubConVecinoEn_(númeroDeClub) {
+  /*
+     PROPÓSITO: posiciona el cabezal sobre algún motoquero activo sin club que tenga un vecino en el club dado, 
+                si el mismo existe, o sobre alguna esquina, si no
+     PRECONDICIONES: hay una convención representada en el tablero
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club debe pertenecer el vecino del buscado
+     OBSERVACIONES:
+       - se arma como un recorrido de búsqueda sobre las celdas del tablero
+       - al terminar, si hay un motoquero que cumpla la condición, está parado sobre él
+  */
+  IniciarRecorrido__(Norte, Este)
+  while (not esFinDeRecorrido__(Norte, Este)
+      && not esMotoqueroActivoYSinClubConVecinoEn_(númeroDeClub)) {
+      PasarALaSiguienteCeldaDelRecorrido__(Norte, Este)
+  }
+}
+
+function esMotoqueroActivoYSinClubConVecinoEn_(númeroDeClub) {
+  /*
+     PROPÓSITO: indica si el motoquero actual está activo, no tiene club asignado y tiene un vecino en el club dado
+     PRECONDICIONES: hay una convención representada en el tablero
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club debe pertenecer el vecino del actual
+     RESULTADO:
+       * un valor de verdad que indica la condición establecida
+  */
+  return (esMotoqueroActivoSinClub() && tieneUnVecinoActivoEn_(númeroDeClub))
+}
+
+function tieneUnVecinoActivoEn_(númeroDeClub) {
+  /*
+     PROPÓSITO: indica si el motoquero actual tiene algún vecino activo que pertenezca al club dado
+     PRECONDICIONES: hay una convención representada en el tablero
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club debe pertenecer el vecino del actual
+     RESULTADO:
+       * un valor de verdad que indica la condición establecida
+     OBSERVACIONES:
+       * se arma como un recorrido de búsqueda sobre direcciones
+       * solo mira ortogonales
+  */
+  direcciónActual := minDir()
+  while (direcciónActual < maxDir() 
+      && not hayVecinoActivoEn_Al_(númeroDeClub, direcciónActual)) {
+      direcciónActual := siguiente(direcciónActual)
+  }
+  return (hayVecinoActivoEn_Al_(númeroDeClub, direcciónActual))
+}
+
+function hayVecinoActivoEn_Al_(númeroDeClub, dirección) {
+  /*
+     PROPÓSITO: indica si en la dirección dada hay un motoquero, y el mismo está activo y pertenece al club dado
+     PRECONDICIONES: hay una convención representada en el tablero
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club debe pertenecer el vecino indicado
+       * dirección, una dirección que indica en qué dirección buscar al motoquero con el club indicado
+     RESULTADO:
+       * un valor de verdad que indica la condición establecida
+  */
+  return (puedeMover(dirección) && tieneVecinoActivoEn_Al_(númeroDeClub, dirección))
+}
+
+function tieneVecinoActivoEn_Al_(númeroDeClub, dirección) {
+  /*
+     PROPÓSITO: indica si el motoquero que está en la dirección dada está activo y pertenece al club dado
+     PRECONDICIONES: 
+       * hay una convención representada en el tablero
+       * hay un motoquero en la dirección dada
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club debe pertenecer el vecino indicado
+       * dirección, una dirección que indica en qué dirección buscar al motoquero con el club indicado
+     RESULTADO:
+       * un valor de verdad que indica la condición establecida
+  */
+  Mover(dirección)
+  return (elMotoqueroEstáActivo() && elMotoqueroPerteneceAUnClub()
+       && clubAlQuePerteneceElMotoquero() == númeroDeClub)
+}
+
+//////////////////////////////////////////////////////
+// EJERCICIO 2
+//////////////////////////////////////////////////////
+function clubConMásMotoqueros() {
+  /*
+     PROPÓSITO: describe el número del club con más motoqueros de toda la convención
+     PRECONDICIONES: 
+      * hay una convención representada en el tablero
+      * ningún motoquero tiene club asignado
+      * hay al menos un club en la convención (no es una convención vacía)
+     RESULTADO: un número, con el número del club que tenga más motoqueros en la convención
+     OBSERVACIONES: 
+       * es un recorrido sobre los clubes numerados
+       * si no hay ningún club, el número que devuelve es 0
+  */
+  totalDeClubes := cantidadDeClubesEnLaConvención()  // Hay que hacerlo ANTES de AsignarClubATodosLosMotoquerosActivos, por su precondición
+  AsignarClubATodosLosMotoquerosActivos()            // Es necesario hacerlo para poder recorrer los clubes por número
+  // Al principio, el club 1 es el más popular
+  IrAAlgúnMotoqueroDelClub_(1)
+  cantidadDeMotoquerosDelClubPopularVisto := cantidadDeMiembrosDelClubActual()
+  clubConMásMotoquerosVisto               := 1
+  // Recorro los restantes clubes
+  clubActual := 2
+  repeat (totalDeClubes-1) {
+      IrAAlgúnMotoqueroDelClub_(clubActual)
+      cantidadDeMiembrosActual := cantidadDeMiembrosDelClubActual()
+      // Si el club actual tiene más miembros que el popular anterior, pasa a ser el popular
+      if (cantidadDeMiembrosActual > cantidadDeMotoquerosDelClubPopularVisto) {
+        cantidadDeMotoquerosDelClubPopularVisto := cantidadDeMiembrosActual
+        clubConMásMotoquerosVisto               := clubActual
+      }
+  }
+  return(clubConMásMotoquerosVisto)
+}
+
+procedure AsignarClubATodosLosMotoquerosActivos() {
+  /*
+     PROPÓSITO: asigna número de club a todos los clubes que hay en la convención actual
+     PRECONDICIONES: 
+       * hay una convención representada en el tablero
+       * ningún grupo tiene un club asignado
+     OBSERVACIONES: 
+       * se arma como un recorrido sobre los posibles clubes
+  */
+  próximoClub := 1
+  while (hayMotoquerosActivosSinClub()) {
+    IrAMotoqueroActivoSinClub()
+    AsignarClub_AMotoquerosConectados(próximoClub)
+    próximoClub := próximoClub + 1
+  }
+}
+
+procedure IrAAlgúnMotoqueroDelClub_(númeroDeClub) {
+  /*
+     PROPÓSITO: posiciona el cabezal sobre algún motoquero activo del club dado, 
+                si el mismo existe, o sobre alguna esquina, si no
+     PRECONDICIONES: 
+       * hay una convención representada en el tablero
+       * todos los motoqueros tienen club asignado
+       * númeroDeClub es un número de club válido
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club debe pertenecer el motoquero buscado
+     OBSERVACIONES:
+       - se arma como un recorrido de búsqueda sobre las celdas del tablero
+       - al terminar, si hay un motoquero que cumpla la condición, está parado sobre él
+  */
+  IniciarRecorrido__(Norte, Este)
+  while (not esFinDeRecorrido__(Norte, Este)
+      && not esMotoqueroActivoDelClub_(númeroDeClub)) {
+      PasarALaSiguienteCeldaDelRecorrido__(Norte, Este)
+  }
+
+}
+
+function esMotoqueroActivoDelClub_(númeroDeClub) {
+  /*
+     PROPÓSITO: indica si el motoquero actual está en el club dado (si está en un club, está activo)
+     PRECONDICIONES: hay una convención representada en el tablero
+     PARÁMETROS:
+       * númeroDeClub, un número que dice a cuál club debe pertenecer el motoquero actual
+     RESULTADO:
+       * un valor de verdad que indica la condición establecida
+  */
+  return(esMotoqueroActivoConClub() 
+      && clubAlQuePerteneceElMotoquero() == númeroDeClub)
+    
+}
+
+function esMotoqueroActivoConClub() {
+  /*
+     PROPÓSITO: indica si el motoquero actual está activo y pertenece a algún club
+     PRECONDICIONES: ninguna
+     RESULTADO: un valor de verdad que indica la condición establecida
+  */
+  return (elMotoqueroEstáActivo() && elMotoqueroPerteneceAUnClub())
+}
+
+function cantidadDeMiembrosDelClubActual() {
+  /*
+     PROPÓSITO: describe la cantidad de miembros que hay en el club actual.
+     PRECONDICIONES:
+       * hay una convención representada en el tablero
+       * hay un motoquero activo en la celda actual con club asignado
+     RESULTADO: un número, con la cantidad pedida
+  */
+  clubActual := clubAlQuePerteneceElMotoquero()
+  cantidadDeMiembrosVistos := 1
+  IniciarRecorrido__(Norte, Este)
+  while (not esFinDeRecorrido__(Norte, Este)) {
+    cantidadDeMiembrosVistos := cantidadDeMiembrosVistos + 1
+    PasarALaSiguienteCeldaDelRecorrido__(Norte,Este)
+  }
+  return(cantidadDeMiembrosVistos)
+}

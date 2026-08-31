@@ -1,0 +1,21 @@
+program { 
+
+}
+
+procedure ContestarLaJugada() {
+  if (el3DeOrosPierde()) {
+    PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(1), palo_(Espadas)))
+  } else {
+    PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(3), palo_(Oros)))
+  }
+}
+
+function el3DeOrosPierde() {
+  return ((...) || (...))
+}
+
+function laComputadoraJugóUn7Bravo() {
+  return (...)
+}
+
+

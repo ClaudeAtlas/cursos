@@ -1,0 +1,1 @@
+procedure Poner_BolitasRojas(cantidad) { repeat (cantidad) { Poner(Rojo) } }

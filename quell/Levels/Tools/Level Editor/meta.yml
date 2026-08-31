@@ -1,0 +1,25 @@
+name: 'Level Editor'
+board:
+  collapse_toolbox: False
+  user_permissions:
+    can_edit_board: true
+    can_view_size_section: true
+
+inherit:
+  $course: gobstonesgames/quell
+  $assets:
+    extra: true
+    attires:
+      - Quell
+  execution_speed: true
+  source: true
+  library: true
+  board: 
+    active: true
+    initial_board_source: true
+    visible_edition: true
+    user_permissions:
+      can_view_attire_section: true
+      can_change_initial_board_source: false
+  attire: true
+  blocks: true

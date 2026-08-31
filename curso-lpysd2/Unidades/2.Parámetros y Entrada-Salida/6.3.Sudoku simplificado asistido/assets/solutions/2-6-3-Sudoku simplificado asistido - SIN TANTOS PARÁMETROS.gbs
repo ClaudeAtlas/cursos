@@ -1,0 +1,31 @@
+interactive program {
+  on K_LEFT  { MoverSiPuede_(Oeste)    }
+  on K_RIGHT { MoverSiPuede_(Este)     }
+  on K_UP    { MoverSiPuede_(Norte)    }
+  on K_DOWN  { MoverSiPuede_(Sur)      }
+  on K_1     { PonerDígitoSiSePuede(1) }
+  on K_2     { PonerDígitoSiSePuede(2) }
+  on K_3     { PonerDígitoSiSePuede(3) }
+}
+
+procedure PonerDígitoSiSePuede(dígitoAPoner) {
+  if (esVálidoPonerlo(dígitoAPoner)) { PonerDígito_(dígitoAPoner) }
+}
+
+function esVálidoPonerlo(dígito) {
+  return (not hayDígito()
+       && noSeRepiteEnLaFila(dígito) 
+       && noSeRepiteEnLaColumna(dígito))
+}
+
+function noSeRepiteEnLaFila(dígitoAVerEnLaFila) {
+  return (dígitoAVerEnLaFila /= dígitoEnLaPrimeraPosiciónDeLaFila() 
+       && (dígitoAVerEnLaFila /= dígitoEnLaSegundaPosiciónDeLaFila() 
+        && dígitoAVerEnLaFila /= dígitoEnLaTerceraPosiciónDeLaFila()))
+}
+
+function noSeRepiteEnLaColumna(dígitoAVerEnLaColumna) {
+  return (dígitoAVerEnLaColumna /= dígitoEnLaPrimeraPosiciónDeLaColumna() 
+       && (dígitoAVerEnLaColumna /= dígitoEnLaSegundaPosiciónDeLaColumna() 
+        && dígitoAVerEnLaColumna /= dígitoEnLaTerceraPosiciónDeLaColumna()))
+}

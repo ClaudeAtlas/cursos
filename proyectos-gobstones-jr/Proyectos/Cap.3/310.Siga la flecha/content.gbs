@@ -1,0 +1,23 @@
+procedure DibujarLaPuntaDeFlecha() {
+  repeat(4) {
+    ...
+  }
+  Mover(Oeste)
+  Mover(Norte)
+  repeat(...) {
+    Poner(Verde)
+  }
+  Mover(Sur)
+  Mover(Sur)
+  ...
+}
+
+procedure DibujarLaFlecha() {
+  ...
+  DibujarLaPuntaDeFlecha()
+}
+
+
+program {
+
+}

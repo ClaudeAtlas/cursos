@@ -1,0 +1,29 @@
+﻿program { LimpiarLaImagen() }
+
+procedure LimpiarLaImagen() {
+  ComenzarElRecorrido()
+  while (not (esLaÚltimaCelda())) {
+    EliminarCenizaDeLaCeldaActual()
+    PasarALaSiguienteCelda()
+  }
+  EliminarCenizaDeLaCeldaActual()
+}
+
+function esLaÚltimaCelda() { return (not(puedeMover(Este)) && not(puedeMover(Norte))) }
+
+procedure PasarALaSiguienteCelda() {
+  if (puedeMover(Este)) 
+       { Mover(Este) } 
+  else {
+         IrAlBorde(Oeste)
+         Mover(Norte)
+       }
+}
+
+procedure ComenzarElRecorrido() {
+  IrAlBorde(Sur)
+  IrAlBorde(Oeste)
+}
+
+procedure EliminarCenizaDeLaCeldaActual() { SacarTodas_(Negro) }
+

@@ -1,0 +1,94 @@
+program { EncenderYContar() }
+
+// ---------------------------------------------------------------------
+// El recorrido de encendido, con una función antes que hace la cuenta
+//  (debe recorrer 2 veces porque las funciones no modifican estado)
+procedure EncenderYContar() {
+  cantidadDeLucesAEncender := 
+                  cantidadDeLucesApagadasEnElTablero() // Contar las luces que hay que encender
+  ComenzarElRecorrido()                                // IniciarRecorrido()
+  while (not (esLaÚltimaCelda())) {                    // while (hayQueSeguir())
+    PrenderLuzSiHay()                                  //   ProcesarElementoActual()
+    PasarALaSiguienteCelda()                           //   PasarAlSiguienteElemento()
+  }
+  PrenderLuzSiHay()                                    // ProcesarÚltimoElemento()
+  InformarElTotalDeLuces(cantidadDeLucesAEncender)     // FinalizarRecorrido()
+}
+
+// ---------------------------------------------------------------------
+// El recorrido para contar
+//  (no enciende las luces, porque el recorrido es imaginario)
+function cantidadDeLucesApagadasEnElTablero() {
+  ComenzarElRecorrido()                                // IniciarRecorrido()
+  cantidadDeLucesApagadasQueVí := 0                    //  (¡¡y la variable para contar!!)
+  while (not (esLaÚltimaCelda())) {                    // while (hayQueSeguir())
+    cantidadDeLucesApagadasQueVí := 
+                  cantidadDeLucesApagadasQueVí         //   ProcesarElementoActual()
+                + cantidadDeLucesApagadasEnEsteLugar()
+    PasarALaSiguienteCelda()                           //   PasarAlSiguienteElemento()
+  }
+  cantidadDeLucesApagadasQueVí := 
+                cantidadDeLucesApagadasQueVí           // ProcesarÚltimoElemento()
+              + cantidadDeLucesApagadasEnEsteLugar()
+  return (cantidadDeLucesApagadasQueVí)                // FinalizarRecorrido()
+}
+
+function cantidadDeLucesApagadasEnEsteLugar() {
+  return (choose yield 1 when (hayLuzApagada()) yield
+                 0 otherwise)
+}
+
+// ---------------------------------------------------------------------
+// OPERACIONES DE REPRESENTACIÓN
+// ---------------------------------------------------------------------
+
+// ------------------------------
+// De lógica
+procedure InformarElTotalDeLuces(cantidadAInformar) {
+  LlevarALuchoALaEsquinaSuroeste()
+  Poner__Veces(Rojo, cantidadAInformar)
+}
+
+procedure PrenderLuzSiHay() {
+  if (hayLuzApagada()) { PrenderLaLuz() }
+}
+
+procedure LlevarALuchoAlBorde(direcciónDelBorde) {
+  SacarALucho()
+  IrAlBorde(direcciónDelBorde)
+  PonerALucho()
+}
+
+procedure MoverALuchoAl(direcciónAMover) {
+  SacarALucho()
+  Mover(direcciónAMover)
+  PonerALucho()
+}
+
+procedure LlevarALuchoALaEsquinaSuroeste() {
+  LlevarALuchoAlBorde(Oeste)
+  LlevarALuchoAlBorde(Sur)
+}
+
+// ------------------------------
+// De bolitas
+procedure PrenderLaLuz() { Poner(Azul) }
+
+procedure PonerALucho()  { Poner(Negro) }
+procedure SacarALucho()  { Sacar(Negro) }
+
+function hayLuzApagada() { return (nroBolitas(Azul) == 1) }
+
+// ---------------------------------------------------------------------
+// OPERACIONES DE RECORRIDO POR CELDAS
+// ---------------------------------------------------------------------
+procedure ComenzarElRecorrido() { LlevarALuchoALaEsquinaSuroeste() }
+function esLaÚltimaCelda() { return (not(puedeMover(Este)) && not(puedeMover(Norte))) }
+
+procedure PasarALaSiguienteCelda() {
+  if (puedeMover(Este)) 
+        { MoverALuchoAl(Este) } 
+   else { LlevarALuchoAlBorde(Oeste)
+          MoverALuchoAl(Norte)
+        }
+}

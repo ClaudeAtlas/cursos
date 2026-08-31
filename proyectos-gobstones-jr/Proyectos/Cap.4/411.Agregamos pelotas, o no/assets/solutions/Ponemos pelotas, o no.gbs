@@ -1,0 +1,18 @@
+procedure CompletarLaColumnaDePelotas() {
+  repeat(4) {
+    AgregarUnaPelotaSiHaceFalta()
+    Mover(Sur)
+  }
+  AgregarUnaPelotaSiHaceFalta()
+}
+
+procedure AgregarUnaPelotaSiHaceFalta() {
+  if (not(hayUnaPelota())) {
+    AgregarUnaPelota()
+  }
+}
+
+
+program {
+  CompletarLaColumnaDePelotas()
+}

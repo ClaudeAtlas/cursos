@@ -1,0 +1,25 @@
+procedure CombatirVerdolagaVsCopaAlta() {
+  if (...) {
+    Empatan()
+  } elseif (...) {
+    ...
+  } else {
+    ...
+  }
+}
+
+procedure SacarAVerdolaga() {
+  ...
+}
+
+procedure Empatan() {
+  ...
+}
+
+procedure SacarACopaAlta() {
+  ...
+}
+
+
+program {
+}

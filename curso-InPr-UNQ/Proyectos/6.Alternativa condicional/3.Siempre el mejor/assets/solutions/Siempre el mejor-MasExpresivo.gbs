@@ -1,0 +1,30 @@
+﻿program {
+  CombatirGikachuVsGarmander()
+}
+
+procedure CombatirGikachuVsGarmander() {
+  if (nroBolitas(Rojo) == nroBolitas(Negro)) {
+    ProcesarEmpate()
+  }
+  else {
+    if (nroBolitas(Rojo) < nroBolitas(Negro)) 
+         { GanaGikachu()   }
+    else { GanaGarmander() }
+  }
+}
+
+procedure GanaGikachu()   { SacarGarmander() }
+procedure GanaGarmander() { SacarGikachu()   }
+
+procedure SacarGikachu() {
+  SacarTodas(Negro)
+}
+
+procedure SacarGarmander() {
+  SacarTodas(Rojo)
+}
+
+procedure ProcesarEmpate() {
+  SacarGarmander()
+  SacarGikachu()
+}

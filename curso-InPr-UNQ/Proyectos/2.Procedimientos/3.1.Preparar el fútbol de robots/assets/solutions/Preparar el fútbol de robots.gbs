@@ -1,0 +1,111 @@
+/*
+   La representación de esta actividad es la siguiente:
+     * el Beto, una bolita azul
+	 * el Beto con la pierna extendida, dos bolitas azules
+	 * la pelota, una bolita negra
+	 * el arco, con una bolita roja
+   En todo momento solamente hay una celda que contiene 
+   bolitas azules, una con una bolita negra y una con una
+   bolita roja; todas las demás están vacías
+*/
+
+/* PROPÓSITO: hacer que el Beto patee la pelota hasta el arco
+   PRECONDICIONES:
+    * hay una representación del Beto, la pelota y el arco según
+	  el siguiente gráfico (B es Beto, p es pelota y a es arco)
+	     B _ p _ _ _ _ _ a
+    * la celda actual está sobre el Beto
+*/
+program{ MeterElGol() }
+
+procedure MeterElGol() {
+  /* PROPÓSITO: hacer que el Beto patee la pelota hasta el arco
+     PRECONDICIONES:
+	   * las mismas que las del programa
+  */
+  AvanzarYPatear()
+  AvanzarYPatear()
+  AvanzarYPatear()
+}
+
+procedure AvanzarYPatear() {
+  /* PROPÓSITO: hacer avanzar al Beto y patear la pelota
+     PRECONDICIONES:
+	   * está el Beto en la celda actual
+	   * la pelota está en la celda dos lugares al Este
+  */
+  MoverABetoAlEste()
+  MoverABetoAlEste()
+  PatearLaPelota()
+}
+
+procedure PatearLaPelota() {
+  /* PROPÓSITO: patear la pelota, haciéndola avanzar 2 lugares
+     PRECONDICIONES:
+	   * está el Beto en la celda actual
+	   * está la pelota en la celda actual
+	   * hay al menos 2 celdas al Este de la celda actual
+  */
+  MoverElPieDelBeto()
+  SacarLaPelota()
+  Mover(Este)
+  PonerLaPelota()
+  SacarLaPelota()
+  Mover(Este)
+  PonerLaPelota()
+  Mover(Oeste)
+  Mover(Oeste)
+}
+
+procedure MoverAlBetoAlEste() {
+  /* PROPÓSITO: mover al Beto un lugar al Este
+     PRECONDICIONES:
+	   * está el Beto en la celda actual
+	   * no hay otra representación del Beto
+	     en el tablero
+  */
+  SacarAlBeto()
+  Mover(Este)
+  PonerAlBeto()
+}
+
+procedure MoverElPieDelBeto() { 
+  /* PROPÓSITO: mueve el pie del Beto y lo 
+                deja igual que al comienzo
+     PRECONDICIONES:
+	   * está el Beto en la celda actual
+  */
+  Poner(Azul) Sacar(Azul) 
+}
+
+procedure SacarAlBeto() { 
+  /* PROPÓSITO: sacar al Beto de la celda actual
+     PRECONDICIONES:
+	   * está el Beto en la celda actual
+  */
+  Sacar(Azul) 
+}
+
+procedure PonerAlBeto() { 
+  /* PROPÓSITO: poner al Beto en la celda actual
+     PRECONDICIONES:
+	   * NO está el Beto en la celda actual
+  */
+  Poner(Azul) 
+}
+
+procedure SacarLaPelota() { 
+  /* PROPÓSITO: sacar la pelota de la celda actual
+     PRECONDICIONES:
+	   * está la pelota en la celda actual
+  */
+  Sacar(Negro) 
+}
+
+procedure PonerLaPelota() { 
+  /* PROPÓSITO: poner la pelota en la celda actual
+     PRECONDICIONES:
+	   * NO está la pelota en la celda actual
+  */
+  Poner(Negro) 
+}

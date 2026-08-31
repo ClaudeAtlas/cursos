@@ -1,0 +1,155 @@
+procedure PintarConElColorPrimario() {
+  repeat(0) {
+    Poner(Rojo)
+  }
+  repeat(3) {
+    Poner(Verde)
+  }
+  repeat(4) {
+    Poner(Azul)
+  }
+}
+
+procedure PintarLaLíneaPrimariaCortaDeLaManga() {
+  repeat(5) {
+    Mover(Norte)
+  }
+  repeat(3) {
+    PintarConElColorPrimario()
+    Mover(Norte)
+  }
+}
+
+procedure PintarLaLíneaSecundariaCortaDeLaManga() {
+  repeat(5) {
+    Mover(Norte)
+  }
+  repeat(3) {
+    PintarConElColorSecundario()
+    Mover(Norte)
+  }
+}
+
+procedure PintarLaMitadIzquierda() {
+  PintarLaLíneaPrimariaCortaDeLaManga()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaSecundariaMediaDeLaManga()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaPrimariaLargaDeLaManga()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaSecundariaCortaDelTorso()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaSecundariaLargaDelTorso()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaPrimariaLargaDelTorso()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaPrimariaCortaDelTorso()
+}
+
+procedure PintarLaLíneaPrimariaMediaDeLaManga() {
+  repeat(5) {
+    Mover(Norte)
+  }
+  repeat(4) {
+    PintarConElColorPrimario()
+    Mover(Norte)
+  }
+}
+
+procedure PintarLaLíneaSecundariaMediaDeLaManga() {
+  repeat(5) {
+    Mover(Norte)
+  }
+  repeat(4) {
+    PintarConElColorSecundario()
+    Mover(Norte)
+  }
+}
+
+procedure PintarConElColorSecundario() {
+  repeat(4) {
+    Poner(Rojo)
+  }
+  repeat(4) {
+    Poner(Verde)
+  }
+  repeat(4) {
+    Poner(Azul)
+  }
+}
+
+procedure PintarLaMitadDerecha() {
+  PintarLaLíneaSecundariaCortaDelTorso()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaSecundariaLargaDelTorso()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaPrimariaLargaDelTorso()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaPrimariaCortaDelTorso()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaSecundariaLargaDeLaManga()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaPrimariaMediaDeLaManga()
+  PasarALaSiguienteColumna()
+  PintarLaLíneaSecundariaCortaDeLaManga()
+}
+
+procedure PintarLaLíneaPrimariaLargaDeLaManga() {
+  repeat(6) {
+    Mover(Norte)
+  }
+  repeat(4) {
+    PintarConElColorPrimario()
+    Mover(Norte)
+  }
+}
+
+procedure PintarLaLíneaSecundariaLargaDeLaManga() {
+  repeat(6) {
+    Mover(Norte)
+  }
+  repeat(4) {
+    PintarConElColorSecundario()
+    Mover(Norte)
+  }
+}
+
+procedure PintarLaLíneaPrimariaLargaDelTorso() {
+  repeat(11) {
+    PintarConElColorPrimario()
+    Mover(Norte)
+  }
+}
+
+procedure PintarLaLíneaSecundariaLargaDelTorso() {
+  repeat(11) {
+    PintarConElColorSecundario()
+    Mover(Norte)
+  }
+}
+
+procedure PasarALaSiguienteColumna() {
+  IrAlBorde(Sur)
+  Mover(Este)
+}
+
+procedure PintarLaLíneaPrimariaCortaDelTorso() {
+  repeat(10) {
+    PintarConElColorPrimario()
+    Mover(Norte)
+  }
+}
+
+procedure PintarLaLíneaSecundariaCortaDelTorso() {
+  repeat(10) {
+    PintarConElColorSecundario()
+    Mover(Norte)
+  }
+}
+
+
+program {
+  PintarLaMitadIzquierda()
+  PasarALaSiguienteColumna()
+  PintarLaMitadDerecha()
+}

@@ -1,0 +1,18 @@
+procedure EncenderLaFilaDeLucesYContarlas() {
+  cantidadDeLucesQueYaPrendí := 0
+  while (not (luchoEstáEnLaMeta())) {
+    cantidadDeLucesQueYaPrendí := cantidadDeLucesQueYaPrendí + 1
+    EncenderLaLuz()
+    MoverALuchoAl(Este)
+  }
+  InformarLaCantidadDeLucesPrendidas(cantidadDeLucesQueYaPrendí)
+}
+
+procedure InformarLaCantidadDeLucesPrendidas(cantidadDeLucesAInformar) {
+  Poner_BolitasRojas(cantidadDeLucesAInformar)
+}
+
+
+program {
+  EncenderLaFilaDeLucesYContarlas()
+}

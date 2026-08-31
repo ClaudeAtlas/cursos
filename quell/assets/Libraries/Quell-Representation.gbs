@@ -1,0 +1,100 @@
+/* ============================================================================================================
+   START Quell-Representation.gbs
+   Coding colors and explanation of representation for QuellLevels
+// REQUIRE: Babel.gbs
+// REQUIRE: EnglishPrimitives.gbs
+// REQUIRE: Prelude.gbs
+// REQUIRE: Quell-Model.gbs
+   ============================================================================================================
+*/
+
+// ---------
+// Representation
+// ---------
+/*
+  QLevel info is represented at top row with 10x qelem stones (x the col Number) 
+    * cell  0 at column 0 encode if the level is tutorial
+    * cell  1 at column 1 encode numMoves in attrA stones (100 for overload)
+    * cell  2 at column 2 encode minMoves in attrA stones (up to 29 -- more are ignored)
+    * cell  3 at column 2 from East encode jewelFound in attrB stones
+    * cell  4 at column 1 from East encode numPearls  in attrA stones
+                                       and rightMoves in attrB stones
+    * cell  5 at East edge encode spikesDir in attrA stones
+
+  QElements are represented with qelemColor() stones, and their attributes with attrAColor() and attrBColor() stones, depending of the case.
+    + Empty       ,  no qelem stones
+    + Corner      ,  1 stone   * dir      , attrA stones
+    + Angle       ,  2 stones  * dir      , attrA stones
+    + Limit       ,  3 stones  * pointsTo , attrA stones 
+    + Portal      ,  4 stones  * target   , attrA stones
+                               * id       , attrB stones
+    + Gate        ,  5 stones  * clsed    , attrB stones
+    + Spike       ,  6 stones  * dir      , attrA stones 
+    + Multispike  ,  7 stones
+    + Rotablespike,  8 stones  * spikesDir, attrA stones
+    + Switch      ,  9 stones  * spikesDir, attrA stones
+    + Wall        , 10 stones
+    + Out         , 11 stones
+
+  QTokens are represented with attrAColor() and attrBColor(), in such a way as to avoid clashing with each other or the qelems they may appear in
+    + Pearl                    *       1 attrB stones 
+    + Box                      * gender, 100*attrB stones (must be equal to Pearl representation, and different from attributes at Gates, Portals or Switches)
+                                         10+ for beaming boxes
+    + Jewel                    * hits  , attrA stones (must be different from Pearl representation, because it may also appear on Empty)
+  
+  The ball is represented with ballColor() stones 
+    + moving North                 ,  1 stone
+    + moving East                  ,  2 stones
+    + moving South                 ,  3 stones
+    + moving West                  ,  4 stones
+    + not moving                   ,  5 stones
+    + not moving with hint to North,  6 stones (5+1)
+    + not moving with hint to East ,  7 stones (5+2)
+    + not moving with hint to South,  8 stones (5+3)
+    + not moving with hint to West ,  9 stones (5+4)
+    + beaming while moving North   , 11 stones (10+1)
+    + beaming while moving East    , 12 stones (10+2)
+    + beaming while moving South   , 13 stones (10+3)
+    + beaming while moving West    , 14 stones (10+4)
+*/
+
+procedure GoToTopShowHint()  { GoToCorner__(North, West)                       }
+procedure GoToTopNumMoves()  { GoToCorner__(North, West); Move(East)           }
+procedure GoToTopJewel()     { GoToCorner__(North, East); Move__Times(West, 2) }
+procedure GoToTopNumPearls() { GoToCorner__(North, East); Move(West)           }
+procedure GoToTopHint()      { GoToCorner__(North, East); Move(West)           }
+procedure GoToTopSpikesDir() { GoToCorner__(North, East)                       }
+
+// ---------
+// Colors
+// ---------
+function ballColor()  { return(Blue)  }
+function qelemColor() { return(Black) }
+function attrAColor() { return(Green) }
+function attrBColor() { return(Red)   }
+
+// ---------
+// Codes
+// ---------
+function codeOfQelem_(qelem) {
+  return (matching (qelem) yield
+             0 on Empty yield
+             0 on Pearl yield   // Pearls are always on Empty cells, and drawn with attribute colors
+             1 on Corner(dir -> dir) yield
+             2 on Angle(dir -> dir) yield
+             3 on Limit(pointsTo -> pointsTo) yield
+             4 on Portal(id -> id, target -> target) yield
+             5 on Gate(closed -> closed) yield
+             6 on Spike(pointsTo -> pointsTo) yield
+             7 on Multispike yield
+             8 on RotableSpike yield
+             9 on Switch yield
+            10 on Wall yield
+            11 on Out yield
+            boom(msgNotExpected("QElem")) otherwise
+  )
+}
+/* ============================================================================================================
+   END Quell-Representation.gbs
+   ============================================================================================================
+*/

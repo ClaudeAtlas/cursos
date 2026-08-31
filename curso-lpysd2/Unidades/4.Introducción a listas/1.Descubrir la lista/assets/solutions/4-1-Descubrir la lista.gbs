@@ -1,0 +1,15 @@
+program { DescubrirLaLista() }
+
+procedure DescubrirLaLista() {
+  InformarNúmero_(primerElemento_(listaDeNúmerosOculta()))
+  InformarNúmero_(elementoDelCentro(listaDeNúmerosOculta()))
+  InformarNúmero_(últimoElemento_(listaDeNúmerosOculta()))
+}
+
+function elementoDelCentro(lista) {
+  return (sumaDeLosElementos_(lista) 
+          - primerElemento_(lista) 
+          - últimoElemento_(lista))
+}
+
+

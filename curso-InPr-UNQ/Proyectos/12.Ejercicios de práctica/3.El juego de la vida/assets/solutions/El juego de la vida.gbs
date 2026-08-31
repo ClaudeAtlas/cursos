@@ -1,0 +1,114 @@
+interactive program {
+  on K_UP     { PrepararElPróximoTick()  }
+  on K_RIGHT  { CompletarElPróximoTick() }
+  on K_RETURN { SimularUnTick()          }
+}
+
+function esCélulaViva() {
+  return (hayBolitas(Verde))
+}
+
+function nroDeVecinasVivas() {
+  return (nroDeVecinasVivasEnCruz() + nroDeVecinasVivasEnX())
+}
+
+procedure Simular_Ticks(cantidad) {
+  repeat(cantidad) { SimularUnTick() }
+}
+
+procedure SimularUnTick() {
+  PrepararElPróximoTick()
+  CompletarElPróximoTick()
+}
+
+procedure PrepararCélulaActual() {
+  DecidirSiReanimarOEliminar(nroDeVecinasVivas())
+}
+
+procedure PrepararElPróximoTick() {
+  IniciarRecorrido(Norte, Este)
+  while (not (esFinDeRecorrido(Norte, Este))) {
+    PrepararCélulaActual()
+    PasarALaSiguienteCeldaDelRecorrido(Norte, Este)
+  }
+}
+
+procedure CompletarElPróximoTick() {
+  IniciarRecorrido(Norte, Este)
+  while (not (esFinDeRecorrido(Norte, Este))) {
+    CompletarProcesamientoDeCélula()
+    PasarALaSiguienteCeldaDelRecorrido(Norte, Este)
+  }
+}
+
+procedure DecidirSiReanimarOEliminar(cantidadDeVecinasVivas) {
+  if (cantidadDeVecinasVivas < 2)  { MarcarCélulaParaSerEliminada() }
+  if (cantidadDeVecinasVivas > 3)  { MarcarCélulaParaSerEliminada() }
+  if (cantidadDeVecinasVivas == 3) { MarcarCélulaParaSerReanimada() }
+}
+
+procedure CompletarProcesamientoDeCélula() {
+  if (estáMarcadaParaSerEliminada()) { EliminarCélula() }
+  if (estáMarcadaParaSerReanimada()) { ReanimarCélula() }
+}
+
+function nroDeVecinasVivasEnCruz() {
+  cantidadDeCélulasVivasVistas := nroDeCélulasVivasAl_(Norte)
+  direcciónActual := siguiente(Norte)
+  while (not (direcciónActual == Norte)) {
+    cantidadDeCélulasVivasVistas := cantidadDeCélulasVivasVistas + nroDeCélulasVivasAl_(direcciónActual)
+    direcciónActual := siguiente(direcciónActual)
+  }
+  return (cantidadDeCélulasVivasVistas)
+}
+
+function nroDeVecinasVivasEnX() {
+  cantidadDeCélulasVivasVistas := nroDeCélulasVivasEnDiagonalAl_(Norte)
+  direcciónActual := siguiente(Norte)
+  while (not (direcciónActual == Norte)) {
+    cantidadDeCélulasVivasVistas := cantidadDeCélulasVivasVistas + nroDeCélulasVivasEnDiagonalAl_(direcciónActual)
+    direcciónActual := siguiente(direcciónActual)
+  }
+  return (cantidadDeCélulasVivasVistas)
+}
+
+function nroDeCélulasVivasAl_(dirección) {
+  return (choose yield 1 when (puedeMover(dirección) && tieneCélulaVivaAl_(dirección)) yield
+                 0 otherwise)
+}
+
+function nroDeCélulasVivasEnDiagonalAl_(dirección) {
+  return (choose yield 1 when (puedeMoverEnDiagonal(dirección) && tieneCélulaVivaEnDiagonalAl_(dirección)) yield
+                 0 otherwise)
+}
+
+function tieneCélulaVivaAl_(dirección) {
+  Mover(dirección)
+  return (esCélulaViva())
+}
+
+function puedeMoverEnDiagonal(dirección) {
+  return (puedeMover(dirección) && puedeMover(siguiente(dirección)))
+}
+
+function tieneCélulaVivaEnDiagonalAl_(dirección) {
+  Mover(dirección)
+  Mover(siguiente(dirección))
+  return (esCélulaViva())
+}
+
+procedure IniciarRecorrido(direcciónPrincipal, direcciónSecundaria) {
+  IrAlBorde(opuesto(direcciónPrincipal))
+  IrAlBorde(opuesto(direcciónSecundaria))
+}
+
+function esFinDeRecorrido(direcciónPrincipal, direcciónSecundaria) {
+  return (not(puedeMover(direcciónPrincipal)) && not(puedeMover(direcciónSecundaria)))
+}
+
+procedure PasarALaSiguienteCeldaDelRecorrido(direcciónPrincipal, direcciónSecundaria) {
+  if (puedeMover(direcciónPrincipal)) 
+       { Mover(direcciónPrincipal) }
+  else { IrAlBorde(opuesto(direcciónPrincipal)) Mover(direcciónSecundaria) }
+}
+

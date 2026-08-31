@@ -1,0 +1,12 @@
+program {
+  númeroDeLaCartaIzquierda := dameElNúmero_(cartaActual())
+  PasarASiguientePosición()
+  númeroDeLaCartaDerecha := dameElNúmero_(cartaActual())
+  IrAlSectorDeInformar()
+  DecirElEnvido_(envidoSimpleDeNúmeros(númeroDeLaCartaIzquierda, númeroDeLaCartaDerecha))
+}
+
+function envidoSimpleDeNúmeros(númeroIzquierdo, númeroDerecho) {
+  return (20 + (númeroIzquierdo + númeroDerecho))
+}
+

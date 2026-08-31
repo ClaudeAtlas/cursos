@@ -1,0 +1,8 @@
+program {
+}
+
+function códigoDeLaCarta(carta) {
+  return ((100 * códigoDelPalo_(dameElPalo_(carta))) + dameElValor_(carta))
+}
+
+

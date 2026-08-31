@@ -1,0 +1,32 @@
+function encontréLaLlave() {
+  return (...)
+}
+
+procedure BuscarLaLlave() {
+  ...
+  while (not ()) {
+    ...
+  }
+}
+
+procedure PasarAlSiguienteCajónYAbrirlo() {
+  if (...) {
+    Mover(Este)
+  } else {
+    ...
+  }
+  AbrirElCajón()
+}
+
+procedure IrAlPrimerCajónYAbrirlo() {
+  ...
+  AbrirElCajón()
+}
+
+procedure AbrirElCajón() {
+  Sacar(Negro)
+}
+
+
+program {
+}

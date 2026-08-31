@@ -1,0 +1,27 @@
+procedure DescubrirLaLista() {
+  InformarNúmero_(primerElemento_(listaDeNúmerosOculta()))
+  InformarNúmero_(segundoElemento(listaDeNúmerosOculta()))
+  InformarNúmero_(tercerElemento(listaDeNúmerosOculta()))
+  InformarNúmero_(cuartoElemento(listaDeNúmerosOculta()))
+}
+
+function sinLosDosPrimeros(lista) {
+  return (resto_(resto_(lista)))
+}
+
+function segundoElemento(lista) {
+  return (primerElemento_(resto_(lista)))
+}
+
+function tercerElemento(lista) {
+  return (primerElemento_(sinLosDosPrimeros(lista)))
+}
+
+function cuartoElemento(lista) {
+  return (segundoElemento(sinLosDosPrimeros(lista)))
+}
+
+
+program {
+  DescubrirLaLista()
+}

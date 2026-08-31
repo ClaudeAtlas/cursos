@@ -1,0 +1,36 @@
+program { DibujarFiguraRoja() }
+
+ procedure DibujarFiguraRoja() {
+   /*
+  */
+   DibujarLínea(Rojo, 2, Norte)
+   DibujarLíneaEnDiagonal(Rojo, 2, Norte, Este)
+   DibujarLínea(Rojo, 3, Este)
+   DibujarLíneaEnDiagonal(Rojo, 2, Sur, Este)
+   DibujarLínea(Rojo, 2, Sur)
+   DibujarLínea(Rojo, 7, Oeste)
+ }
+
+ procedure DibujarLíneaEnDiagonal(colorDeLaLínea, largoDeLaLínea
+                                 ,dirección1, dirección2) {
+   /* PROPÓSITO:
+       * dibujar una línea del largo y el color dado en diagonal
+         hacia las dos direcciones dadas
+      PARÁMETROS:
+       * colorDeLaLínea: el color con el que dibujar la línea
+       * largoDeLaLínea: la cantidad de celdas que debe ocupar
+       * dirección1 y dirección2: las direcciones hacia donde
+                                  debe moverse para dibujar
+      PRECONDICIONES:
+       * dirección1 y dirección2 no deben ser iguales ni opuestas
+         (por ejemplo, pueden ser Este y Sur, Norte y Este, etc.)
+  */
+   repeat(largoDeLaLínea) 
+     { Poner(colorDeLaLínea) Mover(dirección1) Mover(dirección2) }
+ }
+
+ procedure DibujarLínea(color, largo, dirección) {
+   /*
+  */
+   repeat(largo) { Poner(color) Mover(dirección) }
+ }

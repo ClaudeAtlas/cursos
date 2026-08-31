@@ -1,0 +1,45 @@
+name: 'Cuadrados de colores'
+attire:
+  active: Cuadrados
+  user_permissions:
+    can_toggle_visibility: true
+  visible: false
+blocks:
+  defaultToolbox: |
+      <category name="Comandos primitivos">
+        <block type="Poner"></block>
+        <block type="Mover"></block>
+        <block type="IrAlBorde"></block>
+      </category>
+      <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+      <category name="Repeticiones">
+        <block type="RepeticionSimple"></block>
+      </category>
+      <category name="Valores">
+        <block type="math_number"></block>
+        <block type="ColorSelector"></block>
+        <block type="DireccionSelector"></block>
+      </category>
+      <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+      </category>
+board:
+  active: 1
+  initial_board_source: selected
+  visible_edition: true
+  collapse_toolbox: false
+  user_permissions:
+    can_view_attire_section: true
+    can_edit_board: false
+    can_change_initial_board: false
+    can_change_initial_board_source: false
+    can_view_size_section: false
+execution_speed:
+  active: instantaneous
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.75

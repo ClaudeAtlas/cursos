@@ -1,0 +1,113 @@
+procedure EstablecerDirecciónParaAtajar(dirección) {
+  Poner_BolitasDeColor_(dirección, Verde)
+}
+
+function izquierda() {
+  return (1)
+}
+
+function centro() {
+  return (2)
+}
+
+procedure EstablecerDirecciónParaPatear(dirección) {
+  Poner_BolitasDeColor_(dirección, Azul)
+}
+
+function derecha() {
+  return (3)
+}
+
+function laAcciónDelArqueroYaEstáDefinida() {
+  return (nroBolitas(Verde) > 0)
+}
+
+procedure EjecutarElPenal() {
+  if (laAcciónDelArqueroYaEstáDefinida() && laAcciónDelJugadorYaEstáDefinida()) {
+    MoverAlArquero()
+    MoverLaPelota()
+  }
+}
+
+function laAcciónDelJugadorYaEstáDefinida() {
+  return (nroBolitas(Azul) > 0)
+}
+
+procedure VolverAlInicio() {
+  IrAlBorde(Oeste)
+  IrAlBorde(Sur)
+  Mover(Este)
+}
+
+procedure MoverAlArquero() {
+  SacarAlArquero()
+  MoverElCabezalSegúnLaOpciónElegida(nroBolitas(Verde))
+  PonerAlArquero()
+  VolverAlInicio()
+}
+
+procedure PonerAlArquero() {
+  Mover(Norte)
+  Poner_BolitasDeColor_(2, Negro)
+  Mover(Sur)
+}
+
+procedure SacarAlArquero() {
+  Mover(Norte)
+  SacarTodas_(Negro)
+  Mover(Sur)
+}
+
+procedure MoverLaPelota() {
+  SacarLaPelota()
+  MoverElCabezalSegúnLaOpciónElegida(nroBolitas(Azul))
+  PonerLaPelota()
+  VolverAlInicio()
+}
+
+procedure PonerLaPelota() {
+  Mover(Norte)
+  Poner_BolitasDeColor_(1, Negro)
+  Mover(Sur)
+}
+
+procedure SacarLaPelota() {
+  SacarTodas_(Negro)
+}
+
+procedure MoverElCabezalSegúnLaOpciónElegida(opción) {
+  if (opción == izquierda()) {
+    Mover(Oeste)
+  }
+  if (opción == derecha()) {
+    Mover(Este)
+  }
+}
+
+
+interactive program {
+  on K_Q {
+    EstablecerDirecciónParaAtajar(izquierda())
+  }
+  on K_W {
+    EstablecerDirecciónParaAtajar(centro())
+  }
+  on K_E {
+    EstablecerDirecciónParaAtajar(derecha())
+  }
+  on K_I {
+    EstablecerDirecciónParaPatear(izquierda())
+  }
+  on K_O {
+    EstablecerDirecciónParaPatear(centro())
+  }
+  on K_P {
+    EstablecerDirecciónParaPatear(derecha())
+  }
+  on K_RETURN {
+    ResetearElJuego()
+  }
+  on K_SPACE {
+    EjecutarElPenal()
+  }
+}

@@ -1,0 +1,63 @@
+procedure IrALaPróximaCelda() 
+ {
+   AuxSacarCursor()
+   AuxPasarASiguienteCelda() 
+   AuxPonerCursor()
+ }
+
+/*@ATTRIBUTE@block_name@Poner un elemento A@*/
+procedure PonerUnElementoA() {
+   if (nroBolitas(Negro) == 2) 
+          { Poner(Verde) } 
+     else { BOOM("¡Se corrió el foco del autómata que pone elementos!") } 
+}
+
+/*@ATTRIBUTE@block_name@Cambiar un elemento B por un elemento C@*/
+procedure CambiarUnElementoBPorUnElementoC() {
+    if (hayBolitas(Rojo)) 
+          { Sacar(Rojo) } 
+     else { BOOM("No hay un elemento B tipo para cambiar") } }
+
+/*@ATTRIBUTE@block_name@Esperar a que todos los elementos A se vuelvan elementos B@*/
+procedure CambiarTodosLosElementosAPorElementosB() {
+    while (auxHaySiguienteCelda()) {
+        AuxPasarASiguienteCelda()
+        AuxCambiarVerdePorAzulYRoja() 
+    }
+    IrAlBorde(Oeste); IrAlBorde(Sur)
+}
+
+procedure VolverALaCeldaInicial() 
+  { 
+    AuxSacarCursor()   
+    IrAlBorde(Oeste); IrAlBorde(Sur) 
+    AuxPonerCursor()
+  }
+
+procedure AuxSacarCursor() { 
+  if (nroBolitas(Negro) < 2) { BOOM("No está el autómata que pone elementos en esta celda") }
+  repeat(2) { Sacar(Negro) } 
+}
+
+procedure AuxPonerCursor() { 
+  if (nroBolitas(Negro) >= 2) { BOOM("Ya está el autómata que pone elementos en esta celda") }
+  repeat(2) { Poner(Negro) } 
+}
+
+procedure AuxCambiarVerdePorAzulYRoja() { 
+    if (hayBolitas(Verde)) 
+            { Sacar(Verde); Poner(Azul); Poner(Rojo) } 
+       else { BOOM("No se pueden cambiar los elementos A por B si no están todos los A ubicados") } 
+}       
+
+function auxHaySiguienteCelda() 
+    { return (puedeMover(Este) || puedeMover(Norte)) }
+
+procedure AuxPasarASiguienteCelda() {
+    if (puedeMover(Este)) 
+         { Mover(Este) } 
+    else { if (puedeMover(Norte))
+                { Mover(Norte) IrAlBorde(Oeste) } 
+           else { BOOM("Se terminaron las celdas y no puedo pasar a la siguiente") }
+         }
+}

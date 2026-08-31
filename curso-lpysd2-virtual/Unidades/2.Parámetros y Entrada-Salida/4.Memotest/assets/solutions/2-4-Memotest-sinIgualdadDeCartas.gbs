@@ -1,0 +1,66 @@
+interactive program {
+  on K_LEFT   { MoverseHacia(Oeste)     }
+  on K_RIGHT  { MoverseHacia(Este)      }
+  on K_UP     { MoverseHacia(Norte)     }
+  on K_DOWN   { MoverseHacia(Sur)       }
+  on K_RETURN { ProcesarLaCartaActual() }
+}
+
+function lasCartasSonIguales(primeraCartaAControlar, segundaCartaACotrolar) {
+  return (valor(primeraCartaAControlar) == valor(segundaCartaACotrolar)
+       && palo(primeraCartaAControlar)  == palo(segundaCartaACotrolar)
+         )
+}
+
+function lasCartasDestapadasSonIguales() {
+  primeraCarta := leerCarta()
+  IrALaCartaOtraCartaDestapada()
+  segundaCarta := leerCarta()
+  return (lasCartasSonIguales(primeraCarta, segundaCarta))
+}
+
+function hayDosCartasDestapadas() {
+  return (hayCartaDestapadaSinIluminar() 
+       && hayOtraCartaDestapadaSinIluminar())
+}
+
+procedure MoverseHacia(dir) {
+    if (hayDosCartasDestapadas()) { TaparAmbasCartasDestapadas() }
+    PasarASiguientePosiciónHacia_(dir)
+}
+
+procedure ProcesarLaCartaActual() {
+  DestaparLaCartaActualSiSePuede()
+  IluminarLasCartasDestapasSiCorresponde()
+}
+
+procedure IluminarLasCartasDestapasSiCorresponde() {
+  if (hayDosCartasDestapadas() && lasCartasDestapadasSonIguales())
+    { IluminarAmbasCartasDestapadas() } 
+}
+
+procedure DestaparLaCartaActualSiSePuede() { if (hayCartaTapada()) { DarVueltaLaCartaActual() } }
+
+procedure IluminarAmbasCartasDestapadas() {
+  // Primero la lejana, para que la última en procesar sea la inicial
+  IrALaCartaOtraCartaDestapada()
+  IluminarLaCartaActual()
+  IrALaCartaOtraCartaDestapada()
+  IluminarLaCartaActual()
+  // Termina posicionado sobre la carta inicial
+}
+
+procedure TaparAmbasCartasDestapadas() {
+  // Primero la lejana, para que la última en procesar sea la inicial
+  IrALaCartaOtraCartaDestapada()
+  DarVueltaLaCartaActual()
+  IrALaCartaOtraCartaDestapada()
+  DarVueltaLaCartaActual()
+  // Termina posicionado sobre la carta inicial
+}
+
+procedure IrALaCartaOtraCartaDestapada() {
+  PasarASiguientePosición()
+  while (not hayCartaDestapadaSinIluminar()) { PasarASiguientePosición() }
+}
+

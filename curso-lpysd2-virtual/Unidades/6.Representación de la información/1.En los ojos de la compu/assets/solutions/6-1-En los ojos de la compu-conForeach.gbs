@@ -1,0 +1,15 @@
+function listaDeLetrasDeCódigo(códigos) {
+  lasLetrasYaVistas := listaVacía()
+  foreach código in códigos {
+    lasLetrasYaVistas := agregarAlFinalDeLaLista__(lasLetrasYaVistas, letraDelCódigo_(código))
+  }
+  return (lasLetrasYaVistas)
+}
+
+
+program {
+  IrAlInicioDeLaEntrada()
+  códigosLeídos := listaDeNúmerosOriginal()
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarLaListaDeLetras_(listaDeLetrasDeCódigo(códigosLeídos))
+}

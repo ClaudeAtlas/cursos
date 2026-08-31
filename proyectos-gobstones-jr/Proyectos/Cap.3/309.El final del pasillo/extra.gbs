@@ -1,0 +1,8 @@
+﻿/*@ATTRIBUTE@block_name@Mover a Lucho al _@*/
+procedure MoverALuchoAl_(dir) {
+    if (not hayBolitas(Azul)) { BOOM("Lucho no está en esta celda") }
+    Sacar(Azul)
+    Mover(dir)
+    if (hayBolitas(Negro))    { BOOM("Lucho tocó una pared explosiva") }
+    Poner(Azul)
+}

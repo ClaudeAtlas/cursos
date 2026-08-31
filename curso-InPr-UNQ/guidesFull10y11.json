@@ -1,0 +1,307 @@
+[ 
+  {"name": "Descubrir Gobstones",   "repo": "gobstones/curso-InPr-UNQ",
+   "exercises": [
+      { "id": "1.1",        "name": "La simulación del docente robot",
+        "path": "Proyectos/1.Descubrir Gobstones/1.1.La simulación del docente robot"
+      }
+    , { "id": "1.2",        "name": "El docente, el granjero y las bolitas",
+        "path": "Proyectos/1.Descubrir Gobstones/1.2.El docente, el granjero y las bolitas"
+      }
+    , { "id": "2",          "name": "Gobstones",
+        "path": "Proyectos/1.Descubrir Gobstones/2.Gobstones"
+      }
+    , { "id": "3.1",        "name": "Víbora de bolitas, horizontal",
+        "path": "Proyectos/1.Descubrir Gobstones/3.1.Víbora de bolitas, horizontal"
+      }
+    , { "id": "3.2",        "name": "Víbora de bolitas, vertical",
+        "path": "Proyectos/1.Descubrir Gobstones/3.2.Víbora de bolitas, vertical"
+      }
+    , { "id": "3.3",        "name": "Una víbora más inquieta",
+        "path": "Proyectos/1.Descubrir Gobstones/3.3.Una víbora más inquieta"
+      }
+    , { "id": "4.1",        "name": "Vaciar la celda",
+        "path": "Proyectos/1.Descubrir Gobstones/4.1.Vaciar la celda"
+      }
+    , { "id": "4.2",        "name": "Limpiar la cruz roja",
+        "path": "Proyectos/1.Descubrir Gobstones/4.2.Limpiar la cruz roja"
+      }
+    , { "id": "5.1",        "name": "Marquemos las puntas",
+        "path": "Proyectos/1.Descubrir Gobstones/5.1.Marquemos las puntas"
+      }
+    , { "id": "5.2",        "name": "Lugar para los corners",
+        "path": "Proyectos/1.Descubrir Gobstones/5.2.Lugar para los corners"
+      }
+    , { "id": "6.1",         "name": "Haz lo que yo digo…",
+        "path": "Proyectos/1.Descubrir Gobstones/6.1.Haz lo que yo digo…"
+      }
+    , { "id": "6.2",         "name": "Puede fallar",
+        "path": "Proyectos/1.Descubrir Gobstones/6.2.Puede fallar"
+      }
+    , { "id": "7",          "name": "Snake básico",
+        "path": "Proyectos/1.Descubrir Gobstones/7.Snake básico"
+      }
+    ] }
+, {"name": "Procedimientos",   "repo": "gobstones/curso-InPr-UNQ",
+   "exercises": [
+      { "id": "1.1",        "name": "Programo el cuadrado",
+        "path": "Proyectos/2.Procedimientos/1.1.Programo el cuadrado"
+      }
+    , { "id": "1.2",        "name": "Programo el cuadrado, programo el cuadrado",
+        "path": "Proyectos/2.Procedimientos/1.2.Programo el cuadrado, programo el cuadrado"
+      }
+    , { "id": "1.3",        "name": "Dos cuadrados, pero más fáciles",
+        "path": "Proyectos/2.Procedimientos/1.3.Dos cuadrados, pero más fáciles"
+      }
+    , { "id": "2.1",        "name": "El alien toca botón",
+        "path": "Proyectos/2.Procedimientos/2.1.El alien toca botón"
+      }
+    , { "id": "2.2",        "name": "Armamos 'El alien toca botón'",
+        "path": "Proyectos/2.Procedimientos/2.2.Armamos 'El alien toca botón'"
+      }
+    , { "id": "3.1",        "name": "Preparar el fútbol de robots",
+        "path": "Proyectos/2.Procedimientos/3.1.Preparar el fútbol de robots"
+      }
+    , { "id": "3.2",        "name": "Preparar el fútbol de robots, sin procedimientos",
+        "path": "Proyectos/2.Procedimientos/3.2.Preparar el fútbol de robots, sin procedimientos"
+      }
+    , { "id": "4",          "name": "La gran aventura del mar encantado",
+        "path": "Proyectos/2.Procedimientos/4.La gran aventura del mar encantado"
+      }
+    , { "id": "5.1",        "name": "Lucho enciende las luces",
+        "path": "Proyectos/2.Procedimientos/5.1.Lucho enciende las luces"
+      }
+    , { "id": "5.2",        "name": "Lucho enciende las luces, extendido",
+        "path": "Proyectos/2.Procedimientos/5.2.Lucho enciende las luces, extendido"
+      }
+    , { "id": "6",          "name": "Reparando la nave",
+        "path": "Proyectos/2.Procedimientos/6.Reparando la nave"
+      }
+    ] }
+, {"name": "Repetición simple",   "repo": "gobstones/curso-InPr-UNQ",
+   "exercises": [
+      { "id": "1.1",    "name": "Poner muchas bolitas se vuelve incómodo",
+        "path": "Proyectos/3.Repetición simple/1.1.Poner muchas bolitas se vuelve incómodo"
+      }
+    , { "id": "1.2",    "name": "La computadora repite por nosotros",
+        "path": "Proyectos/3.Repetición simple/1.2.La computadora repite por nosotros"
+      }
+    , { "id": "2.",      "name": "El final del pasillo",
+        "path": "Proyectos/3.Repetición simple/2.El final del pasillo"
+      }
+    , { "id": "3",      "name": "Siga la flecha",
+        "path": "Proyectos/3.Repetición simple/3.Siga la flecha"
+      }
+    , { "id": "4",      "name": "Candela, me quemo",
+        "path": "Proyectos/3.Repetición simple/4.Candela, me quemo"
+      }
+    , { "id": "5",      "name": "Entrenamiento para fútbol de robots",
+        "path": "Proyectos/3.Repetición simple/5.Entrenamiento para fútbol de robots"
+      }
+	] } 
+, {"name": "Parámetros",   "repo": "gobstones/curso-InPr-UNQ",
+   "exercises": [
+      { "id": "1.1",        "name": "Tablero de Ludo, toma 1",
+        "path": "Proyectos/4.Parámetros/1.1.Tablero de Ludo, toma 1"
+      }
+    , { "id": "1.2",        "name": "Tablero de Ludo, toma 2",
+        "path": "Proyectos/4.Parámetros/1.2.Tablero de Ludo, toma 2"
+      }
+    , { "id": "1.3",        "name": "Tablero de Ludo, toma 3",
+        "path": "Proyectos/4.Parámetros/1.3.Tablero de Ludo, toma 3"
+      }
+    , { "id": "2.1",    "name": "Ludo loco, toma 1",
+        "path": "Proyectos/4.Parámetros/2.1.Ludo loco, toma 1"
+      }
+    , { "id": "2.2",    "name": "Ludo loco, toma 2",
+        "path": "Proyectos/4.Parámetros/2.2.Ludo loco, toma 2"
+      }
+    , { "id": "3.1",    "name": "Dibujar figuras con subtareas",
+        "path": "Proyectos/4.Parámetros/3.1.Dibujar figuras con subtareas"
+      }
+    , { "id": "3.2",    "name": "Dibujar figuras con subtareas, revisado",
+        "path": "Proyectos/4.Parámetros/3.2.Dibujar figuras con subtareas, revisado"
+      }
+    , { "id": "4",      "name": "Varias cosas de una sola vez",
+        "path": "Proyectos/4.Parámetros/4.Varias cosas de una sola vez"
+      }
+    , { "id": "5",      "name": "El planeta de Nano",
+        "path": "Proyectos/4.Parámetros/5.El planeta de Nano"
+      }
+	] } 
+, { "name": "Expresiones y tipos",    "repo": "gobstones/curso-InPr-UNQ",
+    "exercises": [
+      { "id": "1.1",        "name": "No encuentro bolitas de color Sur",
+        "path": "Proyectos/5.Expresiones y tipos/1.1.No encuentro bolitas de color Sur"
+      }
+    , { "id": "1.2",        "name": "Para dónde queda Rojo",
+        "path": "Proyectos/5.Expresiones y tipos/1.2.Para dónde queda Rojo"
+      }
+    , { "id": "1.3",        "name": "Y por qué hace BOOM",
+        "path": "Proyectos/5.Expresiones y tipos/1.3.Y por qué hace BOOM"
+      }
+    , { "id": "2.1",        "name": "El cabezal juega a ser mimo",
+        "path": "Proyectos/5.Expresiones y tipos/2.1.El cabezal juega a ser mimo"
+      }
+    , { "id": "2.2",        "name": "El mimo que suma",
+        "path": "Proyectos/5.Expresiones y tipos/2.2.El mimo que suma"
+      }
+    , { "id": "2.3",        "name": "Super mimo multiplica",
+        "path": "Proyectos/5.Expresiones y tipos/2.3.Super mimo multiplica"
+      }
+    , { "id": "3.1",        "name": "Escapar de la jaula",
+        "path": "Proyectos/5.Expresiones y tipos/3.1.Escapar de la jaula"
+      }
+    , { "id": "3.2",        "name": "La flecha enloqueció",
+        "path": "Proyectos/5.Expresiones y tipos/3.2.La flecha enloqueció"
+      }
+    , { "id": "4",          "name": "Laberinto",
+        "path": "Proyectos/5.Expresiones y tipos/4.Laberinto"
+      }
+    ] }
+, { "name": "Alternativa condicional",    "repo": "gobstones/curso-InPr-UNQ",
+    "exercises": [
+      { "id": "1",        "name": "Apagar la luz, o prenderla",
+        "path": "Proyectos/6.Alternativa condicional/1.Apagar la luz, o prenderla"
+      }
+    , { "id": "2",        "name": "No me quiero caer",
+        "path": "Proyectos/6.Alternativa condicional/2.No me quiero caer"
+      }
+    , { "id": "3",        "name": "Siempre el mejor",
+        "path": "Proyectos/6.Alternativa condicional/3.Siempre el mejor"
+      }
+    , { "id": "4",        "name": "No, no y no",
+        "path": "Proyectos/6.Alternativa condicional/4.No, no y no"
+      }
+    ] }
+, { "name": "Funciones",  "repo": "gobstones/curso-InPr-UNQ",
+    "exercises": [
+      { "id": "1.1",      "name": "Mi elección es clara",
+        "path": "Proyectos/7.Funciones/1.1.Mi elección es clara"
+      }
+    , { "id": "1.2",        "name": "Y también…",
+        "path": "Proyectos/7.Funciones/1.2.Y también…"
+      }
+    , { "id": "2",        "name": "Laberinto con queso",
+        "path": "Proyectos/7.Funciones/2.Laberinto con queso"
+      }
+    , { "id": "3",        "name": "Lucho recargado",
+        "path": "Proyectos/7.Funciones/3.Lucho recargado"
+      }
+    , { "id": "4",        "name": "Está lista la cena",
+        "path": "Proyectos/7.Funciones/4.Está lista la cena"
+      }
+    ] }
+, { "name": "Repetición condicional",  "repo": "gobstones/curso-InPr-UNQ",
+    "exercises": [
+      { "id": "1.1",      "name": "Super Lucho 1",
+        "path": "Proyectos/8.Repetición condicional/1.1.Super Lucho 1"
+      }
+    , { "id": "1.2",        "name": "Super Lucho 2",
+        "path": "Proyectos/8.Repetición condicional/1.2.Super Lucho 2"
+      }
+    , { "id": "2",        "name": "Laberinto con queso, recargado",
+        "path": "Proyectos/8.Repetición condicional/2.Laberinto con queso, recargado"
+      }
+    , { "id": "3",        "name": "Más entrenamiento para Beto",
+        "path": "Proyectos/8.Repetición condicional/3.Más entrenamiento para Beto"
+      }
+    , { "id": "4",        "name": "Hansel y Gretel van a la casa de la Bruja",
+        "path": "Proyectos/8.Repetición condicional/4.Hansel y Gretel van a a la casa de la Bruja"
+      }
+    , { "id": "5",        "name": "Limpiemos imágenes",
+        "path": "Proyectos/8.Repetición condicional/5.Limpiemos imágenes"
+      }
+     , { "id": "6",        "name": "¿Dónde puse las llaves?",
+        "path": "Proyectos/8.Repetición condicional/6.Dónde puse las llaves"
+      }
+   ] }
+, { "name": "Otras herramientas avanzadas",  "repo": "gobstones/curso-InPr-UNQ",
+    "exercises": [
+      { "id": "1.1",      "name": "Recuerden la contraseña",
+        "path": "Proyectos/9.Otras herramientas avanzadas/1.1.Recuerden la contraseña"
+      }
+    , { "id": "1.2",        "name": "Otra vez el cabezal juega a ser mimo",
+        "path": "Proyectos/9.Otras herramientas avanzadas/1.2.Otra vez el cabezal juega a ser mimo"
+      }
+    , { "id": "2.1",        "name": "Super Lucho también cuenta luces",
+        "path": "Proyectos/9.Otras herramientas avanzadas/2.1.Super Lucho también cuenta luces"
+      }
+    , { "id": "2.2",        "name": "A qué distancia está el borde",
+        "path": "Proyectos/9.Otras herramientas avanzadas/2.2.A qué distancia está el borde"
+      }
+    , { "id": "3.1",        "name": "Contar las baldosas",
+        "path": "Proyectos/9.Otras herramientas avanzadas/3.1.Contar las baldosas"
+      }
+    , { "id": "3.2",        "name": "Contar las baldosas rajadas",
+        "path": "Proyectos/9.Otras herramientas avanzadas/3.2.Contar las baldosas rajadas"
+      }
+    , { "id": "3.3",        "name": "Super Lucho, recargado",
+        "path": "Proyectos/9.Otras herramientas avanzadas/3.3.Super Lucho, recargado"
+      }
+    , { "id": "4",        "name": "El radar",
+        "path": "Proyectos/9.Otras herramientas avanzadas/4.El radar"
+      }
+   ] }
+, { "name": "Introducción a registros",  "repo": "gobstones/curso-InPr-UNQ",
+    "exercises": [
+      { "id": "1",      "name": "Descubrir la carta",
+        "path": "Proyectos/10.Registros/1.Descubrir la carta"
+      }
+    , { "id": "2.1",    "name": "¡Quiero retruco!",
+        "path": "Proyectos/10.Registros/2.1.Quiero retruco"
+      }
+    , { "id": "2.2",    "name": "¡Te carteaste!",
+        "path": "Proyectos/10.Registros/2.2.Te carteaste"
+      }
+    , { "id": "3",      "name": "El alquimista",
+        "path": "Proyectos/10.Registros/3.El alquimista"
+      }
+    , { "id": "4",      "name": "El rey, el caballo, …",
+        "path": "Proyectos/10.Registros/4.El rey, el caballo, …"
+      }
+    , { "id": "5.1",    "name": "No te gastes el ancho - parte 1",
+        "path": "Proyectos/10.Registros/5.1.No te gastes el ancho - parte 1"
+      }
+    , { "id": "5.2",    "name": "No te gastes el ancho - parte 2",
+        "path": "Proyectos/10.Registros/5.2.No te gastes el ancho - parte 2"
+      }
+    , { "id": "6",      "name": "Calcular el envido simple",
+        "path": "Proyectos/10.Registros/6.Calcular el envido simple"
+      }
+    , { "id": "7.1",    "name": "Es de espadas",
+        "path": "Proyectos/10.Registros/7.1.Es de espadas"
+      }
+    , { "id": "7.2",    "name": "Es de…",
+        "path": "Proyectos/10.Registros/7.2.Es de…"
+      }
+    , { "id": "8",      "name": "Memotest",
+        "path": "Proyectos/10.Registros/8.Memotest"
+      }
+    , { "id": "9.1",    "name": "Envido con parámetros",
+        "path": "Proyectos/10.Registros/9.1.Envido con parámetros"
+      }
+    , { "id": "9.2",    "name": "Son buenas",
+        "path": "Proyectos/10.Registros/9.2.Son buenas"
+      }
+    , { "id": "10.1",   "name": "¿Tengo envido?",
+        "path": "Proyectos/10.Registros/10.1.Tengo envido"
+      }
+    , { "id": "10.1",   "name": "¿Cuánto envido?",
+        "path": "Proyectos/10.Registros/10.2.Cuánto envido"
+      }
+, { "name": "Introducción a listas",  "repo": "gobstones/curso-InPr-UNQ",
+    "exercises": [
+      { "id": "1",      "name": "Descubrir la lista",
+        "path": "Proyectos/11.Listas/1.Descubrir la lista"
+      }
+    , { "id": "2",    "name": "La lista contraataca",
+        "path": "Proyectos/11.Listas/2.La lista contraataca"
+      }
+    , { "id": "3",    "name": "El regreso de la lista",
+        "path": "Proyectos/11.Listas/3.El regreso de la lista"
+      }
+    , { "id": "4",      "name": "El repartir de las cartas",
+        "path": "Proyectos/11.Listas/4.El repartir de las cartas"
+      }
+   ] }
+]

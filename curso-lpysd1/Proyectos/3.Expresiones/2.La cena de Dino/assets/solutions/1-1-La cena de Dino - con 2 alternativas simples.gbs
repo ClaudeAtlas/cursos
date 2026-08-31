@@ -1,0 +1,25 @@
+program { HacerQueDinoSeComaSuCena() }
+
+procedure HacerQueDinoSeComaSuCena() {
+  repeat(5) {
+    ComerComidaDe1FilaYVolver()
+    CambiarADinoDeFila()
+  }
+  ComerComidaDe1FilaYVolver()
+}
+
+procedure ComerComidaDe1FilaYVolver() {
+  IrHastaLaComida()
+  ComerLaComidaCorrespondiente()
+  VolverAlInicioDeLaFila()
+}
+
+procedure ComerLaComidaCorrespondiente() {
+  if (hay_(Hamburguesa)) { Comer_(Hamburguesa) }
+  if (hay_(Torta))       { Comer_(Torta)       }
+}
+
+procedure IrHastaLaComida()        { while (not (hay_(Hamburguesa) || hay_(Torta))) { MoverADinoAl_(Este)  } }
+procedure VolverAlInicioDeLaFila() { while (not (estáDinoEnElInicioDeLaFila()))     { MoverADinoAl_(Oeste) } }
+
+

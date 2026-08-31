@@ -1,0 +1,54 @@
+name: La máquina de licuados v4.0
+attire:
+  active: La máquina de licuados
+  user_permissions:
+    can_toggle_visibility: true
+  visible: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="RepeticionSimple"></block>
+        <block type="RetirarElVaso"></block>
+        <block type="IncrementarDisplay"></block>
+        <block type="DecrementarDisplay"></block>
+        <block type="SeleccionarBanana"></block>
+        <block type="SeleccionarFrutilla"></block>
+    </category>
+    <category name="Expresiones básicas">
+        <block type="math_number"></block>
+        <block type="cantidadEnElDisplay"></block>
+        <block type="frutaSeleccionada"></block>
+    </category>
+    <category name="Operaciones de la Licuadora">
+        <block type="PonerLecheEnLaLicuadora"></block>
+        <block type="PonerUna_EnLaLicuadora"></block>
+        <block type="LicuarUnMinuto"></block>
+        <block type="ServirContenidoEnElVaso"></block>
+        <block type="EntregarElVaso"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+          <block type="InteractiveLetterBinding"></block>
+          <block type="InteractiveKeyBinding"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: selected
+  visible_edition: false
+  collapse_toolbox: false
+  user_permissions:
+    can_view_attire_section: false
+    can_edit_board: false
+    can_change_initial_board: false
+    can_change_initial_board_source: false
+    can_view_size_section: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.75  

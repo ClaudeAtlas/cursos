@@ -1,0 +1,4 @@
+program {
+  DecirNúmero_(dameElNúmero_(cartaActual()))
+  DecirPalo_(dameElPalo_(cartaActual()))
+}

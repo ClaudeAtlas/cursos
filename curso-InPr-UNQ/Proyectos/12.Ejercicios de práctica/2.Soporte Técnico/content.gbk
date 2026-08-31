@@ -1,0 +1,27 @@
+<xml xmlns="http://www.w3.org/1999/xhtml"><variables><variable type="" id="pw]B0]dYuws_c2=DY3QU">color a sacar</variable></variables><block type="Program" id="9~bLX:VImX!XEguTJa?9" deletable="false" x="46" y="54"><mutation timestamp="1554402555750"></mutation></block><block type="procedures_defnoreturnnoparams" id="Vq[}0/fRT%jE[-v+52Y$" x="39" y="175"><field name="NAME">Reparar edificio</field><comment pinned="false" h="124" w="424">PROPÓSITO:
+  * reparar todas las máquinas del edificio.
+    El cabezal queda en el Hall del último piso
+    del edificio (el hall más al Norte)
+PRECONDICIONES:
+  * el cabezal debe estar en la hall del edificio</comment><statement name="STACK"><shadow type="ComandoCompletar" id="?[KTY6*r/n[#^(2.Us!x"></shadow></statement></block><block type="procedures_defnoreturnnoparams" id="VFIr$R}]kPvocs^MNa3z" x="382" y="176"><field name="NAME">Indicar OK</field><comment pinned="false" h="114" w="438">PROPÓSITO:
+  * indicar que la máquina de la celda actual no
+    tiene virus poniendo la indicación de OK
+PRECONDICIONES:
+  * la máquina de la celda actual no tiene virus ni
+    indicación de OK</comment><statement name="STACK"><shadow type="ComandoCompletar" id="^[3~;#hWx2r4aEkQ8O7]"></shadow></statement></block><block type="procedures_defnoreturnnoparams" id="D)M,J5G$T7Z81jE(S+Im" x="42" y="290"><field name="NAME">Reparar piso</field><comment pinned="false" h="102" w="450">PROPÓSITO:
+  * reparar todas las máquinas del piso actual
+   (sacando todos los Virus de las máquinas del piso)
+PRECONDICIONES:
+  * la celda actual es el Hall del piso</comment><statement name="STACK"><shadow type="ComandoCompletar" id="35~dQ_u6hYdf[iH$b6qM"></shadow></statement></block><block type="procedures_defnoreturn" id="^2W0/lqk0WKAe)ZMOMC[" x="387" y="360"><mutation><arg name="color a sacar"></arg></mutation><field name="NAME">Sacar todas _</field><field name="ARG0">color a sacar</field><comment pinned="false" h="148" w="430">PROPÓSITO:
+  * sacar de la celda actual todas las bolitas
+    del color dado
+PRECONDICIONES:
+  * ninguna (es una operación total)
+PARÁMETROS:
+  * colorASacar es un color, que indica el color
+                de las bolitas que se deben sacar</comment><statement name="STACK"><shadow type="ComandoCompletar" id="2J8PIjtCtxc:JML)mzHw"></shadow></statement></block><block type="procedures_defnoreturnnoparams" id="4cQ$*Z3x[z5prabO%QYf" x="42" y="400"><field name="NAME">Reparar máquina</field><comment pinned="false" h="114" w="418">PROPÓSITO:
+  * eliminar los virus de la celda actual y dejar
+    la marca de OK
+PRECONDICIONES:
+  * en la celda actual hay una máquina con virus
+    y sin marcas de OK</comment><statement name="STACK"><shadow type="ComandoCompletar" id="0|uZ1!bvT:s|jR*`kh|/"></shadow></statement></block></xml>

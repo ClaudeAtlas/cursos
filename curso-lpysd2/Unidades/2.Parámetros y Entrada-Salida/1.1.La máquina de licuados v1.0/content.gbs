@@ -1,0 +1,4 @@
+interactive program {
+  on K_RETURN { ...             }
+  on K_SPACE  { RetirarElVaso() }
+}

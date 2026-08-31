@@ -1,0 +1,12 @@
+program {
+  IrAlInicioDeLaEntrada()
+  cartaDeEntrada := cartaActual()
+  IrAlInicioDeLaSalida()
+  InformarCarta_(cartaConvertidaAOros(cartaDeEntrada))
+}
+
+function cartaConvertidaAOros(carta) {
+  return (...)
+}
+
+

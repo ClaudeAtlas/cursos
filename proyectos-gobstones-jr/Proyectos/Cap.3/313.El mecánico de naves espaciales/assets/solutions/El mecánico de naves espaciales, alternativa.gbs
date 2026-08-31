@@ -1,0 +1,58 @@
+procedure RepararLaNaveYVolverACasa() {
+  RepararLaNave()
+  VolverACasa()
+}
+
+procedure RepararLaNave() {
+  repeat(3) {
+    BuscarYPonerUnaPiezaDeHierro()
+    BuscarYPonerUnaPiezaDeCarbón()
+  }
+}
+
+procedure BuscarYPonerUnaPiezaDeHierro() {
+  IrHastaElHierro()
+  AgarrarUnaPiezaDeHierro()
+  VolverConElHierro()
+  PonerHierroEnLaNave()
+}
+
+procedure BuscarYPonerUnaPiezaDeCarbón() {
+  IrHastaElCarbón()
+  AgarrarUnaPiezaDeCarbón()
+  VolverConElCarbón()
+  PonerCarbónEnLaNave()
+}
+
+procedure IrHastaElHierro() {
+  repeat(3) {
+    MoverAEdgardoAl_(Norte)
+  }
+}
+
+procedure IrHastaElCarbón() {
+  repeat(3) {
+    MoverAEdgardoAl_(Norte)
+    MoverAEdgardoAl_(Este)
+  }
+  MoverAEdgardoAl_(Este)
+}
+
+procedure VolverConElHierro() {
+  repeat(3) {
+    MoverAEdgardoAl_(Sur)
+  }
+}
+
+procedure VolverConElCarbón() {
+  repeat(3) {
+    MoverAEdgardoAl_(Sur)
+    MoverAEdgardoAl_(Oeste)
+  }
+  MoverAEdgardoAl_(Oeste)
+}
+
+
+program {
+  RepararLaNaveYVolverACasa()
+}

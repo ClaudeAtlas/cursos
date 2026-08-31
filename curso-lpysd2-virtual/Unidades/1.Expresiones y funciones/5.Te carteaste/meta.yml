@@ -1,0 +1,38 @@
+name: ¡Te carteaste!
+attire:
+  active: 'Cartas, letras, números'
+  user_permissions:
+    can_toggle_visibility: false
+  visible: true
+blocks:
+  defaultToolbox: | 
+    <category name="Comandos comunes">
+        <block type="PasarASiguientePosición"></block>
+        <block type="RepeticionSimple"></block>
+    </category>
+    <category name="Expresiones comunes">
+        <block type="math_number"></block>
+    </category>
+    <category name="Operaciones de Cartas">
+        <block type="paloDeCartaEspañolaDe40_"></block>
+        <block type="númeroDeCartaEspañolaDe40_"></block>
+        <block type="PonerCarta_"></block>
+        <block type="dameCarta__"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturnnoparams"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  user_permissions:
+    can_change_source: false
+    can_edit_board: false
+  visible_edition: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false

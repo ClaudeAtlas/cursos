@@ -1,0 +1,74 @@
+/*----------------------------------------------------------------------------------------*/
+/*---------------- INTERFAZ --------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+/*@ATTRIBUTE@block_name@Mover al Beto hacia el _@*/
+procedure MoverAlBetoAl_(dir)            { AuxMoverAlBetoAl(dir)                     }
+procedure PatearAlArco()                 { AuxPatearAlArco()                         }
+/*@ATTRIBUTE@block_name@Cambiar al Beto de fila@*/
+procedure CambiarAlBetoDeFila()          { AuxCambiarAlBetoDeFila()                  }
+function  estáLaPelotaEnEstaCelda()      { return(aux_estáLaPelotaEnLaCeldaActual()) }
+/*@ATTRIBUTE@block_name@está el Beto en el inicio de la fila@*/
+function  estáElBetoEnElInicioDeLaFila() { return(aux_estáElBetoEnElInicio())        }
+
+/*----------------------------------------------------------------------------------------*/
+/*---------------- OPERACIONES AUXILIARES ------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+procedure AuxMoverAlBetoAl(dir){
+    TypeCheck(dir,Norte,"'Mover al Beto al' espera una dirección como argumento (por ejemplo 'Mover al Beto al (Este)') y recibió %1")
+    AuxVerificarPresenciaDelBetoParaInstrucción()
+    if (dir == Norte || dir == Sur)            { BOOM("Para mover al Beto de fila, usar 'Cambiar al Beto de fila'")    }
+    AuxSacarAlBeto()
+    Mover(dir)
+    AuxPonerAlBeto()
+    if (aux_estáElArcoEnLaCeldaActual())       { BOOM("¡Off-side! El Beto está en posición fuera de juego")            }
+}
+
+procedure AuxPatearAlArco() {
+    AuxVerificarPresenciaDelBetoParaInstrucción()
+    if (not aux_estáLaPelotaEnLaCeldaActual()) { BOOM("No puedo patear si no está la pelota en esta celda")            }
+    AuxSacarLaPelota()
+    AuxMoverLaPelotaAlArco()
+    AuxPonerLaPelota()
+    AuxVolverAlBeto()    
+}
+
+procedure AuxCambiarAlBetoDeFila() {
+    AuxVerificarPresenciaDelBetoParaInstrucción()
+    if (not aux_estáElBetoEnElInicio())        { BOOM("Para cambiar de fila el Beto debe estar en el inicio")          }
+    AuxSacarAlBeto()
+    Mover(Sur)
+    AuxPonerAlBeto()
+}
+
+procedure AuxVerificarPresenciaDelBetoParaInstrucción() {
+    if (not aux_estáElBetoEnLaCeldaActual())   { BOOM("No puedo darle instrucciones al Beto si no está en esta celda") }
+}
+    
+procedure AuxVerificarPresenciaDelBetoParaPregunta() {
+    if (not aux_estáElBetoEnLaCeldaActual())   { BOOM("No puedo hacerle preguntas al Beto si no está en esta celda") }
+}
+    
+function aux_elBeto() { return(Azul)  }
+function aux_pelota() { return(Negro) }
+function aux_arco()   { return(Rojo)  }
+
+function aux_estáElBetoEnElInicio()        { 
+    AuxVerificarPresenciaDelBetoParaPregunta()
+    return (not puedeMover(Oeste)) 
+}
+
+function aux_estáElBetoEnLaCeldaActual()   { return (nroBolitas(aux_elBeto())==1) }
+function aux_estáLaPelotaEnLaCeldaActual() { return (nroBolitas(aux_pelota())==1) }
+function aux_estáElArcoEnLaCeldaActual()   { return (nroBolitas(aux_arco())  ==1) }
+
+procedure AuxPonerAlBeto()      { Poner(aux_elBeto())     }
+procedure AuxSacarAlBeto()      { Sacar(aux_elBeto())     }
+procedure AuxMoverElPieDelBeto(){ Poner(Azul) Sacar(Azul) } // SOLO TIENE SENTIDO SI PODEMOS HACERLA NO-ATÓMICA
+procedure AuxVolverAlBeto()     { while (not aux_estáElBetoEnLaCeldaActual()) { Mover(Oeste) } }
+
+procedure AuxPonerLaPelota(){ Poner(aux_pelota()) }
+procedure AuxSacarLaPelota(){ Sacar(aux_pelota()) }
+procedure AuxMoverLaPelotaAlArco() {                        // SOLO TIENE SENTIDO SI PODEMOS HACERLA NO-ATÓMICA
+    while (not aux_estáElArcoEnLaCeldaActual()) 
+      { Mover(Este) AuxPonerLaPelota() AuxSacarLaPelota() }
+}

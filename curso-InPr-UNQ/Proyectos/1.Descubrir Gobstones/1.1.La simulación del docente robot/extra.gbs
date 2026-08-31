@@ -1,0 +1,55 @@
+procedure IrASiguienteEstudiante() 
+ {
+   AuxSacarDocente()
+   AuxPasarASiguienteCelda() 
+   AuxPonerDocente()
+ }
+
+procedure DarUnCaramelo() 
+    { if (nroBolitas(Negro) == 2) { Poner(Verde) } else { BOOM("No hay estudiante para darle un caramelo") } }
+
+procedure TomarElEnvoltorio() 
+    { if (hayBolitas(Rojo)) { Sacar(Rojo) } else { BOOM("No hay papel de caramelo en este lugar") } }
+
+procedure ComerLosCaramelos() {
+    while (auxHaySiguienteCelda()) {
+        AuxPasarASiguienteCelda()
+        AuxCambiarVerdePorAzulYRoja() 
+    }
+    IrAlBorde(Oeste); IrAlBorde(Sur)
+}
+
+procedure IrAlEscritorio() 
+  { 
+    AuxSacarDocente()   
+    IrAlBorde(Oeste); IrAlBorde(Sur) 
+    AuxPonerDocente()
+  }
+
+procedure AuxSacarDocente() { 
+  if (nroBolitas(Negro) < 2) { BOOM("No hay docente en esta celda") }
+  repeat(2) { Sacar(Negro) } 
+}
+
+procedure AuxPonerDocente() { 
+  if (nroBolitas(Negro) >= 2) { BOOM("Ya está le docente en esta celda") }
+  repeat(2) { Poner(Negro) } 
+}
+
+procedure AuxCambiarVerdePorAzulYRoja() {
+    if (hayBolitas(Verde)) 
+            { Sacar(Verde); Poner(Azul); Poner(Rojo) } 
+       else { BOOM("No se pueden comer los caramelos sin repartirlos todos") } 
+}
+
+function auxHaySiguienteCelda() 
+    { return (puedeMover(Este) || puedeMover(Norte)) }
+
+procedure AuxPasarASiguienteCelda() {
+    if (puedeMover(Este)) 
+         { Mover(Este) } 
+    else { if (puedeMover(Norte))
+                { Mover(Norte) IrAlBorde(Oeste) } 
+           else { BOOM("Se terminaron les estudiantes y no hay siguiente") }
+         }
+}

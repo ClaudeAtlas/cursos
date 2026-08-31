@@ -1,0 +1,23 @@
+program {
+  PonerTodosLosElementosA()
+  CambiarTodosLosElementosAPorElementosB()
+  CambiarTodosLosElementosBPorElementosC()
+}
+
+procedure PonerTodosLosElementosA() {
+  repeat(19) {
+    IrALaPróximaCelda()
+    PonerUnElementoA()
+  }
+  VolverALaCeldaInicial()
+}
+
+procedure CambiarTodosLosElementosBPorElementosC() {
+  repeat(19) {
+    IrALaPróximaCelda()
+    CambiarUnElementoBPorUnElementoC()
+  }
+  VolverALaCeldaInicial()
+}
+
+

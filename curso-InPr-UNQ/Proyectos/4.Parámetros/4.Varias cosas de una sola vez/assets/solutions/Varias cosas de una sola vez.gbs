@@ -1,0 +1,26 @@
+program {
+  IrALaEsquina__(Sur, Oeste)
+  SacarMuchasBolitas(17, Negro)
+  MoverMuchasCeldas(3, Este)
+  PonerMuchasBolitas(42, Rojo)
+}
+
+procedure PonerMuchasBolitas(cantidadAPoner, colorAPoner) {
+  repeat(cantidadAPoner) {
+    Poner(colorAPoner)
+  }
+}
+
+procedure SacarMuchasBolitas(cantidadASacar, colorASacar) {
+  repeat(cantidadASacar) {
+    Sacar(colorASacar)
+  }
+}
+
+procedure MoverMuchasCeldas(cantidadDeCeldas, dirección) {
+  repeat(cantidadDeCeldas) {
+    Mover(dirección)
+  }
+}
+
+

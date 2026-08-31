@@ -1,0 +1,12 @@
+program { ContarLasCartas() }
+
+procedure ContarLasCartas() {
+  cantidadDeCartasVistas := 0
+  IrAlInicioDeLaEntrada()
+  while (not (not(hayCarta()))) {
+    cantidadDeCartasVistas := cantidadDeCartasVistas + 1
+    PasarASiguientePosición()
+  }
+  InformarNúmero_(cantidadDeCartasVistas)
+}
+

@@ -1,0 +1,18 @@
+program {
+  IrAlInicioDeLaEntrada()
+  mazoDeEntrada := mazoActual()
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarElMazo_(mazoConvertidoAOros(mazoDeEntrada))
+}
+
+function mazoConvertidoAOros(mazo) {
+  cartasAúnNoConvertidas := mazo
+  cartasYaConvertidas := mazoVacío()
+  while (not (not(quedanCartas_(cartasAúnNoConvertidas)))) {
+    cartasYaConvertidas := agregarAlFinalDelMazo__(cartasYaConvertidas, dameLaPrimeraCartaDe_(cartasAúnNoConvertidas))
+    cartasAúnNoConvertidas := sacarLaPrimeraCartaDe_(cartasAúnNoConvertidas)
+  }
+  return (cartasYaConvertidas)
+}
+
+

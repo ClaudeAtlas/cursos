@@ -1,0 +1,71 @@
+program {
+  PrenderLuz3()
+  PrenderLuz8()
+  PrenderLuz5()
+  PrenderLuz7()
+  PrenderLuz1()
+  PrenderLuz4()
+  PrenderLuz6()
+  PrenderLuz2()
+}
+
+procedure PrenderLuz1() {
+  repeat(1) { MoverALuchoAl_(Norte) }
+  EncenderLuz()
+  repeat(1) { MoverALuchoAl_(Sur)   }
+}
+
+procedure PrenderLuz2() {
+  repeat(2) { MoverALuchoAl_(Este)  }
+  EncenderLuz()
+  repeat(2) { MoverALuchoAl_(Oeste) }
+}
+
+procedure PrenderLuz3() {
+  repeat(2) { MoverALuchoAl_(Norte) }
+  repeat(1) { MoverALuchoAl_(Este)  }
+  EncenderLuz()
+  repeat(2) { MoverALuchoAl_(Sur)   }
+  repeat(1) { MoverALuchoAl_(Oeste) }
+}
+
+procedure PrenderLuz4() {
+  repeat(3) { MoverALuchoAl_(Este)  }
+  repeat(1) { MoverALuchoAl_(Norte) }
+  EncenderLuz()
+  repeat(3) { MoverALuchoAl_(Oeste) }
+  repeat(1) { MoverALuchoAl_(Sur)   }
+}
+
+procedure PrenderLuz5() {
+  repeat(3) { MoverALuchoAl_(Norte) }
+  repeat(2) { MoverALuchoAl_(Este)  }
+  EncenderLuz()
+  repeat(3) { MoverALuchoAl_(Sur)   }
+  repeat(2) { MoverALuchoAl_(Oeste) }
+}
+
+procedure PrenderLuz6() {
+  repeat(4) { MoverALuchoAl_(Este)  }
+  repeat(2) { MoverALuchoAl_(Norte) }
+  EncenderLuz()
+  repeat(4) { MoverALuchoAl_(Oeste) }
+  repeat(2) { MoverALuchoAl_(Sur)   }
+}
+
+procedure PrenderLuz7() {
+  repeat(4) { MoverALuchoAl_(Norte) }
+  repeat(3) { MoverALuchoAl_(Este)  }
+  EncenderLuz()
+  repeat(4) { MoverALuchoAl_(Sur)   }
+  repeat(3) { MoverALuchoAl_(Oeste) }
+}
+
+procedure PrenderLuz8() {
+  repeat(5) { MoverALuchoAl_(Este)  }
+  repeat(3) { MoverALuchoAl_(Norte) }
+  EncenderLuz()
+  repeat(5) { MoverALuchoAl_(Oeste) }
+  repeat(3) { MoverALuchoAl_(Sur)   }
+}
+

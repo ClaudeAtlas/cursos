@@ -1,0 +1,17 @@
+program { InformarSiTengoFlor() }
+
+procedure InformarSiTengoFlor() {
+  if (tengoFlor()) { DecirQueTengoFlor()   } 
+  else             { DecirQueNoTengoFlor() }
+}
+
+function tengoFlor() {
+  return (laCartaEsDeEspadas(segundaCarta()) 
+       && laCartaEsDeEspadas(terceraCarta()))
+}
+
+function laCartaEsDeEspadas(cartaAControlar) {
+  return (...)
+}
+
+

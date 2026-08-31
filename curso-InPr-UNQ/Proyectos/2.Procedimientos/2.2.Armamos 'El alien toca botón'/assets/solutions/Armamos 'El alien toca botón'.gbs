@@ -1,0 +1,37 @@
+/*
+   PROPÓSITO: Resuelve la actividad "El alien toca botón", 
+              moviendo al Alien hasta el botón y tocando el botón
+   PRECONDICIONES: 
+     Hay un Alien representado en la celda inicial, y un botón
+	 representado 3 celdas al Este de la celda inicial
+*/
+program {
+  MoverAlAlienAlEste()
+  MoverAlAlienAlEste()
+  MoverAlAlienAlEste()
+  TocarBotón()
+}
+
+procedure MoverAlAlienAlEste() {
+  /*
+     PROPÓSITO: Mueve al Alien un lugar al Este
+     PRECONDICIONES: 
+       Hay un alien representado en la celda inicial
+	   Hay una celda al Este de la celda inicial
+  */
+  Sacar(Verde)   // El Alien se representa con una bolita verde
+  Mover(Este)
+  Poner(Verde)
+}
+
+procedure TocarBotón() {
+  /*
+     PROPÓSITO: Aprieta el botón
+     PRECONDICIONES: 
+       Hay un botón representado en la celda inicial
+	   Debería también haber un alien representado en la celda inicial (NO GARANTIZADO POR AHORA)
+  */
+  Sacar(Rojo)    // El botón sin tocar se representa con 2 bolitas rojas
+                 // y el botón tocado con 1 bolita roja sola
+}
+

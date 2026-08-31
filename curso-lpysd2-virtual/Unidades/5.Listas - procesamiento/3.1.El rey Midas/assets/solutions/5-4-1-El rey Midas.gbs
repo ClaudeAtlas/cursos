@@ -1,0 +1,10 @@
+program {
+  IrAlInicioDeLaEntrada()
+  cartaDeEntrada := cartaActual()
+  IrAlInicioDeLaSalida()
+  InformarCarta_(cartaConvertidaAOros(cartaDeEntrada))
+}
+
+function cartaConvertidaAOros(carta) {
+  return (dameCarta__(dameElValor_(carta), palo_(Oros)))
+}

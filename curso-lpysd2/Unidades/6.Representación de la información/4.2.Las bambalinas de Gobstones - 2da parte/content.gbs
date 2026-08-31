@@ -1,0 +1,20 @@
+program {
+  IrAlInicioDeLaEntrada()
+  mazoDeEntrada := mazoActual()
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarLaListaDeNúmeros_(códigosDeLasCartas(mazoDeEntrada))
+}
+
+function códigosDeLasCartas(mazo) {
+  cartasAúnNoAnalizadas := mazo
+  códigosVistos := listaVacía()
+  while (not (not(quedanCartas_(cartasAúnNoAnalizadas)))) {
+    códigosVistos := agregarAlFinalDeLaLista__(códigosVistos, códigoDeLaCarta(dameLaPrimeraCartaDe_(cartasAúnNoAnalizadas)))
+    cartasAúnNoAnalizadas := sacarLaPrimeraCartaDe_(cartasAúnNoAnalizadas)
+  }
+  return (códigosVistos)
+}
+
+function códigoDeLaCarta(carta) { return ((100 * códigoDelPalo_(dameElPalo_(carta))) + dameElValor_(carta)) }
+
+

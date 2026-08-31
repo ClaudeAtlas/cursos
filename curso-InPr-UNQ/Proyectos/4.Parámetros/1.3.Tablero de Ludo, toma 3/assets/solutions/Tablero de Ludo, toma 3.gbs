@@ -1,0 +1,45 @@
+program {
+  PosicionarseParaElPrimerCuadrado()
+  DibujarCuadrado(Rojo)
+  PosicionarseParaElSegundoCuadrado()
+  DibujarCuadrado(Negro)
+  PosicionarseParaElTercerCuadrado()
+  DibujarCuadrado(Azul)
+  PosicionarseParaElCuartoCuadrado()
+  DibujarCuadrado(Verde)
+}
+
+procedure DibujarCuadrado(colorDelCuadrado) {
+  /*
+  */
+  DibujarLíneaDeLargo2(colorDelCuadrado, Norte)
+  DibujarLíneaDeLargo2(colorDelCuadrado, Este)
+  DibujarLíneaDeLargo2(colorDelCuadrado, Sur)
+  DibujarLíneaDeLargo2(colorDelCuadrado, Oeste)
+}
+
+procedure DibujarLíneaDeLargo2(colorDeLaLínea, direcciónDeDibujo) {
+  /*
+  */
+  repeat(2) { Poner(colorDeLaLínea)  Mover(direcciónDeDibujo) }
+}
+
+procedure PosicionarseParaElPrimerCuadrado() {
+  IrAlBorde(Oeste)  IrAlBorde(Sur)
+}
+
+procedure PosicionarseParaElSegundoCuadrado() {
+  IrAlBorde(Sur)    IrAlBorde(Este)
+  repeat(2) { Mover(Oeste) }
+}
+
+procedure PosicionarseParaElTercerCuadrado() {
+  IrAlBorde(Norte)  IrAlBorde(Este)
+  repeat(2) { Mover(Sur) Mover(Oeste) }
+}
+
+procedure PosicionarseParaElCuartoCuadrado() {
+  IrAlBorde(Oeste)  IrAlBorde(Norte)
+  repeat(2) { Mover(Sur) }
+}
+

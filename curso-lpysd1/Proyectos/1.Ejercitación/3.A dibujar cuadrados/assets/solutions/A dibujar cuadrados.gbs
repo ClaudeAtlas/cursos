@@ -1,0 +1,50 @@
+procedure DibujarCuadradoRojo() {
+  repeat(2) {
+    Poner(Rojo)
+    Mover(Este)
+  }
+  repeat(2) {
+    Poner(Rojo)
+    Mover(Norte)
+  }
+  repeat(2) {
+    Poner(Rojo)
+    Mover(Oeste)
+  }
+  repeat(2) {
+    Poner(Rojo)
+    Mover(Sur)
+  }
+}
+
+procedure PosicionarParaEl2doCuadrado() {
+  IrAlBorde(Este)
+  Mover(Oeste)
+  Mover(Oeste)
+}
+
+procedure PosicionarParaEl3erCuadrado() {
+  IrAlBorde(Norte)
+  Mover(Sur)
+  Mover(Sur)
+}
+
+procedure PosicionarParaEl4toCuadrado() {
+  IrAlBorde(Oeste)
+}
+
+procedure VolverAlInicio() {
+  IrAlBorde(Sur)
+}
+
+
+program {
+  DibujarCuadradoRojo()
+  PosicionarParaEl2doCuadrado()
+  DibujarCuadradoRojo()
+  PosicionarParaEl3erCuadrado()
+  DibujarCuadradoRojo()
+  PosicionarParaEl4toCuadrado()
+  DibujarCuadradoRojo()
+  VolverAlInicio()
+}

@@ -1,0 +1,12 @@
+interactive program {
+  on K_RETURN { HacerLicuado(cantidadEnElDisplay()) }
+  on K_SPACE  { RetirarElVaso()                     }
+  on K_LEFT   { DecrementarDisplay()                }
+  on K_RIGHT  { IncrementarDisplay()                }
+}
+
+procedure HacerLicuado(cantidadDeBananas) {
+  ...
+}
+
+

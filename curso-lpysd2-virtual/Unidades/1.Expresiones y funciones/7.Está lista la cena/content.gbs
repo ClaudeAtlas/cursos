@@ -1,0 +1,32 @@
+program {
+  if (estáListaLaCena()) 
+       { AvisarQueVengan()       }
+  else { AvisarQueTodavíaFalta() }
+}
+
+function estáListaLaCena() {
+  return (estáElPlatoPrincipalEnLaMesa() 
+       && estáElPostreEnLaMesa())
+}
+
+function estáElPostreEnLaMesa() {
+  return (estáLaFrutaEnLaMesa() 
+       || estáLaTortaEnLaMesa())
+}
+
+function estáElPlatoPrincipalEnLaMesa() {
+  return (estáElBifeConEnsalada() 
+       && estáElGobCombo())
+}
+
+function estáElBifeConEnsalada() {
+  return (estáElBifeEnLaMesa() 
+       && estáLaEnsaladaEnLaMesa())
+}
+
+function estáElGobCombo() {
+  return (estáLaHamburguesaEnLaMesa() 
+       && estánLasPapasFritasEnLaMesa())
+}
+
+

@@ -1,0 +1,14 @@
+name: 'Welcome to Quell'
+
+inherit:
+  $course: gobstonesgames/quell
+  $assets:
+    extra: true
+    attires:
+      - Quell
+  execution_speed: true
+  source: true
+  library: true
+  board: true
+  attire: true
+  blocks: true

@@ -1,0 +1,27 @@
+name: Soporte Técnico
+rules:
+  - { image: 1.png     , when: { black: 1, blue: 0, green: 0, red: 0 } }
+  - { image: 2.png     , when: { black: 2, blue: 0, green: 0, red: 0 } }
+  - { image: 3.png     , when: { black: 3, blue: 0, green: 0, red: 0 } }
+  - { image: 4.png     , when: { black: 4, blue: 0, green: 0, red: 0 } }
+  - { image: 5.png     , when: { black: 5, blue: 0, green: 0, red: 0 } }
+  - { image: 6.png     , when: { black: 6, blue: 0, green: 0, red: 0 } }
+  - { image: 7.png     , when: { black: 7, blue: 0, green: 0, red: 0 } }
+  - { image: 8.png     , when: { black: 8, blue: 0, green: 0, red: 0 } }
+  - { image: 9.png     , when: { black: 9, blue: 0, green: 0, red: 0 } }
+  - { image: 1Azul.png , when: { black: 0, blue: 1, green: 0, red: 0 } }
+  - { image: 2Azul.png , when: { black: 0, blue: 2, green: 0, red: 0 } }
+  - { image: 3Azul.png , when: { black: 0, blue: 3, green: 0, red: 0 } }
+  - { image: 4Azul.png , when: { black: 0, blue: 4, green: 0, red: 0 } }
+  - { image: 5Azul.png , when: { black: 0, blue: 5, green: 0, red: 0 } }
+  - { image: 6Azul.png , when: { black: 0, blue: 6, green: 0, red: 0 } }
+  - { image: 7Azul.png , when: { black: 0, blue: 7, green: 0, red: 0 } }
+  - { image: 8Azul.png , when: { black: 0, blue: 8, green: 0, red: 0 } }
+  - { image: 9Azul.png , when: { black: 0, blue: 9, green: 0, red: 0 } }
+  - { image: virus1.png, when: { black: 0, blue: 0, green: 0, red: 1 } }
+  - { image: virus2.png, when: { black: 0, blue: 0, green: 0, red: 2 } }
+  - { image: virus3.png, when: { black: 0, blue: 0, green: 0, red: 3 } }
+  - { image: virus4.png, when: { black: 0, blue: 0, green: 0, red: 4 } }
+  - { image: virus5.png, when: { black: 0, blue: 0, green: 0, red: 5 } }
+  - { image: virus6.png, when: { black: 0, blue: 0, green: 0, red: 6 } }
+  - { image: compu.png , when: { black: 0, blue: 0, green: 1, red: 0 } }

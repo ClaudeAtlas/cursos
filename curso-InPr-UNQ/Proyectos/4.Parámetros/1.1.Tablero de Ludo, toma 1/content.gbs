@@ -1,0 +1,71 @@
+program {
+  ...
+}
+
+procedure DibujarCuadradoDeColorRojo() {
+  ...
+}
+
+procedure DibujarCuadradoDeColorNegro() {
+  ...
+}
+
+procedure DibujarCuadradoDeColorAzul() {
+  ...
+}
+
+procedure PosicionarseParaElPrimerCuadrado() {
+  // PROPÓSITO:
+  //  * posiciona el cabezal para dibujar el
+  //    primer cuadrado
+  // PRECONDICIONES:
+  //  * ninguna
+  IrAlBorde(Oeste)
+  IrAlBorde(Sur)
+}
+
+procedure DibujarCuadradoDeColorVerde() {
+  BOOM("El programa todavía no está completo")
+}
+
+procedure PosicionarseParaElSegundoCuadrado() {
+  // PROPÓSITO:
+  //  * posiciona el cabezal para dibujar el
+  //    segundo cuadrado
+  // PRECONDICIONES:
+  //  * el tablero tiene al menos 2 celdas de
+  //    ancho
+  IrAlBorde(Sur)
+  IrAlBorde(Este)
+  Mover(Oeste)
+  Mover(Oeste)
+}
+
+procedure PosicionarseParaElTercerCuadrado() {
+  // PROPÓSITO:
+  //  * posiciona el cabezal para dibujar el
+  //    tercer cuadrado
+  // PRECONDICIONES:
+  //  * el tablero tiene al menos 2 celdas de
+  //    ancho y 2 de alto
+  IrAlBorde(Norte)
+  Mover(Sur)
+  Mover(Sur)
+  IrAlBorde(Este)
+  Mover(Oeste)
+  Mover(Oeste)
+}
+
+procedure PosicionarseParaElCuartoCuadrado() {
+  // PROPÓSITO:
+  //  * posiciona el cabezal para dibujar el
+  //    cuarto cuadrado
+  // PRECONDICIONES:
+  //  * el tablero tiene al menos 2 celdas de
+  //    alto
+  IrAlBorde(Oeste)
+  IrAlBorde(Norte)
+  Mover(Sur)
+  Mover(Sur)
+}
+

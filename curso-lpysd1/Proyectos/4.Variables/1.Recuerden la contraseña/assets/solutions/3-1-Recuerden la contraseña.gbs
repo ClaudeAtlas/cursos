@@ -1,0 +1,11 @@
+program {
+  IrAlEscritorio()
+  AbrirElCuaderno()
+  contraseña := laContraseñaEscritaEnElCuaderno()
+  IrHastaElPizarrón()
+  EscribirLaContraseña_(contraseña)
+}
+
+procedure IrHastaElPizarrón() { repeat(5) { MoverALaDocenteAl_(Oeste) } }
+procedure IrAlEscritorio()    { MoverALaDocenteAl_(Este)                }
+

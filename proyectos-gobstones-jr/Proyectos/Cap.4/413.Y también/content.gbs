@@ -1,0 +1,25 @@
+procedure CosecharTodosLosTomates() {
+  repeat(9) {
+    CosecharLosTomatesSiHay()
+    Mover(Este)
+  }
+  CosecharLosTomatesSiHay()
+}
+
+procedure CosecharLosTomatesSiHay() {
+  if (hayTomates()) {
+    CosecharLosTomates()
+  }
+}
+
+function hayTomates() {
+  return (...)
+}
+
+procedure CosecharLosTomates() {
+  ...
+}
+
+
+program {
+}

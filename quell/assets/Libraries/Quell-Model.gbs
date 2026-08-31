@@ -1,0 +1,224 @@
+/* ============================================================================================================
+   START Quell-Model.gbs
+   Definition of the datatypes representing a Quell level.
+   
+   It is assumed that there is a single function level() that encodes the initial state of the level.
+   All the static information is obtained from it (particularly, isTutorial, solution, and minMoves).
+
+// REQUIRE: Babel.gbs
+// REQUIRE: EnglishPrimitives.gbs
+// REQUIRE: Prelude.gbs
+   ============================================================================================================
+*/
+
+type QuellLevel is record {
+  /* INV.REP.:
+   * board represent the Quell game-board
+     - all elements of the game-board are borders of the same length
+     - boarders (Limits and Angles) and Corners form a continuous "line"
+     - all rows or columns that have some element different from Out or a limit have at least a two paired borders (Limits or Angles pointing to each other) 
+     - all elements different from Out or boarders or Corner are between paired borders
+     - no Out or border or Corner elements are between paired borders
+     - for each Portal on the board, its target is a valid pos with the only other Portal with matching id on the board
+   * solution is a list of Dirs of length minMoves that solves the level
+   * minMoves is the minimum number of moves required to solve the level using Quell rules (0 if not solvable)
+   * if the jewel field jpos exists, then it indicates a valid position in the board, and the QElem in that position is either Wall or Empty
+   * either there is some RotableSpikes, at least a Switch, and spikesDir is different from Nothing, 
+     or there is no RotableSpikes, no Switches, and spikesDir is Nothing
+   * all pos values in boxes are valid positions in the board, and the QElement in that position is Empty
+   * if the ball field bpos exists, then it indicates a valid position in the board, and the QElem in that position is either Empty, or an open Gate, or a Portal, or a Switch
+   * if rightMoves is not Nothing, the number is positive and less than minMoves
+   */
+   field isTutorial    // Bool
+   field board         // [[QElem]] 
+   field solution      // [Dir]
+   field minMoves      // Number
+   field jewel         // QJewel
+   field spikesDir     // Maybe(Direction)
+   field boxes         // [(Pos, Gender)]
+   field ball          // QBall
+   field numMoves      // Number
+   field rightMoves    // Maybe(Number)
+   field numPearls     // Number
+}
+
+type QElem is variant {
+   case Empty        {}
+   case Pearl        {}
+   case Wall         {}
+   case Corner       { field dir }        // Dir
+   case Angle        { field dir }        // Dir
+   case Limit        { field pointsTo }   // Dir
+   case Portal       { field id           // Number (less than 10)
+                       field target       // Pos
+                     }
+   case Gate         { field closed }     // Bool
+   case Spike        { field pointsTo }   // Dir
+   case Multispike   {}
+   case RotableSpike {}
+   case Switch       {} 
+   case Out          {}
+}
+
+type QJewel is variant {
+   case NoJewel {}
+   case QJewel  { field jpos // Pos
+                  field hits // Number (usually 4 if Wall, and 1 if visible)
+                }
+}
+
+type QBall is variant {
+   case NoBall  {}
+   case QBallAt { field bpos }  // Pos
+   case QBallTo { field bpos    // Pos
+                  field goingTo // Dir 
+                  field beaming // Bool
+                }
+}
+
+type QToken is variant {
+  case ABox    {}
+  case APearl  {}
+  case AJewel  {}
+  case ABall   {}
+  case NoToken {}
+}
+
+// ---------------------------
+//  Abbreviations
+// ---------------------------
+function cNW() { return(Corner(dir <- East))      }
+function cNE() { return(Corner(dir <- South))     }
+function cSE() { return(Corner(dir <- West))      }
+function cSW() { return(Corner(dir <- North))     }
+   
+function aNW()    { return(Angle(dir <- East ))                  }
+function aNE()    { return(Angle(dir <- South))                  }
+function aSE()    { return(Angle(dir <- West ))                  }
+function aSW()    { return(Angle(dir <- North))                  }
+              
+function hT()     { return(Limit(pointsTo <- South))             }
+function hB()     { return(Limit(pointsTo <- North))             }
+function vL()     { return(Limit(pointsTo <- East ))             }
+function vR()     { return(Limit(pointsTo <- West ))             }
+            
+function oG()     { return(Gate(closed <- False))                }
+
+function pA_(c,r) { return(Portal(target <- pos(c,r), id <- 1))  }
+function pB_(c,r) { return(Portal(target <- pos(c,r), id <- 2))  }
+
+function mS()     { return(Multispike)                           }
+function sN()     { return(Spike(pointsTo <- North))             }
+function sE()     { return(Spike(pointsTo <- East ))             }
+function sS()     { return(Spike(pointsTo <- South))             }
+function sW()     { return(Spike(pointsTo <- West ))             }
+function rS()     { return(RotableSpike)                         }
+
+// ---------------------------
+//  Detection functions
+// ---------------------------
+function isEmpty_(qelem)        { return(matching (qelem)  yield True  on Empty yield        False otherwise) }
+function isPearl_(qelem)        { return(matching (qelem)  yield True  on Pearl yield        False otherwise) }
+function isWall_(qelem)         { return(matching (qelem)  yield True  on Wall yield         False otherwise) }
+function isCorner_(qelem)       { return(matching (qelem)  yield True  on Corner(dir -> dir) yield       False otherwise) }
+function isAngle_(qelem)        { return(matching (qelem)  yield True  on Angle(dir -> dir) yield        False otherwise) }
+function isLimit_(qelem)        { return(matching (qelem)  yield True  on Limit(pointsTo -> pointsTo) yield        False otherwise) }
+function isPortal_(qelem)       { return(matching (qelem)  yield True  on Portal(id -> id, target -> target) yield       False otherwise) }
+function isGate_(qelem)         { return(matching (qelem)  yield True  on Gate(closed -> closed) yield         False otherwise) }
+function isSpike_(qelem)        { return(matching (qelem)  yield True  on Spike(pointsTo -> pointsTo) yield        False otherwise) }
+function isMultispike_(qelem)   { return(matching (qelem)  yield True  on Multispike yield   False otherwise) }
+function isRotableSpike_(qelem) { return(matching (qelem)  yield True  on RotableSpike yield False otherwise) }
+function isSwitch_(qelem)       { return(matching (qelem)  yield True  on Switch yield       False otherwise) }
+function isOut_(qelem)          { return(matching (qelem)  yield True  on Out yield          False otherwise) }
+
+function isOpen_(qelem) {
+  return(matching (qelem)  yield True              on Empty yield
+                                  True              on Portal(id -> id, target -> target) yield
+                                  True              on Switch yield
+                                  True              on Limit(pointsTo -> pointsTo) yield
+                                  not closed(qelem) on Gate(closed -> closed) yield
+                                  False             otherwise)
+} 
+
+function isSpiky_ComingFrom_WithRotablesTo_(qelem, dir, rmdir) {
+  return (matching (qelem) yield True on Multispike yield
+                                  dir==opposite(pointsTo(qelem)) on Spike(pointsTo -> pointsTo) yield
+                                  dir==opposite(fromJust(rmdir)) on RotableSpike yield
+                                  False                          otherwise)
+}
+
+// --------------------------- 
+function isNoJewel_(jewel)      { return(matching (jewel)  yield True             on NoJewel yield False otherwise) }
+function isJewel_(jewel)        { return(matching (jewel)  yield True             on QJewel(jpos -> jpos, hits -> hits) yield  False otherwise) }
+
+function isFound_(jewel)        { return(matching (jewel)  yield (hits(jewel)==0) on QJewel(jpos -> jpos, hits -> hits) yield  False otherwise) }
+
+// ---------------------------      
+function isNoBall_(qball)       { return(matching (qball)  yield True  on NoBall yield            False otherwise) }
+function isBall_(qball)         { return(matching (qball)  yield False on NoBall yield            True  otherwise) }
+function isStaticBall_(qball)   { return(matching (qball)  yield True  on QBallAt(bpos -> bpos) yield           False otherwise) }
+function isMovingBall_(qball)   { return(matching (qball)  yield True  on QBallTo(bpos -> bpos, goingTo -> goingTo, beaming -> beaming) yield           False otherwise) }
+function isBeamingBall_(qball)  { return(matching (qball)  yield beaming(qball) on QBallTo(bpos -> bpos, goingTo -> goingTo, beaming -> beaming) yield  False otherwise)}
+
+// ---------------------------
+function isNoToken_(qtoken)     { return(matching (qtoken) yield True  on NoToken yield           False  otherwise) }
+function isToken_(qtoken)       { return(matching (qtoken) yield False on NoToken yield           True  otherwise) }
+function isABox_(qtoken)        { return(matching (qtoken) yield True  on ABox yield              False otherwise) }
+function isAPearl_(qtoken)      { return(matching (qtoken) yield True  on APearl yield            False otherwise) }
+function isAJewel_(qtoken)      { return(matching (qtoken) yield True  on AJewel yield            False otherwise) }
+
+// ---------------------------
+//  Ball modification
+// ---------------------------
+function movedBall_To_(qball,dir) { return(QBallTo(bpos    <- bpos(qball)
+                                                  ,goingTo <- dir
+                                                  ,beaming <- False))                            } /* PRECOND: isBall_(qball)       */
+function stoppedBall_(qball)      { return(QBallAt(bpos <- bpos(qball)))                         } /* PRECOND: isBall_(qball)       */
+function bouncedBall_(qball)      { return(QBallTo(qball | goingTo <- opposite(goingTo(qball)))) } /* PRECOND: isMovingBall_(qball) */
+function beamedBall_(qball)       { return(QBallTo(qball | beaming <- False))                    } /* PRECOND: isMovingBall_(qball) */
+function beamingBall_(qball)      { return(QBallTo(qball | beaming <- True))                     } /* PRECOND: isMovingBall_(qball) */
+
+// ---------------------------
+//  Jewel information on Quell
+// ---------------------------
+function hasJewel_(quell)      { return(not isNoJewel_(jewel(quell))) }
+function jewelPosOn_(quell)    { return(jpos(jewel(quell)))           } /* PRECOND: * hasJewel_(quell) */     
+
+// ---------------------------
+//  Ball information on Quell
+// ---------------------------
+function hasBall_(quell)       { return(not isNoBall_(ball(quell))) }
+function hasMovingBall_(quell) { return(isMovingBall_(ball(quell))) }
+function ballPosOn_(quell)     { return(bpos(ball(quell)))          } /* PRECOND: * hasBall_(quell) */     
+function ballDirOn_(quell)     { return(goingTo(ball(quel)))        } /* PRECOND: hasMovingBall_(quell) */ 
+function ballBeamingOn_(quell) { return(beaming(ball(quel)))        } /* PRECOND: hasMovingBall_(quell) */ 
+
+// ---------------------------
+//  Hint information on Quell
+// ---------------------------
+function firstTutorialDHintOn_(quell) {
+  return(choose yield just(head(solution(quell))) when (isTutorial(quell)) yield
+                Nothing otherwise)
+}
+
+function dHintOn_(quell) {
+  return(choose yield just(elemAtIndex_In_(fromJust(rightMoves(quell))
+                                    ,solution(quell)))           when (not isNothing(rightMoves(quell))) yield
+                Nothing                                          otherwise)
+}
+
+function nHintOn_(quell) {
+  return(choose yield just(minMoves(quell)-fromJust(rightMoves(quell))) when (not isNothing(rightMoves(quell))) yield
+                Nothing                                           otherwise)
+}
+
+function dHintForNHint_On_(mi, quell) { 
+  return(choose yield just(elemAtIndex_In_(minMoves(quell)-fromJust(mi)
+                                    ,solution(quell)))            when (not isNothing(mi) && mi/=just(0)) yield
+                Nothing                                           otherwise)
+}
+
+/* ============================================================================================================
+   END Quell-Model.gbs
+   ============================================================================================================
+*/

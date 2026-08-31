@@ -1,0 +1,35 @@
+name: Otro ladrillo en la pared
+attire:
+  active: Paredes
+  user_permissions:
+    can_toggle_visibility: false
+  visible: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="Mover"></block>
+        <block type="RepeticionSimple"></block>
+    </category>
+    <category name="Expresiones básicas">
+        <block type="math_number"></block>
+        <block type="DireccionSelector"></block>
+    </category>
+    <category name="Procedimientos primitivos">
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturnnoparams"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  user_permissions:
+    can_change_source: false
+    can_edit_board: false
+  visible_edition: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false

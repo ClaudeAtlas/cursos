@@ -1,0 +1,10 @@
+program { DescubrirLaLista(listaDeNúmerosOculta()) }
+
+procedure DescubrirLaLista(lista) {
+  elementosQueTodavíaNoProcesé := lista
+  while (not (estáVacía_(elementosQueTodavíaNoProcesé))) {
+    InformarNúmero_(primerElemento_(elementosQueTodavíaNoProcesé))
+    elementosQueTodavíaNoProcesé := resto_(elementosQueTodavíaNoProcesé)
+  }
+}
+

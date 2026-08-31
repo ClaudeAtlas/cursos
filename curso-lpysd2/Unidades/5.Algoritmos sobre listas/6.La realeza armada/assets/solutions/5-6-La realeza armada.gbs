@@ -1,0 +1,35 @@
+program {
+  IrAlInicioDeLaEntrada()
+  mazoDeEntrada := mazoActual()
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarElMazo_(soloLaRealezaArmada(mazoDeEntrada))
+}
+
+function soloLaRealezaArmada(mazo) {
+  cartasAúnNoAnalizadas := mazo
+  figurasArmadasVistas := mazoVacío()
+  while (not (not(quedanCartas_(cartasAúnNoAnalizadas)))) {
+    if (esMiembroDeLaRealezaArmada(dameLaPrimeraCartaDe_(cartasAúnNoAnalizadas))) {
+      figurasArmadasVistas := 
+          agregarAlFinalDelMazo__(figurasArmadasVistas
+                                 ,dameLaPrimeraCartaDe_(cartasAúnNoAnalizadas))
+    }
+    cartasAúnNoAnalizadas := sacarLaPrimeraCartaDe_(cartasAúnNoAnalizadas)
+  }
+  return (figurasArmadasVistas)
+}
+
+function esMiembroDeLaRealezaArmada(carta) { return (esFigura(carta) && estáArmado(carta)) }
+function estáArmado(carta)                 { return (esDe(carta, palo_(Bastos)) 
+                                                  || esDe(carta, palo_(Espadas)))          }
+
+function esFigura(carta) { return (esUnaSota(carta) || (esUnCaballo(carta) || esUnRey(carta))) }
+
+function esUnaSota(carta)   { return (tieneNúmero(carta, 10)) }
+function esUnCaballo(carta) { return (tieneNúmero(carta, 11)) }
+function esUnRey(carta)     { return (tieneNúmero(carta, 12)) }
+
+function tieneNúmero(carta, número) { return (dameElNúmero_(carta) == número) }
+function esDe(carta, palo)          { return (dameElPalo_(carta) == palo)     }
+
+

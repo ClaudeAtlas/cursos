@@ -1,0 +1,132 @@
+/* ============================================================================================================
+   START EnglishPrimitives.gbs
+   Code for using English names on Gobstones programs, even when the language is still not internationalized
+// REQUIRE: Babel.gbs
+   ============================================================================================================
+*/
+// ---------
+// Colors
+// ---------
+type Colour is variant {
+    case Red    {}
+    case Green  {}
+    case Blue   {}
+    case Black  {}
+}
+
+/*@ATTRIBUTE@block_name@_@*/
+/*@ATTRIBUTE@block_dropdown@[("Red", 'Red'), ("Green", 'Green'), ("Blue", 'Blue'), ("Black", 'Black')]@*/
+function colour_(dir) { return (dir) }
+
+function colorEn2Sp(color) {
+  return(matching (color) yield
+           Rojo   on Red yield
+           Verde  on Green yield
+           Azul   on Blue yield
+           Negro  on Black yield
+           boom(msgNotExpected("Colour")) otherwise)
+}
+
+function colorSp2En(color) {
+  return(matching (color) yield
+           Red   on Rojo yield    
+           Green on Verde yield   
+           Blue  on Azul yield   
+           Black on Negro yield
+           boom(msgNotExpected("Color")) otherwise)
+}
+
+function hasStones(color) { return(hayBolitas(colorEn2Sp(color))) }
+function numStones(color) { return(nroBolitas(colorEn2Sp(color))) }
+
+procedure Drop(color) { Poner(colorEn2Sp(color)) }
+procedure Grab(color) { 
+    Assert_OrFail_(hasStones(color), msgNoStones())
+    Sacar(colorEn2Sp(color)) 
+}
+
+function nextColor(color)  { return(colorSp2En(siguiente(colorEn2Sp(dir)))) }
+function prevColor(color)  { return(colorSp2En(previo(colorEn2Sp(dir))))    }
+
+function minColour() { return(colorSp2En(minColor())) }
+function maxColour() { return(colorSp2En(maxColor())) }
+
+// ---------
+// Directions
+// ---------
+type Direction is variant {
+    case North {}
+    case East  {}
+    case South {}
+    case West  {}
+}
+
+/*@ATTRIBUTE@block_name@_@*/
+/*@ATTRIBUTE@block_dropdown@[("North", 'North'), ("East", 'East'), ("South", 'South'), ("West", 'West')]@*/
+function direction_(dir) { return (dir) }
+
+function dirEn2Sp(dir) {
+  return(matching (dir) yield
+           Norte on North yield
+           Este  on East yield
+           Sur   on South yield
+           Oeste on West yield
+           boom(msgNotExpected("Direction")) otherwise)
+}
+
+function dirSp2En(dir) {
+  return(matching (dir) yield
+           North on Norte yield
+           East  on Este yield 
+           South on Sur yield  
+           West  on Oeste yield
+           boom(msgNotExpected("Dirección")) otherwise)
+}
+
+function canMove(dir) { return(puedeMover(dirEn2Sp(dir))) }
+
+procedure Move(dir) { 
+  Assert_OrFail_(canMove(dir), msgNoCells())
+  Mover(dirEn2Sp(dir))     
+}
+
+procedure GoToEdge(dir) { IrAlBorde(dirEn2Sp(dir)) }
+
+function opposite(dir) { return(dirSp2En(opuesto(dirEn2Sp(dir))))   }
+function nextDir(dir)  { return(dirSp2En(siguiente(dirEn2Sp(dir)))) }
+function prevDir(dir)  { return(dirSp2En(previo(dirEn2Sp(dir))))    }
+
+function minDirection() { return(dirSp2En(minDir())) }
+function maxDirection() { return(dirSp2En(maxDir())) }
+
+// ---------
+// Lists
+// ---------
+function isEmpty(xs) { return(esVacía(xs)) }
+// [migración] lo define Gobstones 4: function head(xs)    { return(primero(xs)) }
+// [migración] lo define Gobstones 4: function tail(xs)    { return(resto(xs))   }
+
+// ---------
+// ERROR MESSAGES
+// ---------
+function msgNoStones() { 
+  return(babel("Cannot grab stones: there are no stones of that color"
+              ,"No puedo sacar bolitas: no hay bolitas de ese color"
+              ))
+}
+
+function msgNoCells() { 
+  return(babel("Cannot move: there are no cells on that direction"
+              ,"No puedo mover hacia ahí: no hay celdas en esa dirección"
+              ))
+}
+
+function msgNotExpected(element) { 
+  return(babel("CANNOT HAPPEN: has some element changed?"
+              ,"NO PUEDE SUCEDER: ¿cambió algún elemento?"
+              ))
+}
+/* ============================================================================================================
+   END EnglishPrimitives.gbs
+   ============================================================================================================
+*/

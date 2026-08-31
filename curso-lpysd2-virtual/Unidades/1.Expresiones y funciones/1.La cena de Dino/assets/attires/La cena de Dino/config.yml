@@ -1,0 +1,20 @@
+name: La cena de Dino
+rules:
+  - { image: Fondo.png                    , when: { black: 0, blue: 0, green: 0, red: 0 } }
+  - { image: Dino.png                     , when: { black: 0, blue: 1, green: 0, red: 0 } }
+  - { image: DinoYHamburguesa.png         , when: { black: 0, blue: 1, green: 0, red: 1 } }
+  - { image: DinoYTorta.png               , when: { black: 0, blue: 1, green: 0, red: 2 } }
+  - { image: DinoYBife.png                , when: { black: 0, blue: 1, green: 1, red: 0 } }
+  - { image: DinoYDurazno.png             , when: { black: 0, blue: 1, green: 2, red: 0 } }
+  - { image: Hamburguesa.png              , when: { black: 0, blue: 0, green: 0, red: 1 } }
+  - { image: Torta.png                    , when: { black: 0, blue: 0, green: 0, red: 2 } }
+  - { image: Bife.png                     , when: { black: 0, blue: 0, green: 1, red: 0 } }
+  - { image: Durazno.png                  , when: { black: 0, blue: 0, green: 2, red: 0 } }
+  - { image: DinoYHamburguesaProhibida.png, when: { black: 1, blue: 1, green: 0, red: 1 } }
+  - { image: DinoYTortaProhibida.png      , when: { black: 1, blue: 1, green: 0, red: 2 } }
+  - { image: DinoYBifeProhibido.png       , when: { black: 1, blue: 1, green: 1, red: 0 } }
+  - { image: DinoYDuraznoProhibido.png    , when: { black: 1, blue: 1, green: 2, red: 0 } }
+  - { image: HamburguesaProhibida.png     , when: { black: 1, blue: 0, green: 0, red: 1 } }
+  - { image: TortaProhibida.png           , when: { black: 1, blue: 0, green: 0, red: 2 } }
+  - { image: BifeProhibido.png            , when: { black: 1, blue: 0, green: 1, red: 0 } }
+  - { image: DuraznoProhibido.png         , when: { black: 1, blue: 0, green: 2, red: 0 } }

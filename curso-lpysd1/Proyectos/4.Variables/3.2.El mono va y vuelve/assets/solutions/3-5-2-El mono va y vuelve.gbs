@@ -1,0 +1,16 @@
+program { IrHastaLaFrutaYVolver() }
+
+procedure IrHastaLaFrutaYVolver() {
+  cantidadDePasosDados := 0
+  while (not (hayManzana())) {
+    MoverAlMonoAl_(Este)
+    cantidadDePasosDados := cantidadDePasosDados + 1
+  }
+  TomarLaManzana()
+  Volver(cantidadDePasosDados)
+}
+
+procedure Volver(cantidadDePasos) {
+  repeat(cantidadDePasos) { MoverAlMonoAl_(Oeste) }
+}
+

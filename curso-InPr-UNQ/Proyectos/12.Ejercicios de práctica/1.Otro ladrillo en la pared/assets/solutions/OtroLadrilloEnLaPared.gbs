@@ -1,0 +1,53 @@
+program { ConstruirPared() }
+
+procedure ConstruirPared() {
+    repeat (3) {
+      ConstruirDosHileras()
+      Mover(Norte)
+    }
+    ConstruirDosHileras()
+    IrAlBorde(Sur)
+}
+
+procedure ConstruirDosHileras() {
+      ConstruirHileraInferior()
+      ConstruirHileraSuperior()
+}
+
+procedure ConstruirHileraInferior() {
+    PonerCementoEnLaHilera()
+    PonerLadrillosEnLaHileraInferior()
+}
+
+procedure ConstruirHileraSuperior() {
+    PonerCementoEnLaHilera()
+    PonerLadrillosEnLaHileraSuperior()
+}
+
+procedure PonerCementoEnLaHilera() {
+    repeat (3) {
+        PonerCemento()
+        Mover(Este)
+    }
+    PonerCemento()
+    IrAlBorde(Oeste)
+}
+
+procedure PonerLadrillosEnLaHileraInferior() {
+    repeat (3) {
+        PonerLadrillo()
+        Mover(Este)
+    }
+    PonerLadrillo()
+    IrAlBorde(Oeste)
+}
+
+procedure PonerLadrillosEnLaHileraSuperior() {
+    PonerMedioLadrilloEnElBordeOeste()
+    repeat (3) {
+        Mover(Este)
+        PonerLadrillo()
+    }
+    PonerMedioLadrilloEnElBordeEste()
+    IrAlBorde(Oeste)
+}

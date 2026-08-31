@@ -1,0 +1,22 @@
+GBB/1.0
+size 8 8
+cell 1 0 Negro 1
+cell 6 0 Negro 2
+cell 7 0 Negro 5
+cell 0 1 Negro 5
+cell 1 1 Negro 3
+cell 0 2 Negro 3
+cell 1 2 Negro 4
+cell 4 2 Negro 1
+cell 3 3 Negro 5
+cell 4 3 Negro 2
+cell 5 3 Negro 4
+cell 4 4 Negro 1
+cell 5 4 Negro 2
+cell 1 5 Negro 3
+cell 0 6 Negro 1
+cell 1 6 Negro 2
+cell 5 7 Negro 2
+cell 6 7 Negro 3
+cell 7 7 Negro 4
+head 0 0

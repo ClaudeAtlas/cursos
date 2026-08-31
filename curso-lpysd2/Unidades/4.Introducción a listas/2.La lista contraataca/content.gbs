@@ -1,0 +1,18 @@
+program {
+}
+
+procedure DescubrirLaLista() {
+  InformarNúmero_(...)
+  InformarNúmero_(segundoElemento(...))
+  InformarNúmero_(...)
+  InformarNúmero_(...)
+}
+
+function sinLosDosPrimeros(lista) {
+  return (resto_(...))
+}
+
+function segundoElemento(lista) {
+  return (primerElemento_(...))
+}
+

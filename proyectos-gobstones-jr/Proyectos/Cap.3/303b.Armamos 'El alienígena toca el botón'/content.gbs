@@ -1,0 +1,15 @@
+procedure MoverAlAlienígenaAlEste() {
+  BOOM("El programa todavía no está completo")
+}
+
+procedure TocarElBotón() {
+  BOOM("El programa todavía no está completo")
+}
+
+
+program {
+  MoverAlAlienígenaAlEste()
+  MoverAlAlienígenaAlEste()
+  MoverAlAlienígenaAlEste()
+  TocarElBotón()
+}

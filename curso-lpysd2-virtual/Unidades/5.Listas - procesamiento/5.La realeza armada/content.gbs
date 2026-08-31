@@ -1,0 +1,7 @@
+program {
+}
+
+function tieneNúmero(carta, número) { return (dameElNúmero_(carta) == número) }
+function esDe(carta, palo)          { return (dameElPalo_(carta)   == palo)   }
+
+

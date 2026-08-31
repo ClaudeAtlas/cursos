@@ -1,0 +1,31 @@
+attire:
+  active: Quell
+  visible: true
+  user_permissions:
+    can_toggle_visibility: true
+source:
+  visible: true
+  percentage: 0.4  
+board:
+  active: 1
+  initial_board_source: selected
+  visible_edition: true
+  collapse_toolbox: true
+  user_permissions:
+    can_view_attire_section: true
+    can_edit_board: false
+    can_change_initial_board: false
+    can_change_initial_board_source: false
+    can_view_size_section: false
+execution_speed:
+  active: instantaneous
+  user_permissions:
+    can_change_speed: false
+library:
+  visible: false
+blocks:
+  disabled: []
+  visible:  ["Just run the code"]
+  defaultToolbox: |
+      <category name="Just run the code" gbs_custom="SEPARATOR"> </category>
+

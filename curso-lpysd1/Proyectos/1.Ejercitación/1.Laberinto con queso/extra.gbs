@@ -1,0 +1,66 @@
+procedure AvanzarUnPasoSegúnLaFlecha() {
+   if       (aux_laFlechaApuntaAl_(Norte))
+     then   { AuxSacarLaFlecha()
+              AuxMoverAlRatónAl_(Norte)
+            }
+     elseif (aux_laFlechaApuntaAl_(Este))
+     then   { AuxSacarLaFlecha()
+              AuxMoverAlRatónAl_(Este) 
+            }
+     elseif (aux_laFlechaApuntaAl_(Sur))
+     then   { AuxSacarLaFlecha()
+              AuxMoverAlRatónAl_(Sur) 
+            }
+     elseif (aux_laFlechaApuntaAl_(Oeste))
+     then   { AuxSacarLaFlecha()
+              AuxMoverAlRatónAl_(Oeste) 
+            }
+}
+
+procedure AuxMoverAlRatónAl_(dir) {
+ 	if (nroBolitas(Azul)/=1) { BOOM("No está el ratón")   }
+  	if (nroBolitas(Verde)>=2) { BOOM("Estoy en la salida") }
+ 	Sacar(Azul)
+ 	Mover(dir)
+ 	if (hayBolitas(Negro))    { BOOM("Choque contra la pared") }
+ 	Poner(Azul)
+}
+
+procedure AuxSacarLaFlecha() {
+   if (not hayBolitas(Rojo)) { BOOM("No hay flecha en esta celda") }
+   repeat(nroBolitas(Rojo)) { Sacar(Rojo) } 
+}
+
+procedure ComerElQueso() {
+   if (nroBolitas(Verde)>=2) { BOOM("Estoy en la salida") }
+   if (nroBolitas(Verde)==0) { BOOM("Acá no hay queso") }
+   Sacar(Verde)
+}   
+
+
+/*@ATTRIBUTE@block_name@¿hay queso acá?@*/
+function hayQuesoAcá() {
+   if (nroBolitas(Azul)/=1)  { BOOM("No está el ratón")   }
+   if (nroBolitas(Verde)>=2) { BOOM("No puedo preguntar si hay queso si estoy en la salida") }
+   return (nroBolitas(Verde)==1)
+}
+
+/*@ATTRIBUTE@block_name@¿estoy en la meta?@*/
+function estoyEnLaMeta() {
+   if (nroBolitas(Azul)/=1)  { BOOM("No está el ratón")   }
+   return (nroBolitas(Verde)>=2)
+}
+
+function aux_laFlechaApuntaAl_(dir) {
+   return (nroBolitas(Rojo)==aux_códigoDeDirección(dir))
+}
+
+function aux_códigoDeDirección(dir) {
+   if         (dir == Norte) { ret := 1 }
+	else { if (dir == Este) { ret := 2  }
+    else { if (dir == Sur) { ret := 3   }
+    else { if (dir == Oeste) { ret := 4 }
+    else { BOOM("No es una dirección válida") }
+    }}}
+    return (ret)
+}

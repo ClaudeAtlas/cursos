@@ -1,0 +1,13 @@
+procedure EncenderLaFilaDeLuces() {
+  while (not (luchoEstáEnLaMeta())) {
+    if (hayUnaLuzApagada()) {
+      EncenderLaLuz()
+    }
+    MoverALuchoAlEste()
+  }
+}
+
+
+program {
+  EncenderLaFilaDeLuces()
+}

@@ -1,0 +1,38 @@
+GBB/1.0
+size 11 7
+cell  4 3 Rojo 10
+cell  5 3 Rojo 20
+cell  0 6 Azul 10 Negro 1022 
+cell  1 6 Azul 10 Negro 1026
+cell  2 6 Azul 10 Negro 1030
+cell  3 6 Azul 10 Negro 1010
+cell  4 6 Azul 10 Negro 1013
+cell  5 6 Azul 10 Negro 1026
+cell  6 6 Azul 10 Negro 1023
+cell  7 6 Azul 10 Negro 1011
+cell  8 6 Azul 10 Negro 1024
+cell  9 6 Azul 10 Negro 1014
+cell 10 6 Azul 10 Negro 1026
+cell  0 5 Azul 10 Negro 1030
+cell  1 5 Azul 10 Negro 1010
+cell  2 5 Azul 10 Negro 1029
+cell  3 5 Azul 10 Negro 1015
+cell  4 5 Azul 10 Negro 1027
+cell  5 5 Azul 10 Negro 1029
+cell  6 5 Azul 10 Negro 1015
+cell  7 5 Azul 10 Negro 1030
+cell  8 5 Azul 10 Negro 1015
+cell  9 5 Azul 10 Negro 1024
+cell 10 5 Azul 10 Negro 1031
+cell  0 4 Azul 10 Negro 1011
+cell  1 4 Azul 10 Negro 1024
+cell  2 4 Azul 10 Negro 1010
+cell  3 4 Azul 10 Negro 1011
+cell  4 4 Azul 10 Negro 1013
+cell  5 4 Azul 10 Negro 1013
+cell  6 4 Azul 10 Negro 1019
+cell  7 4 Azul 10 Negro 1026
+cell  8 4 Azul 10 Negro 1024
+cell  9 4 Azul 10 Negro 1015
+cell 10 4 Azul 10 Negro 1030
+head  0 6 

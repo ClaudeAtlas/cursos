@@ -1,0 +1,15 @@
+﻿program { 
+}
+
+procedure InformarDistanciaAlBorde() {
+  Poner__Veces(...,  distanciaHastaElBorde(Norte))
+  Poner__Veces(Negro, ...)
+  ...
+}
+
+function distanciaHastaElBorde(direcciónAMedir) {
+  ...
+}
+
+procedure PasarALaSiguienteCelda(direcciónAMover) { if (puedeMover(direcciónAMover)) { Mover(direcciónAMover) } }
+function esLaÚltimaCelda(dirección) { return (not(puedeMover(dirección))) }

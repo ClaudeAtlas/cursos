@@ -1,0 +1,173 @@
+
+/* ============================================================================================================
+   START Quell-Reading.gbs
+   Operations to read a Quell level from the board. Awareness of Quell-Representation is needed
+// REQUIRE: Babel.gbs
+// REQUIRE: EnglishPrimitives.gbs
+// REQUIRE: Prelude.gbs
+// REQUIRE: Quell-Model.gbs
+// REQUIRE: Quell-Representation.gbs
+   ============================================================================================================
+*/
+
+// ---------
+// Reading operations
+// OBS: All operations has as PRECOND:
+//        * there is a quell level represented in the Gobstones board 
+// ---------
+function currentQBall() {
+  code := currentNumWith_(ballColor())
+  pos  := currentPos()
+  return (choose yield
+    NoBall when (code==0) yield
+    QBallTo(bpos <- pos, goingTo <- decodedDir_(code)   , beaming <- False) when (num_IsBetween_And_(code,  1,  4)) yield
+    QBallTo(bpos <- pos, goingTo <- decodedDir_(code-10), beaming <- True)  when (num_IsBetween_And_(code, 11, 14)) yield
+    QBallAt(bpos <- pos)                                                    otherwise) // ballColor stones are between 5 and 9
+}
+
+function currentQElemTo_(dir) { Move(dir); return (currentQElem()) } /* PRECOND: there is a cell to dir */
+function currentQElem() {
+  /* PRECOND: * there is a qelem represented in the current cell */
+  return(matching (numStones(qelemColor())) yield
+          Empty                 on 0 yield
+          currentCorner()       on 1 yield
+          currentAngle()        on 2 yield
+          currentLimit()        on 3 yield
+          currentPortal()       on 4 yield
+          currentGate()         on 5 yield
+          currentSpike()        on 6 yield
+          Multispike            on 7 yield
+          RotableSpike          on 8 yield
+          Switch                on 9 yield
+          Wall                  on 10 yield
+          Out                   on 11 yield
+          boom(msgNoQElement()) otherwise)
+}
+
+function currentQToken() {
+  return(choose yield ABox    when (hasBox()) yield
+                APearl  when (hasPearl()) yield
+                AJewel  when (hasJewel()) yield
+                ABall   when (hasBall()) yield
+                NoToken otherwise)
+}
+
+function currentJewel() { return(currentNumWith_(attrAColor())) }
+function currentBox()   {
+  /* PRECOND: there is a Box represented in the current cell 
+     OBS: boxes are represented simply by their Gender
+  */
+  codedBox     := currentNumWith_(attrBColor())
+  code         := codedBox div 100
+  isBeamingBox := (codedBox mod 100) div 10 == 1
+  return (decodeGender_(code), isBeamingBox)
+}
+
+function currentTopShowHint() {
+  GoToTopShowHint()
+  return(currentBoolWith_(attrBColor()))
+}
+
+function currentTopDHint() { return(dHintForNHint_On_(currentTopNHint(), level())) }
+function currentTopNHint() {
+  GoToTopHint()
+  return (currentMNumWith_(attrBColor()))
+}
+
+function currentTopSpikesDir() {
+  GoToTopSpikesDir()
+  return (currentMDirWith_(attrAColor()))
+}
+
+function currentTopNumPearls() {
+  GoToTopNumPearls()
+  return (currentNumWith_(attrAColor()))
+}
+
+// ---------
+// Reading specific QElems
+// ---------
+function currentCorner() { return(Corner(dir      <- currentDirWith_ (attrAColor()))) } /* PRECOND: * there is a  corner represented in the current cell */
+function currentAngle()  { return(Angle (dir      <- currentDirWith_ (attrAColor()))) } /* PRECOND: * there is an angle  represented in the current cell */
+function currentLimit()  { return(Limit (pointsTo <- currentDirWith_ (attrAColor()))) } /* PRECOND: * there is a  limit  represented in the current cell */
+function currentSpike()  { return(Spike (pointsTo <- currentDirWith_ (attrAColor()))) } /* PRECOND: * there is a  spike  represented in the current cell */
+function currentGate()   { code := currentNumWith_(attrBColor()) mod 10
+                           return(Gate  (closed   <- decodedBool_(code)))             } /* PRECOND: * there is a  gate   represented in the current cell */
+function currentPortal() { return(Portal(target   <- currentPosWith_(attrAColor())
+                                       , id       <- currentNumWith_(attrBColor())))  } /* PRECOND: * there is a  portal represented in the current cell */
+
+
+// ---------
+// Detecting QElems
+// ---------
+function hasBall() {
+  ballCode := numStones(ballColor())
+  return(ballCode > 0)
+}
+
+function hasBeamingBall() {
+  /* PRECOND: current cell has a Portal */
+  ballCode := numStones(ballColor())
+  return(ballCode > 10)
+}
+
+function hasBorder() {
+  /* OBS: a border is either an Angle or a Limit */
+  qelemId := numStones(qelemColor())
+  return(qelemId == 2 || qelemId == 3)
+}
+
+function hasPortal() {
+  qelemId := numStones(qelemColor())
+  return(qelemId == 4)
+}
+
+function hasBeamingBox() {
+  /* PRECOND: current cell has a Portal */
+  boxCode := truncate_ToMultipleOf_(numStones(attrBColor()), 10)
+  return(boxCode==110 || boxCode==210) 
+}
+
+function hasRotableQElem() {
+  qelemId := numStones(qelemColor())
+  return(qelemId==8 || qelemId==9)
+}
+
+// ---------
+// Detecting QTokens
+// ---------
+function hasBox()   { 
+  /* OBS: boxes are represented with 10 to 40 stones, bur there can be some more for other things (from Portals)
+          (boxes may appear on Empty, Switch, Portals, and open Gate)
+  */
+  return(numStones(attrBColor())>=10) 
+}
+
+function hasPearl() {
+  /* OBS: pearls appear only on Empty */
+  qelemId := numStones(qelemColor())
+  return(qelemId==0 && numStones(attrBColor())==1) 
+}
+
+function hasJewel() {
+  /* OBS: jewels appear only on Empty or Wall */
+  qelemId := numStones(qelemColor())
+  return ((qelemId==0 || qelemId==10) && hasStones(attrAColor()))
+}
+
+function hasWall() {
+  qelemId := numStones(qelemColor())
+  return (qelemId==10)
+}
+
+// ---------
+// Error messages
+// ---------
+function msgNoQElement() { 
+  return(babel("There is no QElement represented in the current cell"
+              ,"No hay un QElement representado en la celda actual"))
+}
+/* ============================================================================================================
+   END Quell-Reading.gbs
+   ============================================================================================================
+*/

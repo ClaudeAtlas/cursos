@@ -1,0 +1,104 @@
+/*@ATTRIBUTE@tooltip@
+     PROPÓSITO: Poner cemento en la celda actual
+     PRECONDICIONES: 
+       * o bien la celda actual debe estar vacía, 
+       * o bien debe tener un ladrillo entero en la parte
+         inferior, sin cemento sobre él
+  @*/
+procedure PonerCemento() {
+    if (aux_LaCeldaEstáVacía() 
+     || aux_HayLadrilloEnHileraInferiorSinCemento()) 
+         { Poner(Rojo)                    }
+    else { BOOM("No puedo poner cemento en esta celda") }
+}
+
+/*@ATTRIBUTE@tooltip@
+     PROPÓSITO: Poner un ladrillo en la celda actual
+     PRECONDICIONES: 
+      * si no hay ladrillos en la celda actual, debe haber
+        cemento en la misma
+      * si hay un ladrillo entero en la celda actual, debe haber
+        cemento sobre el mismo, y debe existir una celda al Oeste
+        que ya contenga un ladrillo entero y medio ladrillo del
+        lado izquierdo
+  @*/
+procedure PonerLadrillo() {
+    if     (aux_HayCementoEnHileraInferior()) 
+           { Poner(Verde) }
+    elseif (aux_PuedoPonerLadrilloEnHileraSuperior()) 
+           { 
+             Mover(Oeste)
+             AuxPonerMedioLadrilloAl(Este)
+             Mover(Este)
+             AuxPonerMedioLadrilloAl(Oeste)
+           }
+    else   { BOOM("No puedo poner un ladrillo") }
+}
+
+/*@ATTRIBUTE@tooltip@
+     PROPÓSITO: Poner medio ladrillo en la celda actual
+     PRECONDICIONES: 
+      * la celda actual debe estar en el borde Oeste
+      * debe haber un ladrillo entero en la parte inferior de la
+        celda actual, y cemento sobre él
+  @*/
+procedure PonerMedioLadrilloEnElBordeOeste() {
+    if (not puedeMover(Oeste)) 
+         { AuxPonerMedioLadrilloAl(Oeste) }
+    else { BOOM("Solo puedo poner medio ladrillo en el borde") }
+}
+
+/*@ATTRIBUTE@tooltip@
+     PROPÓSITO: Poner medio ladrillo en la celda actual
+     PRECONDICIONES: 
+      * la celda actual debe estar en el borde Este
+      * debe haber un ladrillo entero en la parte inferior de la
+        celda actual, cemento sobre él, y medio ladrillo del lado
+        izquierdo de la celda
+  @*/
+procedure PonerMedioLadrilloEnElBordeEste() {
+    if (not puedeMover(Este)) 
+         { AuxPonerMedioLadrilloAl(Este) }
+    else { BOOM("Solo puedo poner medio ladrillo en el borde") }
+}
+
+procedure AuxPonerMedioLadrilloAl(dir) {
+    if     (dir==Oeste && aux_HayCementoEnLaHileraSuperior()) 
+           { Poner(Azul)  }
+    elseif (dir==Este  && aux_HayMedioLadrilloAlOeste())         
+           { Poner(Negro) }
+    else   { BOOM("No puedo poner medio ladrillo acá") }
+}
+
+function aux_LaCeldaEstáVacía() {
+  return(not hayBolitas(Azul) && not hayBolitas(Negro)
+      && not hayBolitas(Rojo) && not hayBolitas(Verde))
+}
+
+function aux_HayLadrilloEnHileraInferiorSinCemento() {
+  return(hayBolitas(Verde) && not aux_HayCementoEnLaHileraSuperior())
+}
+
+function aux_HayCementoEnHileraInferior() {
+  return(nroBolitas(Rojo)==1)
+}
+
+function aux_PuedoPonerLadrilloEnHileraSuperior() {
+  return(puedeMover(Oeste) 
+      && aux_HayCementoEnLaHileraSuperiorAlOeste()
+      && aux_HayCementoEnLaHileraSuperior())
+}
+
+function aux_HayCementoEnLaHileraSuperior() {
+  return(nroBolitas(Rojo)==2)
+}
+
+function aux_HayCementoEnLaHileraSuperiorAlOeste() {
+  Mover(Oeste)
+  return(aux_HayCementoEnLaHileraSuperior())
+}
+
+function aux_HayMedioLadrilloAlOeste() {
+  return(hayBolitas(Azul))
+}
+

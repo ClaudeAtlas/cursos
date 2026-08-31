@@ -1,0 +1,10 @@
+name: Lucho cuadrado
+rules:
+  - { image: Bosque.png,                     when: { black: 0, blue: 0, green: 0, red: 1 } }
+  - { image: Campamento.png,                 when: { black: 0, blue: 0, green: 0, red: 0 } }
+  - { image: FogataApagada.png,              when: { black: 0, blue: 1, green: 0, red: 0 } }
+  - { image: FogataPrendida.png,             when: { black: 0, blue: 2, green: 0, red: 0 } }
+  - { image: ExploradorEnElBosque.png,       when: { black: 1, blue: 0, green: 0, red: 1 } }
+  - { image: Explorador.png,                 when: { black: 1, blue: 0, green: 0, red: 0 } }
+  - { image: ExploradorEnFogataApagada.png,  when: { black: 1, blue: 1, green: 0, red: 0 } }
+  - { image: ExploradorEnFogataPrendida.png, when: { black: 1, blue: 2, green: 0, red: 0 } }

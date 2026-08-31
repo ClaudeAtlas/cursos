@@ -1,0 +1,15 @@
+function mazoConvertidoAOros(mazo) {
+  cartasYaConvertidas := mazoVacío()
+  foreach carta in mazo {
+    cartasYaConvertidas := agregarAlFinalDelMazo__(cartasYaConvertidas, carta)
+  }
+  return (cartasYaConvertidas)
+}
+
+
+program {
+  IrAlInicioDeLaEntrada()
+  mazoDeEntrada := mazoActual()
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarElMazo_(mazoConvertidoAOros(mazoDeEntrada))
+}

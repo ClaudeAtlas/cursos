@@ -1,0 +1,242 @@
+/* ============================================================================================================
+   START Quell-Drawing.gbs
+   Operations to draw a Quell level on the board. Awareness of Quell-Representation is needed
+// REQUIRE: Babel.gbs
+// REQUIRE: EnglishPrimitives.gbs
+// REQUIRE: Prelude.gbs
+// REQUIRE: Quell-Model.gbs
+// REQUIRE: Quell-Representation.gbs
+   ============================================================================================================
+*/
+
+procedure DrawQLevel_(quell) {
+  /* OBS: to be used only on the initial drawing */
+  ClearBoard()
+  DrawTopBar_(quell)
+  DrawQBoard_WithSpikesTo_(board(quell), spikesDir(quell))
+  DrawQJewel_(jewel(quell))
+  DrawQBoxes_(boxes(quell))
+  DrawQBall_WithDHint_(ball(quell), firstTutorialDHintOn_(quell)) // The first time is accesed directly, without arithmetic operations
+}
+
+procedure SetTopShowHint() {
+  /* PRECOND: TopShowHint is false */
+  GoToTopShowHint()
+  DrawBool_With_(True, attrBColor())
+}
+
+procedure SetTopJewelFound() {
+  pos := currentPos()
+  GoToTopJewel()
+  DrawBool_With_(True, attrBColor())
+  GoToCell_(pos)
+}
+
+procedure IncrementTopNumMoves() {
+  pos := currentPos()
+  GoToTopNumMoves()
+  numMoves := currentNumWith_(attrAColor())
+  ClearTopNumMoves()
+  DrawNum_With_(numMoves+1, attrAColor())
+  GoToCell_(pos)
+}
+
+procedure DecrementTopNumPearls() {
+  pos := currentPos()
+  GoToTopNumPearls()
+  numPearls := currentNumWith_(attrAColor())
+  ClearTopNumPearls()
+  DrawNum_With_(numPearls-1, attrAColor())
+  GoToCell_(pos)
+}
+
+procedure SetTopHintTo_(mdir) {
+  pos := currentPos()
+  GoToTopHint()
+  ClearTopHint()
+  DrawMNum_With_(mdir, attrBColor())
+  GoToCell_(pos)
+}
+
+procedure SetTopSpikesDirTo_(dir) {
+  pos := currentPos()
+  GoToTopSpikesDir()
+  ClearTopSpikesDir()
+  DrawMDir_With_(just(dir), attrAColor())
+  GoToCell_(pos)
+}
+
+// ---------
+// Drawing operations
+// Level 1
+// ---------
+procedure DrawTopBar_(quell) {
+  GoToCorner__(North,West); EncodeTopShowHint_As_   (isTutorial(quell)                , 0)
+  Move(East)              ; EncodeTopNum_As_        (numMoves(quell)                  , 1)
+  Move(East)              ; EncodeTopNum_As_        (minMoves(quell)                  , 2)
+  Move(East)
+  GoToEdge(East)          ; EncodeTopMDir_As_       (spikesDir(quell)                 , 5)
+  Move(West)              ; EncodeTopNum_AndMNum_As_(numPearls(quell), nHintOn_(quell), 4)
+  Move(West)              ; EncodeTopJewel_As_      (jewel(quell)                     , 3)  
+  Move(West)              ; PadEmptyCellAs_(0)
+}
+
+procedure DrawQBoard_WithSpikesTo_(board, spikesDir) { 
+  /* PRECOND: the board has at least one qelem */
+  GoToCorner__(North, West) Move(South)
+  DrawQRow_WithSpikesTo_(head(board), spikesDir)
+  foreach row in tail(board) { Move(South); DrawQRow_WithSpikesTo_(row, spikesDir) }
+}
+
+procedure DrawQJewel_(jewel) { 
+  if (isJewel_(jewel)) { 
+    GoToCell_(jpos(jewel))
+    if (hasWall()) { DrawBool_With_(True, attrBColor()) }
+    DrawJewel_(hits(jewel)) 
+  } 
+}
+
+procedure DrawQBoxes_(boxes) { 
+  foreach box in boxes { 
+    GoToCell_(fst(box))
+    DrawBox_(snd(box))
+  }
+}
+
+procedure DrawMovingQBall_(ball) { 
+  /* PURPOSE: draw the ball in the current cell (ignoring bpos)
+     PRECOND: isMovingBall_(ball) 
+  */
+  DrawDir_With_(goingTo(ball), ballColor())
+  if (beaming(ball)) { Drop__Times(ballColor(), 10) }
+}
+
+procedure DrawStaticQBall() { 
+  /* PURPOSE: draw the ball in the current cell (ignoring bpos)
+     PRECOND: isStaticBall_(ball) 
+  */
+  Drop__Times(ballColor(), 5)
+}
+
+procedure DrawQBall_(ball)   { 
+  /* PURPOSE: draw the ball in the current cell (ignoring bpos) */
+  switch (ball)  
+    on QBallAt(bpos -> pos)               do { DrawStaticQBall()      }
+    on QBallTo(bpos -> pos, goingTo -> dir, beaming -> beaming) do { DrawMovingQBall_(ball) }
+    on NoBall                     do { }
+   
+}  
+
+procedure DrawQBall_WithDHint_(ball, mdir)   { 
+  switch (ball)  
+    on QBallAt(bpos -> pos)               do { GoToCell_(pos); DrawStaticQBall()
+                                    DrawMDir_With_(mdir, ballColor())      }
+    on QBallTo(bpos -> pos, goingTo -> dir, beaming -> beaming) do { GoToCell_(pos); DrawMovingQBall_(ball) }
+    on NoBall                     do { }
+   
+}
+
+// ---------
+// Drawing operations
+// Level 2
+// ---------
+// Top bar operations
+procedure MarkTopCell_(i)    { Drop__Times(qelemColor(), 100+i)                            }
+procedure PadEmptyCellAs_(i) { while(not isCellAtTopRow()) { MarkTopCell_(i); Move(West) } }
+function  isCellAtTopRow()   { return(numStones(qelemColor()) >= 100)                      }
+
+procedure EncodeTopShowHint_As_(showHint, i) {
+  MarkTopCell_(i)
+  DrawBool_With_(True,     attrAColor()) // This is to show the visual aid of Hint
+  DrawBool_With_(showHint, attrBColor()) // At the beginning Tutorial levels start with hints on
+}
+
+procedure EncodeTopJewel_As_(jewel, i) {
+  MarkTopCell_(i)
+  DrawBool_With_(isJewel_(jewel), attrAColor())
+  DrawBool_With_(isFound_(jewel), attrBColor()) 
+}
+
+procedure EncodeTopBool_As_(b , i) { MarkTopCell_(i); DrawBool_With_(b , attrBColor()) }
+procedure EncodeTopPos_As_(pos, i) { MarkTopCell_(i); DrawPos_With_(pos, attrAColor()) }
+procedure EncodeTopMDir_As_(md, i) { MarkTopCell_(i); DrawMDir_With_(md, attrAColor()) }
+procedure EncodeTopNum_As_(n  , i) { MarkTopCell_(i); DrawNum_With_(n  , attrAColor()) }
+procedure EncodeTopNum_AndMNum_As_(n, mn, i) { 
+  MarkTopCell_(i) 
+  DrawNum_With_ (n, attrAColor()) 
+  DrawMNum_With_(mn, attrBColor()) 
+}
+
+// Board
+procedure DrawQRow_WithSpikesTo_(row, spikesDir) {
+  /* PRECOND: the row has at least one element */
+  GoToEdge(West)
+  DrawQElem_WithSpikesTo_(head(row), spikesDir)
+  foreach qelem in tail(row) { Move(East); DrawQElem_WithSpikesTo_(qelem, spikesDir) }
+}
+
+procedure DrawQElemId_(qelem) { Drop__Times(qelemColor(), codeOfQelem_(qelem)) }
+procedure DrawQElem_WithSpikesTo_(qelem, spikesDir) {
+  DrawQElemId_(qelem)
+  switch (qelem)  
+    on Pearl              do { DrawBool_With_(True               , attrBColor())            }
+    on Corner(dir -> dir)        do { DrawDir_With_ (dir                , attrAColor())            }
+    on Angle(dir -> dir)         do { DrawDir_With_ (dir                , attrAColor())            }
+    on Limit(pointsTo -> pointsTo)    do { DrawDir_With_ (pointsTo           , attrAColor())            }
+    on Portal(id -> id, target -> target) do { DrawPos_With_ (target             , attrAColor())            
+                            DrawNum_With_ (id                 , attrBColor())            }
+    on Gate(closed -> closed)       do { DrawBool_With_(closed             , attrBColor()) }
+    on Spike(pointsTo -> dir)         do { DrawDir_With_(dir                 , attrAColor())            }
+    on RotableSpike       do { Assert_OrFail_(not isNothing(spikesDir), msgInvalidQuell()) // spikesDir cannot be Nothing if there are RotableSpikes
+                            DrawDir_With_(fromJust(spikesDir) , attrAColor())            } 
+    on Switch             do { Assert_OrFail_(not isNothing(spikesDir), msgInvalidQuell()) // spikesDir cannot be Nothing if there are Switches
+                            DrawDir_With_(fromJust(spikesDir) , attrAColor())            } 
+    else                  do { }
+     
+}
+
+procedure DrawJewel_(hits) { DrawNum_With_(hits, attrAColor()) }
+procedure DrawBox_(gender) {
+  code := codeOfGender_(gender)
+  DrawNum_With_(100*code, attrBColor())
+}
+
+procedure DrawBeamingBox_(gender) {
+  code := codeOfGender_(gender)
+  DrawNum_With_(100*code+10, attrBColor()) // Beaming is indicated with 10 more stones
+}
+
+// ---------
+// Clearing operations
+// ---------
+procedure ClearBox() {
+  /* PRECOND: there is a Box represented in the current cell */
+  boxCode := truncate_ToMultipleOf_(currentNumWith_(attrBColor()), 10)
+  Grab__Times(attrBColor(), boxCode)
+}
+
+procedure ClearAttrA()        { GrabAll_(attrAColor()) }
+procedure ClearAttrB()        { GrabAll_(attrBColor()) }
+  
+procedure ClearBall()         { GrabAll_(ballColor())  }
+procedure ClearPearl()        { ClearAttrB()           }
+procedure ClearJewel()        { ClearAttrA()           }
+
+procedure ClearTopShowHint()  { ClearAttrB()           }
+procedure ClearTopNumPearls() { ClearAttrA()           }
+procedure ClearTopNumMoves()  { ClearAttrA()           }
+procedure ClearTopHint()      { ClearAttrB()           }
+procedure ClearTopSpikesDir() { ClearAttrA()           }
+
+// ---------
+// Error messages
+// ---------
+function msgInvalidQuell() { 
+  return(babel("Quell representation is invalid"
+              ,"La representación de Quell es inválida"))
+}
+
+/* ============================================================================================================
+   END Quell-Drawing.gbs
+   ============================================================================================================
+*/

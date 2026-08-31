@@ -1,0 +1,16 @@
+interactive program {
+  on K_LEFT  { MoverSiPuede_(Oeste)    }
+  on K_RIGHT { MoverSiPuede_(Este)     }
+  on K_UP    { MoverSiPuede_(Norte)    }
+  on K_DOWN  { MoverSiPuede_(Sur)      }
+  on K_1     { PonerDígitoSiSePuede(1) }
+  on K_2     { PonerDígitoSiSePuede(2) }
+  on K_3     { PonerDígitoSiSePuede(3) }
+}
+
+procedure PonerDígitoSiSePuede(dígitoAPoner) {
+  if (esVálidoPonerlo()) { PonerDígito_(dígitoAPoner) }
+}
+
+function esVálidoPonerlo() { return (not(hayDígito())) }
+

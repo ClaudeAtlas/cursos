@@ -1,0 +1,10 @@
+procedure InformarLosNúmerosDelMazo(mazo) {
+}
+
+
+program {
+  IrAlInicioDeLaEntrada()
+  mazoDeEntrada := mazoActual()
+  IrAlInicioDeLaSalida()
+  InformarLosNúmerosDelMazo(mazoDeEntrada)
+}

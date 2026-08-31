@@ -1,0 +1,47 @@
+name: ¡No te gastes el ancho! - parte 1
+attire:
+  active: 'Cartas, letras y números'
+  user_permissions:
+    can_toggle_visibility: false
+  visible: true
+blocks:
+  defaultToolbox: | 
+    <category name="Comandos básicos">
+        <block type="AlternativaCompleta"></block>
+    </category>
+    <category name="Expresiones básicas">
+        <block type="OperadorDeComparacion"></block>
+        <block type="OperadorLogico"></block>
+        <block type="not"></block>
+    </category>
+    <category name="Operaciones de Cartas">
+        <block type="palo_"></block>
+        <block type="númeroDeCartaEspañolaDe40_"></block>
+        <block type="PonerCarta_"></block>
+        <block type="cartaQueJugóLaComputadora"></block>
+        <block type="dameCarta__"></block>
+        <block type="dameElPalo_"></block>
+        <block type="dameElNúmero_"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Mis funciones" custom="FUNCTION_CALLS">        </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturnnoparams"></block>
+        <block type="procedures_defreturnsimple"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  user_permissions:
+    can_change_source: false
+    can_edit_board: false
+  visible_edition: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.85

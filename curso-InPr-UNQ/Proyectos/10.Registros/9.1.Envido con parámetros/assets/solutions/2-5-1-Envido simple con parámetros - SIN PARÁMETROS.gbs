@@ -1,0 +1,17 @@
+procedure DeclararAmbosEnvidos() {
+  DecirMiEnvido_(miEnvido())
+  DecirSuEnvido_(suEnvido())
+}
+
+function miEnvido() {
+  return (20 + (dameElNúmero_(miCartaIzquierda()) + dameElNúmero_(miCartaDerecha())))
+}
+
+function suEnvido() {
+  return (20 + (dameElNúmero_(suCartaIzquierda()) + dameElNúmero_(suCartaDerecha())))
+}
+
+
+program {
+  DeclararAmbosEnvidos()
+}

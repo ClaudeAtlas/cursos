@@ -1,0 +1,60 @@
+name: Encontrar la carta más chica
+attire:
+  active: 'Cartas, letras y números'
+  user_permissions:
+    can_toggle_visibility: false
+  visible: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="IrAlInicioDeLaEntrada"></block>
+        <block type="IrAlInicioDeLaSalida"></block>
+        <block type="AlternativaSimple"></block>
+        <block type="RepeticionCondicional"></block>
+        <block type="ForEach"></block>
+        <block type="Asignacion"></block>
+    </category>
+    <category name="Expresiones básicas">
+        <block type="not"></block>
+    </category>
+    <category name="Operaciones de cartas">
+        <block type="esMenorCarta__"></block>
+    </category>
+    <category name="Operaciones de mazos">
+        <block type="mazoActual"></block>
+        <block type="InformarEnEsteLugarElMazo_"></block>
+        <block type="quedanCartas_"></block>
+        <block type="dameLaPrimeraCartaDe_"></block>
+        <block type="sacarLaPrimeraCartaDe_"></block>
+        <block type="sinLaCartaMásChica_"></block>
+        <block type="mazoVacío"></block>
+        <block type="agregarAlFinalDelMazo__"></block>
+        <block type="cartasDe_"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Mis funciones" custom="FUNCTION_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+        <block type="procedures_defreturnsimplewithparams"></block>
+        <block type="procedures_defreturn"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  visible_edition: true
+  collapse_toolbox: false
+  user_permissions:
+    can_view_attire_section: false
+    can_edit_board: false
+    can_change_initial_board: true
+    can_change_initial_board_source: true
+    can_view_size_section: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+source:
+  visible: true
+  percentage: 0.7
+library:
+  visible: false

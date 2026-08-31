@@ -1,0 +1,60 @@
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.9
+board:
+  visible_edition: false
+  collapse_toolbox: false
+  user_permissions:
+    can_edit_board: false
+    can_view_size_section: true
+    can_view_attire_section: true
+  active: 1
+  initial_board_source: random
+execution_speed:
+  user_permissions:
+    can_change_speed: true
+  active: high
+attire:
+  visible: true
+  user_permissions:
+    can_toggle_visibility: false
+  active: 'Cartas, letras y números'
+initialDescription: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="IrAlInicioDeLaEntrada"></block>
+        <block type="InformarNúmero_"></block>
+        <block type="RepeticionCondicional"></block>
+        <block type="Asignacion"></block>
+        <block type="ForEach"></block>
+    </category>
+    <category name="Expresiones básicas">
+        <block type="math_number"></block>
+        <block type="OperadorNumerico"></block>
+        <block type="not"></block>
+    </category>
+    <category name="Operaciones de cartas">
+        <block type="dameCarta__"></block>
+        <block type="palo_"></block>
+        <block type="valorDeCartaEspañolaDe40_"></block>
+        <block type="dameElPalo_"></block>
+        <block type="dameElValor_"></block>
+    </category>
+    <category name="Operaciones de mazos">
+        <block type="mazoActual"></block>
+        <block type="quedanCartas_"></block>
+        <block type="dameLaPrimeraCartaDe_"></block>
+        <block type="sacarLaPrimeraCartaDe_"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Mis funciones" custom="FUNCTION_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+        <block type="procedures_defreturnsimplewithparams"></block>
+        <block type="procedures_defreturn"></block>
+    </category>
+customErrors: null
+name: ¿Cuántos puntos tengo?

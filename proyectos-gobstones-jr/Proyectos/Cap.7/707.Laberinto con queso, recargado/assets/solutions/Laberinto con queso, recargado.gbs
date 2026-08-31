@@ -1,0 +1,33 @@
+procedure SalirDelLaberintoComiendoQueso() {
+  while (not (elRatónEstáEnLaSalida())) {
+    ComerQuesoSiHay()
+    AvanzarUnPasoSiguiendoLaFlecha()
+  }
+}
+
+procedure ComerQuesoSiHay() {
+  if (hayQueso()) {
+    ComerQueso()
+  }
+}
+
+procedure AvanzarUnPasoSiguiendoLaFlecha() {
+  if (laFlechaApuntaAlNorte()) {
+    SacarLaFlecha()
+    MoverAlRatónAl_(Norte)
+  } elseif (laFlechaApuntaAlEste()) {
+    SacarLaFlecha()
+    MoverAlRatónAl_(Este)
+  } elseif (laFlechaApuntaAlSur()) {
+    SacarLaFlecha()
+    MoverAlRatónAl_(Sur)
+  } else {
+    SacarLaFlecha()
+    MoverAlRatónAl_(Oeste)
+  }
+}
+
+
+program {
+  SalirDelLaberintoComiendoQueso()
+}

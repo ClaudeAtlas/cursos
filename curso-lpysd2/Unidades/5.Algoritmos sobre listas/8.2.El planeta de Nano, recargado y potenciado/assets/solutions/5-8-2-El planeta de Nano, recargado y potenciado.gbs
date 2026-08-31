@@ -1,0 +1,18 @@
+program { ComerTodasLasFilas([9, 4, 7, 2, 8, 5, 6, 3]) }
+
+procedure ComerTodasLasFilas(cantidadesDeBananasEnCadaFila) {
+  foreach cantidadDeBananas in cantidadesDeBananasEnCadaFila {
+    ComerFila(cantidadDeBananas)
+  }
+}
+
+procedure ComerFila(cantidadDeBananas) {
+  repeat(cantidadDeBananas) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+  MoverANanoHaciaArriba()
+}
+
+

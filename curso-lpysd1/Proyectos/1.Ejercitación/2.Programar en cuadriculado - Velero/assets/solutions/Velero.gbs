@@ -1,0 +1,52 @@
+program
+{
+   UbicarEnLaPosiciónInicialParaElVelero()
+   DibujarVelero()
+}
+
+procedure UbicarEnLaPosiciónInicialParaElVelero() {
+   repeat (7) { MoverAl_(Norte) }
+   repeat (9) { MoverAl_(Este) }
+}
+
+procedure DibujarVelero() {
+   DibujarVelaIzquierda()
+   IrDeVelaIzqAVelaDer()
+   DibujarVelaDerecha()
+   IrDeVelaDerACasco()
+   DibujarCasco()
+}
+
+procedure DibujarVelaIzquierda()
+{
+  repeat (7) { Pintar(); MoverAl_(Oeste) }
+  repeat (7) { Pintar(); MoverAl_(Este); MoverAl_(Norte) }
+  repeat (7) { Pintar(); MoverAl_(Sur) } 
+}
+
+procedure DibujarVelaDerecha()
+{
+  repeat(6) { Pintar(); MoverAl_(Norte) }
+  MoverAl_(Este)
+  repeat(3) { Pintar(); MoverAl_(Este); MoverAl_(Sur); MoverAl_(Sur) }
+  repeat(4) { Pintar(); MoverAl_(Oeste) }
+}
+
+procedure DibujarCasco()
+{
+  repeat ( 5) { Pintar(); MoverAl_(Este) } 
+  repeat ( 2) { Pintar(); MoverAl_(Sur); MoverAl_(Oeste) }
+  repeat (11) { Pintar(); MoverAl_(Oeste) } 
+  repeat ( 2) { Pintar(); MoverAl_(Oeste); MoverAl_(Norte) }
+  repeat (10) { Pintar(); MoverAl_(Este) }   
+}
+
+procedure IrDeVelaIzqAVelaDer()
+{
+  MoverAl_(Este); MoverAl_(Este)
+}
+
+procedure IrDeVelaDerACasco()
+{
+  MoverAl_(Sur); MoverAl_(Sur)
+}

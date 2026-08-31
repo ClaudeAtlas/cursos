@@ -1,0 +1,3 @@
+program {
+  DecirCarta_(dameCarta__(dameElNúmero_(cartaActual()), paloDeCartaEspañolaDe40_(Oros)))
+}

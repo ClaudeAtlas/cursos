@@ -1,0 +1,59 @@
+procedure EstablecerDirecciónParaAtajar(dirección) {
+  BOOM("El programa todavía no está completo")
+}
+
+function izquierda() {
+  return (1)
+}
+
+function centro() {
+  return (boom("El programa todavía no está completo"))
+}
+
+procedure EstablecerDirecciónParaPatear(dirección) {
+  BOOM("El programa todavía no está completo")
+}
+
+function laAcciónDelArqueroYaEstáDefinida() {
+  return (nroBolitas(Verde) > 0)
+}
+
+function laAcciónDelJugadorYaEstáDefinida() {
+  return (boom("El programa todavía no está completo"))
+}
+
+procedure MoverElCabezalSegúnLaOpciónElegida(opción) {
+  BOOM("El programa todavía no está completo")
+}
+
+procedure VolverAlInicio() {
+  IrAlBorde(Oeste)
+  IrAlBorde(Sur)
+  Mover(Este)
+}
+
+procedure PonerAlArquero() {
+  Mover(Norte)
+  Poner_BolitasDeColor_(2, Negro)
+  Mover(Sur)
+}
+
+procedure PonerLaPelota() {
+  Mover(Norte)
+  Poner_BolitasDeColor_(1, Negro)
+  Mover(Sur)
+}
+
+procedure SacarAlArquero() {
+  Mover(Norte)
+  SacarTodas_(Negro)
+  Mover(Sur)
+}
+
+procedure SacarLaPelota() {
+  SacarTodas_(Negro)
+}
+
+
+interactive program {
+}

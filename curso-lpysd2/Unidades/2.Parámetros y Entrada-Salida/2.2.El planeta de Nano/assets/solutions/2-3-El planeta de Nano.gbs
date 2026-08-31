@@ -1,0 +1,46 @@
+﻿program 
+{ SolucionConForeach() }
+
+procedure SolucionConForeach()
+{
+  foreach cantidadDeBananas in [9,4,7,2,8,5,6,3] {
+    ComerFilaDe(cantidadDeBananas)
+    PasarASiguienteFila()
+  }
+}
+
+procedure SolucionConSecuencia()
+{
+  ComerFilaDe(9)
+  PasarASiguienteFila()
+  ComerFilaDe(4)
+  PasarASiguienteFila()
+  ComerFilaDe(7)
+  PasarASiguienteFila()
+  ComerFilaDe(2)
+  PasarASiguienteFila()
+  ComerFilaDe(8)
+  PasarASiguienteFila()
+  ComerFilaDe(5)
+  PasarASiguienteFila()
+  ComerFilaDe(6)
+  PasarASiguienteFila()
+  ComerFilaDe(3)
+  PasarASiguienteFila()
+  ComerFilaDe(4 )
+}
+
+procedure PasarASiguienteFila()
+{ MoverANanoHaciaArriba() }
+
+procedure ComerFilaDe(cantBananas)
+{
+  repeat (cantBananas)
+   { 
+     MoverANanoALaDerecha()
+     ComerBanana()
+   }
+  VolverANanoAlBordeIzquierdo()
+}
+
+

@@ -1,0 +1,61 @@
+////////////////////////////////////////////////////////
+// Procedimientos y funciones primitivas
+////////////////////////////////////////////////////////
+/*@ATTRIBUTE@tooltip@
+     PROPÓSITO: Indica si el motoquero actual está activo o no.
+     PRECONDICIONES: Ninguna.
+     RESULTADO: Un valor de verdad.
+@*/
+function elMotoqueroEstáActivo() { return(aux_hayMotoqueroActivo()) }
+
+/*@ATTRIBUTE@tooltip@
+     PROPÓSITO: Indica si el motoquero actual pertenece a algún club.
+     PRECONDICIONES: El motoquero actual se encuentra activo.
+     RESULTADO: Un valor de verdad.
+@*/
+function elMotoqueroPerteneceAUnClub() { 
+  if (not aux_hayMotoqueroActivo()) { BOOM("No hay un motoquero activo") }
+  return(aux_elMotoqueroPerteneceAUnClub()) 
+}
+
+/*@ATTRIBUTE@tooltip@
+     PROPÓSITO: Describe el número del club al cual pertenece el motoquero actual.
+     PRECONDICIONES: El motoquero actual se encuentra activo y pertenece a un club.
+     RESULTADO: Un número de club válido.
+@*/
+function clubAlQuePerteneceElMotoquero() {
+  if (not aux_hayMotoqueroActivo())          { BOOM("No hay un motoquero activo")                     }
+  if (not aux_elMotoqueroPerteneceAUnClub()) { BOOM("El motoquero activo no pertenece a ningún club") }
+  return(nroBolitas(Rojo))
+}
+
+/*@ATTRIBUTE@tooltip@
+     PROPÓSITO: Incluye al motoquero actual como perteneciente al club con el número dado.
+     PRECONDICIONES: El motoquero actual se encuentra activo y no pertenece todavía a ningún club.
+@*/
+procedure IncluirEnElClubNúmero_(número) {
+  if (not aux_hayMotoqueroActivo())      { BOOM("No hay un motoquero activo para incluir en el club") }
+  if (aux_elMotoqueroPerteneceAUnClub()) { BOOM("El motoquero actual ya pertenece a un club")         }
+  repeat (número) { Poner(Rojo) }
+}
+
+function aux_hayMotoqueroActivo()          { return (hayBolitas(Negro)) }
+function aux_elMotoqueroPerteneceAUnClub() { return (hayBolitas(Rojo))  }
+
+////////////////////////////////////////////////////////
+// Procedimientos y funciones auxiliares
+////////////////////////////////////////////////////////
+procedure IniciarRecorrido__(direcciónPrincipal, direcciónSecundaria) {
+  IrAlBorde(opuesto(direcciónPrincipal))
+  IrAlBorde(opuesto(direcciónSecundaria))
+}
+
+function esFinDeRecorrido__(direcciónPrincipal, direcciónSecundaria) {
+  return (not(puedeMover(direcciónPrincipal)) && not(puedeMover(direcciónSecundaria)))
+}
+
+procedure PasarALaSiguienteCeldaDelRecorrido__(direcciónPrincipal, direcciónSecundaria) {
+  if (puedeMover(direcciónPrincipal)) 
+       { Mover(direcciónPrincipal) }
+  else { IrAlBorde(opuesto(direcciónPrincipal)) Mover(direcciónSecundaria) }
+}

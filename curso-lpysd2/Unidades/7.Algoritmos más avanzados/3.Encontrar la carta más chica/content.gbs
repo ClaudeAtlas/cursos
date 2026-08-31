@@ -1,0 +1,23 @@
+program {
+  IrAlInicioDeLaEntrada()
+  mazoDeEntrada := mazoActual()
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarElMazo_(ordenado(mazoDeEntrada))
+}
+
+function laCartaMásChicaDe(mazo) {
+  cartaMásChicaVistaHastaAhora := dameLaPrimeraCartaDe_(mazo)
+  cartasQueFaltaMirar := sacarLaPrimeraCartaDe_(mazo)
+  ...
+  return (...)
+}
+
+function ordenado(mazo) {
+  cartasYaOrdenadas := mazoVacío()
+  cartasQueFaltaMirar := mazo
+  while (not (not(quedanCartas_(cartasQueFaltaMirar)))) {
+    cartasYaOrdenadas := agregarAlFinalDelMazo__(cartasYaOrdenadas, laCartaMásChicaDe(cartasQueFaltaMirar))
+    cartasQueFaltaMirar := sinLaCartaMásChica_(cartasQueFaltaMirar)
+  }
+  return (cartasYaOrdenadas)
+}

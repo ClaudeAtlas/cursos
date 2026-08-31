@@ -1,0 +1,9 @@
+interactive program {
+  on K_LEFT  { MoverSiPuede_(Oeste) }
+  on K_RIGHT { MoverSiPuede_(Este)  }
+  on K_UP    { MoverSiPuede_(Norte) }
+  on K_DOWN  { MoverSiPuede_(Sur)   }
+  on K_1     { PonerDígito_(1)      }
+  on K_2     { PonerDígito_(2)      }
+  on K_3     { PonerDígito_(3)      }
+}

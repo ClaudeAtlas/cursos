@@ -1,0 +1,307 @@
+/* ============================================================================================================
+   START Quell-Logic.gbs
+   Operations to perform a step of movement (with all the needed changes)
+// REQUIRE: Babel.gbs
+// REQUIRE: EnglishPrimitives.gbs
+// REQUIRE: Prelude.gbs
+// REQUIRE: Quell-Model.gbs
+// REQUIRE: Quell-Representation.gbs
+// REQUIRE: Quell-Drawing.gbs
+// REQUIRE: Quell-Reading.gbs
+   ============================================================================================================
+*/
+
+procedure ProcessStepTo_(mdir) {
+  /* OBS: 
+      * not all steps move. If there is no ball, or the ball is not moving and no key was pressed, 
+          (that is, no movement occurs) nothing happens. If the ball is moving, the key is ignored.  
+      * steps are designed to "animate" the interactive program
+  */
+  ball := currentQBall()
+  if (movementOccursWith_And_(ball,mdir)) {
+      ProcessMoveOf_To_(ball,mdir)
+      // AnalizeEnding()
+  }
+}
+
+procedure ToogleShowHint() {
+  /* PRECOND: the current cell has the ball */
+  ball := currentQBall()
+  ClearBall()
+  if (currentTopShowHint()) { 
+    GoToTopShowHint()
+    ClearTopShowHint()
+    DrawQBall_WithDHint_(ball, Nothing) 
+  } 
+  else { 
+    if (isTutorial(level())) { SetTopShowHint() }
+    DrawQBall_WithDHint_(ball, currentTopDHint()) 
+  }
+}
+
+// ---------
+// Quell logic operations
+// Level 1
+// ---------
+function movementOccursWith_And_(ball, mdir) { return(isBall_(ball) && (isMovingBall_(ball) || not isNothing(mdir))) }
+
+procedure ProcessMoveOf_To_(theBall,mdir) {
+  /* PRECOND: 
+      * movementOccursWith_And_(theBall,mdir), that is, theBall is different from NoBall, and if it is not moving, mdir is not Nothing
+      * the current cell has the ball.
+     OBS: * There are 3 kinds of moves: 
+            + one that continues one already started, and
+            + two that starts this turn (depending on the next valid QElement): 
+                - one of them counts, and 
+                - the other one is stopped immediately                 
+          * It is made in a highly imperative style for efficiency.
+             - the ball is received as parameter for efficiency, and changes are made first on the model
+             - qelems (curQE and nextQE) and qtoken are read for efficiency
+  */ 
+  ball       := theBall
+  dirOfMove  := dirOfMoveDeterminedBy_And_(ball, mdir)
+  moveStarts := not isMovingBall_(ball)
+  if (moveStarts) { ball := movedBall_To_(ball, dirOfMove) }
+  
+  curQE                         := currentQElem ()
+  let (nextQE, nextPos, qtoken) := elemsAtNextValidPosTo_From_(dirOfMove, curQE)
+
+  // Box treatment: it is done before ball movement, because it can block it
+  if (isABox_(qtoken)) {
+    TryToMoveBoxAt_To_(nextPos, dirOfMove) 
+    nextQE := currentQElem()  // If it is a Gate, it may have changed
+    qtoken := currentQToken() // QToken may have changed, as a result from moving the box (when successful)
+    GoToCell_(bpos(ball)) 
+  }
+
+  // Ball moves
+  if (isOpen_(nextQE) && not isABox_(qtoken)) // If the ball can enter the next element, move it 
+       {                                      // -- many triggers may occur
+         MoveBall_To_Leaving_AndEntering_With_At_(ball, dirOfMove, curQE, nextQE, qtoken, nextPos)
+         ballChanged := True
+       } 
+         // The ball cannot move into the next element. 
+         // Three possibilities: stopping/bouncing, popping, or nothing
+  elseif (not moveStarts)        // The ball was moving, so it has to consider stopping or bouncing
+       { 
+         ConsiderStoppingOrBouncingBall_MovingTo_Leaving_Entering_With_At_(ball, dirOfMove, curQE, nextQE, qtoken, nextPos) 
+         ballChanged := True
+       }
+  elseif (isSpiky_ComingFrom_WithRotablesTo_(nextQE, dirOfMove, currentTopSpikesDir())) 
+       {                         // The ball cannot move against a spike, even when starting to move
+         ClearBall()
+         ballChanged := True  
+       }
+  else { ballChanged := False } // Movement try to start, but there was no room to do it
+
+  // Adjust TopBar
+  if (moveStarts && ballChanged && currentTopNumPearls()>0) { IncrementTopNumMoves(); AdjustTopHintTo_(dirOfMove) }
+}
+
+// ---------
+// Quell logic operations
+// Level 2
+// ---------
+function dirOfMoveDeterminedBy_And_(ball, mdir) {
+  /* PRECOND: movementOccursWith_(ball)And_(mdir), that is, ball is different from NoBall, and if it is not moving, mdir is not Nothing */
+  return(choose yield goingTo(ball)  when (isMovingBall_(ball)) yield
+                fromJust(mdir) otherwise)
+}
+
+function elemsAtNextValidPosTo_From_(dir, qelem) {
+  /* OBS: a valid pos QElem is different from a border (Limit or Angle) */
+  GoToNextValidPosTo_From_(dir, qelem)
+  return(currentQElem(), currentPos(), currentQToken())
+}
+
+procedure TryToMoveBoxAt_To_(pos, dir) {
+  /* PRECOND: there is a box in the current cell */
+  GoToCell_(pos)
+  curQE                         := currentQElem()
+  let (box, isBeamingBox)       := currentBox()
+  let (nextQE, nextPos, qtoken) := elemsAtNextValidPosTo_From_(dir, curQE)
+  if (isOpen_(nextQE) && not isToken_(qtoken)) 
+    {
+      ClearBox()
+      ConsiderTriggersLeaving_MovingTo_(curQE, dir)
+      GoToCell_(nextPos)
+      ConsiderTriggersForBoxEntering_MovingTo_(nextQE, dir)
+      if (isPortal_(nextQE) && not isBeamingBox) { DrawBeamingBox_(box) }
+      else                                       { DrawBox_(box)        }
+      GoToCell_(pos)
+    } 
+  elseif (isABox_(qtoken)) 
+    {
+      ClearBox()
+      GoToCell_(nextPos)
+      ClearBox()
+      GoToCell_(pos)
+    }
+  elseif (isPortal_(curQE)) // Bouncing!
+    {
+      ClearBox()
+      DrawBeamingBox_(box)
+    }
+}
+
+procedure ConsiderPreviouslyBoncedBox() { 
+  /* TO-DO: Consider box bouncing */ 
+}
+
+procedure MoveBall_To_Leaving_AndEntering_With_At_(theBall, dir, curQE, nextQE, qtoken, nextPos) {
+  /* PRECOND: current cell contains the ball and curQE, and cell at nextPos contains nextxQE and qtoken */
+  ball := theBall
+  ClearBall()
+  if (isPortal_(curQE) && isBeamingBall_(ball)) 
+       {
+        ball := beamedBall_(ball)            // Beaming is resolved in a single step
+        if (isABox_(qtoken))                 // Portal target is occupied
+             { ball := bouncedBall_(ball) }  // The ball bounces and remains in the pos
+        else { GoToCell_(nextPos)         }  // The ball goes to portal target
+        DrawMovingQBall_(ball)               // Beaming finishes
+       }
+  else {
+        if (isPortal_(curQE))  { ConsiderPreviouslyBoncedBox() } // Bounced balls goes in the other direction...
+        ConsiderTriggersLeaving_MovingTo_(curQE, dir)
+        GoToCell_(nextPos) 
+        ConsiderTriggersForBallEntering_With_MovingTo_(nextQE, qtoken, dir)
+        if (isPortal_(nextQE)) { DrawMovingQBall_(beamingBall_(ball)) }
+        else                   { DrawQBall_(ball)                     }
+      }
+}
+
+procedure ConsiderStoppingOrBouncingBall_MovingTo_Leaving_Entering_With_At_(ball, dir, curQE, nextQE, qtoken, nextPos) {
+  /* PRECOND:
+       * current cell contains the ball and curQE, and cell at nextPos contains nextxQE and qtoken
+       * the move does not start this turn
+       * the ball is not bouncing 
+  */
+  ClearBall()
+  if (isPortal_(curQE)) // If leaving a target portal, and there is no room, the ball bounces
+       { DrawMovingQBall_(beamingBall_(bouncedBall_(ball))) } 
+  else {                    
+         if (isAJewel_(qtoken))
+           { HitJewelAt_AndReturnTo_(nextPos, bpos(ball)) } // Jewel can be hit across borders...
+         // If stopping against something spiky, ball pops
+         if (not isSpiky_ComingFrom_WithRotablesTo_(nextQE, dir, currentTopSpikesDir()))
+           { DrawQBall_WithDHint_(stoppedBall_(ball), choose yield currentTopDHint() when (currentTopShowHint()) yield 
+                                                             Nothing           otherwise) }
+                      // bpos(ball) is the current pos, because no movement occurs
+       } 
+}
+
+// ---------
+// Quell logic operations
+// Level 3
+// ---------
+procedure GoToNextValidPosTo_From_(dir,qelem) {
+  if (isPortal_(qelem) && currentPortalIsBeaming()) 
+       { GoToCell_(target(qelem))    } 
+  else { Move(dir); CheckForBorderMovingTo_(dir) }
+}
+
+procedure ConsiderTriggersLeaving_MovingTo_(qelem, dir) { 
+  /* PRECOND: current cell has qelem. 
+     OBS: the parameter is for efficiency
+  */
+  if (isGate_(qelem))   { CloseGate()             }
+  if (isSwitch_(qelem)) { RotateAllQElemsTo_(dir) }
+} 
+
+procedure ConsiderTriggersForBallEntering_With_MovingTo_(qelem, qtoken, dir) {
+  /* PRECOND: current cell has qelem and qtoken, with isOpen_(qelem) and qtoken not a box
+     OBS: parameters qelem and qtoken are for efficiency
+  */
+  if (isAPearl_(qtoken)) { GrabPearl()             } 
+  if (isAJewel_(qtoken)) { HitJewel()              } 
+  if (isSwitch_(qelem))  { RotateAllQElemsTo_(dir) } 
+}
+
+procedure ConsiderTriggersForBoxEntering_MovingTo_(qelem, dir) {
+  /* PRECOND: current cell has qelem. 
+     OBS: parameter qelem is for efficiency
+  */
+  if (isSwitch_(qelem))  { RotateAllQElemsTo_(dir) }
+}
+
+// ---------
+// Triggers
+// ---------
+procedure GrabPearl() {  
+  /* PRECOND: the current cell contains a Pearl */
+  ClearPearl()
+  DecrementTopNumPearls()
+}
+
+procedure HitJewelAt_AndReturnTo_(pos, inipos) { 
+  /* PRECOND: cell at pos must contain the Jewel */
+  GoToCell_(pos)
+  HitJewel()
+  GoToCell_(inipos)
+}
+
+procedure HitJewel() { 
+  /* PRECOND: current cell must contain the Jewel */
+  hits := currentJewel()
+  ClearJewel()
+  if (hits > 1)      { DrawJewel_(hits-1) }
+  elseif (hits == 1) { SetTopJewelFound() }
+}
+
+procedure RotateAllQElemsTo_(dir) { 
+  pos := currentPos()
+  SetTopSpikesDirTo_(dir)
+  AdjustAllRotableQElemsTo_(dir)
+  GoToCell_(pos)
+} 
+
+procedure AdjustAllRotableQElemsTo_(dir) {
+  StartBoardTraverseTo_And_(East, North)
+  while (not atEndOfBoardTraverseTo_And_(East, North)) {
+    RotateCurrentQElemTo_IfNeeded(dir)
+    GoToNextCellInBoardTraverseTo_And_(East, North)
+  }
+}
+
+procedure RotateCurrentQElemTo_IfNeeded(dir) {
+  if (hasRotableQElem()) {
+    ClearAttrA()
+    DrawDir_With_(dir, attrAColor())
+  }
+}
+
+// ---------
+// Top level modifications
+// ---------
+procedure AdjustTopHintTo_(dir) {
+  currentDHint := currentTopDHint()
+  currentNHint := currentTopNHint()
+  SetTopHintTo_(choose yield just(fromJust(currentNHint)-1) when (just(dir)==currentDHint) yield 
+                       Nothing                        otherwise)
+}
+
+// ---------
+// Next QElement logic
+// ---------
+procedure CheckForBorderMovingTo_(dir) {
+  if (hasBorder()) {
+    GoToMatchingBorderTo_(opposite(dir)) // Precondition guaranteed by global precondition and invariant representation of QLevel
+    Move(dir) // current qelem cannot be a boarder or Corner, or board is not valid, guaranteed by global precondition and invariant representation of QLevel
+  }
+}
+
+// ---------
+// Quell element operations, on board
+// ---------
+procedure GoToMatchingBorderTo_(dir) { Move(dir); while (not hasBorder()) { Move(dir) } } /* PRECOND: there exists a matching border in the given direction */
+procedure CloseGate()                { DrawBool_With_(True, attrBColor())               } /* PRECOND: there is an open Gate at the current cell */
+
+function  currentPortalIsBeaming()   { return(hasPortal() && (hasBeamingBall() || hasBeamingBox())) }
+
+// ---------
+// Error messages
+// ---------
+/* ============================================================================================================
+   END Quell-Logic.gbs
+   ============================================================================================================
+*/

@@ -1,0 +1,14 @@
+program {  }
+
+procedure InformarLaCantidadDeRajadas() {
+  IrALaEsquinaSuroeste()
+  Poner__Veces(Negro, cantidadDeBaldosasRajadas())
+}
+
+procedure IrALaEsquinaSuroeste() { IrAlBorde(Sur)  IrAlBorde(Oeste) }
+
+function cantidadDeBaldosasRajadas() {
+  ...
+  return (...)
+}
+

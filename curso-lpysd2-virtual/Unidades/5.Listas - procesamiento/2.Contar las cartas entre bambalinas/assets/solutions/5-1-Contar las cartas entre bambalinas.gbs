@@ -1,0 +1,13 @@
+program { InformarNúmero_(cantidadDeCartasDelMazo(mazoActual())) }
+
+function cantidadDeCartasDelMazo(mazo) {
+  cartasAúnNoContadas := mazo
+  cantidadDeCartasVistas := 0
+  while (not (not(quedanCartas_(cartasAúnNoContadas)))) {
+    cantidadDeCartasVistas := cantidadDeCartasVistas + 1
+    cartasAúnNoContadas := sacarLaPrimeraCartaDe_(cartasAúnNoContadas)
+  }
+  return (cantidadDeCartasVistas)
+}
+
+

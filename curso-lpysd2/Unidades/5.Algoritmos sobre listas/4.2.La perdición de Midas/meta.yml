@@ -1,0 +1,53 @@
+name: La perdición de Midas
+attire:
+  active: 'Cartas, letras y números'
+  user_permissions:
+    can_toggle_visibility: false
+  visible: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="IrAlInicioDeLaEntrada"></block>
+        <block type="IrAlInicioDeLaSalida"></block>
+        <block type="InformarEnEsteLugarElMazo_"></block>
+        <block type="RepeticionCondicional"></block>
+        <block type="Asignacion"></block>
+    </category>
+    <category name="Expresiones básicas">
+        <block type="not"></block>
+    </category>
+    <category name="Operaciones de cartas">
+        <block type="dameCarta__"></block>
+        <block type="palo_"></block>
+        <block type="valorDeCartaEspañolaDe40_"></block>
+        <block type="dameElPalo_"></block>
+        <block type="dameElValor_"></block>
+    </category>
+    <category name="Operaciones de mazos">
+        <block type="mazoActual"></block>
+        <block type="quedanCartas_"></block>
+        <block type="dameLaPrimeraCartaDe_"></block>
+        <block type="sacarLaPrimeraCartaDe_"></block>
+        <block type="mazoVacío"></block>
+        <block type="agregarAlFinalDelMazo__"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Mis funciones" custom="FUNCTION_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+        <block type="procedures_defreturnsimplewithparams"></block>
+        <block type="procedures_defreturn"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  user_permissions:
+    can_change_source: false
+    can_edit_board: false
+  visible_edition: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false

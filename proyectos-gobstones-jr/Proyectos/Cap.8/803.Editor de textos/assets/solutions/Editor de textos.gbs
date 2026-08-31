@@ -1,0 +1,243 @@
+procedure PonerElCarácter(códigoDelCarácter) {
+  LimpiarLaCelda()
+  Poner_BolitasNegras(códigoDelCarácter)
+  AvanzarElCursor()
+}
+
+procedure AvanzarElCursor() {
+  if (puedeMover(Este)) {
+    Mover(Este)
+  } else {
+    NuevaLínea()
+  }
+}
+
+procedure NuevaLínea() {
+  MoverSiSePuede(Sur)
+  IrAlBorde(Oeste)
+}
+
+procedure LimpiarLaCelda() {
+  SacarTodasLasBolitasNegras()
+}
+
+function códigoDelEspacio() {
+  return (0)
+}
+
+function códigoDeLaLetraA() {
+  return (1)
+}
+
+procedure MoverSiSePuede(dirección) {
+  if (puedeMover(dirección)) {
+    Mover(dirección)
+  }
+}
+
+function códigoDeLaLetraB() {
+  return (2)
+}
+
+function códigoDeLaLetraC() {
+  return (3)
+}
+
+function códigoDeLaLetraD() {
+  return (4)
+}
+
+function códigoDeLaLetraE() {
+  return (5)
+}
+
+function códigoDeLaLetraF() {
+  return (6)
+}
+
+function códigoDeLaLetraG() {
+  return (7)
+}
+
+function códigoDeLaLetraH() {
+  return (8)
+}
+
+function códigoDeLaLetraI() {
+  return (9)
+}
+
+function códigoDeLaLetraJ() {
+  return (10)
+}
+
+function códigoDeLaLetraK() {
+  return (11)
+}
+
+function códigoDeLaLetraL() {
+  return (12)
+}
+
+function códigoDeLaLetraM() {
+  return (13)
+}
+
+function códigoDeLaLetraN() {
+  return (14)
+}
+
+function códigoDeLaLetraÑ() {
+  return (15)
+}
+
+function códigoDeLaLetraO() {
+  return (16)
+}
+
+function códigoDeLaLetraP() {
+  return (17)
+}
+
+function códigoDeLaLetraQ() {
+  return (18)
+}
+
+function códigoDeLaLetraR() {
+  return (19)
+}
+
+function códigoDeLaLetraS() {
+  return (20)
+}
+
+function códigoDeLaLetraT() {
+  return (21)
+}
+
+function códigoDeLaLetraU() {
+  return (22)
+}
+
+function códigoDeLaLetraV() {
+  return (23)
+}
+
+function códigoDeLaLetraW() {
+  return (24)
+}
+
+function códigoDeLaLetraX() {
+  return (25)
+}
+
+function códigoDeLaLetraY() {
+  return (26)
+}
+
+function códigoDeLaLetraZ() {
+  return (27)
+}
+
+
+interactive program {
+  on K_LEFT {
+    MoverSiSePuede(Oeste)
+  }
+  on K_RIGHT {
+    MoverSiSePuede(Este)
+  }
+  on K_UP {
+    MoverSiSePuede(Norte)
+  }
+  on K_DOWN {
+    MoverSiSePuede(Sur)
+  }
+  on K_RETURN {
+    NuevaLínea()
+  }
+  on K_SPACE {
+    PonerElCarácter(códigoDelEspacio())
+  }
+  on K_A {
+    PonerElCarácter(códigoDeLaLetraA())
+  }
+  on K_B {
+    PonerElCarácter(códigoDeLaLetraB())
+  }
+  on K_C {
+    PonerElCarácter(códigoDeLaLetraC())
+  }
+  on K_D {
+    PonerElCarácter(códigoDeLaLetraD())
+  }
+  on K_E {
+    PonerElCarácter(códigoDeLaLetraE())
+  }
+  on K_F {
+    PonerElCarácter(códigoDeLaLetraF())
+  }
+  on K_G {
+    PonerElCarácter(códigoDeLaLetraG())
+  }
+  on K_H {
+    PonerElCarácter(códigoDeLaLetraH())
+  }
+  on K_I {
+    PonerElCarácter(códigoDeLaLetraI())
+  }
+  on K_J {
+    PonerElCarácter(códigoDeLaLetraJ())
+  }
+  on K_K {
+    PonerElCarácter(códigoDeLaLetraK())
+  }
+  on K_L {
+    PonerElCarácter(códigoDeLaLetraL())
+  }
+  on K_M {
+    PonerElCarácter(códigoDeLaLetraM())
+  }
+  on K_N {
+    PonerElCarácter(códigoDeLaLetraN())
+  }
+  K_Ñ -> {
+    PonerElCarácter(códigoDeLaLetraÑ())
+  }
+  on K_O {
+    PonerElCarácter(códigoDeLaLetraO())
+  }
+  on K_P {
+    PonerElCarácter(códigoDeLaLetraP())
+  }
+  on K_Q {
+    PonerElCarácter(códigoDeLaLetraQ())
+  }
+  on K_R {
+    PonerElCarácter(códigoDeLaLetraR())
+  }
+  on K_S {
+    PonerElCarácter(códigoDeLaLetraS())
+  }
+  on K_T {
+    PonerElCarácter(códigoDeLaLetraT())
+  }
+  on K_U {
+    PonerElCarácter(códigoDeLaLetraU())
+  }
+  on K_V {
+    PonerElCarácter(códigoDeLaLetraV())
+  }
+  on K_W {
+    PonerElCarácter(códigoDeLaLetraW())
+  }
+  on K_X {
+    PonerElCarácter(códigoDeLaLetraX())
+  }
+  on K_Y {
+    PonerElCarácter(códigoDeLaLetraY())
+  }
+  on K_Z {
+    PonerElCarácter(códigoDeLaLetraZ())
+  }
+}

@@ -1,0 +1,75 @@
+/*----------------------------------------------------------------------------------------*/
+/*---------------- INTERFAZ --------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+procedure AvisarQueTodavíaFalta()       { AuxAvisarQueTodavíaFalta()                } 
+procedure AvisarQueVengan()             { AuxAvisarQueVengan()                      }          
+
+function  estáLaHamburguesaEnLaMesa()   { return(aux_estáLaHamburguesaEnLaMesa())   }
+function  estánLasPapasFritasEnLaMesa() { return(aux_estánLasPapasFritasEnLaMesa()) }
+function  estáLaTortaEnLaMesa()         { return(aux_estáLaTortaEnLaMesa())         }
+function  estáElBifeEnLaMesa()          { return(aux_estáElBifeEnLaMesa())          }
+function  estáLaEnsaladaEnLaMesa()      { return(aux_estáLaEnsaladaEnLaMesa())      }
+function  estáLaFrutaEnLaMesa()         { return(aux_estáElDuraznoEnLaMesa())       }
+//function  estáElCaféEnLaMesa()          { return(aux_estáElCaféEnLaMesa())          }
+
+/*----------------------------------------------------------------------------------------*/
+/*---------------- OPERACIONES AUXILIARES ------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+procedure AuxAvisarQueTodavíaFalta()  { Poner(aux_prohibido()) }
+procedure AuxAvisarQueVengan()        { Poner(aux_permitido()) }
+
+function  aux_prohibido() { return(Rojo)  }
+function  aux_permitido() { return(Verde) }
+function  aux_comida()    { return(Azul)  }
+
+function  aux_hamburguesa() { return(11) }
+function  aux_papas()       { return(21) }
+function  aux_torta()       { return(31) }
+function  aux_café()        { return(41) }
+function  aux_bife()        { return(10) }
+function  aux_ensalada()    { return(20) }
+function  aux_fruta()       { return(30) }
+
+function  aux_estáLaHamburguesaEnLaMesa()   { return(aux_estáListaLaComida(aux_hamburguesa())) }
+function  aux_estánLasPapasFritasEnLaMesa() { return(aux_estáListaLaComida(aux_papas()))       }
+function  aux_estáLaTortaEnLaMesa()         { return(aux_estáListaLaComida(aux_torta()))       }
+function  aux_estáElBifeEnLaMesa()          { return(aux_estáListaLaComida(aux_bife()))        }
+function  aux_estáLaEnsaladaEnLaMesa()      { return(aux_estáListaLaComida(aux_ensalada()))    }
+function  aux_estáElDuraznoEnLaMesa()       { return(aux_estáListaLaComida(aux_fruta()))       }
+function  aux_estáElCaféEnLaMesa()          { return(aux_estáListaLaComida(aux_café()))        }
+
+function aux_estáListaLaComida(códigoComida) {
+    AuxIniciarRecorrido()
+    while(not aux_terminóElRecorrido() && not aux_hayComida(códigoComida)) {
+        AuxAvanzarRecorrido()
+    }
+    return (aux_hayComida(códigoComida))
+}
+
+function aux_hayComida(códigoComida) { return (nroBolitas(aux_comida()) == códigoComida) }
+     
+//---------------------------------------------------------------------------------------------------/
+/*---------------------------------- Operaciones de recorrido ---------------------------------------/
+/---------------------------------------------------------------------------------------------------*/
+// El Recorrido default es Este-Norte (los 3 deben usar los mismos parámetros)
+procedure AuxIniciarRecorrido()    { AuxIniciarRecorridoGral          (Este, Norte)  }
+procedure AuxAvanzarRecorrido()    { AuxAvanzarRecorridoGral          (Este, Norte)  }
+function  aux_terminóElRecorrido() { return(aux_terminóElRecorridoGral(Este, Norte)) }
+
+procedure AuxIniciarRecorridoGral(dirPpal, dirSecundaria) 
+  { IrAlBorde(opuesto(dirPpal)) IrAlBorde(opuesto(dirSecundaria)) }
+
+function aux_terminóElRecorridoGral(dirPpal, dirSecundaria) 
+  { return (not puedeMover(dirPpal) && not puedeMover(dirSecundaria)) }
+
+procedure AuxAvanzarRecorridoGral(dirPpal, dirSecundaria) {
+    if     (puedeMover(dirPpal))       { Mover(dirPpal)                                                }
+    elseif (puedeMover(dirSecundaria)) { IrAlBorde(opuesto(dirPpal)) Mover(dirSecundaria)              }
+    else                               { IrAlBorde(opuesto(dirPpal)) IrAlBorde(opuesto(dirSecundaria)) }
+}
+
+//---------------------------------------------------------------------------------------------------/
+/*---------------------------------- Operaciones de Gobstones ---------------------------------------/
+/---------------------------------------------------------------------------------------------------*/
+procedure AuxPoner__Veces(c,n) { repeat (n) { Poner(c) } }
+procedure AuxSacar__Veces(c,n) { repeat (n) { Sacar(c) } }

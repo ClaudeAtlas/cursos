@@ -1,0 +1,89 @@
+procedure MoverLaVíboraAl(dirección) {
+  AvanzarLaCabezaAl_(dirección)
+  if (hayUnaManzana()) {
+    SacarLaManzana()
+  } else {
+    AvanzarLaColaDeLaVíbora()
+  }
+}
+
+procedure AvanzarLaColaDeLaVíbora() {
+  IrDeLaCabezaALaCola()
+  AvanzarLaCola()
+  IrDeLaColaALaCabeza()
+}
+
+procedure IrDeLaCabezaALaCola() {
+  while (not (hayCola())) {
+    Mover(direcciónDelSegmentoPosterior())
+  }
+}
+
+procedure SacarLaManzana() {
+  Sacar(Rojo)
+}
+
+procedure AvanzarLaCola() {
+  direcciónParaVolver := direcciónDelSegmentoAnterior()
+  SacarTodasLasBolitasDeColor_(Negro)
+  Mover(direcciónParaVolver)
+  SacarTodasLasBolitasDeColor_(Verde)
+}
+
+procedure IrDeLaColaALaCabeza() {
+  while (not (hayCabeza())) {
+    Mover(direcciónDelSegmentoAnterior())
+  }
+}
+
+function hayUnaManzana() {
+  return (nroBolitas(Rojo) == 1)
+}
+
+function direcciónCodificada(color) {
+  if (nroBolitas(color) == 1) {
+    dirección := Norte
+  } elseif (nroBolitas(color) == 2) {
+    dirección := Este
+  } elseif (nroBolitas(color) == 3) {
+    dirección := Sur
+  } else {
+    dirección := Oeste
+  }
+  return (dirección)
+}
+
+function hayCabeza() {
+  return (not(hayBolitas(Negro)) && hayBolitas(Verde))
+}
+
+function hayCola() {
+  return (hayBolitas(Negro) && not(hayBolitas(Verde)))
+}
+
+function direcciónDelSegmentoAnterior() {
+  return (direcciónCodificada(Negro))
+}
+
+function direcciónDelSegmentoPosterior() {
+  return (direcciónCodificada(Verde))
+}
+
+
+interactive program {
+  on K_LEFT {
+    MoverLaVíboraAl(Oeste)
+  }
+  on K_RIGHT {
+    MoverLaVíboraAl(Este)
+  }
+  on K_UP {
+    MoverLaVíboraAl(Norte)
+  }
+  on K_DOWN {
+    MoverLaVíboraAl(Sur)
+  }
+  on TIMEOUT(500) {
+  MoverLaVíboraAl(direcciónDelÚltimoMovimiento())
+  }
+}

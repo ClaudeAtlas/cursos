@@ -1,0 +1,28 @@
+procedure ContestarLaJugada() {
+  if (el7DeEspadasPierde()) {
+    PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(1), palo_(Espadas)))
+  } else {
+    PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(7), palo_(Espadas)))
+  }
+}
+
+function el7DeEspadasPierde() {
+  return (laComputadoraJugóUnAncho())
+}
+
+function laComputadoraJugóUnAncho() {
+  return (laComputadoraJugóElAnchoDeEspadas() || laComputadoraJugóElAnchoDeBastos())
+}
+
+function laComputadoraJugóElAnchoDeEspadas() {
+  return (cartaQueJugóLaComputadora() == dameCarta__(númeroDeCartaEspañolaDe40_(1), palo_(Espadas)))
+}
+
+function laComputadoraJugóElAnchoDeBastos() {
+  return (cartaQueJugóLaComputadora() == dameCarta__(númeroDeCartaEspañolaDe40_(1), palo_(Bastos)))
+}
+
+
+program {
+  ContestarLaJugada()
+}

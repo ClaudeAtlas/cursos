@@ -1,0 +1,50 @@
+/*@ATTRIBUTE@block_name@Mover a Nano a la derecha@*/
+procedure MoverANanoALaDerecha()
+{ 
+  if (not aux_hayNano()) { BOOM("No puedo darle instrucciones a Nano si no está en esta celda") }
+  AuxSacarNano() 
+  Mover(Este) 
+  AuxPonerNano()
+}
+
+/*@ATTRIBUTE@block_name@Mover a Nano hacia arriba@*/
+procedure MoverANanoHaciaArriba()
+{ 
+  if (not aux_hayNano()) { BOOM("No puedo darle instrucciones a Nano si no está en esta celda") }
+  AuxSacarNano()
+  Mover(Norte) 
+  AuxPonerNano()
+}
+
+/*@ATTRIBUTE@block_name@Volver a Nano al borde izquierdo@*/
+procedure VolverANanoAlBordeIzquierdo()
+{ 
+  if (not aux_hayNano()) { BOOM("No puedo darle instrucciones a Nano si no está en esta celda") }
+  AuxSacarNano()
+  IrAlBorde(Oeste) 
+  AuxPonerNano()
+}
+
+procedure ComerBanana()
+{
+  if (not aux_hayNano())   { BOOM("No puedo darle instrucciones a Nano si no está en esta celda") }
+  if (not aux_hayBanana()) { BOOM("No hay una banana que comer en esta celda") }
+  AuxSacarNano()
+  AuxSacarBanana()
+  AuxPonerNano()
+}
+
+procedure AuxSacarBanana() { Sacar(aux_banana()) }
+procedure AuxSacarNano()   { Sacar(aux_Nano())   }
+procedure AuxPonerNano()   { Poner(aux_Nano())   }
+
+function  aux_Nano()   { return(Negro) }
+function  aux_banana() { return(Verde) }
+
+function  aux_hayNano()   { return (nroBolitas(aux_Nano())   == 1) }
+function  aux_hayBanana() { return (nroBolitas(aux_banana()) == 1) }
+
+function  estáVacía_(lista)      { return (esVacía(lista))                 }
+function  primerElemento_(lista)      { return (primero(lista))                 }
+/*@ATTRIBUTE@block_name@sin el primero _@*/
+function  resto_(lista)               { return (resto(lista))                   }

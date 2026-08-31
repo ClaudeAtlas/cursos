@@ -1,0 +1,19 @@
+program {
+  repeat(5) {
+    while (not (estáLaPelotaEnEstaCelda())) {
+      MoverAlBetoAl_(Este)
+    }
+    PatearAlArco()
+    while (not (estáElBetoEnElInicioDeLaFila())) {
+      MoverAlBetoAl_(Oeste)
+    }
+    CambiarAlBetoDeFila()
+  }
+  while (not (estáLaPelotaEnEstaCelda())) {
+    MoverAlBetoAl_(Este)
+  }
+  PatearAlArco()
+  while (not (estáElBetoEnElInicioDeLaFila())) {
+    MoverAlBetoAl_(Oeste)
+  }
+}

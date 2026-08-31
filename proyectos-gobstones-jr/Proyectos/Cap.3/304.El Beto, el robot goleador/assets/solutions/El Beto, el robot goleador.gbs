@@ -1,0 +1,55 @@
+procedure MeterElGol() {
+  AvanzarYPatear()
+  AvanzarYPatear()
+  AvanzarYPatear()
+}
+
+procedure MoverElPieDelBeto() {
+  Poner(Azul)
+  Sacar(Azul)
+}
+
+procedure AvanzarYPatear() {
+  MoverAlBetoAlEste()
+  MoverAlBetoAlEste()
+  PatearLaPelota()
+}
+
+procedure PatearLaPelota() {
+  MoverElPieDelBeto()
+  SacarLaPelota()
+  Mover(Este)
+  PonerLaPelota()
+  SacarLaPelota()
+  Mover(Este)
+  PonerLaPelota()
+  Mover(Oeste)
+  Mover(Oeste)
+}
+
+procedure PonerLaPelota() {
+  Poner(Negro)
+}
+
+procedure MoverAlBetoAlEste() {
+  SacarAlBeto()
+  Mover(Este)
+  PonerAlBeto()
+}
+
+procedure SacarAlBeto() {
+  Sacar(Azul)
+}
+
+procedure PonerAlBeto() {
+  Poner(Azul)
+}
+
+procedure SacarLaPelota() {
+  Sacar(Negro)
+}
+
+
+program {
+  MeterElGol()
+}

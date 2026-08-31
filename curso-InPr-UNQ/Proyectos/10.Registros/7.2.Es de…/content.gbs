@@ -1,0 +1,17 @@
+program { InformarSiTengoFlor() }
+
+procedure InformarSiTengoFlor() {
+  if (tengoFlor()) { DecirQueTengoFlor()   } 
+  else             { DecirQueNoTengoFlor() }
+}
+
+function tengoFlor() {
+  return (laCartaEsDeEstePalo(segundaCarta(), dameElPalo_(primeraCarta())) 
+       && laCartaEsDeEstePalo(terceraCarta(), dameElPalo_(primeraCarta())))
+}
+
+function laCartaEsDeEstePalo(cartaAControlar, paloAControlar) {
+  return (...)
+}
+
+

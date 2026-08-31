@@ -1,0 +1,17 @@
+program { GenerarManoParaRetrucar() }
+
+// procedure GenerarManoParaRetrucar() {
+  // PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(1), paloDeCartaEspañolaDe40_(Espadas)))
+  // PasarASiguientePosición()
+  // PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(7), paloDeCartaEspañolaDe40_(Espadas)))
+  // PasarASiguientePosición()
+  // PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(7), paloDeCartaEspañolaDe40_(Oros)))
+// }
+
+procedure GenerarManoParaRetrucar() {
+  PonerCarta_(dameCarta__(1, Espadas))
+  PasarASiguientePosición()
+  PonerCarta_(dameCarta__(7, Espadas))
+  PasarASiguientePosición()
+  PonerCarta_(dameCarta__(7, Oros))
+}

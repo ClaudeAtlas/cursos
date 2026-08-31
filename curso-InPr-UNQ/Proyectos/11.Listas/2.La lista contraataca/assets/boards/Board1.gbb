@@ -1,0 +1,9 @@
+GBB/1.0
+size 5 3
+cell 1 1 Rojo 10
+cell 2 1 Rojo 20
+cell 0 2 Azul 10 Negro 1055 Rojo 1
+cell 1 2 Azul 10 Negro 1999 Rojo 1
+cell 2 2 Azul 10 Negro 1303 Rojo 1
+cell 3 2 Azul 10 Negro 1212 Rojo 1
+head 0 2

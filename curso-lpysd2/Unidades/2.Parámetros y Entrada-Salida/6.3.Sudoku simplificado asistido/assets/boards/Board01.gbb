@@ -1,0 +1,6 @@
+GBB/1.0
+size 3 3
+cell 0 0 Azul 1 Negro 1
+cell 1 2 Azul 1 Negro 2
+cell 2 1 Azul 1 Negro 3
+head 0 0

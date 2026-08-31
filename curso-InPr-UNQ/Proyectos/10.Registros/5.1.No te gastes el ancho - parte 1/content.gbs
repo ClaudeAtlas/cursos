@@ -1,0 +1,14 @@
+program { 
+
+}
+
+procedure ContestarLaJugada() {
+  if (...) {
+    PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(1), palo_(Espadas)))
+  } else {
+    PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(7), palo_(Espadas)))
+  }
+}
+
+
+

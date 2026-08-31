@@ -1,0 +1,35 @@
+function decodificadas(letras) {
+  return (listaDeLetrasDeLosCódigos(convertidasSegúnCésarMenos2(listaDeCódigosDeLetras(letras))))
+}
+
+function listaDeCódigosDeLetras(letras) {
+  losCódigosYaVistos := listaVacía()
+  foreach letra in letras {
+    losCódigosYaVistos := agregarAlFinalDeLaLista__(losCódigosYaVistos, códigoDeLaLetra_(letra))
+  }
+  return (losCódigosYaVistos)
+}
+
+function convertidasSegúnCésarMenos2(códigosDeLetras) {
+  losCódigosYaProcesados := listaVacía()
+  foreach código in códigosDeLetras {
+    losCódigosYaProcesados := agregarAlFinalDeLaLista__(losCódigosYaProcesados, código - 2)
+  }
+  return (losCódigosYaProcesados)
+}
+
+function listaDeLetrasDeLosCódigos(códigos) {
+  lasLetrasYaVistas := listaVacía()
+  foreach código in códigos {
+    lasLetrasYaVistas := agregarAlFinalDeLaLista__(lasLetrasYaVistas, letraDelCódigo_(código))
+  }
+  return (lasLetrasYaVistas)
+}
+
+
+program {
+  IrAlInicioDeLaEntrada()
+  textoOriginal := textoDeEntrada()
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarLaListaDeLetras_(decodificadas(textoOriginal))
+}

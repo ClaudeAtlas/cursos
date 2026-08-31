@@ -1,0 +1,43 @@
+name: "Programar en cuadriculado: Camión"
+attire:
+  active: Programar en cuadriculado
+  user_permissions:
+    can_toggle_visibility: false
+  visible: true
+blocks:
+  defaultToolbox: |
+      <category name="Comandos primitivos">
+        <block type="Pintar"></block>
+        <block type="MoverAl_"></block>
+      </category>
+      <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+      <category name="Repeticiones">
+        <block type="RepeticionSimple"></block>
+      </category>
+      <category name="Valores">
+        <block type="math_number"></block>
+        <block type="DireccionSelector"></block>
+      </category>
+      <category name="Definiciones">
+        <block type="procedures_defnoreturnnoparams"></block>
+      </category>
+board:
+  active: 1
+  initial_board_source: selected
+  user_permissions:
+    can_change_initial_board: true
+    can_change_initial_board_source: true
+    can_change_source: false
+    can_edit_board: false
+    can_view_size_section: false
+    can_view_attire_section: false
+  visible_edition: true
+execution_speed:
+  active: instantaneous
+  user_permissions:
+    can_change_speed: false
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.75

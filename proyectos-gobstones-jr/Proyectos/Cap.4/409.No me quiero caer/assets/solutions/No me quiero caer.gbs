@@ -1,0 +1,27 @@
+procedure DibujarLaVíbora() {
+  repeat(10) {
+    DibujarUnSegmentoDeLaVíboraYAvanzar()
+  }
+}
+
+procedure DibujarUnSegmentoDeLaVíbora() {
+  Poner(Verde)
+}
+
+procedure Avanzar() {
+  if (puedeMover(Este)) {
+    Mover(Este)
+  } else {
+    Mover(Norte)
+  }
+}
+
+procedure DibujarUnSegmentoDeLaVíboraYAvanzar() {
+  DibujarUnSegmentoDeLaVíbora()
+  Avanzar()
+}
+
+
+program {
+  DibujarLaVíbora()
+}

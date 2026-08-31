@@ -1,0 +1,8 @@
+procedure AyudarAlRatónASalir() {
+  MoverElRatónA_(opuesto(dondeApuntaLaFlecha()))
+}
+
+
+program {
+  AyudarAlRatónASalir()
+}

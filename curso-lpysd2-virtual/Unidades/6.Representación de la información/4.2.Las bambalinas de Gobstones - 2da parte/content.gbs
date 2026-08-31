@@ -1,0 +1,19 @@
+function códigosDeLasCartas(mazo) {
+  códigos := listaVacía()
+  foreach carta in mazo {
+    códigos := agregarAlFinalDeLaLista__(códigos, códigoDeLaCarta(carta))
+  }
+  return (códigos)
+}
+
+function códigoDeLaCarta(carta) {
+  return ((100 * códigoDelPalo_(dameElPalo_(carta))) + dameElValor_(carta))
+}
+
+
+program {
+  IrAlInicioDeLaEntrada()
+  mazo := mazoActual()
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarLaListaDeNúmeros_(códigosDeLasCartas(mazo))
+}

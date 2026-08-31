@@ -1,0 +1,14 @@
+name: Células
+rules:
+  - { image: amoeba-1.png,    when: { black:   1, blue: 0, green: 1, red: 0 } }
+  - { image: amoeba-2.png,    when: { black:   2, blue: 0, green: 1, red: 0 } }
+  - { image: amoeba-3.png,    when: { black:   3, blue: 0, green: 1, red: 0 } }
+  - { image: amoeba-4.png,    when: { black:   4, blue: 0, green: 1, red: 0 } }
+  - { image: amoeba-5.png,    when: { black:   5, blue: 0, green: 1, red: 0 } }
+  - { image: amoeba-6.png,    when: { black:   6, blue: 0, green: 1, red: 0 } }
+  - { image: amoeba-7.png,    when: { black:   7, blue: 0, green: 1, red: 0 } }
+  - { image: amoeba-8.png,    when: { black:   8, blue: 0, green: 1, red: 0 } }
+  - { image: amoeba.png,      when: { black:   0, blue: 0, green: 1, red: 0 } }
+  - { image: Fondo.png,       when: { black: '*', blue: 0, green: 0, red: 0 } }
+  - { image: amoebaNew.png,   when: { black: '*', blue: 1, green: 0, red: 0 } }
+  - { image: amoebaDying.png, when: { black: '*', blue: 0, green: 1, red: 1 } }

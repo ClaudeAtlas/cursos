@@ -1,0 +1,14 @@
+program { 
+  DecirSiGanaÉl_(sonBuenas(miCartaIzquierda(), miCartaDerecha(), suCartaIzquierda(), suCartaDerecha()))
+}
+
+function sonBuenas(cartaIzquierdaDelJugador1, cartaDerechaDelJugador1
+                  ,cartaIzquierdaDelJugador2, cartaDerechaDelJugador2) {
+  return (envido(cartaIzquierdaDelJugador1, cartaDerechaDelJugador1) 
+        < envido(cartaIzquierdaDelJugador2, cartaDerechaDelJugador2))
+}
+
+function envido(cartaIzquierda, cartaDerecha) {
+  return (20 + (dameElNúmero_(cartaIzquierda) + dameElNúmero_(cartaDerecha)))
+}
+

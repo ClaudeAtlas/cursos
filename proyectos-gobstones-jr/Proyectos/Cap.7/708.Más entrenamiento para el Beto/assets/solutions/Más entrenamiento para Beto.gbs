@@ -1,0 +1,49 @@
+procedure EntrenarAlBeto() {
+  repeat(4) {
+    PatearYVolverAlBordeOeste()
+    MoverAlBetoAl_(Norte)
+  }
+  PatearYVolverAlBordeOeste()
+}
+
+procedure PatearYVolverAlBordeOeste() {
+  MoverAlBetoHastaLaPelota()
+  PatearLaPelota()
+  RegresarAlBetoAlBordeOeste()
+}
+
+procedure MoverAlBetoHastaLaPelota() {
+  while (not (lleguéALaPelota())) {
+    MoverAlBetoAl_(Este)
+  }
+}
+
+procedure RegresarAlBetoAlBordeOeste() {
+  while (not (not(puedeMover(Oeste)))) {
+    MoverAlBetoAl_(Oeste)
+  }
+}
+
+procedure MoverLaPelotaYVolverABeto() {
+  while (not (lleguéAlArco())) {
+    MoverLaPelotaAl_(Este)
+  }
+  while (not (lleguéAlBeto())) {
+    Mover(Oeste)
+  }
+}
+
+procedure PatearLaPelota() {
+  MoverElPieDelBeto()
+  MoverLaPelotaYVolverABeto()
+}
+
+procedure MoverElPieDelBeto() {
+  Poner(Azul)
+  Sacar(Azul)
+}
+
+
+program {
+  EntrenarAlBeto()
+}

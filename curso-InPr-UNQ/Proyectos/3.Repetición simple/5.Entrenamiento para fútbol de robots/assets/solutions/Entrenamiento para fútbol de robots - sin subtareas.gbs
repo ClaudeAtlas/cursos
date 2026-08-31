@@ -1,0 +1,23 @@
+program {
+  EntrenarAlBeto()
+}
+
+procedure EntrenarAlBeto() {
+  /*
+  */
+  repeat(4) {
+    repeat(6) { MoverAlBetoAl_(Este) }
+    MoverElPieDelBeto()
+    repeat(3) { MoverLaPelotaAl_(Este) }
+    repeat(3) { Mover(Oeste) }
+    repeat(6) { MoverAlBetoAl_(Oeste) }
+    MoverAlBetoAl_(Norte)
+  }
+  // ¡Caso de borde!
+  repeat(6) { MoverAlBetoAl_(Este) }
+  MoverElPieDelBeto()
+  repeat(3) { MoverLaPelotaAl_(Este) }
+  repeat(3) { Mover(Oeste) }
+  repeat(6) { MoverAlBetoAl_(Oeste) }
+}
+

@@ -1,0 +1,6 @@
+name: El planeta de Nano
+rules:
+  - { image: FondoNano.png,      when: { black: 0, blue: 0, green: 0, red: 0 } }
+  - { image: Nano.png,           when: { black: 1, blue: 0, green: 0, red: 0 } }
+  - { image: Bananas.png,        when: { black: 0, blue: 0, green: 1, red: 0 } }
+  - { image: NanoConBananas.png, when: { black: 1, blue: 0, green: 1, red: 0 } }

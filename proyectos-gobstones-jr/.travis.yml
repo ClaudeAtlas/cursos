@@ -1,0 +1,12 @@
+language: ruby
+rvm:
+- 2.3.1
+install:
+- "./empaquetar-proyectos.rb"
+- bundle install
+script: 
+- cd site
+- bundle exec rake site:deploy --quiet
+env:
+  global:
+    secure: KyBP44wRLVEvn0wqVH1dtxEPKWo/N8v5tzWtUrxCLF7/yhNHCnQrdvmbOnrDKZK/qXccAkwDUNXx0DEH22OyOrhy1gPqNsY06ZfgyHiNZjAjcK8/2nPMdsr4kSPjFd/9PnYva4RQMfO/5wI6AbFO5JB1ChWFJkM9+B75NZ+o4BfklmWCmvKbcDniwhU6mYTGS6rtQ8l8FkOByQmxR3AtHC1W02Dnz176J2cFq/+6+Rq5DCPGBivkVzJ1eB5rhBr4hCAYDpmFtL4VL5Wd9g1yOjwXPG31SePzqxGte6U5tm4z+rs8ZERwlEOPa1D2i8zJ2PKG/1M2lrG97K/VR7ZYJNRC4g1fzYLG8NEvfMVeI4XZra+VsHc5wjGG0bkNT8etppTC/nYmWiFn6jhskJxprcFasoE30iMkpjIUwQ/FnWEei2/HMD2tgcac5oDQOmjin70Uggf6z9iaL+E7lKezLlHoyW3wjipFKgBykf7xV+vaGNgc58Fpzvd6qiYmW3naGZeOoqRPGPmCjebglE6J+vNPXkDfwd2n5vt1YyZ3rbvqaXcn4umGhX5sphJlk8zliJR7AHPVq55AheUG6GucfqQuD9c7vquDeGzpQtx4jar+cWaZBQGwrW+8SRL/ntulLNiywl90XHSOZxZXQGJ+Rs/Wzri48585LCH2gkZp2oM=

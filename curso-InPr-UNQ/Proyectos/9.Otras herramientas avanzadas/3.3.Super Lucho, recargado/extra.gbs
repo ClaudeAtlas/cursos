@@ -1,0 +1,10 @@
+procedure Poner__Veces(color,cantidad) { repeat(cantidad) { Poner(color) } }
+
+/*@ATTRIBUTE@block_name@elegir _ cuando _ y si no, _@*/
+function elegir_cuando_ySiNo_(valor1, condición, valor2) {
+ return (choose yield
+            valor1 when (condición) yield
+            valor2 otherwise
+        )
+}
+

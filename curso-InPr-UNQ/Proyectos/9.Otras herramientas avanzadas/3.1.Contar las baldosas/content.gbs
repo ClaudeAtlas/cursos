@@ -1,0 +1,25 @@
+﻿program {
+}
+
+procedure InformarLaCantidadDeBaldosas() {
+  IrALaEsquinaSuroeste()
+  Poner__Veces(Negro, ...)
+}
+
+function cantidadDeBaldosas() {
+  ...
+  return(...)
+}
+
+procedure ComenzarElRecorrido() { IrALaEsquinaSuroeste() }
+
+function esLaÚltimaBaldosa() { return (...) }
+
+procedure PasarALaSiguienteBaldosa() {
+  ...
+}
+
+procedure IrALaEsquinaSuroeste() {
+  IrAlBorde(Oeste)
+  IrAlBorde(Sur)
+}

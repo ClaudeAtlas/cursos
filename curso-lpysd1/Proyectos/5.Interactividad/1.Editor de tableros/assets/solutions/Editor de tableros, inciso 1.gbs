@@ -1,0 +1,14 @@
+interactive program {
+  on K_LEFT {
+    Mover(Oeste)
+  }
+  on K_RIGHT {
+    Mover(Este)
+  }
+  on K_UP {
+    Mover(Norte)
+  }
+  on K_DOWN {
+    Mover(Sur)
+  }
+}

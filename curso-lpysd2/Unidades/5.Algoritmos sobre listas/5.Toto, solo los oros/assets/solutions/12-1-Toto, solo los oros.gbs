@@ -1,0 +1,21 @@
+program {
+  IrAlInicioDeLaEntrada()
+  mazoDeEntrada := mazoActual()
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarElMazo_(soloLosOros(mazoDeEntrada))
+}
+
+function soloLosOros(mazo) {
+  cartasAúnNoAnalizadas := mazo
+  cartasDeOrosVistas := mazoVacío()
+  while (not (not(quedanCartas_(cartasAúnNoAnalizadas)))) {
+    if (esDeOros(dameLaPrimeraCartaDe_(cartasAúnNoAnalizadas))) {
+      cartasDeOrosVistas := agregarAlFinalDelMazo__(cartasDeOrosVistas, dameLaPrimeraCartaDe_(cartasAúnNoAnalizadas))
+    }
+    cartasAúnNoAnalizadas := sacarLaPrimeraCartaDe_(cartasAúnNoAnalizadas)
+  }
+  return (cartasDeOrosVistas)
+}
+
+function esDeOros(carta) { return (dameElPalo_(carta) == palo_(Oros)) }
+

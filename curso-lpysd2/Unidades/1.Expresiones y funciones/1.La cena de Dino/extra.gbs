@@ -1,0 +1,135 @@
+/*----------------------------------------------------------------------------------------*/
+/*---------------- INTERFAZ --------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+/*@ATTRIBUTE@block_name@Mover a Dino hacia el _@*/
+procedure MoverADinoAl_(dir)           { AuxMoverADinoAl(dir)                           }
+/*@ATTRIBUTE@block_name@Cambiar a Dino de fila@*/
+procedure CambiarADinoDeFila()         { AuxCambiarADinoDeFila()                        }
+/*@ATTRIBUTE@block_name@¿está Dino en el inicio de la fila?@*/
+function  estáDinoEnElInicioDeLaFila() { return(aux_estáDinoEnElInicio())               }
+
+procedure RechazarLaComida()           { AuxRechazarLaComida()                          }
+
+/*@ATTRIBUTE@block_name@Comer _@*/
+/*@ATTRIBUTE@block_dropdown@[("la hamburguesa", 'Hamburguesa'), ("la torta",'Torta')]@*/
+procedure Comer_(laComida) { AuxComer(laComida) }
+
+/*@ATTRIBUTE@block_name@¿hay _ ?@*/
+/*@ATTRIBUTE@block_dropdown@[("hamburguesa", 'Hamburguesa'), ("torta",'Torta')]@*/
+function hay_(laComida) {
+   switch (laComida)  
+      on Hamburguesa do { valorDeRetorno := aux_estáLaHamburguesaEnLaCeldaActual() }                                         
+      on Torta       do { valorDeRetorno := aux_estáLaTortaEnLaCeldaActual()       }                                         
+      on Bife        do { valorDeRetorno := aux_estáElBifeEnLaCeldaActual()        }                                         
+      on Durazno     do { valorDeRetorno := aux_estáElDuraznoEnLaCeldaActual()     }
+      else           do { AuxGarantizarEsteError(aux_errorCannotHappen())          }
+    
+  return (valorDeRetorno)
+}
+
+// procedure ComerLaHamburguesa()         { AuxComerLaHamburguesa()                        }
+// procedure ComerLaTorta()               { AuxComerLaTorta()                              }
+// procedure ComerElBife()                { AuxComerElBife()                               }
+// procedure ComerElDurazno()             { AuxComerElDurazno()                            }
+// /*@ATTRIBUTE@block_name@¿hay hamburguesa?@*/
+// function  hayHamburguesa()             { return(aux_estáLaHamburguesaEnLaCeldaActual()) }
+// /*@ATTRIBUTE@block_name@¿hay torta?@*/
+// function  hayTorta()                   { return(aux_estáLaTortaEnLaCeldaActual())       }
+// /*@ATTRIBUTE@block_name@¿hay bife?@*/
+// function  hayBife()                    { return(aux_estáElBifeEnLaCeldaActual())        }
+// /*@ATTRIBUTE@block_name@¿hay hay durazno?@*/
+// function  hayDurazno()                 { return(aux_estáElDuraznoEnLaCeldaActual())     }
+
+/*----------------------------------------------------------------------------------------*/
+/*---------------- OPERACIONES AUXILIARES ------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+type Comida is variant { case Hamburguesa {} case Torta {} case Bife {} case Durazno {} }
+
+procedure AuxMoverADinoAl(dir){
+    TypeCheck(dir, Este, "'Mover a Dino al _' espera una dirección como argumento (por ejemplo 'Mover a Dino al (Este)'), pero recibió %1")
+    AuxVerificarADinoParaInstrucción()
+    if (dir == Norte || dir == Sur)            { BOOM("Para mover a Dino de fila, usar 'Cambiar a Dino de fila'")     }
+    AuxSacarADino()
+    Mover(dir)
+    AuxPonerADino()
+}
+
+procedure AuxCambiarADinoDeFila() {
+    AuxVerificarADinoParaInstrucción()
+    if (not aux_estáDinoEnElInicio())          { BOOM("Para cambiar de fila, Dino debe estar en el inicio")           }
+    AuxSacarADino()
+    Mover(Sur)
+    AuxPonerADino()
+}
+
+procedure AuxRechazarLaComida() { 
+    AuxVerificarADinoParaInstrucción()
+    if (not aux_hayComidaEnLaCeldaActual())    { BOOM("No hay ninguna comida que rechazar")                           }
+    AuxPonerProhibido()
+}
+
+procedure AuxComer(laComida) { 
+    AuxVerificarADinoParaInstrucción()
+    switch (laComida)  
+      on Hamburguesa do { if (not aux_estáLaHamburguesaEnLaCeldaActual()) 
+                                                                  { BOOM("No hay ninguna hamburguesa que comer") } }
+      on Torta       do { if (not aux_estáLaTortaEnLaCeldaActual())  { BOOM("No hay ninguna torta que comer")       } }
+      on Bife        do { if (not aux_estáElBifeEnLaCeldaActual())   { BOOM("No hay ningún bife que comer")         } }
+      on Durazno     do { if (not aux_estáElDuraznoEnLaCeldaActual()){ BOOM("No hay ningún durazno que comer")      } }
+      else           do { AuxGarantizarEsteError(aux_errorCannotHappen())                                             }
+     
+    AuxSacar(laComida)
+}
+
+function aux_dino()           { return(Azul)  }
+function aux_prohibido()      { return(Negro) }
+function aux_comidaSana()     { return(Verde) }
+function aux_comidaChatarra() { return(Rojo)  }
+function aux_platoPrincipal() { return(1)     }
+function aux_postre()         { return(2)     }
+
+function aux_estáDinoEnElInicio()        { 
+    if (not aux_estáDinoEnLaCeldaActual())     { BOOM("No está Dino en esta celda")                                    }
+    return (not puedeMover(Oeste)) 
+}
+
+function aux_hayComidaEnLaCeldaActual()         { return (hayBolitas(aux_comidaChatarra()) 
+                                                       || hayBolitas(aux_comidaSana()))                           }
+function aux_estáDinoEnLaCeldaActual()          { return (nroBolitas(aux_dino())==1)                              }
+function aux_estáLaHamburguesaEnLaCeldaActual() { return (nroBolitas(aux_comidaChatarra())==aux_platoPrincipal()) }
+function aux_estáLaTortaEnLaCeldaActual()       { return (nroBolitas(aux_comidaChatarra())==aux_postre())         }
+function aux_estáElBifeEnLaCeldaActual()        { return (nroBolitas(aux_comidaSana())    ==aux_platoPrincipal()) }
+function aux_estáElDuraznoEnLaCeldaActual()     { return (nroBolitas(aux_comidaSana())    ==aux_postre())         }
+
+procedure AuxPonerProhibido()  { Poner(aux_prohibido()) }
+
+procedure AuxPonerADino()      { Poner(aux_dino())      }
+procedure AuxSacarADino()      { Sacar(aux_dino())      }
+
+procedure AuxSacar(laComida) {
+    switch (laComida)  
+        on Hamburguesa do { AuxSacarLaHamburguesa()                         }
+        on Torta       do { AuxSacarLaTorta()                               }
+        on Bife        do { AuxSacarElBife()                                }
+        on Durazno     do { AuxSacarElDurazno()                             }
+        else           do { AuxGarantizarEsteError(aux_errorCannotHappen()) }
+     
+}
+procedure AuxSacarLaHamburguesa() { AuxSacar__Veces(aux_comidaChatarra(), aux_platoPrincipal()) }
+procedure AuxSacarLaTorta()       { AuxSacar__Veces(aux_comidaChatarra(), aux_postre())         }
+procedure AuxSacarElBife()        { AuxSacar__Veces(aux_comidaSana()    , aux_platoPrincipal()) }
+procedure AuxSacarElDurazno()     { AuxSacar__Veces(aux_comidaSana()    , aux_postre())         }
+
+procedure AuxGarantizarEsteError(error) { /* Solo por el efecto de evaluar la expresión error, que debería dar boom */ }
+function aux_errorCannotHappen() { return (boom("NO PUEDE SUCEDER. Alguien modificó las comidas")) }
+
+procedure AuxVerificarADinoParaInstrucción() {
+    if (not aux_estáDinoEnLaCeldaActual())     { BOOM("No puedo darle instrucciones a Dino si no está en esta celda") }
+}
+
+
+//---------------------------------------------------------------------------------------------------/
+/*---------------------------------- Operaciones de Gobstones ---------------------------------------/
+/---------------------------------------------------------------------------------------------------*/
+procedure AuxPoner__Veces(c,n) { repeat (n) { Poner(c) } }
+procedure AuxSacar__Veces(c,n) { repeat (n) { Sacar(c) } }

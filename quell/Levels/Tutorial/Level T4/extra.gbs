@@ -1,0 +1,31 @@
+function level() {
+  return(QuellLevel(
+           isTutorial <- True
+         , board      <- boardT04()
+         , solution   <- [East, South, West, South, East]
+         , minMoves   <- 5
+         , jewel      <- NoJewel
+         , spikesDir  <- Nothing
+         , boxes      <- []
+         , ball       <- QBallAt(bpos <- pos(6,7))
+         , numMoves   <- 0
+         , rightMoves <- just(0)
+         , numPearls  <- 1
+  ))
+}
+
+function boardT04() { 
+  // [[QElem]], size=pos(9,11)
+  return(
+   [[cNW(), hT() , hT() , hT() , hT(), hT() , hT() , hT() , cNE()]
+   ,[vL() , Wall , Wall , Wall , Wall, Wall , Wall , Wall , vR() ]
+   ,[vL() , Empty, Empty, Empty, Wall, Empty, Empty, Empty, vR() ]
+   ,[vL() , Wall , Wall , Empty, Wall, Wall , Wall , Wall , vR() ]
+   ,[vL() , Wall , Wall , oG() , Wall, Wall , Wall , Wall , vR() ]
+   ,[vL() , Empty, Empty, Empty, Wall, Empty, Empty, Empty, vR() ]
+   ,[vL() , Wall , Wall , Wall , Wall, oG() , Wall , Wall , vR() ]
+   ,[vL() , Empty, Empty, Pearl, Wall, Empty, Empty, Empty, vR() ]
+   ,[vL() , Wall , Wall , Wall , Wall, Wall , Wall , Wall , vR() ]
+   ,[cSW(), hB() , hB() , hB() , hB(), hB() , hB() , hB() , cSE()]
+   ])
+}

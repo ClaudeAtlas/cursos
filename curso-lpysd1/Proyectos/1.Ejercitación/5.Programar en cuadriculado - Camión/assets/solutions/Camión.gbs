@@ -1,0 +1,87 @@
+program
+{
+   UbicarEnLaPosiciónInicialParaElCamión()
+   DibujarCamión()
+}
+
+procedure UbicarEnLaPosiciónInicialParaElCamión() {
+   repeat (2) { 
+     MoverAl_(Norte)    
+     MoverAl_(Este) 
+   }
+}
+
+procedure DibujarCamión() {
+   DibujarCabina()
+   IrAlFinalDeSecciónCorta()
+   DibujarAcoplado()
+   VolverDelFinalDeSecciónCorta()
+}
+
+procedure DibujarCabina() {
+  DibujarCuadradoDeTamaño3()
+  IrARuedas()
+  DibujarRueda()
+  VolverDeRuedas()
+}
+
+procedure DibujarAcoplado() {
+  DibujarCaja()
+  IrAlFinalDeSecciónLarga()
+  DibujarCaja()
+  VolverDelFinalDeSecciónLarga()
+}
+
+procedure DibujarCaja() {
+  DibujarCuadradoDeTamaño6()
+  IrARuedas()
+  DibujarRuedas()
+  VolverDeRuedas()
+}
+
+procedure DibujarRuedas() {
+  DibujarRueda()
+  IrAlFinalDeSecciónCorta()
+  DibujarRueda()
+  VolverDelFinalDeSecciónCorta()
+}
+
+procedure DibujarRueda() { Pintar() } 
+    
+procedure DibujarCuadradoDeTamaño3() {
+  repeat (2) { Pintar(); MoverAl_(Norte) }
+  repeat (2) { Pintar(); MoverAl_(Este) }
+  repeat (2) { Pintar(); MoverAl_(Sur) } 
+  repeat (2) { Pintar(); MoverAl_(Oeste) }
+}
+
+procedure DibujarCuadradoDeTamaño6() {
+  repeat (5) { Pintar(); MoverAl_(Norte) }
+  repeat (5) { Pintar(); MoverAl_(Este) }
+  repeat (5) { Pintar(); MoverAl_(Sur) } 
+  repeat (5) { Pintar(); MoverAl_(Oeste) }
+}
+
+procedure IrARuedas() {
+  MoverAl_(Este); MoverAl_(Sur)
+}
+
+procedure VolverDeRuedas() {
+  MoverAl_(Oeste); MoverAl_(Norte)
+}
+
+procedure IrAlFinalDeSecciónCorta() {
+  repeat (3) { MoverAl_(Este) }
+}
+
+procedure VolverDelFinalDeSecciónCorta() {
+  repeat (3) { MoverAl_(Oeste) }
+}
+
+procedure IrAlFinalDeSecciónLarga() {
+  repeat (5) { MoverAl_(Este) }
+}
+
+procedure VolverDelFinalDeSecciónLarga() {
+  repeat (5) { MoverAl_(Oeste) }
+}

@@ -1,0 +1,31 @@
+procedure MoverLaVíboraAl(dirección) {
+  ...
+}
+
+procedure SacarLaManzana() {
+  ...
+}
+
+function hayUnaManzana() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function hayCabeza() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function hayCola() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function direcciónDelSegmentoAnterior() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function direcciónDelSegmentoPosterior() {
+  return (boom("El programa todavía no está completo"))
+}
+
+
+interactive program {
+}

@@ -1,0 +1,29 @@
+name: Convención de motoqueros
+attire:
+  active: Motoqueros
+  user_permissions:
+    can_toggle_visibility: false
+  visible: true
+blocks:
+  visible: []
+  disabled: []
+board:
+  active: 1
+  initial_board_source: selected
+  visible_edition: true
+  collapse_toolbox: false
+  user_permissions:
+    can_view_attire_section: false
+    can_edit_board: false
+    can_change_initial_board: true
+    can_change_initial_board_source: true
+    can_view_size_section: false
+execution_speed:
+  active: instantaneous
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.75  

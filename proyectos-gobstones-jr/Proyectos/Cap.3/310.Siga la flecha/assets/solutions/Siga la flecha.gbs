@@ -1,0 +1,38 @@
+procedure DibujarLaPuntaDeFlecha() {
+  repeat(4) {
+    Poner(Verde)
+  }
+  Mover(Oeste)
+  Mover(Norte)
+  repeat(2) {
+    Poner(Verde)
+  }
+  Mover(Sur)
+  Mover(Sur)
+  repeat(3) {
+    Poner(Verde)
+  }
+}
+
+procedure DibujarLaFlecha() {
+  DibujarElAstil()
+  DibujarLaPuntaDeFlecha()
+}
+
+procedure DibujarElAstil() {
+  repeat(7) {
+    Poner(Verde)
+    Mover(Este)
+  }
+}
+
+procedure VolverAlInicio() {
+  Mover(Norte)
+  IrAlBorde(Oeste)
+}
+
+
+program {
+  DibujarLaFlecha()
+  VolverAlInicio()
+}

@@ -1,0 +1,17 @@
+program {
+  ...
+}
+
+procedure PonerMuchasBolitas(cantidadAPoner, colorAPoner) {
+  repeat(cantidadAPoner) {
+    Poner(...)
+  }
+}
+
+procedure SacarMuchasBolitas(cantidadASacar, colorASacar) {
+  repeat(...) {
+    Sacar(colorASacar)
+  }
+}
+
+

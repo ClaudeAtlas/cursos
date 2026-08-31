@@ -1,0 +1,42 @@
+name: Las bambalinas de Gobstones
+attire:
+  active: Sembrando tomates
+  user_permissions:
+    can_toggle_visibility: true
+  visible: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="RepeticionSimple"></block>
+    </category>
+    <category name="Expresiones básicas">
+        <block type="math_number"></block>
+    </category>
+    <category name="Operaciones de elementos">
+        <block type="PonerUnElementoA"></block>
+        <block type="CambiarTodosLosElementosAPorElementosB"></block>
+        <block type="CambiarUnElementoBPorUnElementoC"></block>
+        <block type="IrALaPróximaCelda"></block>
+        <block type="VolverALaCeldaInicial"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: selected
+  visible_edition: true
+  collapse_toolbox: false
+  user_permissions:
+    can_view_attire_section: true
+    can_edit_board: false
+    can_change_initial_board: false
+    can_change_initial_board_source: false
+    can_view_size_section: false
+execution_speed:
+  active: medium
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false

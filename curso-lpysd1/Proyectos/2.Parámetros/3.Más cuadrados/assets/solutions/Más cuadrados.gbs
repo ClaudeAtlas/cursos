@@ -1,0 +1,60 @@
+procedure DibujarCuadrado(colorDelCuadrado, longitudDelLado) {
+  repeat(longitudDelLado - 1) {
+    Poner(colorDelCuadrado)
+    Mover(Este)
+  }
+  repeat(longitudDelLado - 1) {
+    Poner(colorDelCuadrado)
+    Mover(Norte)
+  }
+  repeat(longitudDelLado - 1) {
+    Poner(colorDelCuadrado)
+    Mover(Oeste)
+  }
+  repeat(longitudDelLado - 1) {
+    Poner(colorDelCuadrado)
+    Mover(Sur)
+  }
+}
+
+procedure PosicionarEnEsquinaSurEsteParaCuadrado(ladoDelCuadrado) {
+  IrAlBorde(Sur)
+  IrAlBorde(Este)
+  repeat(ladoDelCuadrado - 1) {
+    Mover(Oeste)
+  }
+}
+
+procedure PosicionarEnEsquinaNorEsteParaCuadrado(ladoDelCuadrado) {
+  IrAlBorde(Norte)
+  IrAlBorde(Este)
+  repeat(ladoDelCuadrado - 1) {
+    Mover(Oeste)
+    Mover(Sur)
+  }
+}
+
+procedure PosicionarEnEsquinaNorOesteParaCuadrado(ladoDelCuadrado) {
+  IrAlBorde(Oeste)
+  IrAlBorde(Norte)
+  repeat(ladoDelCuadrado - 1) {
+    Mover(Sur)
+  }
+}
+
+procedure VolverAlInicio() {
+  IrAlBorde(Sur)
+  IrAlBorde(Oeste)
+}
+
+
+program {
+  DibujarCuadrado(Rojo, 4)
+  PosicionarEnEsquinaSurEsteParaCuadrado(3)
+  DibujarCuadrado(Negro, 3)
+  PosicionarEnEsquinaNorEsteParaCuadrado(6)
+  DibujarCuadrado(Azul, 6)
+  PosicionarEnEsquinaNorOesteParaCuadrado(5)
+  DibujarCuadrado(Verde, 5)
+  VolverAlInicio()
+}

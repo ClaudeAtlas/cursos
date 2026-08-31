@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Introducción a la programación — UNQ",
+    "path": "curso-InPr-UNQ",
+    "upstream": "gobstonescursos/curso-InPr-UNQ"
+  },
+  {
+    "name": "La programación y su didáctica 1",
+    "path": "curso-lpysd1",
+    "upstream": "gobstonescursos/curso-lpysd1"
+  },
+  {
+    "name": "La programación y su didáctica 2",
+    "path": "curso-lpysd2",
+    "upstream": "gobstonescursos/curso-lpysd2"
+  },
+  {
+    "name": "La programación y su didáctica 2 — virtual",
+    "path": "curso-lpysd2-virtual",
+    "upstream": "gobstonescursos/curso-lpysd2-virtual"
+  },
+  {
+    "name": "Manual Program.AR",
+    "path": "proyectos-gobstones-jr",
+    "upstream": "Program-AR/proyectos-gobstones-jr"
+  },
+  {
+    "name": "Quell",
+    "path": "quell",
+    "upstream": "gobstonesgames/quell"
+  }
+]

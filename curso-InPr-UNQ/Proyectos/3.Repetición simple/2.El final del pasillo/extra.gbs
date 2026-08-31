@@ -1,0 +1,10 @@
+﻿/*@ATTRIBUTE@block_name@Mover al Beto al _@*/
+procedure MoverAlBetoAl_(dir) {
+    TypeCheck(dir,Norte, "`MoverAlBetoAl_` espera una dirección como argumento y recibió %1")
+    if (not hayBolitas(Azul)) { BOOM("Beto no está en esta celda") }
+	if (not puedeMover(dir))  { BOOM("Beto no se puede mover fuera del escenario") }
+    Sacar(Azul)
+    Mover(dir)
+    if (hayBolitas(Negro))    { BOOM("Tocaste una pared explosiva") }
+    Poner(Azul)
+}

@@ -1,0 +1,44 @@
+procedure SimularUnInterruptorDeLuz() {
+  if (hayBolitas(Azul)) {
+    ApagarLaLuz()
+  } else {
+    PrenderLaLuz()
+  }
+}
+
+procedure MantenerLaSecciónDeLaHuerta() {
+  if (hayPlantas()) {
+    FertilizarLasPlantas()
+  } else {
+    PlantarTomates()
+  }
+}
+
+function hayPlantas() {
+  return (hayBolitas(Verde))
+}
+
+procedure PrenderLaLuz() {
+  Poner(Azul)
+  Sacar(Negro)
+}
+
+procedure PlantarTomates() {
+  Poner(Verde)
+}
+
+procedure ApagarLaLuz() {
+  Poner(Negro)
+  Sacar(Azul)
+}
+
+procedure FertilizarLasPlantas() {
+  Poner(Rojo)
+}
+
+
+program {
+  MantenerLaSecciónDeLaHuerta()
+  Mover(Norte)
+  SimularUnInterruptorDeLuz()
+}

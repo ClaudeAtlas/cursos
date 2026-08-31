@@ -1,0 +1,20 @@
+program { ComerTodasLasFilas([9, 4, 7, 2, 8, 5, 6, 3]) }
+
+procedure ComerTodasLasFilas(cantidadesDeBananasEnCadaFila) {
+  cantidadesQueFaltan := cantidadesDeBananasEnCadaFila
+  while (not (estáVacía_(cantidadesQueFaltan))) {
+    ComerFila(primerElemento_(cantidadesQueFaltan))
+    cantidadesQueFaltan := resto_(cantidadesQueFaltan)
+  }
+}
+
+procedure ComerFila(cantidadDeBananas) {
+  repeat(cantidadDeBananas) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+  MoverANanoHaciaArriba()
+}
+
+

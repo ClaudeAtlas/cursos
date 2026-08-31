@@ -1,0 +1,51 @@
+name: Está lista la cena
+attire:
+  active: Una cena
+  user_permissions:
+    can_toggle_visibility: false
+  visible: true
+blocks:
+  defaultToolbox: | 
+    <category name="Comandos comunes">
+        <block type="AlternativaCompleta"></block>
+    </category>
+    <category name="Expresiones comunes">
+        <block type="OperadorLogico"></block>
+        <block type="not"></block>
+    </category>
+    <category name="Operaciones de la cena">
+        <block type="AvisarQueTodavíaFalta"></block>
+        <block type="AvisarQueVengan"></block>
+        <block type="estáLaHamburguesaEnLaMesa"></block>
+        <block type="estánLasPapasFritasEnLaMesa"></block>
+        <block type="estáLaTortaEnLaMesa"></block>
+        <block type="estáElBifeEnLaMesa"></block>
+        <block type="estáLaEnsaladaEnLaMesa"></block>
+        <block type="estáLaFrutaEnLaMesa"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Mis funciones" custom="FUNCTION_CALLS">        </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturnnoparams"></block>
+        <block type="procedures_defreturnsimple"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  user_permissions:
+    can_change_initial_board: true
+    can_change_initial_board_source: true
+    can_change_source: false
+    can_edit_board: false
+    can_view_size_section: false
+    can_view_attire_section: true
+  visible_edition: true
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.85

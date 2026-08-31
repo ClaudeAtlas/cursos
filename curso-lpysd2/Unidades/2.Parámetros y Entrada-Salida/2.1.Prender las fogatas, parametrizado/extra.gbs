@@ -1,0 +1,31 @@
+//--------------------------
+// Operaciones de interfaz
+//--------------------------
+/*@ATTRIBUTE@block_name@Prender la fogata@*/        procedure PrenderEstaFogata()       { AuxPrenderFogata()          }
+/*@ATTRIBUTE@block_name@Mover al explorador al _@*/ procedure MoverAlExploradorAl_(dir) { AuxMoverAlExploradorAl(dir) } 
+
+/*@ATTRIBUTE@block_name@¿hay fogata apagada en este lugar?@*/ 
+function hayFogataApagada() { return(aux_hayFogataApagada()) }
+
+//--------------------------
+// Operaciones auxiliares
+//--------------------------
+procedure AuxPrenderFogata() {
+  // PRECONDICIÓN: está el explorador y hay una fogata apagada
+  if (not aux_estáElExplorador()) { BOOM("No puedo darle instrucciones al explorador si no está en este lugar") }
+  if (aux_hayFogataPrendida())    { BOOM("La fogata ya está prendida") }
+  if (not aux_hayFogataApagada()) { BOOM("No hay fogata en este lugar") }
+  Poner(Azul)
+}
+
+procedure AuxMoverAlExploradorAl(dir) { 
+   if (not aux_estáElExplorador()) { BOOM("No está el explorador en este lugar") }
+   Sacar(Negro) Mover(dir) 
+   if (aux_sePerdióElExplorador()) { BOOM("El explorador se perdió en el bosque") }
+   Poner(Negro) 
+}
+
+function aux_hayFogataApagada()     { return(nroBolitas(Azul) ==1) }
+function aux_hayFogataPrendida()    { return(nroBolitas(Azul) ==2) }
+function aux_estáElExplorador()     { return(nroBolitas(Negro)==1) }
+function aux_sePerdióElExplorador() { return(nroBolitas(Rojo) ==1) }

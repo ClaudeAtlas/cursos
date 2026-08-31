@@ -1,0 +1,82 @@
+program {
+  ComerFilaCon9Bananas()
+  MoverANanoHaciaArriba()
+  ComerFilaCon4Bananas()
+  MoverANanoHaciaArriba()
+  ComerFilaCon7Bananas()
+  MoverANanoHaciaArriba()
+  ComerFilaCon2Bananas()
+  MoverANanoHaciaArriba()
+  ComerFilaCon8Bananas()
+  MoverANanoHaciaArriba()
+  ComerFilaCon5Bananas()
+  MoverANanoHaciaArriba()
+  ComerFilaCon6Bananas()
+  MoverANanoHaciaArriba()
+  ComerFilaCon3Bananas()
+  MoverANanoHaciaArriba()
+}
+
+procedure ComerFilaCon2Bananas() {
+  repeat(2) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+}
+
+procedure ComerFilaCon3Bananas() {
+  repeat(3) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+}
+
+procedure ComerFilaCon4Bananas() {
+  repeat(4) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+}
+
+procedure ComerFilaCon5Bananas() {
+  repeat(5) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+}
+
+procedure ComerFilaCon6Bananas() {
+  repeat(6) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+}
+
+procedure ComerFilaCon7Bananas() {
+  repeat(7) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+}
+
+procedure ComerFilaCon8Bananas() {
+  repeat(8) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+}
+
+procedure ComerFilaCon9Bananas() {
+  repeat(9) {
+    MoverANanoALaDerecha()
+    ComerBanana()
+  }
+  VolverANanoAlBordeIzquierdo()
+}

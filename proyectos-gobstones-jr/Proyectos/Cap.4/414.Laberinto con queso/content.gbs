@@ -1,0 +1,53 @@
+procedure SalirDelLaberintoComiendoQueso() {
+  repeat(20) {
+    ComerQuesoSiHay()
+    AvanzarUnPasoSiguiendoLaFlecha()
+  }
+}
+
+procedure ComerQuesoSiHay() {
+  ...
+}
+
+procedure AvanzarUnPasoSiguiendoLaFlecha() {
+  if (laFlechaApuntaAlNorte()) {
+    SacarLaFlecha()
+    MoverAlRatónAl_(Norte)
+  } elseif (laFlechaApuntaAlEste()) {
+    ...
+  } elseif (boom("El programa todavía no está completo")) {
+    ...
+  } elseif (boom("El programa todavía no está completo")) {
+    ...
+  } else {
+  }
+}
+
+procedure ComerQueso() {
+  Sacar(Verde)
+}
+
+function hayQueso() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function laFlechaApuntaAlNorte() {
+  return (nroBolitas(Rojo) == 1)
+}
+
+function laFlechaApuntaAlEste() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function laFlechaApuntaAlSur() {
+  return (boom("El programa todavía no está completo"))
+}
+
+function laFlechaApuntaAlOeste() {
+  return (boom("El programa todavía no está completo"))
+}
+
+
+program {
+  SalirDelLaberintoComiendoQueso()
+}

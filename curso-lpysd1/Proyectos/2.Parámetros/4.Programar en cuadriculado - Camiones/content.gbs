@@ -1,0 +1,32 @@
+program {
+  DibujarCamión(4)
+  PasarAlCamiónSiguienteAlDeTamaño(4)
+  DibujarCamión(3)
+  PasarAlCamiónSiguienteAlDeTamaño(3)
+  DibujarCamión(2)
+}
+
+procedure DibujarCamión(alturaDeLaCabinaDelCamión) {
+  DibujarCabina(...)
+  PasarALaSecciónSiguienteAUnaDeTamaño(...)
+  DibujarAcoplado(... * 2)
+}
+
+procedure PasarAlCamiónSiguienteAlDeTamaño(tamañoDelCamiónAPasar) {
+  ...
+}
+
+// Auxiliares de dibujo del camión
+procedure DibujarCabina(alturaDeLaCabina) {
+  ...
+}
+
+procedure DibujarAcoplado(alturaDelAcoplado) {
+  ...
+}
+
+procedure PasarALaSecciónSiguienteAUnaDeTamaño(tamañoASaltear) {
+  ...
+}
+
+

@@ -1,0 +1,9 @@
+interactive program {
+  on INIT       { DrawQuell_(level())      }
+  on K_R        { DrawQuell_(level())      }
+  on K_DOWN     { ProcessOneStepTo_(South) }
+  on K_UP       { ProcessOneStepTo_(North) }
+  on K_LEFT     { ProcessOneStepTo_(West)  }    
+  on K_RIGHT    { ProcessOneStepTo_(East)  }
+  on TIMEOUT(1) { ProcessOneStep()         }
+}

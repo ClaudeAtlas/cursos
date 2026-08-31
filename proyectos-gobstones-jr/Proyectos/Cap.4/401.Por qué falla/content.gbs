@@ -1,0 +1,38 @@
+﻿program {
+  DibujarUnCuadrado()
+}
+
+procedure DibujarUnCuadrado() {
+  DibujarUnaLíneaAlNorte()
+  DibujarUnaLíneaAlEste()
+  DibujarUnaLíneaAlSur()
+  DibujarUnaLíneaAlOeste()
+}
+
+procedure DibujarUnaLíneaAlNorte() {
+  repeat(4) {
+    Poner(Verde)
+    Mover(Norte)
+  }
+}
+
+procedure DibujarUnaLíneaAlEste() {
+  repeat(4) {
+    Poner(Verde)
+    Mover(Este)
+  }
+}
+
+procedure DibujarUnaLíneaAlSur() {
+  repeat(4) {
+    Poner(Verde)
+    Mover(Verde)
+  }
+}
+
+procedure DibujarUnaLíneaAlOeste() {
+  repeat(Negro) {
+    Poner(Sur)
+    Mover(Oeste)
+  }
+}

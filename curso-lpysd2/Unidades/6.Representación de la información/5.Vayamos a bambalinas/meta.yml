@@ -1,0 +1,40 @@
+name: "Vayamos a bambalinas: El alien toca botón"
+attire:
+  active: El alien toca botón
+  user_permissions:
+    can_toggle_visibility: true
+blocks:
+  defaultToolbox: |
+    <category name="Operaciones del Alien">
+        <block type="MoverAlienAlEste"></block>
+        <block type="TocarBotón"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+    </category>
+  disabled: []
+  visible: 
+    - Operaciones del Alien
+    - MisProcedimientos
+    - Definiciones
+board:
+  visible_edition: true
+  collapse_toolbox: false
+  user_permissions:
+    can_change_initial_board: true
+    can_change_initial_board_source: false
+    can_edit_board: true
+    can_view_size_section: true
+    can_view_attire_section: true
+  active: 1
+  initial_board_source: selected
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.6000000128225118

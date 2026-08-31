@@ -1,0 +1,49 @@
+procedure MoverALaDocenteAl_(dir) {
+  if (not aux_hayDocente())      { BOOM("No puedo darle órdenes a la docente si no está en la celda actual") }
+  if (dir==Norte)                { BOOM("La docente no puede volar")                                         }
+  if (dir==Sur)                  { BOOM("La docente no puede atravesar el piso")                             }
+  if (not puedeMover(dir) && (dir==Este || dir==Oeste)) { BOOM("No puedo pasar por la pared")                }
+  Sacar(aux_colorDeLaDocente())
+  Mover(dir)
+  Poner(aux_colorDeLaDocente())
+}
+
+procedure AbrirElCuaderno() {
+  if (not aux_hayDocente())      { BOOM("No puedo darle órdenes a la docente si no está en la celda actual") }
+  if (not aux_hayEscritorio())   { BOOM("La docente no está cerca del cuaderno")                             }
+  if (aux_cuadernoAbierto())     { BOOM("El cuaderno ya está abierto")                                       }
+  Poner(aux_colorDelEscritorio())
+}
+
+procedure EscribirLaContraseña_(passwd) {
+  if (not aux_hayDocente())      { BOOM("No puedo darle órdenes a la docente si no está en la celda actual") }
+  if (not aux_hayPizarrón())     { BOOM("La docente no llegó al pizarrón")                                   }
+  if (not aux_pizarrónVacío())   { BOOM("El pizarrón ya está escrito")                                       }
+  if (passwd/=aux_contraseña())  { BOOM("No es la contraseña correcta")                                      }
+  repeat (passwd) { Poner(aux_colorDeContraseña()) }  
+}
+
+function laContraseñaEscritaEnElCuaderno() {
+  if (not aux_hayDocente())      { BOOM("No puedo darle órdenes a la docente si no está en la celda actual") }
+  if (not aux_hayEscritorio())   { BOOM("La docente no alcanza a leer la contraseña desde lejos")            }
+  if (not aux_cuadernoAbierto()) { BOOM("El cuaderno no está abierto")                                       }
+  return (nroBolitas(aux_colorDeContraseña()))
+}
+
+function aux_colorDeContraseña()  { return (Rojo)  }
+function aux_colorDeLaDocente()   { return (Negro) }
+function aux_colorDelEscritorio() { return (Azul)  }
+function aux_colorDelPizarrón()   { return (Verde) }
+
+function aux_hayDocente()       { return (hayBolitas(aux_colorDeLaDocente()))   }
+function aux_hayPizarrón()      { return (hayBolitas(aux_colorDelPizarrón()))   }
+function aux_hayEscritorio()    { return (hayBolitas(aux_colorDelEscritorio())) }
+function aux_hayContraseña()    { return (hayBolitas(aux_colorDeContraseña()))  }
+
+function aux_pizarrónVacío()    { return (aux_hayPizarrón() && not aux_hayContraseña()) }
+function aux_cuadernoAbierto()  { return (nroBolitas(aux_colorDelEscritorio())==2)      }
+
+function aux_contraseña() { 
+  IrAlBorde(Este)
+  return (nroBolitas(aux_colorDeContraseña()))
+}

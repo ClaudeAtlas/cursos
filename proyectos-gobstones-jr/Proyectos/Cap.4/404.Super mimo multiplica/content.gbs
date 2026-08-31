@@ -1,0 +1,9 @@
+procedure ImitarElDobleDeLasAzules() {
+  repeat(...) {
+    Poner(Rojo)
+  }
+}
+
+
+program {
+}

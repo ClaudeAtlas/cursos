@@ -1,0 +1,16 @@
+program {
+  EncenderTodasLasLuces()
+}
+
+procedure EncenderTodasLasLuces() {
+  repeat (4) { EncenderUnRiel() }
+}
+
+procedure EncenderUnRiel() {
+  repeat (2) { MoverALuchoAl_(Este) }
+  EncenderLuz()
+  MoverALuchoAl_(Norte)
+  repeat (2) { MoverALuchoAl_(Oeste) }
+  EncenderLuz()
+  MoverALuchoAl_(Este)
+}

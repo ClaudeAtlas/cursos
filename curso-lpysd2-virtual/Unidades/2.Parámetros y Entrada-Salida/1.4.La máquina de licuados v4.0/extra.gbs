@@ -1,0 +1,327 @@
+/*
+   REPRESENTACIÓN:
+      1. las bolitas negras indican el tipo de elemento en la celda
+          a. Borde   - 1 negra
+          b. Esquina - 2 negras
+          c. Imagen  - 3 negras
+          d. Botón   - 4 negras
+          e. Licuado - 5 o 15 negras (según sega de banana o frutilla, respectivamente)
+          f. Display - 6 negras
+      2. las bolitas azules indican el valor del elemento
+          a. Borde Norte, Esquina NO - 1 azul
+          b. Borde Este , Esquina NE - 2 azules
+          c. Borde Sur  , Esquina SE - 3 azules
+          d. Borde Oeste, Esquina SO - 4 azules
+          En los botones y el licuado, indica la cantidad de frutas (deseadas o puestas, respectivamente)
+          En el display indica el número
+      3. las bolitas verdes y rojas indican situaciones especiales
+          a. en la celda del licuado (5 negras), el número de verdes indica el próximo paso del licuado (0 rojas)
+          b. en la celda del licuado (5 negras), una bolita roja indica un error (0 verdes)
+          c. en cualquier celda, 1 bolita roja y 1 verde indica que ese lugar está marcado (y no puede haber más de una celda así)
+*/
+
+type Fruta is variant { case Banana {} case Frutilla {} }
+
+/*@ATTRIBUTE@block_name@_@*/
+/*@ATTRIBUTE@block_dropdown@[("Banana",'Banana'),("Frutilla",'Frutilla')]@*/
+function fruta_(fruta) { return(fruta) }
+
+// --------------------------------------------------------
+// -- OPERACIONES INTERNAS DE LA MÁQUNA DE LICUADOS -------
+// --------------------------------------------------------
+procedure PonerLecheEnLaLicuadora() { 
+   /*
+      PROPÓSITO: inicia un licuado según el display. Si hay un licuado iniciado, falla
+      PRECONDICIÓN: no hay marcas en el tablero
+   */
+   AuxMarcar()
+   AuxIrAPosiciónDeServir()
+   if (auxNoComenzó()) { AuxComenzarLicuadoDe__(aux_cantidadEnElDisplay(),aux_frutaSeleccionada()) }
+   else                { AuxIndicarMalFuncionamiento() }
+   AuxVolverALaMarca()
+   AuxDesmarcar()
+}
+
+procedure PonerUna_EnLaLicuadora(fruta) { 
+   /*
+      PROPÓSITO: agrega una fruta al licuado actual. 
+                 Para funcionar debe haber un licuado comenzado 
+                 que solo tenga leche.
+      PRECONDICIÓN: no hay marcas en el tablero, la fruta seleccionada debe ser la colocada
+   */
+   TypeCheck(fruta, Banana, "Solo puedo poner frutas en la licuadora")
+   AuxMarcar()
+   AuxIrAPosiciónDeServir()
+   if (auxVaPorElPasoDePonerFrutas(fruta)) { AuxHacerUnPasoDelLicuado() AuxPonerFruta() }
+   else                                    { AuxIndicarMalFuncionamiento() }
+   AuxVolverALaMarca()
+   AuxDesmarcar()
+}
+
+procedure LicuarUnMinuto() { 
+   /*
+      PROPÓSITO: avanza en la confección del licuado, si ya se pusieron todas las frutas o falla si no
+      PRECONDICIÓN: no hay marcas en el tablero
+      OBSERVACIÓN: para licuar siempre faltan 2 pasos (luego van servir y entregar)
+   */
+   AuxHacerElPasoDelLicuadoParaQueFalten_Pasos(2)
+}
+
+procedure ServirContenidoEnElVaso() { 
+   /*
+      PROPÓSITO: avanza en la confección del licuado, si ya se licuó el contenido o falla si no
+      PRECONDICIÓN: no hay marcas en el tablero
+      OBSERVACIÓN: para licuar siempre faltan 1 pasos (entregar)
+   */
+   AuxHacerElPasoDelLicuadoParaQueFalten_Pasos(1)
+}
+
+procedure EntregarElVaso() { 
+   /*
+      PROPÓSITO: avanza en la confección del licuado, si ya se sirvió el contenido o falla si no
+      PRECONDICIÓN: no hay marcas en el tablero
+      OBSERVACIÓN: entregar es el último paso, por lo que debe no deben quedar pasos
+   */
+   AuxHacerElPasoDelLicuadoParaQueFalten_Pasos(0)
+}
+
+// --------------------------------------------------------
+// -- OPERACIONES EXTERNAS DE LA MÁQUNA DE LICUADOS -------
+// --------------------------------------------------------
+procedure RetirarElVaso() { 
+   /*
+      PROPÓSITO: resetea la máquina, si hay un licuado listo
+      PRECONDICIÓN: no hay marcas en el tablero
+   */
+   AuxMarcar()
+   AuxIrAPosiciónDeServir()
+   if (auxFaltan_Pasos(0)) { AuxResetearLaMáquina() }
+   AuxVolverALaMarca()
+   AuxDesmarcar()
+}
+
+procedure SeleccionarBanana() {
+   /*
+      PROPÓSITO: cambia el toogle de banana/frutilla si corresponde, seleccionando la banana
+      PRECONDICIÓN: no hay marcas en el tablero
+   */
+   if (auxComenzó()) { BOOM("Solo puedo usar los botones en la consola (no dentro de la máquina)") }
+   AuxMarcar()
+   AuxSeleccionarBotón(Banana)
+   AuxDeseleccionarBotón(Frutilla)
+   AuxVolverALaMarca()
+   AuxDesmarcar()
+}
+
+procedure SeleccionarFrutilla() {
+   /*
+      PROPÓSITO: cambia el toogle de banana/frutilla si corresponde, seleccionando la frutilla
+      PRECONDICIÓN: no hay marcas en el tablero
+   */
+   if (auxComenzó()) { BOOM("Solo puedo usar los botones en la consola (no dentro de la máquina)") }
+   AuxMarcar()
+   AuxSeleccionarBotón(Frutilla)
+   AuxDeseleccionarBotón(Banana)
+   AuxVolverALaMarca()
+   AuxDesmarcar()
+}
+
+procedure IncrementarDisplay() {
+   /*
+      PROPÓSITO: incrementar el display (si es menor que 6)
+      PRECONDICIÓN: no hay marcas en el tablero, el licuado no está comenzado
+   */
+   if (auxComenzó()) { BOOM("Solo puedo usar los botones en la consola (no dentro de la máquina)") }
+   AuxMarcar()
+   AuxIrAlDisplay()
+   if (nroBolitas(aux_fruta()) < 6) { Poner(aux_fruta()) }
+   AuxVolverALaMarca()
+   AuxDesmarcar()
+}
+
+procedure DecrementarDisplay() {
+   /*
+      PROPÓSITO: incrementar el display (si es mayor que 1)
+      PRECONDICIÓN: no hay marcas en el tablero, el licuado no está comenzado
+   */
+   if (auxComenzó()) { BOOM("Solo puedo usar los botones en la consola (no dentro de la máquina)") }
+   AuxMarcar()
+   AuxIrAlDisplay()
+   if (nroBolitas(aux_fruta()) > 1) { Sacar(aux_fruta()) }
+   AuxVolverALaMarca()
+   AuxDesmarcar()
+}
+
+
+function frutaSeleccionada() { 
+   /*
+      PROPÓSITO: retorna la fruta seleccionada con los botones
+      PRECONDICIÓN: el licuado no está comenzado
+   */
+   if (auxComenzó()) { BOOM("Solo puedo leer la fruta en la consola (no dentro de la máquina)") }
+   return (aux_frutaSeleccionada()) 
+}
+
+function cantidadEnElDisplay() { 
+   /*
+      PROPÓSITO: retorna la cantidad indicada en el display
+      PRECONDICIÓN: el licuado no está comenzado
+   */
+   if (auxComenzó()) { BOOM("Solo puedo leer el display en la consola (no dentro de la máquina)") }
+   return (aux_cantidadEnElDisplay()) 
+}
+
+// --------------------------------------------------------
+// -- OPERACIONES AUXILIARES ------------------------------
+// --------------------------------------------------------
+function auxComenzó() { 
+   AuxIrAPosiciónDeServir()
+   return (not auxNoComenzó()) 
+}
+
+function aux_cantidadEnElDisplay() { 
+   AuxIrAlDisplay() 
+   return (nroBolitas(aux_fruta()))
+}
+
+function aux_frutaSeleccionada() { 
+   correcto := False
+   AuxIrAlBotón(Banana)
+   if (aux_hayMarcasSelección()) { fruta := Banana   correcto := True }
+   AuxIrAlBotón(Frutilla)
+   if (aux_hayMarcasSelección()) { fruta := Frutilla correcto := True }
+   if (not correcto) { BOOM("La representación no es correcta") }
+   return (fruta)
+}
+
+procedure AuxHacerElPasoDelLicuadoParaQueFalten_Pasos(nroPaso) { 
+   /*
+      PROPÓSITO: avanza en la confección del licuado, si va por el paso indicado para que falte la cantidad pedida
+      PRECONDICIÓN: no hay marcas en el tablero
+   */
+   AuxMarcar()
+   AuxIrAPosiciónDeServir()
+   if (auxFaltan_Pasos(nroPaso+1)) { AuxHacerUnPasoDelLicuado()    }
+   else                            { AuxIndicarMalFuncionamiento() }
+   AuxVolverALaMarca()
+   AuxDesmarcar()
+}
+
+// -----------------------------------------------
+// -- OPERACIONES DE REPRESENTACIÓN --------------
+// -- Todas tienen como precondición:            -
+// --   * está en la posición de servir          -
+// -----------------------------------------------
+procedure AuxComenzarLicuadoDe__(cantidad,fruta) { 
+   repeat (5+aux_offsetDeRepresentación(fruta)) { Poner(aux_elemento()) }
+   AuxIndicar_Pasos(cantidad+3)
+}   
+
+procedure AuxIndicar_Pasos(pasos) { Poner__Veces(aux_paso(), pasos) }
+procedure AuxResetearLaMáquina() { 
+   // Resetar posición de servir
+   SacarTodas_(aux_elemento())
+   SacarTodas_(aux_paso())
+   SacarTodas_(aux_fruta())
+   // Resetear display
+   AuxIrAlDisplay()
+   SacarTodas_(aux_fruta())
+   Poner(aux_fruta())
+   // Volver a la posición de servir
+   AuxIrAPosiciónDeServir()
+}   
+
+function auxNoComenzó()     { return (nroBolitas(aux_paso()) == 0 && nroBolitas(aux_elemento()) == 0 && nroBolitas(Rojo) == 0) }
+function auxFaltan_Pasos(i) { 
+  return (nroBolitas(aux_paso()) == i 
+       && nroBolitas(aux_elemento()) == 5+aux_offsetDeRepresentación(aux_frutaSeleccionada())
+       && nroBolitas(Rojo) == 0) 
+}
+function auxVaPorElPasoDePonerFrutas(fruta) { 
+  return (nroBolitas(aux_paso()) > 3  
+       && nroBolitas(aux_elemento()) == 5+aux_offsetDeRepresentación(fruta)
+       && nroBolitas(Rojo) == 0) 
+}
+
+function aux_hayMarcasSelección() { return(hayBolitas(aux_marcaSelección())) }
+function aux_nroMarcasSelección() { return(nroBolitas(aux_marcaSelección())) }
+
+procedure AuxPonerFruta()               { Poner(aux_fruta())   }
+procedure AuxHacerUnPasoDelLicuado()    { Sacar(aux_paso())    }   
+procedure AuxIndicarMalFuncionamiento() { Poner(Rojo)  SacarTodas_(aux_paso()) }
+
+function aux_fruta()          { return(Azul)  }
+function aux_paso()           { return(Verde) }
+function aux_elemento()       { return(Negro) }
+function aux_marcaSelección() { return(Rojo)  }
+
+procedure AuxSeleccionarBotón(fruta) {
+   AuxIrAlBotón(fruta)
+   if (aux_nroMarcasSelección() == 0) { Poner(aux_marcaSelección()) }
+}
+
+procedure AuxDeseleccionarBotón(fruta) {
+   AuxIrAlBotón(fruta)
+   SacarTodas_(aux_marcaSelección())
+}
+
+function aux_offsetDeRepresentación(fruta) { 
+  return(matching (fruta) yield  
+            0 on Banana yield
+           10 on Frutilla yield
+           boom("No puede suceder: ¿alteraste la definición de Frutas?") otherwise
+        )
+}
+
+function aux_offsetDePosición(fruta) { 
+  return(matching (fruta) yield  
+           1 on Banana yield
+           3 on Frutilla yield
+           boom("No puede suceder: ¿alteraste la definición de Frutas?") otherwise
+        )
+}
+
+// -----------------------------------------------
+// -- OPERACIONES DE MOVIMIENTO ------------------
+// -----------------------------------------------
+procedure AuxIrAlDisplay() {
+  IrAlBorde(Sur) IrAlBorde(Oeste)
+  Mover__Veces(Norte,5)
+  Mover__Veces(Este,2)
+}
+
+procedure AuxIrAlBotón(fruta) {
+  IrAlBorde(Sur) IrAlBorde(Oeste)
+  Mover__Veces(Norte,4)
+  Mover__Veces(Este,aux_offsetDePosición(fruta))
+}
+
+procedure AuxIrAPosiciónDeServir() {
+  IrAlBorde(Sur) IrAlBorde(Oeste)
+  Mover(Norte)
+  Mover__Veces(Este,2)
+}
+
+procedure AuxVolverALaMarca() {
+   // PRECONDICIÓN: hay una marca
+  IrAlBorde(Norte) IrAlBorde(Oeste)                     // Iniciar recorrido
+  while (not aux_hayMarca()                             // No encontré lo buscado
+     && (puedeMover(Este) || puedeMover(Sur))) {        // y no se terminó el tablero
+    if (puedeMover(Este)) { Mover(Este) }               // Avanzar por la fila
+    else { IrAlBorde(Oeste) Mover(Sur) }                // o pasar a la siguiente fila
+  }
+  // Al terminar, si hay una marca, está parado sobre ella
+}
+
+// La marca se representa de forma abstracta, pero no debe superponerse su representación con otros elementos del tablero
+procedure AuxMarcar()    { Poner(Verde) Poner(Rojo) }
+procedure AuxDesmarcar() { Sacar(Verde) Sacar(Rojo) }
+function  aux_hayMarca() { return (hayBolitas(Verde) && hayBolitas(Rojo)) }
+
+// -----------------------------------------------
+// -- OPERACIONES ELEMENTALES --------------------
+// -----------------------------------------------
+procedure SacarTodas_(color)            { repeat (nroBolitas(color)) { Sacar(color) } }
+procedure Poner__Veces(color, cantidad) { repeat (cantidad)          { Poner(color) } }
+procedure Mover__Veces(dir, cantidad)   { repeat (cantidad)          { Mover(dir)   } }
+

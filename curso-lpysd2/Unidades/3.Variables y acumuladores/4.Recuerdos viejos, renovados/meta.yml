@@ -1,0 +1,46 @@
+name: Recuerdos viejos, renovados
+attire:
+  active: 'Cartas, letras y números'
+  user_permissions:
+    can_toggle_visibility: false
+  visible: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="RepeticionCondicional"></block>
+        <block type="Asignacion"></block>
+    </category>
+    <category name="Expresiones básicas">    
+        <block type="math_number"></block>
+        <block type="OperadorNumerico"></block>
+        <block type="not"></block>
+    </category>
+    <category name="Operaciones de cartas">
+        <block type="SacarCartaActual"></block>
+        <block type="hayCarta"></block>
+        <block type="IrAlInicioDeLaEntrada"></block>
+        <block type="PasarASiguientePosición"></block>
+        <block type="InformarNúmero_"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Mis funciones" custom="FUNCTION_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+        <block type="procedures_defreturnsimplewithparams"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  user_permissions:
+    can_change_source: false
+    can_edit_board: false
+  visible_edition: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.65

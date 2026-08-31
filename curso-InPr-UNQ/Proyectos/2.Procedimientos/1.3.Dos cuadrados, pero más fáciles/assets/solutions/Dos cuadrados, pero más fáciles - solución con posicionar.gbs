@@ -1,0 +1,34 @@
+﻿/*
+   PROPÓSITO: dibuja 2 cuadrados rojos, en las esquinas SurOeste y SurEste
+   PRECONDICIONES: 
+     El tablero tiene al menos 3 celdas de lado.
+	 Idealmente tiene al menos 7 celdas de lado.
+	 La celda inicial es la esquina SurOeste
+*/
+program {
+  DibujarCuadradoRojo()
+  PosicionarPara2doCuadrado()
+  DibujarCuadradoRojo()
+}
+
+procedure PosicionarPara2doCuadrado() {
+  /*
+     PROPÓSITO: ubica al cabezal para poder dibujar un cuadrado 
+	            de lado 3 apoyado en la esquina SurEste
+     PRECONDICIONES: 
+       El tablero tiene al menos 3 celdas de lado
+  */
+  IrAlBorde(Este)  Mover(Oeste)  Mover(Oeste)
+}
+
+procedure DibujarCuadradoRojo() {
+  /*
+     PROPÓSITO: dibuja un cuadrado de lado 3, hecho con bolitas rojas
+     PRECONDICIONES: 
+       hay al menos 2 celdas al Norte y 2 al Este de la celda inicial
+  */
+  Poner(Rojo)  Mover(Este)   Poner(Rojo)  Mover(Este)
+  Poner(Rojo)  Mover(Norte)  Poner(Rojo)  Mover(Norte)
+  Poner(Rojo)  Mover(Oeste)  Poner(Rojo)  Mover(Oeste)
+  Poner(Rojo)  Mover(Sur)    Poner(Rojo)  Mover(Sur)
+}

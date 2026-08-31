@@ -1,0 +1,1 @@
+procedure Poner_BolitasNegras(cantidad) { repeat(cantidad) { Poner(Negro) } }

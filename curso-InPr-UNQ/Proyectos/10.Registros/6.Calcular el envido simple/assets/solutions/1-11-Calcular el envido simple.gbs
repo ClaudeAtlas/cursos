@@ -1,0 +1,7 @@
+program { DecirNúmero_(envidoSimple()) }
+
+function envidoSimple() {
+  return (dameElNúmero_(cartaIzquierda()) + (dameElNúmero_(cartaDerecha()) + 20))
+}
+
+

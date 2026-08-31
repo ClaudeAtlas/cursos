@@ -1,0 +1,9 @@
+program {
+  
+}
+
+procedure GenerarManoParaRetrucar() {
+  PonerCarta_(...)
+  PasarASiguientePosición()
+  ...
+}

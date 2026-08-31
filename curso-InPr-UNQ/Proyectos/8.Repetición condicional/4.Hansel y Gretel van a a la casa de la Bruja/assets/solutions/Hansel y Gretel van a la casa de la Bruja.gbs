@@ -1,0 +1,15 @@
+﻿program { LlevarAHanselYGretelALaCasaDeLaBruja() }
+
+function miguitas() { return (Rojo) }
+function llegamosALoDeLaBruja() { return (nroBolitas(Negro) == 3) }
+
+procedure LlevarAHanselYGretelALaCasaDeLaBruja() {
+  while (not llegamosALoDeLaBruja()) {
+    DejarMiguitas()
+    AvanzarCarreta()
+  }
+}
+
+procedure DejarMiguitas() {
+  Poner(miguitas())
+}

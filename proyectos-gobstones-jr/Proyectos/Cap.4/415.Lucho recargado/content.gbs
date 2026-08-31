@@ -1,0 +1,39 @@
+procedure EncenderLasFilasDeLuces() {
+  ...
+}
+
+procedure MoverALuchoAlNorte() {
+  ...
+}
+
+procedure EncenderUnaFilaYVolver() {
+  ...
+}
+
+procedure EncenderLaLuzSiCorresponde() {
+  ...
+}
+
+procedure VolverALuchoAlBordeOeste() {
+  ...
+}
+
+procedure MoverALuchoAlEste() {
+  ...
+}
+
+procedure EncenderLaLuz() {
+  ...
+}
+
+procedure MoverALuchoAlOeste() {
+  ...
+}
+
+function hayUnaLuzApagada() {
+  return (...)
+}
+
+
+program {
+}

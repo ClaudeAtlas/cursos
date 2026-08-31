@@ -1,0 +1,86 @@
+program {
+  UbicarEnLaPosiciónInicialParaElPrimerCamión()
+  DibujarCamión(4)
+  UbicarEnLaPosiciónInicialLuegoDelCamión(4)
+  DibujarCamión(3)
+  UbicarEnLaPosiciónInicialLuegoDelCamión(3)
+  DibujarCamión(2)
+}
+
+procedure DibujarCamión(alturaDeLaCabina) {
+  DibujarCabina(alturaDeLaCabina)
+  IrAlFinalDeSección(alturaDeLaCabina)
+  DibujarAcoplado(alturaDeLaCabina * 2)
+  VolverDelFinalDeSección(alturaDeLaCabina)
+}
+
+procedure DibujarCabina(altura) {
+  DibujarCuadradoDeTamaño(altura)
+  IrALasRuedas()
+  DibujarRueda()
+  VolverDeLasRuedas()
+}
+
+procedure DibujarAcoplado(alturaDelAcoplado) {
+  DibujarCaja(alturaDelAcoplado)
+  IrAlFinalDeSección(alturaDelAcoplado)
+  DibujarCaja(alturaDelAcoplado)
+  VolverDelFinalDeSección(alturaDelAcoplado)
+}
+
+procedure DibujarCaja(alturaDeLaCaja) {
+  DibujarCuadradoDeTamaño(alturaDeLaCaja)
+  IrALasRuedas()
+  DibujarRuedas(alturaDeLaCaja - 3)
+  VolverDeLasRuedas()
+}
+
+procedure DibujarRuedas(distanciaEntreLasRuedas) {
+  DibujarRueda()
+  IrAlFinalDeSección(distanciaEntreLasRuedas)
+  DibujarRueda()
+  VolverDelFinalDeSección(distanciaEntreLasRuedas)
+}
+
+procedure DibujarRueda() {
+  Pintar()
+}
+
+procedure DibujarCuadradoDeTamaño(largoDelLado) {
+  DibujarLínea(largoDelLado - 1, Norte)
+  DibujarLínea(largoDelLado - 1, Este)
+  DibujarLínea(largoDelLado - 1, Sur)
+  DibujarLínea(largoDelLado - 1, Oeste)
+}
+
+procedure DibujarLínea(largoDeLaLínea, dirección) {
+  repeat(largoDeLaLínea) { Pintar() MoverAl_(dirección) }
+}
+
+procedure IrALasRuedas() {
+  MoverAl_(Este)
+  MoverAl_(Sur)
+}
+
+procedure VolverDeLasRuedas() {
+  MoverAl_(Oeste)
+  MoverAl_(Norte)
+}
+
+procedure IrAlFinalDeSección(largoDeLaSección) {
+  repeat(largoDeLaSección) { MoverAl_(Este) }
+}
+
+procedure VolverDelFinalDeSección(largoDeLaSección) {
+  repeat(largoDeLaSección) { MoverAl_(Oeste) }
+}
+
+procedure UbicarEnLaPosiciónInicialParaElPrimerCamión() {
+  repeat(2) { MoverAl_(Este) MoverAl_(Norte) }
+}
+
+procedure UbicarEnLaPosiciónInicialLuegoDelCamión(tamaño) {
+  repeat((tamaño * 2) - 3) { MoverAl_(Este) MoverAl_(Norte) }
+  repeat(5) { MoverAl_(Norte) }
+}
+

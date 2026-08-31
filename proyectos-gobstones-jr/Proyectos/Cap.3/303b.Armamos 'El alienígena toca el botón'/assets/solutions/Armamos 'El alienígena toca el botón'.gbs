@@ -1,0 +1,17 @@
+procedure MoverAlAlienígenaAlEste() {
+  Sacar(Verde)
+  Mover(Este)
+  Poner(Verde)
+}
+
+procedure TocarElBotón() {
+  Sacar(Rojo)
+}
+
+
+program {
+  MoverAlAlienígenaAlEste()
+  MoverAlAlienígenaAlEste()
+  MoverAlAlienígenaAlEste()
+  TocarElBotón()
+}

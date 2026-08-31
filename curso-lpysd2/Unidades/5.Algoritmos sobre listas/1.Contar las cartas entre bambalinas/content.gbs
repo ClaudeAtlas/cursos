@@ -1,0 +1,8 @@
+program { InformarNúmero_(cantidadDeCartasDelMazo(mazoActual())) }
+
+function cantidadDeCartasDelMazo(mazo) {
+  ...
+  return (...)
+}
+
+

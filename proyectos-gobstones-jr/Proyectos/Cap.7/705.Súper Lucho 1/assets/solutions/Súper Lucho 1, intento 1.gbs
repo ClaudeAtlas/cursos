@@ -1,0 +1,11 @@
+procedure EncenderLaFilaDeLuces() {
+  repeat(2) {
+    EncenderLaLuz()
+    MoverALuchoAlEste()
+  }
+}
+
+
+program {
+  EncenderLaFilaDeLuces()
+}

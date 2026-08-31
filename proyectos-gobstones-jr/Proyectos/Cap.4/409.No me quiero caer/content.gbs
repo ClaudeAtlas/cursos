@@ -1,0 +1,13 @@
+procedure DibujarLaVíbora() {
+  repeat(10) {
+    DibujarUnSegmentoDeLaVíboraYAvanzar()
+  }
+}
+
+procedure DibujarUnSegmentoDeLaVíboraYAvanzar() {
+  ...
+}
+
+
+program {
+}

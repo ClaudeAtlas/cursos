@@ -1,0 +1,41 @@
+name: El alquimista
+attire:
+  active: 'Cartas, letras y números'
+  user_permissions:
+    can_toggle_visibility: true
+  visible: true
+blocks:
+  defaultToolbox: |
+    <category name="Operaciones de Cartas">
+        <block type="paloDeCartaEspañolaDe40_"></block>
+        <block type="númeroDeCartaEspañolaDe40_"></block>
+        <block type="DecirCarta_"></block>
+        <block type="dameCarta__"></block>
+        <block type="cartaActual"></block>
+        <block type="dameElPalo_"></block>
+        <block type="dameElNúmero_"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturnnoparams"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  visible_edition: false
+  collapse_toolbox: false
+  user_permissions:
+    can_view_attire_section: false
+    can_edit_board: false
+    can_change_initial_board: false
+    can_change_initial_board_source: false
+    can_view_size_section: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.65  

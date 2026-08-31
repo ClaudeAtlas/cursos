@@ -1,0 +1,41 @@
+name: "Las bambalinas de Gobstones (3): ¿Cuál es tu nombre?"
+attire:
+  active: 'Cartas, letras y números'
+  user_permissions:
+    can_toggle_visibility: true
+  visible: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="Poner"></block>
+        <block type="Mover"></block>
+        <block type="RepeticionSimple"></block>
+    </category>
+    <category name="Expresiones básicas">
+        <block type="math_number"></block>
+        <block type="ColorSelector"></block>
+        <block type="DireccionSelector"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Mis funciones" custom="FUNCTION_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+        <block type="procedures_defreturnsimplewithparams"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  visible_edition: true
+  collapse_toolbox: false
+  user_permissions:
+    can_view_attire_section: true
+    can_edit_board: true
+    can_change_initial_board: true
+    can_change_initial_board_source: true
+    can_view_size_section: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false

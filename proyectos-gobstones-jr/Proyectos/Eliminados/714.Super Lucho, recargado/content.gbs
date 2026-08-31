@@ -1,0 +1,43 @@
+procedure IrALaEsquinaSuroeste() {
+  ...
+}
+
+procedure EncenderYContar() {
+  ...
+}
+
+procedure PasarALaSiguienteCelda() {
+  ...
+}
+
+function esLaÚltimaCelda() {
+  return (...)
+}
+
+procedure EncenderLuz() {
+  Poner(Azul)
+}
+
+function esLuzApagada() {
+  return (nroBolitas(Azul) == 1)
+}
+
+procedure MoverALucho(direcciónAMover) {
+  ...
+}
+
+procedure SacarALucho() {
+  Sacar(Negro)
+}
+
+procedure LlevarALuchoAlBorde(direcciónDelBorde) {
+  ...
+}
+
+procedure PonerALucho() {
+  Poner(Negro)
+}
+
+
+program {
+}

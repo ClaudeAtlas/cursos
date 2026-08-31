@@ -1,0 +1,87 @@
+[
+  { "name": "Ejercitación", "repo": "ClaudeAtlas/cursos"
+  , "exercises": 
+    [ { "id": "0.", "name": "El alien toca botón"
+      , "path": "Proyectos/1.Ejercitación/0.El alien toca botón"
+      }
+    , { "id": "1.", "name": "Laberinto con queso"
+      , "path": "Proyectos/1.Ejercitación/1.Laberinto con queso"
+      }
+    , { "id": "2.", "name": "Programar en cuadriculado: Velero"
+      , "path": "Proyectos/1.Ejercitación/2.Programar en cuadriculado - Velero"
+      }
+    , { "id": "3.", "name": "A dibujar cuadrados"
+      , "path": "Proyectos/1.Ejercitación/3.A dibujar cuadrados"
+      }
+    , { "id": "4.", "name": "El planeta de Nano (sin parámetros)"
+      , "path": "Proyectos/1.Ejercitación/4.El planeta de Nano sin parámetros"
+      }
+    , { "id": "5.", "name": "Programar en cuadriculado: Camión"
+      , "path": "Proyectos/1.Ejercitación/5.Programar en cuadriculado - Camión"
+      }
+    ]
+  }
+, { "name": "Practiquemos parámetros", "repo": "ClaudeAtlas/cursos"
+  , "exercises": 
+    [ { "id": "0.1.", "name": "La máquina de licuados, v1.0"
+      , "path": "Proyectos/2.Parámetros/0.1.La máquina de licuados v1.0"
+      }
+    , { "id": "0.2.", "name": "La máquina de licuados, v2.0"
+      , "path": "Proyectos/2.Parámetros/0.2.La máquina de licuados v2.0"
+      }
+    , { "id": "0.3.", "name": "La máquina de licuados, v3.0"
+      , "path": "Proyectos/2.Parámetros/0.3.La máquina de licuados v3.0"
+      }
+    , { "id": "0.4.", "name": "La máquina de licuados, v4.0"
+      , "path": "Proyectos/2.Parámetros/0.4.La máquina de licuados v4.0"
+      }
+    , { "id": "1.", "name": "El planeta de Nano (con parámetros)"
+      , "path": "Proyectos/2.Parámetros/1.El planeta de Nano con parámetros"
+      }
+    , { "id": "2.", "name": "Cuadrados de colores"
+      , "path": "Proyectos/2.Parámetros/2.Cuadrados de colores"
+      }
+    , { "id": "3.", "name": "Más cuadrados"
+      , "path": "Proyectos/2.Parámetros/3.Más cuadrados"
+      }
+    , { "id": "4.", "name": "Programar en cuadriculado: Camiones"
+      , "path": "Proyectos/2.Parámetros/4.Programar en cuadriculado - Camiones"
+      }
+    ]
+  }
+, { "name": "Expresiones", "repo": "ClaudeAtlas/cursos"
+  , "exercises": 
+    [ { "id": "1.", "name": "La música del loro"
+      , "path": "Proyectos/3.Expresiones/1.La música del loro"
+      }
+    , { "id": "2.", "name": "La cena de Dino"
+      , "path": "Proyectos/3.Expresiones/2.La cena de Dino"
+      }
+    , { "id": "3.", "name": "Dino aprende a no comer chatarra"
+      , "path": "Proyectos/3.Expresiones/3.Dino aprende a no comer chatarra"
+      }
+    , { "id": "4.", "name": "Está lista la cena"
+      , "path": "Proyectos/3.Expresiones/4.Está lista la cena"
+      }
+    ]
+  }
+, { "name": "Variables", "repo": "ClaudeAtlas/cursos"
+  , "exercises": 
+    [ { "id": "1.", "name": "Recuerden la contraseña"
+      , "path": "Proyectos/4.Variables/1.Recuerden la contraseña"
+      }
+    , { "id": "2.", "name": "¿Cuánto envido?"
+      , "path": "Proyectos/4.Variables/2.Cuánto envido"
+      }
+    , { "id": "3.1.", "name": "El mono cuenta las frutas"
+      , "path": "Proyectos/4.Variables/3.1.El mono cuenta las frutas"
+      }
+    , { "id": "3.2.", "name": "El mono va y vuelve"
+      , "path": "Proyectos/4.Variables/3.2.El mono va y vuelve"
+      }
+    , { "id": "3.3.", "name": "El mono cuenta las frutas"
+      , "path": "Proyectos/4.Variables/3.3.El mono cuenta de nuevo"
+      }
+    ]
+  }
+]

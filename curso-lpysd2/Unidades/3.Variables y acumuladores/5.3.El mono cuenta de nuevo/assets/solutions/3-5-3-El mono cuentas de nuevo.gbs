@@ -1,0 +1,13 @@
+program { ContarLasBananas() }
+
+procedure ContarLasBananas() {
+  cantidadDeBananasVistas := 0
+  while (not (estáElMonoEnElFinDeLaFila())) {
+    ContarLaBanana()
+    cantidadDeBananasVistas := cantidadDeBananasVistas + nroBananas()
+    MoverAlMonoAl_(Este)
+  }
+  InformarCantidadDeBananas_(cantidadDeBananasVistas)
+}
+
+

@@ -1,0 +1,27 @@
+/* ============================================================================================================
+   START Babel.gbs
+   Code for swap between  errors messages on different languages
+   ============================================================================================================
+*/
+function language() { return(English) }
+
+procedure Assert_OrFail_(condition, msg) { if (not condition) { BOOM(msg) } }
+procedure ClearBoard()  { VaciarTablero() }
+
+// ---------
+// Internationalization
+// ---------
+type Language is variant {
+  case English {}
+  case Spanish {}
+}
+
+function babel(msgEn, msgSp) { 
+  return(matching (language()) yield 
+           msgSp on Spanish yield
+           msgEn otherwise)
+}
+/* ============================================================================================================
+   END Babel.gbs
+   ============================================================================================================
+*/

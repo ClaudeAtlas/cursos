@@ -1,0 +1,41 @@
+procedure EntrenarAlBeto() {
+  BOOM("El programa todavía no está completo")
+}
+
+procedure RegresarAlBetoAlBordeOeste() {
+  BOOM("El programa todavía no está completo")
+}
+
+procedure MoverAlBetoHastaLaPelota() {
+  BOOM("El programa todavía no está completo")
+}
+
+procedure PatearYVolverAlBordeOeste() {
+  MoverAlBetoHastaLaPelota()
+  PatearLaPelota()
+  RegresarAlBetoAlBordeOeste()
+}
+
+procedure PatearLaPelota() {
+  MoverElPieDelBeto()
+  MoverLaPelotaYVolverABeto()
+}
+
+procedure MoverElPieDelBeto() {
+  Poner(Azul)
+  Sacar(Azul)
+}
+
+procedure MoverLaPelotaYVolverABeto() {
+  while (not (lleguéAlArco())) {
+    MoverLaPelotaAl_(Este)
+  }
+  while (not (lleguéAlBeto())) {
+    Mover(Oeste)
+  }
+}
+
+
+program {
+  EntrenarAlBeto()
+}

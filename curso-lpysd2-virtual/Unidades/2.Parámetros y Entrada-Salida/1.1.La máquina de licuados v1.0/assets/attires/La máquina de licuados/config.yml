@@ -1,0 +1,22 @@
+name: "La máquina de licuados"
+rules:
+  - { image: Fondo.png            , when: { black: 0, blue:   0, green:   0, red:   0 } }
+  - { image: Borde-N.png          , when: { black: 1, blue:   1, green:   0, red:   0 } }
+  - { image: Borde-E.png          , when: { black: 1, blue:   2, green:   0, red:   0 } }
+  - { image: Borde-S.png          , when: { black: 1, blue:   3, green:   0, red:   0 } }
+  - { image: Borde-O.png          , when: { black: 1, blue:   4, green:   0, red:   0 } }
+  - { image: Esquina-NO.png       , when: { black: 2, blue:   1, green:   0, red:   0 } }
+  - { image: Esquina-NE.png       , when: { black: 2, blue:   2, green:   0, red:   0 } }
+  - { image: Esquina-SE.png       , when: { black: 2, blue:   3, green:   0, red:   0 } }
+  - { image: Esquina-SO.png       , when: { black: 2, blue:   4, green:   0, red:   0 } }
+  - { image: Mensaje-01.png       , when: { black: 3, blue:   1, green:   0, red:   0 } }
+  - { image: Mensaje-02.png       , when: { black: 3, blue:   2, green:   0, red:   0 } }
+  - { image: Mensaje-03.png       , when: { black: 3, blue:   3, green:   0, red:   0 } }
+  - { image: Mensaje-04.png       , when: { black: 3, blue:   4, green:   0, red:   0 } }
+  - { image: Mensaje-05.png       , when: { black: 3, blue:   5, green:   0, red:   0 } }
+  - { image: Mensaje-06.png       , when: { black: 3, blue:   6, green:   0, red:   0 } }
+  - { image: BotonHacerLicuado.png, when: { black: 4, blue:   2, green:   0, red:   0, head: true } }
+  - { image: BotonHacerLicuado.png, when: { black: 4, blue:   2, green:   0, red:   0 } }
+  - { image: VasoNormal.png       , when: { black: 5, blue:   2, green:   0, red:   0 } }
+  - { image: Error.png            , when: { black: 5, blue: "*", green:   0, red: "+" } }
+  - { image: Error.png            , when: { black: 5, blue: "*", green: "+", red:   0 } }

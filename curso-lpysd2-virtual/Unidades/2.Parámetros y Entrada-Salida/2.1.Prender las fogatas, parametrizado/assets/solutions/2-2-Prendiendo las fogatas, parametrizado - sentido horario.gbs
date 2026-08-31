@@ -1,0 +1,18 @@
+program { PrenderFogatasDelCampamento() }
+
+procedure PrenderFogatasDelCampamento() {
+  PrenderFogatasDeUnLadoHaciaEl(Este)
+  PrenderFogatasDeUnLadoHaciaEl(Sur)
+  PrenderFogatasDeUnLadoHaciaEl(Oeste)
+  PrenderFogatasDeUnLadoHaciaEl(Norte)
+}
+
+procedure PrenderFogataSiCorresponde() { if (hayFogataApagada()) { PrenderFogata() } }
+
+procedure PrenderFogatasDeUnLadoHaciaEl(direcciónAMoverse) {
+  repeat(6) {
+    MoverAlExploradorAl_(direcciónAMoverse)
+    PrenderFogataSiCorresponde()
+  }
+  MoverAlExploradorAl_(direcciónAMoverse)
+}

@@ -1,0 +1,31 @@
+function level() {
+  return(QuellLevel(
+           isTutorial <- True
+         , board      <- boardT03()
+         , solution   <- [ North, East ]
+         , minMoves   <- 2
+         , jewel      <- NoJewel
+         , spikesDir  <- Nothing
+         , boxes      <- []
+         , ball       <- QBallAt(bpos <- pos(3,6))
+         , numMoves   <- 0
+         , rightMoves <- just(0)
+         , numPearls  <- 2
+  ))
+}
+
+function boardT03() { 
+  // [[QElem]], size=pos(17,10)
+  return(
+   [[Out  , cNW(), hT(), hT() , hT() , hT() , hT(), cNE(), Out  ]
+   ,[Out  , vL() , Wall, Empty, Empty, Empty, Wall, vR() , Out  ]
+   ,[cNW(), aSE(), Wall, Empty, Empty, Empty, Wall, aSW(), cNE()]
+   ,[vL() , Wall , Wall, Empty, Empty, Empty, Wall, Wall , vR() ]
+   ,[vL() , Wall , Wall, Wall , Wall , Wall , Wall, Wall , vR() ]
+   ,[vL() , Wall , Wall, Wall , Wall , Wall , Wall, Wall , vR() ]
+   ,[vL() , Wall , Wall, Pearl, Empty, Pearl, Wall, Wall , vR() ]
+   ,[cSW(), aNE(), Wall, Empty, Empty, Empty, Wall, aNW(), cSE()]
+   ,[Out  , vL() , Wall, Empty, Empty, Empty, Wall, vR() , Out  ]
+   ,[Out  , cSW(), hB(), hB() , hB() , hB() , hB(), cSE(), Out  ]
+   ])
+}

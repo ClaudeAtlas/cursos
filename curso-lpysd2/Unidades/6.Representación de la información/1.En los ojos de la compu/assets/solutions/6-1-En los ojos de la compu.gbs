@@ -1,0 +1,18 @@
+program {
+  IrAlInicioDeLaEntrada()
+  códigosLeídos := listaDeNúmerosActual()
+  IrAlInicioDeLaSalida()
+  InformarEnEsteLugarLaListaDeLetras_(listaDeLetrasDeCódigo(códigosLeídos))
+}
+
+function listaDeLetrasDeCódigo(códigos) {
+  losCódigosQueFaltanProcesar := códigos
+  lasLetrasYaVistas := listaVacía()
+  while (not (estáVacía_(losCódigosQueFaltanProcesar))) {
+    lasLetrasYaVistas := agregarAlFinalDeLaLista__(lasLetrasYaVistas, letraDelCódigo_(primerElemento_(losCódigosQueFaltanProcesar)))
+    losCódigosQueFaltanProcesar := resto_(losCódigosQueFaltanProcesar)
+  }
+  return (lasLetrasYaVistas)
+}
+
+

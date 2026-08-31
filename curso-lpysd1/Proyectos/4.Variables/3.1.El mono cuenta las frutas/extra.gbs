@@ -1,0 +1,150 @@
+/*----------------------------------------------------------------------------------------*/
+/*---------------- INTERFAZ --------------------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+/*@ATTRIBUTE@block_name@Mover al mono hacia el _@*/
+procedure MoverAlMonoAl_(dir)            { AuxMoverAlMonoAl(dir)                      }
+/*@ATTRIBUTE@block_name@Cambiar al mono de fila@*/
+procedure CambiarAlMonoDeFila()          { AuxCambiarAlMonoDeFila()                   }
+/*@ATTRIBUTE@block_name@¿el mono está en el inicio de la fila?@*/
+function  estáElMonoEnElInicioDeLaFila() { return(aux_estáElMonoEnElInicio())         }
+/*@ATTRIBUTE@block_name@¿el mono está en el fin de la fila?@*/
+function  estáElMonoEnElFinDeLaFila()    { return(aux_estáElMonoEnElFin())            }
+
+/*@ATTRIBUTE@block_name@Tildar la manzana@*/
+procedure ContarLaManzana()              { AuxContarLaManzana()                       }
+/*@ATTRIBUTE@block_name@Tildar la banana@*/
+procedure ContarLaBanana()               { AuxContarLaBanana()                        }
+function  hayManzana()                   { return(aux_estáLaManzanaEnLaCeldaActual()) }
+function  hayBanana()                    { return(aux_estáLaBananaEnLaCeldaActual())  }
+
+procedure InformarCantidadDeManzanas_(cantidadAInformar) { AuxInformarCantidadDeManzanas(cantidadAInformar) }
+procedure InformarCantidadDeBananas_(cantidadAInformar)  { AuxInformarCantidadDeBananas(cantidadAInformar)  }
+
+/*----------------------------------------------------------------------------------------*/
+/*---------------- OPERACIONES AUXILIARES ------------------------------------------------*/
+/*----------------------------------------------------------------------------------------*/
+procedure AuxVerificarPersonajeParaComando() {
+    if (not aux_estáElMonoEnLaCeldaActual())    { BOOM("No puedo darle instrucciones al mono si no está en esta celda") }
+}
+
+procedure AuxVerificarPersonajeParaFunción() {
+    if (not aux_estáElMonoEnLaCeldaActual())    { BOOM("No puedo hacerle preguntas al mono si no está en esta celda") }
+}
+
+procedure AuxMoverAlMonoAl(dir){
+    AuxVerificarPersonajeParaComando() 
+    if (dir == Norte || dir == Sur)             { BOOM("El mono no se puede cambiar de fila")   }
+    AuxSacarAlMono()
+    Mover(dir)
+    AuxPonerAlMono()
+    if (aux_elMonoSeCayó())                     { BOOM("El mono se cayó al vacío") }
+}
+
+procedure AuxCambiarAlMonoDeFila() {
+    AuxVerificarPersonajeParaComando() 
+    if (not aux_estáElMonoEnElInicio())         { BOOM("Para cambiar de fila, el mono debe estar en el inicio de la misma")   }
+    AuxSacarAlMono()
+    Mover(Sur)
+    AuxPonerAlMono()
+    if (aux_elMonoSeCayó())                     { BOOM("El mono se cayó al vacío") }
+}
+
+procedure AuxContarLaManzana() { 
+    AuxVerificarPersonajeParaComando() 
+    if (not aux_estáLaManzanaEnLaCeldaActual()) { BOOM("No hay ninguna manzana que contar")                         }
+    AuxPonerManzana()
+}
+
+procedure AuxContarLaBanana() { 
+    AuxVerificarPersonajeParaComando() 
+    if (not aux_estáLaBananaEnLaCeldaActual())  { BOOM("No hay ninguna banana para contar")                               }
+    AuxPonerBanana()
+}
+
+function aux_mono()      { return(Azul)  }
+function aux_indicador() { return(Negro) }
+function aux_banana()    { return(Verde) }
+function aux_manzana()   { return(Rojo)  }
+
+function aux_estáElMonoEnElInicio() { 
+    AuxVerificarPersonajeParaFunción()
+    return (aux_estáElMonoEnLaCeldaDistinguida() && not puedeMover(Oeste)) 
+}
+
+function aux_estáElMonoEnElFin() { 
+    AuxVerificarPersonajeParaFunción()
+    return (aux_estáElMonoEnLaCeldaDistinguida() && (not puedeMover(Este) || aux_hayVacíoAl(Este))) 
+}
+
+function aux_hayVacíoAl(dir) { Mover(dir) return(aux_elMonoSeCayó()) }
+
+function aux_estáElMonoEnLaCeldaActual()      { return (nroBolitas(aux_mono())==1)      }
+function aux_estáElMonoEnLaCeldaDistinguida() { return (nroBolitas(aux_indicador())==2) }
+function aux_elMonoSeCayó()                   { return (nroBolitas(aux_indicador())==0) }
+function aux_estáLaManzanaEnLaCeldaActual()   { return (nroBolitas(aux_manzana())>=1)   }
+function aux_estáLaBananaEnLaCeldaActual()    { return (nroBolitas(aux_banana())>=1)    }
+function aux_hayManzanaContada()              { return (nroBolitas(aux_manzana())==2)   }
+function aux_hayBananaContada()               { return (nroBolitas(aux_banana())==2)    }
+
+procedure AuxPonerAlMono()  { Poner(aux_mono())    }
+procedure AuxSacarAlMono()  { Sacar(aux_mono())    }
+
+procedure AuxPonerManzana() { Poner(aux_manzana()) }
+procedure AuxPonerBanana()  { Poner(aux_banana())  }
+
+procedure AuxInformarCantidadDeManzanas(cantidadAInformar) {
+   IrAlBorde(Sur) IrAlBorde(Oeste)
+   if (cantidadAInformar/=nroBolitas(Azul)) { BOOM("¡No estás informando el número correcto de manzanas!") }
+   if (aux_cantidadDeManzanas()/=nroBolitas(Azul)) { BOOM("No contaste bien todas las manzanas") }
+   AuxSacarIncognita()
+   AuxVolverAlMono()
+}
+
+procedure AuxInformarCantidadDeBananas(cantidadAInformar) {
+   IrAlBorde(Sur) IrAlBorde(Oeste)
+   if (cantidadAInformar/=nroBolitas(Azul)) { BOOM("¡No estás informando el número correcto de bananas!") }
+   if (aux_cantidadDeBananas()/=nroBolitas(Azul)) { BOOM("No contaste bien todas las bananas") }
+   AuxSacarIncognita()
+   AuxVolverAlMono()
+}
+
+procedure AuxSacarIncognita() { repeat (10) { Sacar(aux_indicador()) } }
+
+procedure AuxVolverAlMono() {
+   AuxIniciarRecorridoGral(Este, Sur)
+   while(not aux_terminóElRecorridoGral(Este, Sur) && not aux_estáElMonoEnLaCeldaActual()) {
+     AuxAvanzarRecorridoGral(Este, Sur)
+   }     
+}
+
+function aux_cantidadDeBananas() {
+  AuxIniciarRecorridoGral(Este, Sur)
+  cantidad := 0
+  while (not aux_terminóElRecorridoGral(Este, Sur)) {
+     if (aux_hayBananaContada()) { cantidad := cantidad + 1 }
+     AuxAvanzarRecorridoGral(Este, Sur)
+  }
+  return (cantidad)
+}
+
+function aux_cantidadDeManzanas() {
+  AuxIniciarRecorridoGral(Este, Sur)
+  cantidad := 0
+  while (not aux_terminóElRecorridoGral(Este, Sur)) {
+     if (aux_hayManzanaContada()) { cantidad := cantidad + 1 }
+     AuxAvanzarRecorridoGral(Este, Sur)
+  }
+  return (cantidad)
+}
+
+procedure AuxIniciarRecorridoGral(dirPpal, dirSecundaria) 
+  { IrAlBorde(opuesto(dirPpal)) IrAlBorde(opuesto(dirSecundaria)) }
+
+function aux_terminóElRecorridoGral(dirPpal, dirSecundaria) 
+  { return (not puedeMover(dirPpal) && not puedeMover(dirSecundaria)) }
+
+procedure AuxAvanzarRecorridoGral(dirPpal, dirSecundaria) {
+    if     (puedeMover(dirPpal))       { Mover(dirPpal)                                                }
+    elseif (puedeMover(dirSecundaria)) { IrAlBorde(opuesto(dirPpal)) Mover(dirSecundaria)              }
+    else                               { IrAlBorde(opuesto(dirPpal)) IrAlBorde(opuesto(dirSecundaria)) }
+}

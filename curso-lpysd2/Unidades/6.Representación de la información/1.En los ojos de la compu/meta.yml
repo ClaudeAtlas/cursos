@@ -1,0 +1,48 @@
+name: En los ojos de la compu
+attire:
+  active: 'Cartas, letras y números'
+  user_permissions:
+    can_toggle_visibility: false
+  visible: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="IrAlInicioDeLaEntrada"></block>
+        <block type="IrAlInicioDeLaSalida"></block>
+        <block type="InformarEnEsteLugarLaListaDeLetras_"></block>
+        <block type="RepeticionCondicional"></block>
+        <block type="ForEach"></block>
+        <block type="Asignacion"></block>
+    </category>
+    <category name="Expresiones de letras">
+        <block type="letraDelCódigo_"></block>
+    </category>
+    <category name="Expresiones de listas">
+        <block type="listaDeNúmerosOriginal"></block>
+        <block type="primerElemento_"></block>
+        <block type="resto_"></block>
+        <block type="estáVacía_"></block>
+        <block type="listaVacía"></block>
+        <block type="agregarAlFinalDeLaLista__"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Mis funciones" custom="FUNCTION_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+        <block type="procedures_defreturnsimplewithparams"></block>
+        <block type="procedures_defreturn"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  user_permissions:
+    can_change_source: false
+    can_edit_board: false
+  visible_edition: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
+

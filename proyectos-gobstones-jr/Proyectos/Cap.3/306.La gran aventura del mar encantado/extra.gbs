@@ -1,0 +1,56 @@
+procedure MoverALaPrincesaAl_(dir) {
+    if (not auxHayPrincesa()) { BOOM("La princesa no está en esta celda") }
+    if (not auxTodaviaNoHuyo())   { BOOM("La princesa ya huyó") }
+    nroAzules := nroBolitas(Azul)
+    repeat (nroAzules) { Sacar(Azul) }
+    Mover(dir)
+    if ((nroBolitas(Verde) > nroAzules)) { BOOM("La princesa todavía no está lista para enfrentar este desafío") }
+    if (hayBolitas(Negro)) { BOOM("La princesa ya resolvió este desafío") }
+    repeat (nroAzules) { Poner(Azul) }
+}
+
+procedure AgarrarLaLlave() {
+    if (not auxHayPrincesa()) { BOOM("La princesa no está en esta celda") }
+    if (not auxHayLlave())        { BOOM("La princesa no está donde está la llave") }
+    Sacar(Verde) Poner(Azul)
+}
+
+procedure AbrirElCofreYAgarrarElSombrero() {
+    if (not auxHayPrincesa()) { BOOM("La princesa no está en esta celda") }
+    if (not auxHayCofre())        { BOOM("La princesa no está donde está el cofre") }
+    if (not auxTieneLlave())      { BOOM("La princesa no tiene la llave") }
+    Poner(Negro) Poner(Azul)
+}
+
+procedure DarElSombreroAlMago() {
+    if (not auxHayPrincesa()) { BOOM("La princesa no está en esta celda") }
+    if (not auxHayMago())         { BOOM("La princesa no está donde está el mago") }
+    if (not auxTieneSombrero())   { BOOM("La princesa no tiene el sombrero") }
+    Poner(Negro) Poner(Azul)
+}
+
+procedure AtacarAlCaballeroConLaEspada() {
+    if (not auxHayPrincesa()) { BOOM("La princesa no está en esta celda") }
+    if (not auxHayCaballero())    { BOOM("La princesa no está donde está el caballero") }
+    if (not auxTieneEspada())     { BOOM("La princesa no tiene la espada") }
+    Poner(Negro) Poner(Azul)
+}
+
+procedure HuirEnElUnicornio() {
+    if (not auxHayPrincesa()) { BOOM("La princesa no está en esta celda") }
+    if (not auxHayUnicornio())    { BOOM("La princesa no está donde está el unicornio") }
+    if (not auxTieneAlPrincipe())    { BOOM("La princesa no rescató aún al príncipe") }
+    Poner(Negro) Poner(Azul)
+}
+
+function auxTodaviaNoHuyo()   { IrAlBorde(Sur) IrAlBorde(Este) return(not hayBolitas(Negro)) }
+function auxHayPrincesa() { return(hayBolitas(Azul)) }
+function auxTieneLlave()      { return(nroBolitas(Azul)  == 2) }
+function auxTieneSombrero()   { return(nroBolitas(Azul)  == 3) }
+function auxTieneEspada()     { return(nroBolitas(Azul)  == 4) }
+function auxTieneAlPrincipe()    { return(nroBolitas(Azul)  == 5) }
+function auxHayLlave()        { return(nroBolitas(Verde) == 1) }
+function auxHayCofre()        { return(nroBolitas(Verde) == 2) }
+function auxHayMago()         { return(nroBolitas(Verde) == 3) }
+function auxHayCaballero()    { return(nroBolitas(Verde) == 4) }
+function auxHayUnicornio()    { return(nroBolitas(Verde) == 5) } 

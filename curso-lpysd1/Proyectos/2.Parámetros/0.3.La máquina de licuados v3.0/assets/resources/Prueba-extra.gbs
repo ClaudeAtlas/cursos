@@ -1,0 +1,61 @@
+procedure HacerElLicuadoCorrespondiente() {
+  HacerLicuado(cantidadEnElDisplay())
+}
+
+procedure PonerUnaBananaEnLaLicuadora() { 
+  AuxIrAlDisplay()
+  // Control de leche y otras
+  AuxIrAlBotón()
+}
+
+procedure PonerLecheEnLaLicuadora() { 
+  AuxIrAlDisplay()
+  // Control de que está vacía
+  Poner(aux_marca())
+  AuxIrAlBotón()
+}
+
+procedure LicuarUnMinuto() { 
+  AuxIrAlDisplay()
+  // Control de orden
+  AuxIrAlBotón()
+}
+
+procedure ServirContenidoEnElVaso() { 
+  AuxIrAlDisplay()
+  // Control de orden
+  AuxIrAlBotón()
+}
+
+procedure IncrementarDisplay() {
+   AuxIrAlDisplay()
+   if (nroBolitas(aux_contador()) < 4) { Poner(aux_contador()) }
+   AuxIrAlBotón()
+}
+
+procedure DecrementarDisplay() {
+   AuxIrAlDisplay()
+   if (nroBolitas(aux_contador()) > 1) { Sacar(aux_contador()) }
+   AuxIrAlBotón()
+}
+
+function cantidadEnElDisplay() { 
+  return (aux_cantidadEnElDisplay()) 
+}
+
+procedure AuxIrAlDisplay() {
+}
+
+procedure AuxIrAlBotón() {
+}
+
+function aux_contador()   { return(Rojo) }
+function aux_marca()      { return(Verde) }
+function aux_hayMarcas()  { return(hayBolitas(aux_marca())) }
+function aux_nroMarcas()  { return(nroBolitas(aux_marca())) }
+function aux_cantidadEnElDisplay() { 
+   AuxIrAlDisplay() 
+   if (aux_hayMarcas()) { BOOM("Solo puedo leer el display en la máquina") }
+   return (nroBolitas(aux_contador()))
+}
+

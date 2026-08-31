@@ -1,0 +1,21 @@
+﻿program {
+  CompletarLaFilaDePelotas()
+}
+
+procedure CompletarLaFilaDePelotas() {
+  repeat(4) {
+    AgregarPelotaSiHaceFalta()
+    IrALaSiguientePosiciónAControlar()
+  }
+  AgregarPelotaSiHaceFalta()
+}
+
+procedure AgregarPelotaSiHaceFalta() {
+  if (not(hayPelota())) {
+    AgregarPelota()
+  }
+}
+
+procedure IrALaSiguientePosiciónAControlar() {
+   Mover(Sur)
+}

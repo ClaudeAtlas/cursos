@@ -1,0 +1,34 @@
+﻿program {
+  MantenerElCantero()
+}
+
+function hayFlor() {
+  return (hayBolitas(Rojo) && hayBolitas(Verde))
+}
+
+procedure MantenerElCantero() {
+  repeat(9) {
+    MantenerSecciónDelCantero()
+    IrALaSiguienteSecciónDelCantero()
+  }
+  MantenerSecciónDelCantero()
+}
+
+procedure MantenerSecciónDelCantero() {
+  if (not hayFlor()) { PlantarFlor() }
+}
+
+procedure IrALaSiguienteSecciónDelCantero() {
+   Mover(Este)
+}
+
+procedure PlantarFlor() {
+  if (hayFlor()) { BOOM("Ya hay una flor, ¡y no puedo plantar encima!") }
+  else           { PonerFlor() }
+}
+
+procedure PonerFlor() {
+    Poner(Verde)
+    Poner(Rojo)
+    Poner(Rojo)
+}

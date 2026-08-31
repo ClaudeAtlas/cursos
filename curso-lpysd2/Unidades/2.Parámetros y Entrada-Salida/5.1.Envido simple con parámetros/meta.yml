@@ -1,0 +1,54 @@
+name: Envido simple con parámetros
+attire:
+  active: 'Cartas, letras y números'
+  user_permissions:
+    can_toggle_visibility: true
+  visible: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="AlternativaCompleta"></block>
+    </category>
+    <category name="Expresiones básicas">
+        <block type="math_number"></block>
+        <block type="OperadorNumerico"></block>
+        <block type="OperadorDeComparacion"></block>
+        <block type="OperadorLogico"></block>
+        <block type="not"></block>
+    </category>
+    <category name="Operaciones de cartas">
+        <block type="miCartaIzquierda"></block>
+        <block type="miCartaDerecha"></block>
+        <block type="suCartaIzquierda"></block>
+        <block type="suCartaDerecha"></block>
+        <block type="DecirMiEnvido_"></block>
+        <block type="DecirSuEnvido_"></block>
+        <block type="dameElPalo_"></block>
+        <block type="dameElNúmero_"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Mis funciones" custom="FUNCTION_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+        <block type="procedures_defreturnsimplewithparams"></block>
+    </category>
+board:
+  active: 1
+  initial_board_source: random
+  visible_edition: false
+  collapse_toolbox: false
+  user_permissions:
+    can_view_attire_section: false
+    can_edit_board: false
+    can_change_initial_board: false
+    can_change_initial_board_source: false
+    can_view_size_section: false
+execution_speed:
+  active: high
+  user_permissions:
+    can_change_speed: true
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.65  

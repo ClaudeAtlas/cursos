@@ -1,0 +1,59 @@
+function elegir_Cuando_YSiNo_(valor1, condición, valor2) {
+  return (choose yield valor1 when (condición) yield
+                 valor2 otherwise)
+}               
+
+/*@ATTRIBUTE@tooltip@
+      PROPÓSITO: Marca la célula para ser eliminada.
+      PRECONDICIÓN: Ninguna.
+@*/
+procedure MarcarCélulaParaSerEliminada() {
+  if (hayBolitas(Verde) && not aux_tieneMarcas()) { Poner(Rojo) }
+}
+
+/*@ATTRIBUTE@tooltip@
+      PROPÓSITO: Elimina la célula si tenía marca para ser eliminada (y también la marca).
+      PRECONDICIÓN: Ninguna.
+@*/
+procedure EliminarCélula() {
+  if (estáMarcadaParaSerEliminada()) { Sacar(Verde) Sacar(Rojo) }
+}
+
+/*@ATTRIBUTE@tooltip@
+      PROPÓSITO: Describe si la célula está marcada para ser eliminada o no.
+      PRECONDICIÓN: Ninguna.
+      RESULTADO: Un valor de verdad que describe la condición establecida.
+@*/
+function estáMarcadaParaSerEliminada() {
+  return(hayBolitas(Rojo))
+}
+
+/*@ATTRIBUTE@tooltip@
+      PROPÓSITO: Marca la célula para ser reanimada.
+      PRECONDICIÓN: Ninguna.
+@*/
+procedure MarcarCélulaParaSerReanimada() {
+  if (not hayBolitas(Verde) && not aux_tieneMarcas()) { Poner(Azul) }
+}
+
+/*@ATTRIBUTE@tooltip@
+      PROPÓSITO: Reanima la célula si tenía marca para ser reanimada (y también la marca)
+      PRECONDICIÓN: Ninguna.
+@*/
+procedure ReanimarCélula() {
+  if (estáMarcadaParaSerReanimada()) { Poner(Verde) Sacar(Azul) }
+}
+
+/*@ATTRIBUTE@tooltip@
+      PROPÓSITO: Describe si la célula está marcada para ser reanimada o no.
+      PRECONDICIÓN: Ninguna.
+      RESULTADO: Un valor de verdad que describe la condición establecida.
+@*/
+function estáMarcadaParaSerReanimada() {
+  return(hayBolitas(Azul))
+}
+
+function aux_tieneMarcas() {
+  return (estáMarcadaParaSerEliminada() 
+       || estáMarcadaParaSerReanimada())
+}

@@ -1,0 +1,19 @@
+program { GenerarManoCarteada() }
+
+// procedure GenerarManoCarteada() {
+  // PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(1), paloDeCartaEspañolaDe40_(Espadas)))
+  // PasarASiguientePosición()
+  // PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(1), paloDeCartaEspañolaDe40_(Espadas)))
+  // PasarASiguientePosición()
+  // PonerCarta_(dameCarta__(númeroDeCartaEspañolaDe40_(1), paloDeCartaEspañolaDe40_(Espadas)))
+// }
+
+procedure GenerarManoCarteada() {
+  PonerCarta_(dameCarta__(1, Espadas))
+  PasarASiguientePosición()
+  PonerCarta_(dameCarta__(1, Espadas))
+  PasarASiguientePosición()
+  PonerCarta_(dameCarta__(1, Espadas))
+}
+
+

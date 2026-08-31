@@ -1,0 +1,26 @@
+program { SalirDelLaberintoSinCasoDeBorde() }
+
+procedure SalirDelLaberintoConCasoDeBorde() {
+  // ESTE PREGUNTA SI HAY QUESO EN LA META
+  ComerQuesoSiHay()
+  while (not (estoyEnLaMeta())) {
+    AvanzarUnPasoSegúnLaFlecha()
+    ComerQuesoSiHay()
+  }
+}
+
+procedure SalirDelLaberintoSinCasoDeBorde() {
+  // ESTE NO PREGUNTA SI HAY QUESO EN LA META
+  while (not (estoyEnLaMeta())) {
+    ComerQuesoSiHay()
+    AvanzarUnPasoSegúnLaFlecha()
+  }
+}
+
+procedure ComerQuesoSiHay() {
+  if (hayQuesoAcá()) {
+    ComerElQueso()
+  }
+}
+
+

@@ -1,0 +1,25 @@
+/* ============================================================================================================
+   START Quell-Operations.gbs
+   Operations to perform a step of movement (with all the needed changes)
+// REQUIRE: Babel.gbs
+// REQUIRE: EnglishPrimitives.gbs
+// REQUIRE: Prelude.gbs
+// REQUIRE: Quell-Model.gbs
+// REQUIRE: Quell-Representation.gbs
+// REQUIRE: Quell-Drawing.gbs
+// REQUIRE: Quell-Reading.gbs
+// REQUIRE: Quell-Logic.gbs
+   ============================================================================================================
+*/
+// ---------
+// Quell top level operations
+// ---------
+procedure DrawQuell_(quell)      { DrawQLevel_(quell)        } /* PRECOND: Gobstones board is big enough to represent the quell board and the top bar */
+
+procedure ProcessOneStepTo_(dir) { ProcessStepTo_(just(dir)) }
+procedure ProcessOneStep()       { ProcessStepTo_(Nothing)   }
+
+/* ============================================================================================================
+   END Quell-Operations.gbs
+   ============================================================================================================
+*/

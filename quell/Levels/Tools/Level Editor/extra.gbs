@@ -1,0 +1,15 @@
+function level() {
+  return(QuellLevel(
+           isTutorial <- True
+         , board      <- [[Out]]
+         , solution   <- []
+         , minMoves   <- 0
+         , jewel      <- NoJewel
+         , spikesDir  <- Nothing
+         , boxes      <- []
+         , ball       <- NoBall
+         , numMoves   <- 0
+         , rightMoves <- Nothing
+         , numPearls  <- 0
+  ))
+}

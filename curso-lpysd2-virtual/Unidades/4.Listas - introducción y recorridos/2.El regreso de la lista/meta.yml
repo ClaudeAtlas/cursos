@@ -1,0 +1,48 @@
+library:
+  visible: false
+source:
+  visible: true
+  percentage: 0.6500000178726666
+board:
+  visible_edition: false
+  collapse_toolbox: false
+  user_permissions:
+    can_change_initial_board: false
+    can_change_initial_board_source: false
+    can_edit_board: false
+    can_view_size_section: false
+    can_view_attire_section: false
+  active: 1
+  initial_board_source: random
+execution_speed:
+  user_permissions:
+    can_change_speed: true
+  active: high
+attire:
+  visible: true
+  user_permissions:
+    can_toggle_visibility: true
+  active: 'Cartas, letras y números'
+initialDescription: true
+blocks:
+  defaultToolbox: |
+    <category name="Comandos básicos">
+        <block type="InformarNúmero_"></block>
+        <block type="RepeticionCondicional"></block>
+        <block type="Asignacion"></block>
+        <block type="ForEach"></block>
+    </category>
+    <category name="Operaciones de listas">
+        <block type="listaDeNúmerosDelEscenario"></block>
+        <block type="estáVacía_"></block>
+        <block type="primerElemento_"></block>
+        <block type="resto_"></block>
+    </category>
+    <category name="Mis procedimientos" custom="PROCEDURE_CALLS">  </category>
+    <category name="Mis funciones" custom="FUNCTION_CALLS">  </category>
+    <category name="Definiciones">
+        <block type="procedures_defnoreturn"></block>
+        <block type="procedures_defreturnsimplewithparams"></block>
+    </category>
+customErrors: null
+name: El regreso de la lista

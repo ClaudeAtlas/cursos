@@ -1,0 +1,52 @@
+procedure BuscarLaLlave() {
+  MoverALaPrincesaAl_(Norte)
+  MoverALaPrincesaAl_(Norte)
+  MoverALaPrincesaAl_(Norte)
+  MoverALaPrincesaAl_(Este)
+  MoverALaPrincesaAl_(Este)
+  MoverALaPrincesaAl_(Este)
+  MoverALaPrincesaAl_(Este)
+  AgarrarLaLlave()
+}
+
+procedure RescatarAlPríncipe() {
+  MoverALaPrincesaAl_(Norte)
+  MoverALaPrincesaAl_(Norte)
+  MoverALaPrincesaAl_(Este)
+  AtacarAlCaballeroConLaEspada()
+}
+
+procedure BuscarElUnicornioYEscapar() {
+  MoverALaPrincesaAl_(Sur)
+  MoverALaPrincesaAl_(Sur)
+  MoverALaPrincesaAl_(Este)
+  MoverALaPrincesaAl_(Este)
+  HuirEnElUnicornio()
+}
+
+procedure BuscarElSombrero() {
+  MoverALaPrincesaAl_(Norte)
+  MoverALaPrincesaAl_(Oeste)
+  MoverALaPrincesaAl_(Oeste)
+  MoverALaPrincesaAl_(Oeste)
+  MoverALaPrincesaAl_(Oeste)
+  AbrirElCofreYAgarrarElSombrero()
+}
+
+procedure ConseguirLaEspada() {
+  MoverALaPrincesaAl_(Sur)
+  MoverALaPrincesaAl_(Sur)
+  MoverALaPrincesaAl_(Sur)
+  MoverALaPrincesaAl_(Sur)
+  MoverALaPrincesaAl_(Este)
+  DarElSombreroAlMago()
+}
+
+
+program {
+  BuscarLaLlave()
+  BuscarElSombrero()
+  ConseguirLaEspada()
+  RescatarAlPríncipe()
+  BuscarElUnicornioYEscapar()
+}

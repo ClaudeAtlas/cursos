@@ -1,0 +1,37 @@
+program { DarVueltaLasFiguras() }
+
+procedure DarVueltaLasFiguras() {
+  repeat(8) {
+    ProcesarUnaCarta()
+    PasarASiguientePosición()
+  }
+  ProcesarUnaCarta()
+}
+
+procedure ProcesarUnaCarta() {
+  DarVueltaLaCartaActual()
+  if (not(laCartaActualEsUnaFigura())) {
+    DarVueltaLaCartaActual()
+  }
+}
+
+function laCartaActualEsUnaFigura() {
+  return ( ...
+        || ...
+		|| ...
+         )
+}
+
+function laCartaActualEsUnRey() {
+  return (...)
+}
+
+function laCartaActualEsUnCaballo() {
+  return (...)
+}
+
+function laCartaActualEsUnaSota() {
+  return (...)
+}
+
+
