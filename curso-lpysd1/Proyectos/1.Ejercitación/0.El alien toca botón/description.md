@@ -5,7 +5,7 @@ apretar un botón, para lo cual primero tiene que llegar hasta él.
 Entonces, tu trabajo es fácil: escribí un programa que haga que el alien apriete el botón. 
 
 <center>
-![Tablero inicial](assets/resources/Imagen1-small.png)
+![Tablero inicial](assets/boards/Board1.gbb)
 </center>
 
 La idea es que uses este proyecto para conocer el entorno de GobstonesWeb.

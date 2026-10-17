@@ -4,7 +4,7 @@ Con los comandos que aprendimos se pueden hacer _“dibujos”_.
 Construí un programa para dibujar un cuadrado rojo de 3 bolitas de lado como muestra la figura.
 
 <center>
-![Tablero final a obtener, con un cuadrado rojo](assets/resources/Imagen1-small.png)
+![Tablero final a obtener, con un cuadrado rojo](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **Las bolitas pueden ser píxeles...**

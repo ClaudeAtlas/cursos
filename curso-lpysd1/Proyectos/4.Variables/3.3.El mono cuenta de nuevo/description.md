@@ -5,7 +5,7 @@ frutas (¡incluso cero!).
 Construí el programa que ayude al mono con su tarea.
 
 <center>
-![Un escenario inicial](assets/resources/Imagen1-small.png)
+![Un escenario inicial](assets/boards/Board6.gbb)
 </center>
 
 > **Acumuladores**

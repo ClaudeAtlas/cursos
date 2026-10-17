@@ -7,9 +7,9 @@ la solución debe tener un solo comando `Poner` y usar una sola vez la expresió
 Mirá algunas de las combinaciones de tablero inicial y final.
  
 <center>
-![A imitar 2 * 2 bolitas](assets/resources/Imagen1-small.png)
+![A imitar 2 * 2 bolitas (1 de 2)](assets/boards/Board01.gbb) ![A imitar 2 * 2 bolitas (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![A imitar 4 * 2 bolitas](assets/resources/Imagen2-small.png)
+![A imitar 4 * 2 bolitas (1 de 2)](assets/boards/Board02.gbb) ![A imitar 4 * 2 bolitas (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![A imitar 5 * 2 bolitas](assets/resources/Imagen3-small.png)
 </center>

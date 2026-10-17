@@ -2,7 +2,7 @@
 Construí un programa para obtener una víbora de bolitas como la siguiente:
 
 <center>
-![Tablero final a obtener](assets/resources/Imagen1-small.png)
+![Tablero final a obtener](assets/resources/Imagen1-small.gbb)
 </center>
 
 Vas a necesitar un comando primitivo diferente de `Poner` y expresiones literales diferentes a los colores. 

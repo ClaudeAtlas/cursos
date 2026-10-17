@@ -18,7 +18,7 @@ El enunciado de la actividad dice:
 > del alien y el botón. Investigá un poco el entorno para encontrarlos._
 
 > <center>
-> ![Tablero inicial](assets/resources/Imagen1-small.png)
+> ![Tablero inicial](assets/boards/Board1.gbb)
 > </center>
 
 > > _**El dato**_

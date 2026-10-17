@@ -9,7 +9,7 @@ Para terminar corregí todos los errores para que el programa haga lo que se esp
 Esto es lo que deberías obtener al final.
 
 <center>
-![Tablero final a obtener](assets/resources/Imagen1-small.png)
+![Tablero final a obtener](assets/resources/Imagen1-small.gbb)
 </center>
 
 ¿Cuánto te hubiese costado encontrar los errores si en lugar de hacer BOOM, los comandos

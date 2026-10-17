@@ -5,7 +5,7 @@ que hay que hacer es limpiar la imagen de ceniza, sacando las bolitas negras.
 Construí ese programa. El tablero inicial y el tablero final se dan a continuación.
 
 <center>
-![Tableros inicial y final](assets/resources/Imagen1-small.png)
+![Tableros inicial y final (1 de 2)](assets/boards/Board1.gbb) ![Tableros inicial y final (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 Fijate que el tablero inicial va a ser siempre el mismo, con lo cual tenés que encontrar qué 

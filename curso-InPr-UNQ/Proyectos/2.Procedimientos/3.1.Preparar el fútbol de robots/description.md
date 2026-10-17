@@ -15,7 +15,7 @@ La representación se hace como indica la siguiente tabla:
 El tablero inicial es el siguiente:
 
 <center>
-![Tablero inicial sin vestimenta](assets/resources/Imagen1-small.png)
+![Tablero inicial sin vestimenta](assets/boards/Board1.gbb?vestimenta=ninguna)
 </center>
 
 ¡Pero no se ve un robot o una pelota, sino bolitas! 

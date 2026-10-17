@@ -8,7 +8,7 @@ Parece que vas a tener que moverte para saber cuáles son los palos…
 ¡A indagar!
 
 <center>
-![Un par de escenarios finales](assets/resources/Imagen1-small.png)
+![Un par de escenarios finales (1 de 2)](assets/resources/Imagen1-small-1.gbb) ![Un par de escenarios finales (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 > **Varias variables**

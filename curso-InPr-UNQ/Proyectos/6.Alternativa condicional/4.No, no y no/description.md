@@ -10,15 +10,15 @@ uno de los procedimientos que resuelven el problema ya definido.
 Te mostramos algunos tableros iniciales posibles:
 
 <center>
-![Un tablero inicial posible](assets/resources/Imagen1-small.png)
+![Un tablero inicial posible](assets/boards/Board13.gbb?vestimenta=ninguna)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Otro tablero inicial posible](assets/resources/Imagen2-small.png)
+![Otro tablero inicial posible](assets/boards/Board20.gbb?vestimenta=ninguna)
 </center>
                  
 y también el tablero final para todos los casos:
 
 <center>
-![Tablero final en todos los casos](assets/resources/Imagen3-small.png)
+![Tablero final en todos los casos](assets/resources/Imagen3-small.gbb?vestimenta=ninguna)
 </center>
 
 Al tratar de definir `Agregar pelota si hace falta`, ¿qué es lo que hay que hacer? 

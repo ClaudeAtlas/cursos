@@ -6,7 +6,7 @@ La idea es que construyas un programa que para cualquier carta que aparezca, baj
 de oros.
 
 <center>
-![Un resultado exitoso](assets/resources/Imagen1-small.png)
+![Un resultado exitoso](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **Datos estructurados basados en otros**

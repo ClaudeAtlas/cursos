@@ -7,7 +7,7 @@ O sea, el programa debe indicar que, comenzando con el tablero inicial de la
 izquierda, la máquina produzca el tablero final de la derecha.
 
 <center>
-![Tableros inicial y final: partiendo del primero, tenés que conseguir hacer el segundo](assets/resources/Imagen1-small.png)
+![Tableros inicial y final: partiendo del primero, tenés que conseguir hacer el segundo (1 de 2)](assets/boards/Board1.gbb) ![Tableros inicial y final: partiendo del primero, tenés que conseguir hacer el segundo (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 Explorá el entorno para descubrir cómo agregar comandos primitivos a un programa 

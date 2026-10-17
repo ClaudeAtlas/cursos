@@ -21,7 +21,7 @@ para que todo funcione. La representación es así:
 El tablero inicial de la actividad anterior, pero sin la vestimenta, es así:
 
 <center>
-![Tablero inicial](assets/resources/Imagen1-small.png)
+![Tablero inicial](assets/boards/Board1.gbb?vestimenta=ninguna)
 </center>
 
 ¿Qué vas a ver cuando actives la vestimenta? Tratá de pensarlo antes de hacerlo, para ver si estás

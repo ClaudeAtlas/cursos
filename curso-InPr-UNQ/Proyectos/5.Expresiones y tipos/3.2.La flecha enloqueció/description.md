@@ -17,7 +17,7 @@ Te mostramos algunos tableros iniciales, y sus correspondientes tableros finales
 
 ![Tablero inicial, salida al Sur, flecha al Norte](assets/resources/Imagen3-small.png)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial, salida al Oeste, flecha al Este](assets/resources/Imagen4-small.png)
+![Tablero inicial, salida al Oeste, flecha al Este (1 de 2)](assets/boards/Board04.gbb) ![Tablero inicial, salida al Oeste, flecha al Este (2 de 2)](assets/resources/Imagen4-small-2.gbb)
 </center>
 
 [Enunciado en PDF][PDF]

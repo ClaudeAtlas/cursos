@@ -11,7 +11,7 @@ negras se puedan usar juntos en la repetición. Te mostramos algunos tableros in
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![A imitar 2+3 bolitas](assets/resources/Imagen2-small.png)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![A imitar 4+2 bolitas](assets/resources/Imagen3-small.png)
+![A imitar 4+2 bolitas (1 de 2)](assets/boards/Board04.gbb) ![A imitar 4+2 bolitas (2 de 2)](assets/resources/Imagen3-small-2.gbb)
 </center>
 
 Recordá que el mismo programa tiene que servir para transformar cualquiera de los tableros iniciales 

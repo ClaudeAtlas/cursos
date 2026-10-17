@@ -4,7 +4,7 @@ Tenés que construir un programa que haga que la celda quede vacía.
 Vas a precisar nuevos comandos primitivos. ¡A explorar! 
 
 <center>
-![Tableros inicial y final a obtener](assets/resources/Imagen1-small.png)
+![Tableros inicial y final a obtener (1 de 2)](assets/boards/Board1.gbb) ![Tableros inicial y final a obtener (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 > **¿Quién hace las cosas?**

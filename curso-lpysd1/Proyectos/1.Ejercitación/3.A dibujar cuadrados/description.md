@@ -5,7 +5,7 @@ Pero tenés que usar tu propio comando para dibujar un cuadrado, y para eso
 tenés que escribir un procedimiento.  
 
 <center>
-![Tablero final esperado en la parte 2](assets/resources/Imagen1-small.png)
+![Tablero final esperado en la parte 2](assets/resources/Imagen1-small.gbb)
 </center>
 
 La parte más complicada es la de mover el cabezal hasta donde hay que empezar a dibujar… 

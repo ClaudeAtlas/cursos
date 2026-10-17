@@ -11,9 +11,9 @@ Cuando la encuentres, probá usar eso como argumento del procedimiento que mueve
 Te mostramos algunos tableros iniciales, y sus correspondientes tableros finales.
  
 <center>
-![Tablero inicial, salida al Norte](assets/resources/Imagen1-small.png)
+![Tablero inicial, salida al Norte (1 de 2)](assets/boards/Board01.gbb) ![Tablero inicial, salida al Norte (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial, salida al Este](assets/resources/Imagen2-small.png)
+![Tablero inicial, salida al Este (1 de 2)](assets/boards/Board02.gbb) ![Tablero inicial, salida al Este (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 
 ![Tablero inicial, salida al Sur](assets/resources/Imagen3-small.png)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

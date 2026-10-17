@@ -12,13 +12,13 @@ Por ejemplo, a continuación podés ver una cena lista en la primera imagen, y c
 resultado del programa al ejecutarlo en la segunda imagen.
 
 <center>
-![Un escenario inicial correcto...](assets/resources/Imagen1-small.png)
+![Un escenario inicial correcto...](assets/boards/Board01.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![...y cómo debería ser su resultado](assets/resources/Imagen2-small.png)
+![...y cómo debería ser su resultado](assets/resources/Imagen2-small.gbb)
 </center>
 
 ¿Funciona así el programa? Si no funciona así, tenés que encontrar dónde está el error, y corregirlo.

@@ -10,7 +10,7 @@ El tablero inicial se muestra en la siguiente imagen.
 Tené en cuenta que el cabezal siempre empieza en la esquina suroeste:
 
 <center>
-![Tablero inicial](assets/resources/Imagen1-small.png)
+![Tablero inicial](assets/boards/Board1.gbb)
 </center>
 
 Algunos posibles tableros finales se muestran en las imágenes siguientes. 
@@ -20,7 +20,7 @@ uno de los que se muestran u otros diferentes.
 ¿Te atrevés a conseguir uno que no sea de los que se muestran?
 
 <center>
-![Algunos tableros finales posibles](assets/resources/Imagen2-small.png)
+![Algunos tableros finales posibles (1 de 2)](assets/resources/Imagen2-small-1.gbb) ![Algunos tableros finales posibles (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 </center>
 
 > **Comentá lo que hiciste**

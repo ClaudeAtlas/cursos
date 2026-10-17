@@ -4,7 +4,7 @@ Tenés que hacer algo muy parecido a lo que hiciste en los proyectos anteriores:
 Pero esta vez la víbora es más inquieta, y debe ser como la que se muestra en la figura:
 
 <center>
-![Tablero final a obtener](assets/resources/Imagen1-small.png)
+![Tablero final a obtener](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **La clave está en la Rosa de los Vientos**

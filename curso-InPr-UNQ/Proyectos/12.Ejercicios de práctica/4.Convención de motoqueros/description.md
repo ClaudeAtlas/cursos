@@ -14,7 +14,7 @@ Dos motoqueros se dicen conectados cuando hay una secuencia de motoqueros activo
 
 
 <center>
-![Un tablero posible](assets/resources/Imagen1-small.png)
+![Un tablero posible](assets/boards/Board3.gbb)
 ![El tablero después de asignar clubes](assets/resources/Imagen2-small.png)
 </center>
 

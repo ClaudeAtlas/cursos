@@ -7,9 +7,9 @@ a usar una bolita azul.
 Entonces, los tableros iniciales y sus correspondientes tableros finales pueden ser los siguientes:
 
 <center>
-![Tablero inicial 1 con su tablero final](assets/resources/Imagen1-small.png)
+![Tablero inicial 1 con su tablero final (1 de 2)](assets/boards/Board02.gbb?vestimenta=ninguna) ![Tablero inicial 1 con su tablero final (2 de 2)](assets/boards/Board01.gbb?vestimenta=ninguna)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial 2con su tablero final](assets/resources/Imagen2-small.png)
+![Tablero inicial 2con su tablero final (1 de 2)](assets/boards/Board01.gbb?vestimenta=ninguna) ![Tablero inicial 2con su tablero final (2 de 2)](assets/boards/Board02.gbb?vestimenta=ninguna)
 </center>
 
 Nuevamente tenemos más de un tablero inicial diferente, y el mismo programa debe funcionar en los dos, 

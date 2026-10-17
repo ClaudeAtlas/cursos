@@ -14,7 +14,7 @@ Tenés que ir pasando las cartas del mazo, y dándoselas a `RepartirCarta`.
 El escenario final, debería quedarte como el siguiente:
 
 <center>
-![Un escenario durante el juego](assets/resources/Imagen1-small.png)
+![Un escenario durante el juego](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **Los mazos son listas**

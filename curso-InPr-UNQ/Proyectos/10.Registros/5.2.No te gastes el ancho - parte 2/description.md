@@ -12,7 +12,7 @@ El ancho de espadas, en cambio, le gana a todas las cartas.
 Entonces, 2 posibles escenarios finales serán:
 
 <center>
-![Un escenario final posible](assets/resources/Imagen1-small.png)
+![Un escenario final posible](assets/resources/Imagen1-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

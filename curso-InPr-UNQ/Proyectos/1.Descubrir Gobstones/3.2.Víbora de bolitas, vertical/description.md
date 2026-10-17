@@ -4,7 +4,7 @@ Tenés que hacer algo muy parecido a lo que hiciste en el proyecto anterior: dib
 La diferencia es que en lugar de armar una víbora de bolitas horizontal, tenés que armar una vertical: 
 
 <center>
-![Tablero final a obtener](assets/resources/Imagen1-small.png)
+![Tablero final a obtener](assets/resources/Imagen1-small.gbb)
 </center>
 
 ¿Cómo cambió el programa de un proyecto al siguiente?

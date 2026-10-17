@@ -8,7 +8,7 @@ Fijate que no vas a poder usar los comandos primitivos, sino **procedimientos pr
 del alien y el botón. Investigá un poco el entorno para encontrarlos.
 
 <center>
-![Tablero inicial](assets/resources/Imagen1-small.png)
+![Tablero inicial](assets/boards/Board1.gbb)
 </center>
 
 > **El dato**

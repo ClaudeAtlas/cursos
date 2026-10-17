@@ -7,7 +7,7 @@ cada une y dándole un caramelo; luego volverá al escritorio y repetirá la acc
 de visitarles pero retirando los papeles de caramelos.
 
 <center>
-![Tablero de 'La simulación de le docente robot'](assets/resources/Imagen1-small.png)
+![Tablero de 'La simulación de le docente robot'](assets/boards/Board1.gbb)
 </center>
 
 Al finalizar la ejecución reflexionar sobre cómo los problemas del mundo real 

@@ -4,7 +4,7 @@
 Pero ahora además de ser de distintos colores, ¡tienen distinto tamaño!
 
 <center>
-![Tablero final esperado en la parte 2](assets/resources/Imagen1-small.png)
+![Tablero final esperado en la parte 2](assets/resources/Imagen1-small.gbb)
 </center>
 
 Pero ya conocés la herramienta necesaria para lograr que el procedimiento de dibujar

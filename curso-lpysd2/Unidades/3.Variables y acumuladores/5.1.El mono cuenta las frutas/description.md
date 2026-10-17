@@ -7,7 +7,7 @@ Todas las celdas de la fila tienen una manzana.
 No sabemos el largo de la fila, pero sí que el final está indicado con una celda verde.
 
 <center>
-![Un escenario inicial](assets/resources/consigna-1.png)
+![Un escenario inicial](assets/boards/Board7.gbb)
 </center>
 
 Acordate que para recordar valores a medida que avanza se puede utilizar una variable.

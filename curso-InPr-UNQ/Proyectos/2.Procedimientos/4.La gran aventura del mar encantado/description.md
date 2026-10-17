@@ -16,7 +16,7 @@ a atacar al caballero, cumpliendo su misión de rescate; la aventura termina cua
 al príncipe hasta el unicornio y escapan juntos.
 
 <center>
-![Tablero inicial con vestimenta](assets/resources/Imagen1-small.png)
+![Tablero inicial con vestimenta](assets/boards/Board1.gbb)
 </center>
 
 Para contar la historia, lo mejor es escribir un procedimiento para cada parte. 

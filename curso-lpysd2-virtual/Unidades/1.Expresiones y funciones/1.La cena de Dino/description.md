@@ -5,7 +5,7 @@ hamburguesas y tortas). Fijate que, aunque siempre son 6 porciones, las comidas 
 hay siempre la misma cantidad de hamburguesas o tortas. Construí un programa que ayude a Dino a comer cualquiera de sus cenas.
 
 <center>
-![Un posible escenario inicial](assets/resources/Imagen1-small.png)
+![Un posible escenario inicial](assets/boards/Board4.gbb)
 </center>
 
 Para que la solución resulte sencilla es recomendable planificar una estrategia de solución antes de empezar.

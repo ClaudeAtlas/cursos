@@ -8,10 +8,10 @@ El tema es que el inicio no está indicado…
 Capaz que alguno precisa un parámetro…
 
 <center>
-![Un escenario inicial](assets/resources/Imagen1-small.png)
+![Un escenario inicial](assets/boards/Board9.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Otro escenario inicial](assets/resources/Imagen2-small.png)
+![Otro escenario inicial](assets/boards/Board1.gbb)
 </center>
 
 > **Pista**

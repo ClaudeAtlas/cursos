@@ -5,7 +5,7 @@ Valiéndote del procedimiento primitivo "`Usar matafuego`" escribí un procedimi
 del tablero que se ve a continuación:
 
 <center>
-![Tablero inicial](assets/resources/Imagen2-small.png)
+![Tablero inicial](assets/boards/Board1.gbb)
 </center>
 <center>
 ![Tablero final](assets/resources/Imagen3-small.png)

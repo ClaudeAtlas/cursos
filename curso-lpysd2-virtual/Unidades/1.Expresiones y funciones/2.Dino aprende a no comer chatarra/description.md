@@ -8,7 +8,7 @@ distancia está. Por eso en cada fila hay que ayudar a Dino a llegar hasta la co
 si es sana y volver al inicio de la fila.
 
 <center>
-![Un posible escenario inicial](assets/resources/Imagen1-small.png)
+![Un posible escenario inicial](assets/boards/Board3.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
