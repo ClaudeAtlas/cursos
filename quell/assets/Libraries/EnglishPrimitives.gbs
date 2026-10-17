@@ -41,7 +41,8 @@ function numStones(color) { return(nroBolitas(colorEn2Sp(color))) }
 
 procedure Drop(color) { Poner(colorEn2Sp(color)) }
 procedure Grab(color) { 
-    Assert_OrFail_(hasStones(color), msgNoStones())
+    /* OBS: the message is built only when it is needed (Assert_OrFail_ would build it on every call) */
+    if (not hasStones(color)) { BOOM(msgNoStones()) }
     Sacar(colorEn2Sp(color)) 
 }
 
@@ -86,7 +87,8 @@ function dirSp2En(dir) {
 function canMove(dir) { return(puedeMover(dirEn2Sp(dir))) }
 
 procedure Move(dir) { 
-  Assert_OrFail_(canMove(dir), msgNoCells())
+  /* OBS: the message is built only when it is needed (Assert_OrFail_ would build it on every call) */
+  if (not canMove(dir)) { BOOM(msgNoCells()) }
   Mover(dirEn2Sp(dir))     
 }
 

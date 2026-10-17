@@ -68,7 +68,8 @@ function numStones(color) { return(nroBolitas(colorEn2Sp(color))) }
 
 procedure Drop(color) { Poner(colorEn2Sp(color)) }
 procedure Grab(color) { 
-    Assert_OrFail_(hasStones(color), msgNoStones())
+    /* OBS: the message is built only when it is needed (Assert_OrFail_ would build it on every call) */
+    if (not hasStones(color)) { BOOM(msgNoStones()) }
     Sacar(colorEn2Sp(color)) 
 }
 
@@ -113,7 +114,8 @@ function dirSp2En(dir) {
 function canMove(dir) { return(puedeMover(dirEn2Sp(dir))) }
 
 procedure Move(dir) { 
-  Assert_OrFail_(canMove(dir), msgNoCells())
+  /* OBS: the message is built only when it is needed (Assert_OrFail_ would build it on every call) */
+  if (not canMove(dir)) { BOOM(msgNoCells()) }
   Mover(dirEn2Sp(dir))     
 }
 
@@ -851,9 +853,8 @@ procedure ProcessStepTo_(mdir) {
           (that is, no movement occurs) nothing happens. If the ball is moving, the key is ignored.  
       * steps are designed to "animate" the interactive program
   */
-  ball := currentQBall()
-  if (movementOccursWith_And_(ball,mdir)) {
-      ProcessMoveOf_To_(ball,mdir)
+  if (movementOccursAtCurrentCellWith_(mdir)) { // The ball is read only when it moves: reading it measures its position
+      ProcessMoveOf_To_(currentQBall(),mdir)
       // AnalizeEnding()
   }
 }
@@ -877,6 +878,14 @@ procedure ToogleShowHint() {
 // Quell logic operations
 // Level 1
 // ---------
+function movementOccursAtCurrentCellWith_(mdir) {
+  /* PURPOSE: same as movementOccursWith_And_(currentQBall(), mdir), but without computing the position of the ball
+     OBS: most of the events are TIMEOUTs with a static ball, and computing the position was 90% of their cost
+  */
+  code := currentNumWith_(ballColor())
+  return(code /= 0 && (num_IsBetween_And_(code, 1, 4) || num_IsBetween_And_(code, 11, 14) || not isNothing(mdir)))
+}
+
 function movementOccursWith_And_(ball, mdir) { return(isBall_(ball) && (isMovingBall_(ball) || not isNothing(mdir))) }
 
 procedure ProcessMoveOf_To_(theBall,mdir) {
