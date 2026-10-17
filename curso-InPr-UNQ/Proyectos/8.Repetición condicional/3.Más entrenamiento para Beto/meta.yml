@@ -20,7 +20,7 @@ attire:
   visible: true
   user_permissions:
     can_toggle_visibility: true
-  active: Fútbol de robots
+  active: FutbolDeRobots
 initialDescription: true
 blocks:
   disabled: [ "IrAlBorde"

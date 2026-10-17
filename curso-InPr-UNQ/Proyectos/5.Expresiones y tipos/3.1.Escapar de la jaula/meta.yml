@@ -20,7 +20,7 @@ attire:
   visible: true
   user_permissions:
     can_toggle_visibility: true
-  active: Escapar de la jaula
+  active: EscaparDeLaJaula
 initialDescription: true
 blocks:
   defaultToolbox: |

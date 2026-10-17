@@ -1,6 +1,6 @@
 name: La flecha enloqueció
 attire:
-  active: Escapar de la jaula
+  active: LaFlechaEnloquecio
   user_permissions:
     can_toggle_visibility: true
   visible: true

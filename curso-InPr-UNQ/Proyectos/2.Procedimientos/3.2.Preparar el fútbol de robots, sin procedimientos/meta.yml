@@ -1,6 +1,6 @@
 name: 'Preparando el fútbol de robots, sin procedimientos'
 attire:
-  active: Fútbol de robots
+  active: FutbolDeRobots
   user_permissions:
     can_toggle_visibility: true
   visible: true

@@ -20,7 +20,7 @@ attire:
   visible: false
   user_permissions:
     can_toggle_visibility: true
-  active: 'Apagar la luz, o prenderla'
+  active: ApagarLaLuz
 initialDescription: true
 blocks:
   disabled: [ "Mover", "IrAlBorde"

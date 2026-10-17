@@ -20,7 +20,7 @@ attire:
   visible: true
   user_permissions:
     can_toggle_visibility: true
-  active: La gran aventura
+  active: La Gran Aventura
 initialDescription: true
 blocks:
   disabled: [ "Poner", "Mover", "Sacar", "IrAlBorde"
