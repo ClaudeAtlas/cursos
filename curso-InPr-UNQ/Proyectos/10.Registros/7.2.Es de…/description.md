@@ -13,10 +13,10 @@ Tu trabajo es completar esta última función para que todo marche como debe.
 Si todo sale como se espera, deberías obtener escenarios finales como los siguientes:
 
 <center>
-![Un escenario final](assets/resources/Imagen1-small.png)
+![Un escenario final](assets/resources/Imagen1-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Otro escenario final](assets/resources/Imagen2-small.png)
+![Otro escenario final](assets/resources/Imagen2-small.gbb)
 </center>
 
 > **Más de un parámetro**

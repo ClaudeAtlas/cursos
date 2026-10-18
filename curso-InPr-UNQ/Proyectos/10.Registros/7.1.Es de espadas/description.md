@@ -11,10 +11,10 @@ Tenés que descubrir cómo definir una función con parámetro y completar el pr
 Los resultados finales tienen que ser como los siguientes escenarios:
 
 <center>
-![Un escenario final](assets/resources/Imagen1-small.png)
+![Un escenario final](assets/resources/Imagen1-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Otro escenario final](assets/resources/Imagen2-small.png)
+![Otro escenario final](assets/resources/Imagen2-small.gbb)
 </center>
 
 > **Parámetros en procedimientos y funciones**

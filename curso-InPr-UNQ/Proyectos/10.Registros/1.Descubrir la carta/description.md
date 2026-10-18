@@ -6,10 +6,10 @@ que aparecen a continuación, tu programa hizo lo que se esparaba; pero si obten
 que ver qué hiciste mal…
 
 <center>
-![Un posible resultado, exitoso](assets/resources/Imagen1-small.png)
+![Un posible resultado, exitoso](assets/resources/Imagen1-small.gbb)
 </center>
 <center>
-![Otro posible resultado, fallido](assets/resources/Imagen2-small.png)
+![Otro posible resultado, fallido](assets/resources/Imagen2-small.gbb)
 </center>
 
 ¡Fijate que hay dos tipos nuevos!

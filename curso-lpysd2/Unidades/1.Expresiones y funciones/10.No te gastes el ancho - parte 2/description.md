@@ -17,7 +17,7 @@ Entonces, 2 posibles escenarios finales serán:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Otro escenario final posible](assets/resources/Imagen2-small.png)
+![Otro escenario final posible](assets/resources/Imagen2-small.gbb)
 </center>
 
 Fijate que en el primero el 3 de oros pierde con el 7 de espadas, y por eso es necesario jugar el ancho de espadas. 

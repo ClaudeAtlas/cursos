@@ -7,7 +7,7 @@ funcionar **_en cualquier tablero inicial_** que se nos ocurra.
 Te mostramos algunos ejemplos de cómo deberían quedar diferentes tableros finales:
                 
 <center>
-![Algunos tableros finales resultado del programa](assets/resources/Imagen1-small.png)
+![Algunos tableros finales resultado del programa (1 de 4)](assets/resources/Imagen1-small-1.gbb) ![Algunos tableros finales resultado del programa (2 de 4)](assets/resources/Imagen1-small-2.gbb) ![Algunos tableros finales resultado del programa (3 de 4)](assets/resources/Imagen1-small-3.gbb) ![Algunos tableros finales resultado del programa (4 de 4)](assets/resources/Imagen1-small-4.gbb)
 </center>
 
 Investigá el entorno para descubrir algo que te permita conseguir este objetivo. 

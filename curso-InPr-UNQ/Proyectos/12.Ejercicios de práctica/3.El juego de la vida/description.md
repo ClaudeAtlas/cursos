@@ -21,9 +21,9 @@ Una célula es vecina de otra si sus correspondientes celdas son lindantes al N,
 Las siguientes imágenes muestran un universo antes, en medio y después de un tick.
 
 <center>
-![Tablero antes de un tick](assets/resources/Imagen1-small.png)
-![Tablero durante el procesamiento de un tick](assets/resources/Imagen2-small.png)
-![Tablero después de un tick](assets/resources/Imagen3-small.png)
+![Tablero antes de un tick](assets/resources/Imagen1-small.gbb)
+![Tablero durante el procesamiento de un tick](assets/resources/Imagen2-small.gbb)
+![Tablero después de un tick](assets/resources/Imagen3-small.gbb)
 </center>
 
 Al procesar para realizar un _tick_, hay que tener en cuenta que no se puede eliminar o reanimar una célula 

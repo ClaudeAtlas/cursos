@@ -6,7 +6,7 @@ A) Construí un programa para dibujar dos cuadrados de color rojo, cada uno de t
    Esta combina un poco de cada una. 
 
 <center>
-![Tablero final a producir, con 2 cuadrados de 3 bolitas de lado](assets/resources/Imagen1-small.png)
+![Tablero final a producir, con 2 cuadrados de 3 bolitas de lado](assets/resources/Imagen1-small.gbb)
 </center>
 
 Prestá atención a la celda donde tiene que terminar el cabezal. 
@@ -22,7 +22,7 @@ B) Luego de guardar el programa en tu computadora, tratá de hacer un cambio.
    El resultado tiene que ser como la siguiente imagen.
 
 <center>
-![Tablero final a producir, con 2 cuadrados de 4 bolitas de lado](assets/resources/Imagen2-small.png)
+![Tablero final a producir, con 2 cuadrados de 4 bolitas de lado](assets/resources/Imagen2-small.gbb)
 </center>
 
 ¿Fue muy difícil hacer el cambio? 

@@ -10,7 +10,7 @@ Sin embargo, por culpa del error, no está funcionando bien.
 El escenario final debería ser el siguiente:
 
 <center>
-![El escenario final](assets/resources/Imagen1-small.png)
+![El escenario final](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **¡No dupliques código!**

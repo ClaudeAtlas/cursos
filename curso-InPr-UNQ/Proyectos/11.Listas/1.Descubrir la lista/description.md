@@ -8,7 +8,7 @@ utilizando esas operaciones.
 El escenario final te tiene que quedar, por ejemplo, de esta forma:
 
 <center>
-![El escenario final](assets/resources/Imagen1-small.png)
+![El escenario final](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **¿Cómo obtener los elementos?**
