@@ -27,7 +27,9 @@ del tablero al Gobstomon de menor nivel.
 Te mostramos algunos tableros iniciales y sus correspondientes tableros finales.
 
 <center>
-![Tableros iniciales con sus tableros finales](assets/resources/Imagen1-small.png)
+![Tableros iniciales con sus tableros finales (1 de 6)](assets/boards/Board01.gbb) ![Tableros iniciales con sus tableros finales (2 de 6)](assets/resources/Imagen1-small-2.gbb) ![Tableros iniciales con sus tableros finales (3 de 6)](assets/resources/Imagen1-small-3.gbb) ![Tableros iniciales con sus tableros finales (4 de 6)](assets/resources/Imagen1-small-4.gbb) ![Tableros iniciales con sus tableros finales (5 de 6)](assets/resources/Imagen1-small-5.gbb) ![Tableros iniciales con sus tableros finales (6 de 6)](assets/resources/Imagen1-small-6.gbb)
+
+*Garmander de nivel 4 y Gikachu de nivel 7 → ganó Gikachu; Garmander de nivel 8 y Gikachu de nivel 7 → ganó Garmander; Garmander y Gikachu de nivel 10 → hubo empate y ambos salieron.*
 </center>
 
 Parece que vas a precisar algunas alternativas condicionales… 

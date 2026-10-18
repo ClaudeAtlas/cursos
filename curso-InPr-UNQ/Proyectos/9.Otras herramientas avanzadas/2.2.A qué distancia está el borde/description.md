@@ -7,11 +7,11 @@ El desafío es hacerlo sin que el cabezal salga de la celda inicial.
 Te mostramos algunos tableros finales.
 
 <center>
-![Un posible tablero final](assets/resources/Imagen1-small.png)
+![Un posible tablero final](assets/resources/Imagen1-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Otro posible tablero final](assets/resources/Imagen2-small.png)
+![Otro posible tablero final](assets/resources/Imagen2-small.gbb)
 </center>
 
 Una buena idea es hacer un recorrido moviéndose hacia el borde, y acumulando la cantidad 

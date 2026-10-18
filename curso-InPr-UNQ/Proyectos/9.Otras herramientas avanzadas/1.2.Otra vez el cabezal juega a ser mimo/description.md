@@ -12,7 +12,7 @@ Como siempre, el programa tiene que funcionar en varios tableros diferentes.
 Te mostramos algunos tableros iniciales y sus correspondientes tableros finales.
 
 <center>
-![Tableros iniciales y sus correspondientes tableros finales](assets/resources/Imagen1-small.png)
+![Tableros iniciales y sus correspondientes tableros finales (1 de 4)](assets/boards/Board05.gbb) ![Tableros iniciales y sus correspondientes tableros finales (2 de 4)](assets/resources/Imagen1-small-2.gbb) ![Tableros iniciales y sus correspondientes tableros finales (3 de 4)](assets/boards/Board17.gbb) ![Tableros iniciales y sus correspondientes tableros finales (4 de 4)](assets/resources/Imagen1-small-4.gbb)
 </center>
 
 Vas a precisar alguna forma de recordar cuántas bolitas azules hay en la celda actual 

@@ -7,13 +7,13 @@ que encuentra por el camino; los quesos que no están en el camino no los va a c
 Como otras veces, te mostramos algunos tableros iniciales y sus correspondientes tableros finales:
           
 <center>
-![Tablero inicial 1 con su correspondiente tablero final](assets/resources/Imagen1-small.png)
+![Tablero inicial 1 con su correspondiente tablero final (1 de 2)](assets/boards/Board01.gbb) ![Tablero inicial 1 con su correspondiente tablero final (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial 2 con su correspondiente tablero final](assets/resources/Imagen2-small.png)
+![Tablero inicial 2 con su correspondiente tablero final (1 de 2)](assets/resources/Imagen2-small-1.gbb) ![Tablero inicial 2 con su correspondiente tablero final (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 
-![Tablero inicial 3 con su correspondiente tablero final](assets/resources/Imagen3-small.png)
+![Tablero inicial 3 con su correspondiente tablero final (1 de 2)](assets/resources/Imagen3-small-1.gbb) ![Tablero inicial 3 con su correspondiente tablero final (2 de 2)](assets/resources/Imagen3-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial 4 con su correspondiente tablero final](assets/resources/Imagen4-small.png)
+![Tablero inicial 4 con su correspondiente tablero final (1 de 2)](assets/resources/Imagen4-small-1.gbb) ![Tablero inicial 4 con su correspondiente tablero final (2 de 2)](assets/resources/Imagen4-small-2.gbb)
 </center>
           
 Fijate que no tenés que hacer todo el programa. 

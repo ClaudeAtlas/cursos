@@ -18,7 +18,7 @@ Un posible tablero inicial y su correspondiente tablero final, con y sin vestime
 se observan en las imágenes:
        
 <center>
-![Un tablero inicial y uno final, con y sin vestimenta](assets/resources/Imagen1-small.png)
+![Un tablero inicial y uno final, con y sin vestimenta: inicial con vestimenta (1 de 4)](assets/boards/Board3.gbb) ![Un tablero inicial y uno final, con y sin vestimenta: inicial sin vestimenta (2 de 4)](assets/boards/Board3.gbb?vestimenta=ninguna) ![Un tablero inicial y uno final, con y sin vestimenta: final con vestimenta (3 de 4)](assets/resources/Imagen1-small-3.gbb) ![Un tablero inicial y uno final, con y sin vestimenta: final sin vestimenta (4 de 4)](assets/resources/Imagen1-small-3.gbb?vestimenta=ninguna)
 </center>
 
 ¡Acordate de empezar pensando una estrategia de solución, y viendo qué subtareas son 

@@ -7,7 +7,7 @@ en una meta, como la de las carreras de autos.
 Algunos de los tableros iniciales son:
 
 <center>
-![Algunos tableros iniciales](assets/resources/Imagen1-small.png)
+![Algunos tableros iniciales (1 de 3)](assets/boards/Board02.gbb) ![Algunos tableros iniciales (2 de 3)](assets/boards/Board08.gbb) ![Algunos tableros iniciales (3 de 3)](assets/resources/Imagen1-small-3.gbb)
 </center>
 
 Si no se te ocurre cómo hacer, pensá que Lucho debe **repetir** la tarea de encender una 

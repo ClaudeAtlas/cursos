@@ -10,7 +10,7 @@ cada una, por lo que Beto va a tener que **repetir** moverse de a un lugar
 Te mostramos algunos tableros iniciales:
 
 <center>
-![Algunos tableros iniciales](assets/resources/Imagen1-small.png)
+![Algunos tableros iniciales (1 de 4)](assets/boards/Board06.gbb) ![Algunos tableros iniciales (2 de 4)](assets/boards/Board07.gbb) ![Algunos tableros iniciales (3 de 4)](assets/boards/Board01.gbb) ![Algunos tableros iniciales (4 de 4)](assets/boards/Board08.gbb)
 </center>
 
 No te olvides de la estrategia de solución y la división en subtareas; 

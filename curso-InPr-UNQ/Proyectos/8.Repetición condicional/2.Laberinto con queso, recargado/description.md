@@ -9,7 +9,7 @@ que cumpla estas condiciones.
 Te mostramos algunos tableros iniciales:
 
 <center>
-![Algunos tableros iniciales](assets/resources/Imagen1-small.png)
+![Algunos tableros iniciales (1 de 4)](assets/resources/Imagen1-small-1.gbb) ![Algunos tableros iniciales (2 de 4)](assets/resources/Imagen1-small-2.gbb) ![Algunos tableros iniciales (3 de 4)](assets/boards/Board32.gbb) ![Algunos tableros iniciales (4 de 4)](assets/boards/Board35.gbb)
 </center>
            
 [Enunciado en PDF][PDF]

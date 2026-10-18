@@ -7,7 +7,7 @@ todas, sino solamente las rajadas.
 Te mostramos algunos tableros finales, sin vestimenta y con ella.
 
 <center>
-![Tableros finales sin vestimenta y con ella](assets/resources/Imagen1-small.png)
+![Tableros finales sin vestimenta y con ella (1 de 4)](assets/resources/Imagen1-small-1.gbb?vestimenta=ninguna) ![Tableros finales sin vestimenta y con ella (2 de 4)](assets/resources/Imagen1-small-2.gbb?vestimenta=ninguna) ![Tableros finales sin vestimenta y con ella (3 de 4)](assets/resources/Imagen1-small-1.gbb) ![Tableros finales sin vestimenta y con ella (4 de 4)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 ¡No te olvides de definir procedimientos y funciones para que tus programas sean legibles!
