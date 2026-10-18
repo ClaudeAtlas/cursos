@@ -11,7 +11,7 @@ programa haga que el entrenador se quede satisfecho al ver cómo Beto hace su ta
 El tablero inicial es el siguiente:
 
 <center>
-![Tablero inicial](assets/boards/Board1.gbb?vestimenta=FutbolDeRobots)
+![Tablero inicial](assets/boards/Board1.gbb)
 </center>
 
 Para hacer el programa, acordate que hay que pensar una estrategia de solución y expresarla con procedimientos.

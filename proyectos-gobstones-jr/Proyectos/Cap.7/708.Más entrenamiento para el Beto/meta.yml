@@ -1,7 +1,7 @@
 name: Más entrenamiento para el Beto
 link: http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria-fichas.pdf#page=76
 attire:
-  active: Fútbol de robots
+  active: FutbolDeRobots
   user_permissions:
     can_toggle_visibility: true
   visible: true
