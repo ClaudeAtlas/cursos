@@ -87,7 +87,7 @@ blocks:
   visible: [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
                            , "Procedimientos primitivos"
                            , "Mis procedimientos"
-						   , "RepeticionSimple"
+                           , "RepeticionSimple"
            , "EXPRESIONES" , "Color", "Direccion", "Numero"
            , "DEFINICIONES", "procedures_defnoreturnnoparams"
            ]
