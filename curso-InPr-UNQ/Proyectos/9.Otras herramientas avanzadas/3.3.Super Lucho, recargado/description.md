@@ -8,7 +8,7 @@ esquina suroeste.
 Te mostramos un tablero inicial y su correspondiente tablero final.
 
 <center>
-![Un posible tablero inicial y su correspondiente tablero final](assets/resources/Imagen1-small.png)
+![Un posible tablero inicial y su correspondiente tablero final: inicial sin vestimenta (1 de 4)](assets/resources/Imagen1-small-1.gbb?vestimenta=ninguna) ![Un posible tablero inicial y su correspondiente tablero final: final sin vestimenta (2 de 4)](assets/resources/Imagen1-small-2.gbb?vestimenta=ninguna) ![Un posible tablero inicial y su correspondiente tablero final: inicial con vestimenta (3 de 4)](assets/resources/Imagen1-small-1.gbb) ![Un posible tablero inicial y su correspondiente tablero final: final con vestimenta (4 de 4)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 ¡No te olvides de usar todas las herramientas que aprendimos! 

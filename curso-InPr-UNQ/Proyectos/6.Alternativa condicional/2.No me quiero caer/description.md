@@ -9,13 +9,21 @@ Este y el Norte; o dicho de otro modo, no te tenés que preocupar de quedarte si
 Las siguientes figuras muestran algunos tableros iniciales y los tableros finales correspondientes:
 
 <center>
-![Tablero inicial 1 con su tablero final](assets/resources/Ìmagen1-small.png)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial 2 con su tablero final](assets/resources/Imagen2-small.png)
+![Tablero inicial 1 con su tablero final (1 de 2)](assets/resources/Ìmagen1-small-1.gbb) ![Tablero inicial 1 con su tablero final (2 de 2)](assets/resources/Ìmagen1-small-2.gbb)
 
-![Tablero inicial 3 con su tablero final](assets/resources/Imagen3-small.png)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial 4 con su tablero final](assets/resources/Imagen4-small.png)
+*Tablero inicial (11 lugares al Este) → Tablero final (la víbora no dobló)*
+
+![Tablero inicial 2 con su tablero final (1 de 2)](assets/boards/Board06.gbb) ![Tablero inicial 2 con su tablero final (2 de 2)](assets/resources/Imagen2-small-2.gbb)
+
+*Tablero inicial (9 lugares al Este) → Tablero final (la víbora dobló un lugar)*
+
+![Tablero inicial 3 con su tablero final (1 de 2)](assets/boards/Board07.gbb) ![Tablero inicial 3 con su tablero final (2 de 2)](assets/resources/Imagen3-small-2.gbb)
+
+*Tablero inicial (7 lugares al Este) → Tablero final (la víbora dobló 3 lugares)*
+
+![Tablero inicial 4 con su tablero final (1 de 2)](assets/boards/Board08.gbb) ![Tablero inicial 4 con su tablero final (2 de 2)](assets/resources/Imagen4-small-2.gbb)
+
+*Tablero inicial (4 lugares al Este) → Tablero final (la víbora dobló 6 lugares)*
 </center>
 
 Como ayuda, el proyecto trae ya hechos algunos procedimientos; vos solamente tenés que completar el 

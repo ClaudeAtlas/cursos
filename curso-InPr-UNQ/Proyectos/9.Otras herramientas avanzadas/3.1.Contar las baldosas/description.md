@@ -7,7 +7,7 @@ usando bolitas negras.
 Te mostramos algunos tableros finales, sin vestimenta y con ella:
 
 <center>
-![Tableros finales posibles, sin vestimenta y con ella](assets/resources/Imagen1-small.png)
+![Tableros finales posibles, sin vestimenta y con ella (1 de 4)](assets/resources/Imagen1-small-1.gbb?vestimenta=ninguna) ![Tableros finales posibles, sin vestimenta y con ella (2 de 4)](assets/resources/Imagen1-small-2.gbb?vestimenta=ninguna) ![Tableros finales posibles, sin vestimenta y con ella (3 de 4)](assets/resources/Imagen1-small-1.gbb) ![Tableros finales posibles, sin vestimenta y con ella (4 de 4)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 El consejo es que utilices un recorrido por celdas, como el de 

@@ -20,7 +20,7 @@ los cuadrantes menos en el noroeste; en el tercero no hay en ningún cuadrante; 
 También te mostramos un tablero final con vestimenta:
 
 <center>
-![Un tablero final con vestimenta](assets/resources/Imagen2-small.png)
+![Un tablero final con vestimenta](assets/resources/Imagen2-small.gbb)
 </center>
 
 Para llevar adelante la tarea, te proponemos que construyas:

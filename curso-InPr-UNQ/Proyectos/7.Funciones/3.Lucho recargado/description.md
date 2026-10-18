@@ -7,9 +7,9 @@ Completá el programa para ayudar a Lucho con su tarea.
 Como siempre, te mostramos algunos tableros iniciales y sus correspondientes tableros finales:
 
 <center>
-![Tablero 1 con su correspondiente tablero final](assets/resources/Imagen1-small.png)
+![Tablero 1 con su correspondiente tablero final (1 de 2)](assets/boards/Board09.gbb) ![Tablero 1 con su correspondiente tablero final (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero 2 con su correspondiente tablero final](assets/resources/Imagen2-small.png)
+![Tablero 2 con su correspondiente tablero final (1 de 2)](assets/boards/Board04.gbb) ![Tablero 2 con su correspondiente tablero final (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 </center>
 
 Vas a necesitar saber cómo es la representación de los elementos y las particularidades de las operaciones:

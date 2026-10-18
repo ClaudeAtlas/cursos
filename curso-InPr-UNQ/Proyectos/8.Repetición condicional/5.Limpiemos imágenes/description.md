@@ -21,7 +21,7 @@ y funciones que representan las subtareas para las partes del mismo:
   
 Te mostramos un tablero inicial posible, y su correspondiente tablero final.
 <center>
-![Un tablero inicial y su correspondiente tablero final](assets/resources/Imagen1-small.png)
+![Un tablero inicial y su correspondiente tablero final: imagen manchada (1 de 2)](assets/boards/Board1.gbb) ![Un tablero inicial y su correspondiente tablero final: imagen limpia (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 > **RGB**

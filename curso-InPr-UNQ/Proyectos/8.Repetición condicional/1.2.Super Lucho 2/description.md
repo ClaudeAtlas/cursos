@@ -6,7 +6,7 @@ pero ahora hay posiciones que no tienen luz (y quizás alguna ya esté prendida)
 Algunos de los tableros iniciales son:
 
 <center>
-![Algunos tableros iniciales](assets/resources/Imagen1-small.png)
+![Algunos tableros iniciales (1 de 4)](assets/resources/Imagen1-small-1.gbb) ![Algunos tableros iniciales (2 de 4)](assets/resources/Imagen1-small-2.gbb) ![Algunos tableros iniciales (3 de 4)](assets/resources/Imagen1-small-3.gbb) ![Algunos tableros iniciales (4 de 4)](assets/resources/Imagen1-small-4.gbb)
 </center>
 
 Parece que vas a tener que combinar la herramienta que 

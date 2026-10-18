@@ -15,7 +15,7 @@ principio todos los cajones están cerrados, pero al final no los tuvo que abrir
 Y tené en cuenta que puede ser que el cabezal no empiece en la esquina sureste…
 
 <center>
-![Un tablero inicial y su correspondiente tablero final, con y sin vestimentas](assets/resources/Imagen1-small.png)
+![Un tablero inicial y su correspondiente tablero final, con y sin vestimentas (1 de 4)](assets/resources/Imagen1-small-1.gbb) ![Un tablero inicial y su correspondiente tablero final, con y sin vestimentas (2 de 4)](assets/resources/Imagen1-small-1.gbb?vestimenta=ninguna) ![Un tablero inicial y su correspondiente tablero final, con y sin vestimentas (3 de 4)](assets/resources/Imagen1-small-2.gbb) ![Un tablero inicial y su correspondiente tablero final, con y sin vestimentas (4 de 4)](assets/resources/Imagen1-small-2.gbb?vestimenta=ninguna)
 </center>
 
 Para poder construir los procedimientos y funciones necesarios, tenés que saber cómo es la 
