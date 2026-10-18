@@ -5,7 +5,7 @@ que aparecen en el tablero, que están siempre en el mismo lugar.
 El tablero inicial es:
 
 <center>
-![El tablero inicial](assets/resources/Imagen1-small.png)
+![El tablero inicial](assets/boards/Board1.gbb)
 </center>
 
 Lo importante es que pienses de entrada una estrategia de solución, dividiendo en subtareas, y escribas 

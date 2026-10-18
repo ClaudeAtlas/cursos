@@ -5,7 +5,7 @@ un programa en el que se pueda obtener un tablero con _“semicírculos”_ rojo
 del borde Este, como se muestra en las figuras.
 
 <center>
-![Algunos tableros finales](assets/resources/Imagen1-small.png)
+![Algunos tableros finales (1 de 2)](assets/resources/Imagen1-small-1.gbb) ![Algunos tableros finales (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
                 
 Acordate que el desafío es construir **_un solo programa_**, pero ese programa tiene que 

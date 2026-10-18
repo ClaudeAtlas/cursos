@@ -3,7 +3,7 @@
 Ejecutá el programa y observá como el granjero siembra tomates y luego los cosecha.
 
 <center>
-![Tablero durante la ejecución](assets/resources/Imagen1-small.png)
+![Tablero durante la ejecución](assets/resources/Imagen1-small.gbb)
 </center>
 
 Durante la ejecución desactivá o cambiá la vestimenta con el botón que se muestra en la imagen.

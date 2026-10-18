@@ -6,7 +6,7 @@ Por ejemplo, una que tenga tres veces el ancho de espadas.
 El escenario final debería quedar así:
 
 <center>
-![El escenario final](assets/resources/Imagen1-small.png)
+![El escenario final](assets/resources/Imagen1-small.gbb)
 </center>
 
 Otra vez, la actividad es tan simple como poner las 3 cartas pedidas.

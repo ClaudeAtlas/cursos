@@ -5,7 +5,7 @@ Pero falta escribir las funciones que determinan si una carta es efectivamente o
 Completá el programa para que al terminar solo las figuras estén descubiertas, como en la imagen.
 
 <center>
-![El escenario inicial](assets/resources/Imagen1-small.png)
+![El escenario inicial](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **Pista**

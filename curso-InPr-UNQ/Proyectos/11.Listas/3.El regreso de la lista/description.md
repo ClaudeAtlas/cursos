@@ -7,7 +7,7 @@ para lograrlo que no use una cantidad fija de comandos para informar un número.
 Algunos escenarios iniciales posibles:
 
 <center>
-![El escenario final](assets/resources/Imagen1-small.png)
+![El escenario final (1 de 4)](assets/boards/Board3.gbb) ![El escenario final (2 de 4)](assets/boards/Board2.gbb) ![El escenario final (3 de 4)](assets/boards/Board4.gbb) ![El escenario final (4 de 4)](assets/boards/Board6.gbb)
 </center>
 
 > **¿Cómo ir recorriendo la lista de a poco?**

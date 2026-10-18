@@ -15,7 +15,7 @@ Dos motoqueros se dicen conectados cuando hay una secuencia de motoqueros activo
 
 <center>
 ![Un tablero posible](assets/boards/Board3.gbb)
-![El tablero después de asignar clubes](assets/resources/Imagen2-small.png)
+![El tablero después de asignar clubes](assets/resources/Imagen2-small.gbb)
 </center>
 
 1. Realizar la función `cantidadDeClubesEnLaConvención()` que determine la cantidad total de clubes de 

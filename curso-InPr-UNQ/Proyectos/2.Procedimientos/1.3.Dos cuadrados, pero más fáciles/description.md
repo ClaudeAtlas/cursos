@@ -8,7 +8,7 @@ El tablero final es igual que el que pedía la actividad mencionada.
 Al terminar con esta parte, fijate que hay una segunda parte.
 
 <center>
-![Tablero final esperado en la parte 1](assets/resources/Imagen1-small.png)
+![Tablero final esperado en la parte 1](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **El dato**
@@ -32,7 +32,7 @@ B) Después de guardar tu solución en la computadora, cambiá el programa para 
    ¡pero para dibujar el cuadrado ya tenés tu propio comando!
 
 <center>
-![Tablero final esperado en la parte 2](assets/resources/Imagen2-small.png)
+![Tablero final esperado en la parte 2](assets/resources/Imagen2-small.gbb)
 </center>
 
 > **Reutilizar es la clave**

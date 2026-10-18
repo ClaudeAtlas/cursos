@@ -1,0 +1,35 @@
+GBB/1.0
+size 9 9
+cell 0 0 Rojo 1
+cell 1 0 Rojo 1
+cell 2 0 Rojo 1
+cell 6 0 Rojo 1
+cell 7 0 Rojo 1
+cell 8 0 Rojo 1
+cell 0 1 Rojo 1
+cell 2 1 Rojo 1
+cell 6 1 Rojo 1
+cell 8 1 Rojo 1
+cell 0 2 Rojo 1
+cell 1 2 Rojo 1
+cell 2 2 Rojo 1
+cell 6 2 Rojo 1
+cell 7 2 Rojo 1
+cell 8 2 Rojo 1
+cell 0 6 Rojo 1
+cell 1 6 Rojo 1
+cell 2 6 Rojo 1
+cell 6 6 Rojo 1
+cell 7 6 Rojo 1
+cell 8 6 Rojo 1
+cell 0 7 Rojo 1
+cell 2 7 Rojo 1
+cell 6 7 Rojo 1
+cell 8 7 Rojo 1
+cell 0 8 Rojo 1
+cell 1 8 Rojo 1
+cell 2 8 Rojo 1
+cell 6 8 Rojo 1
+cell 7 8 Rojo 1
+cell 8 8 Rojo 1
+head 0 6

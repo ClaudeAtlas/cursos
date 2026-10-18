@@ -5,7 +5,7 @@ que aparecen en el escenario, que están siempre en el mismo lugar.
 El escenario inicial es el siguiente:
 
 <center>
-![El escenario inicial](assets/resources/Imagen1-small.png)
+![El escenario inicial](assets/boards/Board1.gbb)
 </center>
 
 Lo importante es que pienses de entrada una **estrategia** de solución, dividas en **subtareas** y 

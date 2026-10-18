@@ -7,7 +7,7 @@ La dificultad es que ahora las primitivas son las que vimos en la actividad ante
 ¿Cómo uso las variables para recordarla?
 
 <center>
-![Un par de escenarios finales](assets/resources/Imagen1-small.png)
+![Un par de escenarios finales (1 de 2)](assets/resources/Imagen1-small-1.gbb) ![Un par de escenarios finales (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 [Enunciado en PDF][PDF]

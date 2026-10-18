@@ -5,7 +5,7 @@ todas las luces que aparecen en el escenario, que están siempre en el mismo lug
 Pero ahora el escenario inicial es diferente:
 
 <center>
-![El escenario inicial](assets/resources/Imagen1-small.png)
+![El escenario inicial](assets/boards/Board2.gbb)
 </center>
 
 En la actividad anterior pensaste algunas estrategias de solución, y construiste algunos procedimientos para 

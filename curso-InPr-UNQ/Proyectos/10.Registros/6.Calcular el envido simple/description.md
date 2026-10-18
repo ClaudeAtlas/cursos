@@ -10,7 +10,7 @@ tienen el mismo palo; por eso decimos que es un "envido simple".
 Te mostramos algunos posibles escenarios finales, con el envido calculado correctamente.
 
 <center>
-![Algunos escenarios finales](assets/resources/Imagen1-small.png)
+![Algunos escenarios finales (1 de 3)](assets/resources/Imagen1-small-1.gbb) ![Algunos escenarios finales (2 de 3)](assets/resources/Imagen1-small-2.gbb) ![Algunos escenarios finales (3 de 3)](assets/resources/Imagen1-small-3.gbb)
 </center>
 
 > **¿Cómo hacemos para sumar los valores?**
