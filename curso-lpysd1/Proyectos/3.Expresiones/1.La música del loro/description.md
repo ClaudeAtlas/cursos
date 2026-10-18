@@ -5,7 +5,7 @@ debe iniciar el concierto.
 La pequeña dificultad es que no siempre aparece el mismo instrumento y no siempre aparecen en el mismo lugar. 
 
 <center>
-![Escenarios iniciales posibles](assets/resources/Imagen1-small.png)
+![Escenarios iniciales posibles (1 de 2)](assets/boards/Board5.gbb) ![Escenarios iniciales posibles (2 de 2)](assets/boards/Board4.gbb)
 </center>
 
 > **Diferentes sensores, para diferentes propósitos**
