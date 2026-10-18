@@ -7,11 +7,11 @@ Tu tarea es revisar el programa, encontrar el error y corregirlo.
 Te mostramos un par de escenarios finales que tienen el resultado que debería ser.
 
 <center>
-![Un escenario final](assets/resources/Imagen1-small.png)
+![Un escenario final](assets/resources/Imagen1-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Otro escenario final](assets/resources/Imagen2-small.png)
+![Otro escenario final](assets/resources/Imagen2-small.gbb)
 </center>
 
 Fijate que se utiliza una variable, como en las actividades anteriores.

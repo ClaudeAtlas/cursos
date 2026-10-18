@@ -9,10 +9,10 @@ encuentra lo buscado.
 El escenario final debería quedar en uno de las dos siguientes situaciones:
 
 <center>
-![Un escenario final donde está la espada](assets/resources/Imagen1-small.png)
+![Un escenario final donde está la espada](assets/resources/Imagen1-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Un escenario final donde NO está la espada](assets/resources/Imagen2-small.png)
+![Un escenario final donde NO está la espada](assets/resources/Imagen2-small.gbb)
 </center>
 
 > **Recorridos de búsqueda**

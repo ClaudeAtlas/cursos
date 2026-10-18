@@ -7,7 +7,7 @@ El tema es que ahora las operaciones primitivas disponibles son levemente distin
 Un escenario final posible podría ser:
 
 <center>
-![El escenario final](assets/resources/Imagen1-small.png)
+![El escenario final](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **Otra forma de obtener los elementos**

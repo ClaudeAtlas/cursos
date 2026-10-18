@@ -17,10 +17,10 @@ todo bien.
 ![Un escenario durante el juego](assets/resources/Imagen1-small.png)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Escenario de un juego exitoso](assets/resources/Imagen2-small.png)
+![Escenario de un juego exitoso](assets/resources/Imagen2-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Escenario de un juego fallido](assets/resources/consigna-1.png)
+![Escenario de un juego fallido](assets/resources/consigna-1.gbb)
 </center>
 
 > **¿Cómo funcionan estos sensores?**

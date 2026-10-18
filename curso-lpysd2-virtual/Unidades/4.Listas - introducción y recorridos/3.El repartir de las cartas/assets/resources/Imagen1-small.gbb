@@ -1,0 +1,51 @@
+GBB/1.0
+size 20 4
+cell 0 0 Azul 2 Negro 23
+cell 0 1 Azul 3 Negro 311
+cell 0 3 Azul 3 Negro 311
+cell 1 0 Azul 2 Negro 32
+cell 1 1 Azul 3 Negro 107
+cell 1 3 Azul 3 Negro 305
+cell 2 0 Azul 2 Negro 36
+cell 2 1 Azul 3 Negro 405
+cell 2 3 Azul 3 Negro 107
+cell 3 0 Azul 2 Negro 10
+cell 3 1 Azul 3 Negro 104
+cell 3 3 Azul 3 Negro 210
+cell 4 0 Azul 2 Negro 12
+cell 4 1 Azul 3 Negro 407
+cell 4 3 Azul 3 Negro 405
+cell 5 0 Azul 2 Negro 19
+cell 5 1 Azul 3 Negro 110
+cell 5 3 Azul 3 Negro 407
+cell 6 0 Azul 2 Negro 15
+cell 6 1 Azul 3 Negro 404
+cell 6 3 Azul 3 Negro 104
+cell 7 0 Azul 2 Negro 24
+cell 7 1 Azul 3 Negro 403
+cell 7 3 Azul 3 Negro 312
+cell 8 1 Azul 3 Negro 101
+cell 8 3 Azul 3 Negro 407
+cell 9 1 Azul 3 Negro 206
+cell 9 2 Rojo 10
+cell 9 3 Azul 3 Negro 204
+cell 10 2 Negro 19 Rojo 20
+cell 10 3 Azul 3 Negro 110
+cell 11 1 Azul 3 Negro 203
+cell 11 3 Azul 3 Negro 402
+cell 12 1 Azul 3 Negro 301
+cell 12 3 Azul 3 Negro 404
+cell 13 1 Azul 3 Negro 111
+cell 13 3 Azul 3 Negro 111
+cell 14 1 Azul 3 Negro 402
+cell 14 3 Azul 3 Negro 403
+cell 15 1 Azul 3 Negro 204
+cell 15 3 Azul 3 Negro 301
+cell 16 1 Azul 3 Negro 312
+cell 16 3 Azul 3 Negro 101
+cell 17 1 Azul 3 Negro 407
+cell 17 3 Azul 3 Negro 203
+cell 18 1 Azul 3 Negro 210
+cell 18 3 Azul 3 Negro 206
+cell 19 1 Azul 3 Negro 305
+head 19 1
