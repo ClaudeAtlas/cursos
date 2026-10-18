@@ -23,7 +23,7 @@ Investigá el entorno para descubrir algo que te permita conseguir este objetivo
 > (las flechitas al lado del botón de ejecución), y elegí el tablero que quieras 
 > (con el menú de selección de tablero inicial, arriba a la izquierda del sector del tablero).
 > <center>
-> ![Opción de tablero aleatorio y menú de tableros](assets/boards/Board13.gbb)
+> ![Opción de tablero aleatorio y menú de tableros](assets/resources/Imagen2-small.png)
 > </center>
 
 &nbsp;
