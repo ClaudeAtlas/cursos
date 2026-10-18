@@ -5,7 +5,7 @@ de las pelotas hacia los arcos correspondientes. Fijate que el escenario siempre
 estar a distinta distancia del Beto. 
 
 <center>
-![Un posible tablero inicial](assets/resources/Imagen1-small.png)
+![Un posible tablero inicial](assets/boards/Board1.gbb)
 </center>
 
 Probá el funcionamiento de los comandos que pueden darse al Beto para organizar la estrategia de solución.

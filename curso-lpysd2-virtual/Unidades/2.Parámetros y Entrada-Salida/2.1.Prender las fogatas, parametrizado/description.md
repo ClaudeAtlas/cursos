@@ -4,7 +4,7 @@ El explorador está preparando el campamento para la llegada del grupo. Y para e
 La idea es construir un único procedimiento para encender lados, y que lo uses para cada uno de los 4 lados…
 
 <center>
-![Escenario inicial](assets/resources/Imagen1-small.png)
+![Escenario inicial](assets/boards/Board08.gbb)
 </center>
 
 Acordate de mirar los tableros posibles, para entender cuáles son las variaciones. 
