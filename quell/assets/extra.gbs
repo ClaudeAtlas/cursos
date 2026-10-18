@@ -883,6 +883,7 @@ procedure ProcessStepTo_(mdir) {
   }
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure ToogleShowHint() {
   /* PRECOND: the current cell has the ball */
   ball := currentQBall()
@@ -1412,9 +1413,12 @@ function dHintForNHint_On_(mi, quell) {
 // ---------
 // Quell top level operations
 // ---------
+/*@ATTRIBUTE@atomic@*/
 procedure DrawQuell_(quell)      { DrawQLevel_(quell)        } /* PRECOND: Gobstones board is big enough to represent the quell board and the top bar */
 
+/*@ATTRIBUTE@atomic@*/
 procedure ProcessOneStepTo_(dir) { ProcessStepTo_(just(dir)) }
+/*@ATTRIBUTE@atomic@*/
 procedure ProcessOneStep()       { ProcessStepTo_(Nothing)   }
 
 /* ============================================================================================================

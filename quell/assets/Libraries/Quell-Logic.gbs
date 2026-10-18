@@ -23,6 +23,7 @@ procedure ProcessStepTo_(mdir) {
   }
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure ToogleShowHint() {
   /* PRECOND: the current cell has the ball */
   ball := currentQBall()
