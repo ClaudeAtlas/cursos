@@ -603,6 +603,7 @@ function msgNotACodeFor_(element) {
    ============================================================================================================
 */
 
+/*@ATTRIBUTE@atomic@*/
 procedure DrawQLevel_(quell) {
   /* OBS: to be used only on the initial drawing */
   ClearBoard()
@@ -613,12 +614,14 @@ procedure DrawQLevel_(quell) {
   DrawQBall_WithDHint_(ball(quell), firstTutorialDHintOn_(quell)) // The first time is accesed directly, without arithmetic operations
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure SetTopShowHint() {
   /* PRECOND: TopShowHint is false */
   GoToTopShowHint()
   DrawBool_With_(True, attrBColor())
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure SetTopJewelFound() {
   pos := currentPos()
   GoToTopJewel()
@@ -626,6 +629,7 @@ procedure SetTopJewelFound() {
   GoToCell_(pos)
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure IncrementTopNumMoves() {
   pos := currentPos()
   GoToTopNumMoves()
@@ -635,6 +639,7 @@ procedure IncrementTopNumMoves() {
   GoToCell_(pos)
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure DecrementTopNumPearls() {
   pos := currentPos()
   GoToTopNumPearls()
@@ -644,6 +649,7 @@ procedure DecrementTopNumPearls() {
   GoToCell_(pos)
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure SetTopHintTo_(mdir) {
   pos := currentPos()
   GoToTopHint()
@@ -652,6 +658,7 @@ procedure SetTopHintTo_(mdir) {
   GoToCell_(pos)
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure SetTopSpikesDirTo_(dir) {
   pos := currentPos()
   GoToTopSpikesDir()
@@ -664,6 +671,7 @@ procedure SetTopSpikesDirTo_(dir) {
 // Drawing operations
 // Level 1
 // ---------
+/*@ATTRIBUTE@atomic@*/
 procedure DrawTopBar_(quell) {
   GoToCorner__(North,West); EncodeTopShowHint_As_   (isTutorial(quell)                , 0)
   Move(East)              ; EncodeTopNum_As_        (numMoves(quell)                  , 1)
@@ -675,6 +683,7 @@ procedure DrawTopBar_(quell) {
   Move(West)              ; PadEmptyCellAs_(0)
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure DrawQBoard_WithSpikesTo_(board, spikesDir) { 
   /* PRECOND: the board has at least one qelem */
   GoToCorner__(North, West) Move(South)
@@ -682,6 +691,7 @@ procedure DrawQBoard_WithSpikesTo_(board, spikesDir) {
   foreach row in tail(board) { Move(South); DrawQRow_WithSpikesTo_(row, spikesDir) }
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure DrawQJewel_(jewel) { 
   if (isJewel_(jewel)) { 
     GoToCell_(jpos(jewel))
@@ -690,6 +700,7 @@ procedure DrawQJewel_(jewel) {
   } 
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure DrawQBoxes_(boxes) { 
   foreach box in boxes { 
     GoToCell_(fst(box))
@@ -697,6 +708,7 @@ procedure DrawQBoxes_(boxes) {
   }
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure DrawMovingQBall_(ball) { 
   /* PURPOSE: draw the ball in the current cell (ignoring bpos)
      PRECOND: isMovingBall_(ball) 
@@ -705,6 +717,7 @@ procedure DrawMovingQBall_(ball) {
   if (beaming(ball)) { Drop__Times(ballColor(), 10) }
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure DrawStaticQBall() { 
   /* PURPOSE: draw the ball in the current cell (ignoring bpos)
      PRECOND: isStaticBall_(ball) 
@@ -712,6 +725,7 @@ procedure DrawStaticQBall() {
   Drop__Times(ballColor(), 5)
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure DrawQBall_(ball)   { 
   /* PURPOSE: draw the ball in the current cell (ignoring bpos) */
   switch (ball)  
@@ -721,6 +735,7 @@ procedure DrawQBall_(ball)   {
    
 }  
 
+/*@ATTRIBUTE@atomic@*/
 procedure DrawQBall_WithDHint_(ball, mdir)   { 
   switch (ball)  
     on QBallAt(bpos -> pos)               do { GoToCell_(pos); DrawStaticQBall()
@@ -762,6 +777,7 @@ procedure EncodeTopNum_AndMNum_As_(n, mn, i) {
 }
 
 // Board
+/*@ATTRIBUTE@atomic@*/
 procedure DrawQRow_WithSpikesTo_(row, spikesDir) {
   /* PRECOND: the row has at least one element */
   GoToEdge(West)
@@ -770,6 +786,7 @@ procedure DrawQRow_WithSpikesTo_(row, spikesDir) {
 }
 
 procedure DrawQElemId_(qelem) { Drop__Times(qelemColor(), codeOfQelem_(qelem)) }
+/*@ATTRIBUTE@atomic@*/
 procedure DrawQElem_WithSpikesTo_(qelem, spikesDir) {
   DrawQElemId_(qelem)
   switch (qelem)  
@@ -789,12 +806,15 @@ procedure DrawQElem_WithSpikesTo_(qelem, spikesDir) {
      
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure DrawJewel_(hits) { DrawNum_With_(hits, attrAColor()) }
+/*@ATTRIBUTE@atomic@*/
 procedure DrawBox_(gender) {
   code := codeOfGender_(gender)
   DrawNum_With_(100*code, attrBColor())
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure DrawBeamingBox_(gender) {
   code := codeOfGender_(gender)
   DrawNum_With_(100*code+10, attrBColor()) // Beaming is indicated with 10 more stones
@@ -803,15 +823,19 @@ procedure DrawBeamingBox_(gender) {
 // ---------
 // Clearing operations
 // ---------
+/*@ATTRIBUTE@atomic@*/
 procedure ClearBox() {
   /* PRECOND: there is a Box represented in the current cell */
   boxCode := truncate_ToMultipleOf_(currentNumWith_(attrBColor()), 10)
   Grab__Times(attrBColor(), boxCode)
 }
 
+/*@ATTRIBUTE@atomic@*/
 procedure ClearAttrA()        { GrabAll_(attrAColor()) }
+/*@ATTRIBUTE@atomic@*/
 procedure ClearAttrB()        { GrabAll_(attrBColor()) }
   
+/*@ATTRIBUTE@atomic@*/
 procedure ClearBall()         { GrabAll_(ballColor())  }
 procedure ClearPearl()        { ClearAttrB()           }
 procedure ClearJewel()        { ClearAttrA()           }
