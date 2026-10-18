@@ -7,9 +7,9 @@ Explorá el entorno para encontrar la manera en la que el número de bolitas azu
 negras se puedan usar juntos en la repetición. Te mostramos algunos tableros iniciales y finales:
  
 <center>
-![A imitar 1+3 bolitas](assets/resources/Imagen1-small.png)
+![A imitar 1+3 bolitas (1 de 2)](assets/boards/Board01.gbb) ![A imitar 1+3 bolitas (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![A imitar 2+3 bolitas](assets/resources/Imagen2-small.png)
+![A imitar 2+3 bolitas (1 de 2)](assets/boards/Board02.gbb) ![A imitar 2+3 bolitas (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![A imitar 4+2 bolitas (1 de 2)](assets/boards/Board04.gbb) ![A imitar 4+2 bolitas (2 de 2)](assets/resources/Imagen3-small-2.gbb)
 </center>

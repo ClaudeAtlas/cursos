@@ -8,8 +8,8 @@ finalizar la ejecución.
 En las imágenes se puede observar cómo debe quedar el tablero final, con y sin vestimenta.
 
 <center>
-![Tablero final sin vestimenta](assets/resources/Imagen1-small.gbb)
-![Tablero final con vestimenta](assets/resources/Imagen2-small.png)
+![Tablero final sin vestimenta](assets/resources/Imagen1-small.gbb?vestimenta=ninguna)
+![Tablero final con vestimenta](assets/resources/Imagen1-small.gbb)
 </center>  
 
 La idea es que utilices tanto procedimientos como repeticiones simples. 

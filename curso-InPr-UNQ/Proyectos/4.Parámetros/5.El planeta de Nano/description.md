@@ -7,7 +7,7 @@ Lo interesante es hacer un solo procedimiento que se pueda usar muchas veces.
 ¿Podés hacer un único procedimiento para comer cualquier fila?
 
 <center>
-![El escenario final](assets/resources/Imagen1-small.png)
+![El escenario final](assets/boards/Board01.gbb)
 </center>
 
 Tené en cuenta que los procedimientos primitivos tienen restricciones que limitan las estrategias posibles

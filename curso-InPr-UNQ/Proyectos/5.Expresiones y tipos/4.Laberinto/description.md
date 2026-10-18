@@ -7,13 +7,13 @@ Construí y probá el procedimiento `Salir del laberinto` que le indique al rat�
 Te mostramos algunos laberintos, y cómo tiene que quedar al terminar:
            
 <center>
-![Tablero inicial 1 con su correspondiente tablero final](assets/resources/Imagen1-small.png)
+![Tablero inicial 1 con su correspondiente tablero final (1 de 2)](assets/boards/Board01.gbb) ![Tablero inicial 1 con su correspondiente tablero final (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial 2 con su correspondiente tablero final](assets/resources/Imagen2-small.png)
+![Tablero inicial 2 con su correspondiente tablero final (1 de 2)](assets/resources/Imagen2-small-1.gbb) ![Tablero inicial 2 con su correspondiente tablero final (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 
-![Tablero inicial 3 con su correspondiente tablero final](assets/resources/Imagen3-small.png)
+![Tablero inicial 3 con su correspondiente tablero final (1 de 2)](assets/resources/Imagen3-small-1.gbb) ![Tablero inicial 3 con su correspondiente tablero final (2 de 2)](assets/resources/Imagen3-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial 4 con su correspondiente tablero final](assets/resources/Imagen4-small.png)
+![Tablero inicial 4 con su correspondiente tablero final (1 de 2)](assets/boards/Board10.gbb) ![Tablero inicial 4 con su correspondiente tablero final (2 de 2)](assets/resources/Imagen4-small-2.gbb)
 </center>
            
 La idea es fácil: en cada paso hay que ver para dónde apunta la flecha, y sacarla antes de moverse. 

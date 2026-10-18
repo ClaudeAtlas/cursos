@@ -4,7 +4,7 @@ Completá el programa para lograr el mismo tablero que en las actividades _“Lu
 o sea, el siguiente tablero (mostrado con y sin vestimenta): 
 
 <center>
-![Tablero final esperado, con y sin vestimenta](assets/resources/Imagen1-small.png)
+![Tablero final esperado, con y sin vestimenta (1 de 2)](assets/resources/Imagen1-small.gbb) ![Tablero final esperado, con y sin vestimenta (2 de 2)](assets/resources/Imagen1-small.gbb?vestimenta=ninguna)
 </center>
 
 La diferencia es que esta vez el procedimiento para dibujar cuadrados ya viene hecho, y vos tenés que hacer los procedimientos que 

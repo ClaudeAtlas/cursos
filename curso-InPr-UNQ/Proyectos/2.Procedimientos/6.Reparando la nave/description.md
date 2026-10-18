@@ -9,7 +9,7 @@ para completar su tarea. El tablero inicial muestra al marciano en su nave, y lo
 carbón y de hierro.
 
 <center>
-![Tablero inicial](assets/resources/Imagen1-small.png)
+![Tablero inicial](assets/boards/Board1.gbb)
 </center>
 
 Escribí un procedimiento por cada tarea que haya que hacer y ponele un nombre adecuado. 

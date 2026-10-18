@@ -11,7 +11,7 @@ Mirá algunas de las combinaciones de tablero inicial y final.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![A imitar 4 * 2 bolitas (1 de 2)](assets/boards/Board02.gbb) ![A imitar 4 * 2 bolitas (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![A imitar 5 * 2 bolitas](assets/resources/Imagen3-small.png)
+![A imitar 5 * 2 bolitas (1 de 2)](assets/boards/Board04.gbb) ![A imitar 5 * 2 bolitas (2 de 2)](assets/resources/Imagen3-small-2.gbb)
 </center>
 
 **Pista:** sale parecido al de _“El mimo que suma”_...

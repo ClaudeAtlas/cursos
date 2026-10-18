@@ -5,7 +5,7 @@ El tablero inicial es siempre el mismo, o sea que la cantidad de bananas en cada
 misma en todas las ejecuciones.
 
 <center>
-![El escenario final](assets/resources/Imagen1-small.png)
+![El escenario final](assets/boards/Board01.gbb)
 </center>
 
 ¿Cuántos procedimientos distintos son necesarios?
