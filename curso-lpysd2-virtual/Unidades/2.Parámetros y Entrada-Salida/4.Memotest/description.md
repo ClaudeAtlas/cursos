@@ -6,7 +6,7 @@ iguales, "`las cartas son iguales`". Completá el programa para que se pueda jug
 debería verse como el siguiente.
 
 <center>
-![Un escenario durante el juego]( assets/resources/Imagen1-small.png)
+![Un escenario durante el juego](assets/resources/Imagen1-small.png)
 </center>
 
 > **Mirando las cartas**

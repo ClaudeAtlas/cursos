@@ -5,7 +5,7 @@ Por ejemplo, una que tenga el ancho de espadas, el 7 de espadas y el 7 de oros.
 El escenario final debería quedar así:
 
 <center>
-![El escenario final]( assets/resources/Imagen1-small.png)
+![El escenario final](assets/resources/Imagen1-small.png)
 </center>
 
 **Atención:** la actividad te pide poner esas 3 cartas y nada más. No tenés que saber jugar al truco para completarla; 
