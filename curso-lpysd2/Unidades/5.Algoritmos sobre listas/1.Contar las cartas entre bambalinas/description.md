@@ -10,7 +10,7 @@ función "`cantidad de cartas del mazo`" a la que le da el mazo actual como argu
 Vos tenés que calcular y determinar el resultado de la función.
 
 <center>
-![Un escenario durante el juego](assets/resources/Imagen1-small.png)
+![Un escenario durante el juego](assets/resources/Imagen1-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![El código del programa principal](assets/resources/consigna-1.png)

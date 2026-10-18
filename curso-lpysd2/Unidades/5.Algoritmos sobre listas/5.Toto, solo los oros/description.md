@@ -8,7 +8,7 @@ Debe informar al final solamente las cartas del mazo de entrada que sean de oros
 El escenario final te tiene que quedar parecido al siguiente.
 
 <center>
-![Un escenario final posible](assets/resources/Imagen1-small.png)
+![Un escenario final posible](assets/resources/Imagen1-small.gbb)
 </center>
 
 Acordate que para procesar una lista podés usar un recorrido sobre sus elementos

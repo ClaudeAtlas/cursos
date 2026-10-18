@@ -7,7 +7,7 @@ cada número representa el código de la carta correspondiente.
 Un escenario final posible sería el siguiente:
 
 <center>
-![Un escenario final posible](assets/resources/Imagen1-small.png)
+![Un escenario final posible](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **¡Todos los elementos se pueden codificar con números!**

@@ -6,7 +6,7 @@ mientras que la lista de entrada es de cartas (un mazo), la de salida debe serlo
 Un escenario posible al finalizar es el siguiente:
 
 <center>
-![Un escenario final](assets/resources/Imagen1-small.png)
+![Un escenario final](assets/resources/Imagen1-small.gbb)
 </center>
 
 ¡Ya sabés recorrer una lista y generar una lista!

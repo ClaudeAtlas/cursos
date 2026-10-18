@@ -8,7 +8,7 @@ procesar elemento es obtener el número de la carta, y agregarlo a la lista de r
 Un escenario posible al finalizar es el siguiente:
 
 <center>
-![Un escenario final](assets/resources/Imagen1-small.png)
+![Un escenario final](assets/resources/Imagen1-small.gbb)
 </center>
 
 Básicamente tenés que combinar dos ideas que ya conocés: por un lado la de recorrer una lista (que 
