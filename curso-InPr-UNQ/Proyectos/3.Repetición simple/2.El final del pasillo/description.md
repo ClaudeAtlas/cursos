@@ -4,7 +4,7 @@ Escribí un procedimiento al que tenés que ponerle como nombre "`Llegar al fina
 en forma de L, como el que muestra la figura, hasta llegar a la otra punta:
 
 <center>
-![Tablero inicial](assets/resources/Imagen2-small.png)
+![Tablero inicial](assets/boards/Board1.gbb)
 </center>
 
 Una vez más, los procedimientos primitivos para representar al Beto ya vienen definidos. 

@@ -4,7 +4,7 @@ Completá el programa para que dibuje cuatro cuadrados, uno en cada esquina, cad
 El resultado final debería ser como el de la figura (mostrado con y sin vestimenta):
 
 <center>
-![Tablero final esperado, con y sin vestimenta](assets/resources/Imagen1-small.png)
+![Tablero final esperado, con y sin vestimenta (1 de 2)](assets/resources/Imagen1-small.gbb) ![Tablero final esperado, con y sin vestimenta (2 de 2)](assets/resources/Imagen1-small.gbb?vestimenta=ninguna)
 </center>
 
 Observá que tenés que definir cuatro procedimientos, uno por cada tamaño, pero que cada uno de ellos ya tiene como parámetro el 

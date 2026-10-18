@@ -4,7 +4,7 @@ Completá el programa para lograr el mismo tablero que en las otras actividades 
 obtener el siguiente tablero final (mostrado con y sin vestimenta):
 
 <center>
-![Tablero final, con y sin vestimenta](assets/resources/Imagen1-small.png)
+![Tablero final, con y sin vestimenta (1 de 2)](assets/resources/Imagen1-small.gbb) ![Tablero final, con y sin vestimenta (2 de 2)](assets/resources/Imagen1-small.gbb?vestimenta=ninguna)
 </center>
 
 La diferencia es que esta vez además de usar un único procedimiento para dibujar cuadrados, tenés que utilizar un único

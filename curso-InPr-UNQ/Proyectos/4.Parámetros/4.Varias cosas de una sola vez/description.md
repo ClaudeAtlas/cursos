@@ -10,7 +10,7 @@ Después tenés que utilizarlos para transformar el tablero inicial dado en el t
 lo interesante es conseguirlo usando solamente los procedimientos que definiste y también el procedimiento primitivo `IrALaEsquina`. 
            
 <center>
-![Tablero inicial y tablero final esperado](assets/resources/Imagen1-small.png)
+![Tablero inicial y tablero final esperado (1 de 2)](assets/resources/Imagen1-small-1.gbb) ![Tablero inicial y tablero final esperado (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 Después que completaste esta tarea, tenemos dos desafíos: 

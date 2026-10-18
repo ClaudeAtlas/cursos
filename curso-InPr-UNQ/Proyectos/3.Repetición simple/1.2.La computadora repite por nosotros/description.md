@@ -4,7 +4,7 @@ Tratá de hacer un procedimiento que sirva para poner 1500 bolitas rojas.
 ¿Habrá alguna herramienta en el entorno que nos haga el trabajo más fácil? 
 
 <center>
-![Tablero final](assets/resources/Imagen1-small.png)
+![Tablero final](assets/resources/Imagen1-small.gbb)
 </center>
 
 Una vez que te salió el procedimiento para poner 1500 bolitas rojas usando un único comando, 

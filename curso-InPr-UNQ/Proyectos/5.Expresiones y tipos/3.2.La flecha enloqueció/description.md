@@ -11,11 +11,11 @@ en cada caso, hay que ir en la dirección opuesta a la que indica la flecha.
 Te mostramos algunos tableros iniciales, y sus correspondientes tableros finales.
  
 <center>
-![Tablero inicial, salida al Norte, flecha al Sur](assets/resources/Imagen1-small.png)
+![Tablero inicial, salida al Norte, flecha al Sur (1 de 2)](assets/boards/Board01.gbb) ![Tablero inicial, salida al Norte, flecha al Sur (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial, salida al Este, flecha al Oeste](assets/resources/Imagen2-small.png)
+![Tablero inicial, salida al Este, flecha al Oeste (1 de 2)](assets/boards/Board02.gbb) ![Tablero inicial, salida al Este, flecha al Oeste (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 
-![Tablero inicial, salida al Sur, flecha al Norte](assets/resources/Imagen3-small.png)
+![Tablero inicial, salida al Sur, flecha al Norte (1 de 2)](assets/boards/Board03.gbb) ![Tablero inicial, salida al Sur, flecha al Norte (2 de 2)](assets/resources/Imagen3-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Tablero inicial, salida al Oeste, flecha al Este (1 de 2)](assets/boards/Board04.gbb) ![Tablero inicial, salida al Oeste, flecha al Este (2 de 2)](assets/resources/Imagen4-small-2.gbb)
 </center>

@@ -14,7 +14,7 @@ Seguí las tareas propuestas.
    El tablero final debería quedarte así:
 
 <center>
-![Tablero final](assets/resources/Imagen1-small.png)
+![Tablero final](assets/resources/Imagen1-small.gbb)
 </center>
 
 [Enunciado en PDF][PDF]

@@ -15,9 +15,9 @@ Te mostramos algunos tableros iniciales, y sus correspondientes tableros finales
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 ![Tablero inicial, salida al Este (1 de 2)](assets/boards/Board02.gbb) ![Tablero inicial, salida al Este (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 
-![Tablero inicial, salida al Sur](assets/resources/Imagen3-small.png)
+![Tablero inicial, salida al Sur (1 de 2)](assets/boards/Board03.gbb) ![Tablero inicial, salida al Sur (2 de 2)](assets/resources/Imagen3-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Tablero inicial, salida al Oeste](assets/resources/Imagen4-small.png)
+![Tablero inicial, salida al Oeste (1 de 2)](assets/boards/Board04.gbb) ![Tablero inicial, salida al Oeste (2 de 2)](assets/resources/Imagen4-small-2.gbb)
 </center>
 
 [Enunciado en PDF][PDF]

@@ -4,7 +4,7 @@ Otra vez más, tenés que dibujar cuatro cuadrados, tal como en la actividad _�
 el siguiente tablero final (mostrado con y sin vestimenta):
 
 <center>
-![Tablero final esperado, con y sin vestimenta](assets/resources/Imagen1-small.png)
+![Tablero final esperado, con y sin vestimenta (1 de 2)](assets/resources/Imagen1-small.gbb) ![Tablero final esperado, con y sin vestimenta (2 de 2)](assets/resources/Imagen1-small.gbb?vestimenta=ninguna)
 </center>
 
 Pero esta vez hay que definir un único procedimiento para dibujar líneas. 

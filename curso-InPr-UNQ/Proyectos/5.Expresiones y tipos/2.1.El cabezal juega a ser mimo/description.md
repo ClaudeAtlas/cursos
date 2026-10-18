@@ -7,11 +7,11 @@ A su vez, el programa tiene que funcionar en varios tableros diferentes.
 Te mostramos algunos tableros iniciales y sus correspondientes tableros finales.
  
 <center>
-![A imitar 2 bolitas](assets/resources/Imagen1-small.png)
+![A imitar 2 bolitas (1 de 2)](assets/boards/Board02.gbb) ![A imitar 2 bolitas (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![A imitar 3 bolitas](assets/resources/Imagen2-small.png)
+![A imitar 3 bolitas (1 de 2)](assets/resources/Imagen2-small-1.gbb) ![A imitar 3 bolitas (2 de 2)](assets/resources/Imagen2-small-2.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![A imitar 7 bolitas](assets/resources/Imagen3-small.png)
+![A imitar 7 bolitas (1 de 2)](assets/resources/Imagen3-small-1.gbb) ![A imitar 7 bolitas (2 de 2)](assets/resources/Imagen3-small-2.gbb)
 </center>
 
 Recordá que el mismo programa tiene que servir para transformar cualquiera de los tableros iniciales 
