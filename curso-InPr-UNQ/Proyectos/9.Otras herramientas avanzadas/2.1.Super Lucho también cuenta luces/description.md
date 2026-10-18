@@ -9,7 +9,7 @@ bolitas rojas, cuántas luces prendió.
 Te mostramos un tablero inicial y su correspondiente tablero final, con y sin vestimenta.
 
 <center>
-![Tablero inicial y su correspondiente tablero final, con y sin vestimenta](assets/resources/Imagen1-small.png)
+![Tablero inicial y su correspondiente tablero final, con y sin vestimenta: inicial sin vestimenta (1 de 4)](assets/boards/Board06.gbb?vestimenta=ninguna) ![Tablero inicial y su correspondiente tablero final, con y sin vestimenta: final sin vestimenta (2 de 4)](assets/resources/Imagen1-small-2.gbb?vestimenta=ninguna) ![Tablero inicial y su correspondiente tablero final, con y sin vestimenta: inicial con vestimenta (3 de 4)](assets/boards/Board06.gbb) ![Tablero inicial y su correspondiente tablero final, con y sin vestimenta: final con vestimenta (4 de 4)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 Una vez más, vas a precisar una variable. 
