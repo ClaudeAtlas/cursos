@@ -4,7 +4,7 @@ En este proyecto se expresa la misma idea de la actividad "Programar en cuadricu
 El objetivo en este caso es dibujar varios camiones, como se muestra en la figura.
 
 <center>
-![Tablero final](assets/resources/Camiones-small.png)
+![Tablero final](assets/resources/Camiones-small.gbb)
 </center>
 
 ¿Cómo lograr usar un único procedimiento de dibujar camiones?

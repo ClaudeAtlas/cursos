@@ -4,7 +4,7 @@ Una vez más tenemos que dibujar cuadrados.
 ¡Pero ahora los cuadrados son todos de distintos colores!
 
 <center>
-![Tablero final esperado en la parte 2](assets/resources/Imagen1-small.png)
+![Tablero final esperado en la parte 2](assets/resources/Imagen1-small.gbb)
 </center>
 
 Si bien podrías definir 4 procedimientos que dibujen cuadrados, uno por cada color,

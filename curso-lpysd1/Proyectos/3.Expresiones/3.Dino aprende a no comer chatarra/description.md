@@ -13,7 +13,7 @@ si es sana y volver al inicio de la fila.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Y su correspondiente escenario final](assets/resources/Imagen2-small.png)
+![Y su correspondiente escenario final](assets/resources/Imagen2-small.gbb)
 </center>
 
 Lo interesante está en cómo construir la expresión que permite a Dino saber si llegó a la comida. 
