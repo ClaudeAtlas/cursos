@@ -8,7 +8,7 @@ del tablero que se ve a continuación:
 ![Tablero inicial](assets/boards/Board1.gbb)
 </center>
 <center>
-![Tablero final](assets/resources/Imagen3-small.png)
+![Tablero final](assets/boards/Board1.gbb?vestimenta=Candela%2C%20me%20quemo)
 </center>
 
 ¿Cuántas veces vas a tener que repetir la acción? 
