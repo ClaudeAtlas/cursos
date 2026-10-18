@@ -10,7 +10,7 @@ Tu trabajo, si decides aceptarlo, es corregir el programa para que funcione como
 Un escenario final debería verse de esta manera:
 
 <center>
-![Un escenario final](assets/resources/Imagen1-small.png)
+![Un escenario final](assets/resources/Imagen1-small.gbb)
 </center>
 
 > **Entrada-Salida**

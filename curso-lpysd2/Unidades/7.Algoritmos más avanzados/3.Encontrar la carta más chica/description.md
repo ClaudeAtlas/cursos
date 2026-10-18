@@ -5,7 +5,7 @@ En esta actividad el ordenamiento viene hecho, pero vos tenés que hacer esa ope
 Nuevamente, el escenario debe quedar como en el ejemplo anterior.
 
 <center>
-![Un escenario posible, antes y después de la ejecución](assets/resources/Imagen1-small.png)
+![Un escenario posible, antes y después de la ejecución (1 de 2)](assets/boards/Board01.gbb) ![Un escenario posible, antes y después de la ejecución (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 Un detalle importante a tener en cuenta es que esta función solo va a trabajar bien si el mazo que

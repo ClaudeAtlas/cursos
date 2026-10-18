@@ -10,7 +10,7 @@ la letra correspondiente.
 Así se vería un posible escenario final exitoso:
 
 <center>
-![El escenario final](assets/resources/Imagen1-small.png)
+![El escenario final](assets/resources/Imagen1-small.gbb)
 </center>
 
 ¿Cómo transformar una lista en otra?

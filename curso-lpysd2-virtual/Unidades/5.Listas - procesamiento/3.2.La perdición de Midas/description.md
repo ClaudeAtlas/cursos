@@ -11,9 +11,9 @@ El programa ya tiene algunas partes resueltas, pero falta completar otras. Utili
 Te mostramos algunos escenarios finales correctos:
 
 <center>
-![Un escenario final correcto](assets/resources/Imagen1-small.png)
+![Un escenario final correcto](assets/resources/Imagen1-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Otro escenario final correcto](assets/resources/Imagen2-small.png)
+![Otro escenario final correcto](assets/resources/Imagen2-small.gbb)
 </center>

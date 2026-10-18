@@ -12,11 +12,11 @@ El objetivo de la actividad es que corrijas el programa para que todas las carta
 Te mostramos algunos escenarios finales correctos:
 
 <center>
-![Un escenario final correcto](assets/resources/Imagen1-small.png)
+![Un escenario final correcto](assets/resources/Imagen1-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Otro escenario final correcto](assets/resources/Imagen2-small.png)
+![Otro escenario final correcto](assets/resources/Imagen2-small.gbb)
 </center>
 
 ¡No te olvides de definir funciones si tenés que agregar alguna transformación de datos!

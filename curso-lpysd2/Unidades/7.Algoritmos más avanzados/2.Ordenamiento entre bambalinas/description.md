@@ -7,7 +7,7 @@ ideas. El escenario final debe quedarte igual al de la actividad anterior; pero 
 nada durante el trabajo…
 
 <center>
-![Un escenario posible, antes y después de la ejecución](assets/resources/Imagen1-small.png)
+![Un escenario posible, antes y después de la ejecución (1 de 2)](assets/boards/Board01.gbb) ![Un escenario posible, antes y después de la ejecución (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 > **Algoritmos de ordenamiento**

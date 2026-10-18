@@ -6,7 +6,7 @@ Indagá cómo hacerlo utilizando los procedimientos y funciones primitivos provi
 Si todo funciona bien, deberías poder lograr la transformación que se muestra en la figura:
 
 <center>
-![Un escenario posible, antes y después de la ejecución](assets/resources/Imagen1-small.png)
+![Un escenario posible, antes y después de la ejecución (1 de 2)](assets/boards/Board01.gbb) ![Un escenario posible, antes y después de la ejecución (2 de 2)](assets/resources/Imagen1-small-2.gbb)
 </center>
 
 Una observación posible es acerca de cuál es el criterio con el que se ordenan las cartas. Ese criterio puede ser

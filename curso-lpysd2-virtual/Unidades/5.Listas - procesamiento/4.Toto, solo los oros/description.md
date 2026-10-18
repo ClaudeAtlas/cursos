@@ -8,7 +8,7 @@ informar al final, de las cartas del mazo de entrada, solamente las que sean de 
 El escenario final te tiene que quedar parecido al siguiente.
 
 <center>
-![Un escenario final posible](assets/resources/Imagen1-small.png)
+![Un escenario final posible](assets/resources/Imagen1-small.gbb)
 </center>
 
 Acordate que para procesar una lista podés usar un recorrido sobre sus elementos,

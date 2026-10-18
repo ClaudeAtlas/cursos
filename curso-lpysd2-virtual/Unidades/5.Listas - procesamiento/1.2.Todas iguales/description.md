@@ -7,7 +7,7 @@ que tenga esa cantidad de cartas, todas iguales a la que viene como dato de entr
 Como siempre, te mostramos un posible escenario final:
 
 <center>
-![Un escenario final](assets/resources/Imagen1-small.png)
+![Un escenario final](assets/resources/Imagen1-small.gbb)
 </center>
 
 La dificultad está en como _recordar_ los resultados que calculamos hasta ahora en cada paso del recorrido.

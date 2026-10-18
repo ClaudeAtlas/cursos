@@ -16,10 +16,10 @@ En las imágenes se observan dos fragmentos de escenarios finales posibles (sí,
 Espadas es 301, y el del 7 de Oros es 407).
 
 <center>
-![Un fragmento de un escenario final posible](assets/resources/Imagen1-small.png)
+![Un fragmento de un escenario final posible](assets/resources/Imagen1-small.gbb)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-![Otro fragmento de un escenario final posible](assets/resources/Imagen2-small.png)
+![Otro fragmento de un escenario final posible](assets/resources/Imagen2-small.gbb)
 </center>
 
 > **¡Todos los elementos se pueden codificar con números!**

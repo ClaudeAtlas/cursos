@@ -7,7 +7,7 @@ cartas que corresponden a ciudadanos de la realeza que poseen armas, para poder 
 El escenario final debería quedarte como el siguiente:
 
 <center>
-![El escenario final](assets/resources/Imagen1-small.png)
+![El escenario final](assets/resources/Imagen1-small.gbb)
 </center>
 
 Las figuras (rey, caballo y sota) representan miembros de la realeza, y los palos de Bastos y Espadas representan armas.
