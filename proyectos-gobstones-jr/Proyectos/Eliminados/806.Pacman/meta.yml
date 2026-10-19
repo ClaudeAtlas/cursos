@@ -35,7 +35,7 @@ blocks:
     - OperadorOpuesto
     - DefinicionDeAsociacionDeTeclaEspecial
     - DefinicionDeAsociacionDeTeclaLetra
-    - DefinicionDeAsociacionDeTeclaNúmero
+    - DefinicionDeAsociacionDeTeclaNumero
     - DefinicionDeProcedimientoSimple
     - DefinicionDeProcedimientoParametrizado
     - DefinicionDeFuncionSimple

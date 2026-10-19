@@ -27,10 +27,6 @@ blocks:
         <block type="math_number"></block>
         <block type="DireccionSelector"></block>
       </category>
-      <category name="Sensores">
-        <block type="hayQuesoAcá"></block>
-        <block type="estoyEnLaMeta"></block>
-      </category>
       <category name="Operadores">
         <block type="OperadorNumerico"></block>
       </category>

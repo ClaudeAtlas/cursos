@@ -30,11 +30,9 @@ blocks:
     - Procedimientos primitivos
     - Mis procedimientos
     - RepeticionSimple
-    - EXPRESIONES
     - Color
     - Direccion
     - Numero
-    - DEFINICIONES
     - procedures_defnoreturnnoparams
     - procedures_defnoreturn
 library:

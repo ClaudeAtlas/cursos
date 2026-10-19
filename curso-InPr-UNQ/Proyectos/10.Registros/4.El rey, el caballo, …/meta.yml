@@ -41,7 +41,6 @@ blocks:
           <block type="DireccionSelector"></block>
           <block type="BoolSelector"></block>
           <block type="paloDeCartaEspañolaDe40_"></block>
-          <block type="dameCarta__"></block>
         </category>
         <category name="Expresiones primitivas">
           <block type="hayBolitas"></block>
@@ -102,7 +101,6 @@ blocks:
                             , "OperadorNumerico"
                             , "siguiente", "previo", "opuesto"
                             , "paloDeCartaEspañolaDe40_"
-                            , "dameCarta__"
                             ]
   visible:  [ "COMANDOS"    , "Poner", "Mover", "Sacar", "IrAlBorde"
                             , "Procedimientos primitivos", "Mis procedimientos"
