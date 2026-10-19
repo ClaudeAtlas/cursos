@@ -1,5 +1,5 @@
 [
-  { "name": "Ejercitación", "repo": "ClaudeAtlas/cursos"
+  { "name": "Ejercitación", "repo": "ClaudeAtlas/cursos-gobstones"
   , "exercises": 
     [ { "id": "0.", "name": "El alien toca botón"
       , "path": "Proyectos/1.Ejercitación/0.El alien toca botón"
@@ -21,7 +21,7 @@
       }
     ]
   }
-, { "name": "Practiquemos parámetros", "repo": "ClaudeAtlas/cursos"
+, { "name": "Practiquemos parámetros", "repo": "ClaudeAtlas/cursos-gobstones"
   , "exercises": 
     [ { "id": "0.1.", "name": "La máquina de licuados, v1.0"
       , "path": "Proyectos/2.Parámetros/0.1.La máquina de licuados v1.0"
@@ -49,7 +49,7 @@
       }
     ]
   }
-, { "name": "Expresiones", "repo": "ClaudeAtlas/cursos"
+, { "name": "Expresiones", "repo": "ClaudeAtlas/cursos-gobstones"
   , "exercises": 
     [ { "id": "1.", "name": "La música del loro"
       , "path": "Proyectos/3.Expresiones/1.La música del loro"
@@ -65,7 +65,7 @@
       }
     ]
   }
-, { "name": "Variables", "repo": "ClaudeAtlas/cursos"
+, { "name": "Variables", "repo": "ClaudeAtlas/cursos-gobstones"
   , "exercises": 
     [ { "id": "1.", "name": "Recuerden la contraseña"
       , "path": "Proyectos/4.Variables/1.Recuerden la contraseña"

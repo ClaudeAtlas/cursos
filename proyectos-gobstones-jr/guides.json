@@ -1,5 +1,5 @@
 [ { "name": "Programas y comandos básicos",
-    "repo": "ClaudeAtlas/cursos",
+    "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://program.ar/manual-primer-ciclo-secundaria/",
     "exercises": [
       { "id": "201",        "name": "Repartija de caramelos",
@@ -35,7 +35,7 @@
     ]
   },
   { "name": "Procedimientos y repeticiones simples",
-    "repo": "ClaudeAtlas/cursos",
+    "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://program.ar/manual-primer-ciclo-secundaria/",
     "exercises": [
       { "id": "301",        "name": "Un cuadrado",
@@ -83,7 +83,7 @@
     ]
   },
   { "name": "Datos, alternativas condicionales y funciones",
-    "repo": "ClaudeAtlas/cursos",
+    "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://program.ar/manual-primer-ciclo-secundaria/",
     "exercises": [
       { "id": "401",        "name": "Por qué falla",
@@ -134,7 +134,7 @@
     ]
   },
   { "name": "Representación de la información",
-    "repo": "ClaudeAtlas/cursos",
+    "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://program.ar/manual-primer-ciclo-secundaria/",
     "exercises": [
       { "id": "501",        "name": "Pintamos la camiseta de colores",
@@ -158,7 +158,7 @@
     ]
   },
   { "name": "Parámetros, repeticiones condicionales y variables",
-    "repo": "ClaudeAtlas/cursos",
+    "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://program.ar/manual-primer-ciclo-secundaria/",
     "exercises": [
       { "id": "701",        "name": "Cuadrados de colores, toma 1",
@@ -200,7 +200,7 @@
     ]
   },
   { "name": "Interactividad",
-    "repo": "ClaudeAtlas/cursos",
+    "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://program.ar/manual-primer-ciclo-secundaria/",
     "exercises": [
       { "id": "802",        "name": "Editor de tableros",

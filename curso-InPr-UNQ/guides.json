@@ -1,5 +1,5 @@
 [ 
-  { "name": "Descubrir Gobstones"         , "repo": "ClaudeAtlas/cursos",
+  { "name": "Descubrir Gobstones"         , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1.1",        "name": "La simulación del docente robot",
@@ -42,7 +42,7 @@
         "path": "Proyectos/1.Descubrir Gobstones/7.Snake básico"
       }
     ] }
-, { "name": "Procedimientos"              , "repo": "ClaudeAtlas/cursos",
+, { "name": "Procedimientos"              , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1.1",        "name": "Programo el cuadrado",
@@ -79,7 +79,7 @@
         "path": "Proyectos/2.Procedimientos/6.Reparando la nave"
       }
     ] }
-, { "name": "Repetición simple"           , "repo": "ClaudeAtlas/cursos",
+, { "name": "Repetición simple"           , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1.1",    "name": "Poner muchas bolitas se vuelve incómodo",
@@ -101,7 +101,7 @@
         "path": "Proyectos/3.Repetición simple/5.Entrenamiento para fútbol de robots"
       }
 	] } 
-, { "name": "Parámetros"                  , "repo": "ClaudeAtlas/cursos",
+, { "name": "Parámetros"                  , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1.1",        "name": "Tablero de Ludo, toma 1",
@@ -132,7 +132,7 @@
         "path": "Proyectos/4.Parámetros/5.El planeta de Nano"
       }
 	] } 
-, { "name": "Expresiones y tipos"         , "repo": "ClaudeAtlas/cursos",
+, { "name": "Expresiones y tipos"         , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1.1",        "name": "No encuentro bolitas de color Sur",
@@ -163,7 +163,7 @@
         "path": "Proyectos/5.Expresiones y tipos/4.Laberinto"
       }
     ] }
-, { "name": "Alternativa condicional"     , "repo": "ClaudeAtlas/cursos",
+, { "name": "Alternativa condicional"     , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1",        "name": "Apagar la luz, o prenderla",
@@ -179,7 +179,7 @@
         "path": "Proyectos/6.Alternativa condicional/4.No, no y no"
       }
     ] }
-, { "name": "Funciones"                   , "repo": "ClaudeAtlas/cursos",
+, { "name": "Funciones"                   , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1.1",      "name": "Mi elección es clara",
@@ -198,7 +198,7 @@
         "path": "Proyectos/7.Funciones/4.Está lista la cena"
       }
     ] }
-, { "name": "Repetición condicional"      , "repo": "ClaudeAtlas/cursos",
+, { "name": "Repetición condicional"      , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1.1",      "name": "Super Lucho 1",
@@ -223,7 +223,7 @@
         "path": "Proyectos/8.Repetición condicional/6.Dónde puse las llaves"
       }
    ] }
-, { "name": "Otras herramientas avanzadas", "repo": "ClaudeAtlas/cursos",
+, { "name": "Otras herramientas avanzadas", "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1.1",      "name": "Recuerden la contraseña",
@@ -251,7 +251,7 @@
         "path": "Proyectos/9.Otras herramientas avanzadas/4.El radar"
       }
    ] }
-, { "name": "Introducción a registros"    , "repo": "ClaudeAtlas/cursos",
+, { "name": "Introducción a registros"    , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1",      "name": "Descubrir la carta",
@@ -270,7 +270,7 @@
         "path": "Proyectos/10.Registros/4.El rey, el caballo, …"
       }
    ] }
-, { "name": "Introducción a listas"       , "repo": "ClaudeAtlas/cursos",
+, { "name": "Introducción a listas"       , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1",    "name": "Descubrir la lista",
@@ -286,7 +286,7 @@
         "path": "Proyectos/11.Listas/4.El repartir de las cartas"
       }
    ] }
-, { "name": "Ejercicios de práctica"       , "repo": "ClaudeAtlas/cursos",
+, { "name": "Ejercicios de práctica"       , "repo": "ClaudeAtlas/cursos-gobstones",
     "homeLink": "http://www.gobstones.org/bibliografia/Libros/BasesConceptualesProg.pdf",
     "exercises": [
       { "id": "1",    "name": "Otro ladrillo en la pared",

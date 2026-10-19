@@ -1,5 +1,5 @@
 [ 
-  { "name": "Tutorial"                     , "repo": "ClaudeAtlas/cursos",
+  { "name": "Tutorial"                     , "repo": "ClaudeAtlas/cursos-gobstones",
     "exercises": [
       { "id": "1", "name": "Tutorial 1", "path": "Levels/Tutorial/Level T1" }
     , { "id": "2", "name": "Tutorial 2", "path": "Levels/Tutorial/Level T2" }
@@ -7,7 +7,7 @@
     , { "id": "4", "name": "Tutorial 4", "path": "Levels/Tutorial/Level T4" }
     ] 
   }
-, { "name": "Levels"                       , "repo": "ClaudeAtlas/cursos",
+, { "name": "Levels"                       , "repo": "ClaudeAtlas/cursos-gobstones",
     "exercises": [
       { "id": "1", "name": "Level 1", "path": "Levels/Level 01" }
     , { "id": "2", "name": "Level 2", "path": "Levels/Level 02" }
