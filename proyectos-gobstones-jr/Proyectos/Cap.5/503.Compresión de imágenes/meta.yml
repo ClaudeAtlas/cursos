@@ -1,7 +1,7 @@
 name: Compresión de imágenes
 link: http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria-fichas.pdf#page=66
 attire:
-  active: Colores RGB
+  active: RGB
   user_permissions:
     can_toggle_visibility: true
   visible: false

@@ -1,7 +1,7 @@
 name: '¿Caramelos, tomates o bolitas?'
 link: http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria-fichas.pdf
 attire:
-  active: Sembrando tomates 2
+  active: Sembrando tomates
   user_permissions:
     can_toggle_visibility: true
   visible: true

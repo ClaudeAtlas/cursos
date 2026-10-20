@@ -1,6 +1,6 @@
 name: ¡Quiero retruco!
 attire:
-  active: 'Cartas, letras, números'
+  active: 'Cartas, letras y números'
   user_permissions:
     can_toggle_visibility: false
   visible: true

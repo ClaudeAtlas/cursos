@@ -1,7 +1,7 @@
 name: 'La luz está prendida vs. hay bolitas: mi elección es clara'
 link: http://program.ar/descargas/cc_para_el_aula-1er_ciclo_secundaria-fichas.pdf#page=55
 attire:
-  active: Bombita y tomateros
+  active: Tomateras y luces
   user_permissions:
     can_toggle_visibility: true
   visible: true
