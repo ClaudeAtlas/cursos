@@ -52,6 +52,8 @@ De 486 MB a 335 MB, y sin tocar una línea de consigna ni una imagen que alguien
 
 ## Los originales siguen donde estaban
 
-Este repositorio es **material listo para usar**, no la fuente. Cada curso tiene además su
-fork en esta organización, sincronizado con su repositorio de origen: de ahí se traen los
-cambios de arriba y se vuelve a armar esto.
+Los repositorios de origen están en la tabla de arriba. **Desde el 19/10/2026 este es el
+lugar donde se trabaja el material**: los forks que había en esta organización, uno por
+curso, quedaron archivados (de solo lectura), porque todo lo que se hizo después de migrar
+—consignas, tableros, vestimentas, cajas de bloques— se hizo acá. Un cambio de arriba que
+valga la pena se trae a mano.
